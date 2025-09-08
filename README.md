@@ -1,5 +1,5 @@
-Apuntes de la asignatura Invesigación Operativa de 2º matemáticas UCM, impartida por Francisco Javier Yañez Gestoso.
+Apuntes de la asignatura Geometría Lineal de 2º matemáticas UCM, impartida por Luis Hernández Corbato.
 
-Se encuentran contenidos sobre Invesigación Operativa.
+Se encuentran contenidos sobre Geometría Lineal.
 
 Apuntes desarrollados por Pau Frangi y Diego Rodríguez.
