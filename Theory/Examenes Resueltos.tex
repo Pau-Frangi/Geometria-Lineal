@@ -1,0 +1,28 @@
+\section{Examenes Resueltos}
+
+\subsection{Test de seguimiento (Marzo-2023). Modelo A}
+
+\begin{problem}{1}
+    Indicar si las afirmaciones siguientes son verdaderas o falsas:
+    \begin{enumerate}
+        \item Si $E \in \mathbb{R}^n$ es medible, entonces $m(E) = m(\bar{E})$.
+        \item Sea $E \in \mathbb{R}^n$. Si $m(\delta E)=0$, entonces $E$ es medible.
+    \end{enumerate}
+\end{problem}
+
+\begin{sol}
+    \begin{enumerate}
+        \item Falso. \\
+        Tengamos como ejemplo $\mathbb{Q}$ cuya medida es $0$ por ser numerable, pero su adherencia $\bar{\mathbb{Q}}=\mathbb{R}$ tiene medida infinita.
+        \item Verdadero. \\
+        Si $m(\delta E)=0$, se deduce que $m^{*}(\bar{E})=m^{*}(\mathring{E})$. Entonces apliquemos la definición de conjunto medible: \\
+        Sea $S \subset \mathbb{R}^n$ arbitrario, queremos comprobar que $m^{*}(S)=m^{*}(S \cap E)+m^{*}(S \cap E^c)$. \\
+        Como $m^{*}(\bar{E})=m^{*}(\mathring{E})$, y teniendo en cuenta que $\mathring{E} \subset E \subset \bar{E}$, se tiene que: \\
+        $m^{*}(S \cap \mathring{E}) \leq m^{*}(S \cap E) \leq m^{*}(S \cap \bar{E})$. \\
+        Ademas, se tiene: \\
+        $m^{*}(S \cap \mathring{E}^c) \geq m^{*}(S \cap E^c) \geq m^{*}(S \cap \bar{E}^c)$. \\
+        Entonces tenemos que $m^{*}(S \cap \mathring{E})+m^{*}(S \cap \bar{E}^c) \leq m^{*}(S \cap E)+m^{*}(S \cap E^c) \leq m^{*}(S \cap \bar{E})+m^{*}(S \cap \mathring{E}^c)$. \\
+        Teniendo en cuenta que $\mathring{E}$ es abierta y $\bar{E}$ es cerrado, ambos son medibles. \\
+        Finalmente 
+    \end{enumerate}
+\end{sol}
