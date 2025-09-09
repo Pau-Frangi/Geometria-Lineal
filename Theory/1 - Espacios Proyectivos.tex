@@ -60,10 +60,12 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
 \end{definición}
 
 \ejemplo{
-    Pongamos de ejemplo los subespacios degenerados:\\
-    $\left\{\vec{0}\right\}$, $V$ son subespacios vectoriales de $V$ y por tanto $\mathbb{P}(\left\{\vec{0}\right\}) = \emptyset$ y $\mathbb{P}(V) = \mathbb{P}$ son subespacios proyectivos de $\mathbb{P}$.\\
-    Si $\mathbb(P) = \mathbb{P}(V)$ es un espacio proyectivo de dimensión $n$ entonces $dim(V) = n + 1$.
-}
+
+    \begin{itemize}
+        \item Pongamos de ejemplo los subespacios degenerados:\\
+        $\{\vec{0}\}$, $V$ son subespacios vectoriales de $V$ y por tanto $\mathbb{P}(\{\vec{0}\}) = \emptyset$ y $\mathbb{P}(V) = \mathbb{P}$ son subespacios proyectivos de $\mathbb{P}$.
+        \item Si $\mathbb{P}=\mathbb{P}(V)$ es un espacio proyectivo de dimensión 3 ($\dim(V)=4$).
+    \end{itemize}
 
 \begin{center}
     \renewcommand{\arraystretch}{1.3}
@@ -72,13 +74,17 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
         $\dim(W)$ & Subespacios vectoriales de $V$ & Subespacios proyectivos de $\mathbb{P}$                  \\
         \hline
         $dim = 4$ & $V$                            & $\mathbb{P} = \mathbb{P}(V)$ con $\dim = dim(V) - 1 = 3$ \\
-        $dim = 3$ & Hiperplanos vectoriales        & Planos proyectivos                                       \\
-        $dim = 2$ & Planos vectoriales             & Rectas proyectivas                                       \\
-        $dim = 1$ & Rectas vectoriales             & Puntos proyectivos                                       \\
+        $dim = 3$ & Hiperplanos vectoriales        & Planos proyectivos con $\dim = 2$                                      \\
+        $dim = 2$ & Planos vectoriales             & Rectas proyectivas con $\dim = 1$                                      \\
+        $dim = 1$ & Rectas vectoriales             & Puntos proyectivos con $\dim = 0$                                      \\
         $dim = 0$ & $\{\vec{0}\}$                  & $\emptyset$ con $dim = -1$                               \\
         \hline
     \end{tabular}
 \end{center}
+
+}
+
+
 
 \observacion{
     A los subespacios proyectivos de codimension 1 (es decir, de $dim = dim(\mathbb{P}) - 1$) se les llama hiperplanos proyectivos.
@@ -114,3 +120,5 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
         \end{tikzpicture}
     \end{center}
 \end{lema}
+
+
