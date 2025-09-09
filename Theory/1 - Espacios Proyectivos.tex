@@ -1,36 +1,36 @@
 \section{Espacios proyectivos}
 
 \begin{definición}[Espacio proyectivo]
-    Dado un espacio vectorial $V$ se define el espacio proyectivo o el proyectivizado de $V$ y se denota por $\mathbb{P}(V)$ como el conjunto de rectas vectoriales de $V$.\\
-    A momentos nos olvidaremos de $V$ y llamaremos $\mathbb{P} = \mathbb{P}(V)$ espacio proyectivo.
+Dado un espacio vectorial $V$ se define el espacio proyectivo o el proyectivizado de $V$ y se denota por $\mathbb{P}(V)$ como el conjunto de rectas vectoriales de $V$.\\
+A momentos nos olvidaremos de $V$ y llamaremos $\mathbb{P} = \mathbb{P}(V)$ espacio proyectivo.
 \end{definición}
 
 \begin{definición}[Dimension de un espacio proyectivo]
-    Si $V$ es un espacio vectorial, se define la dimensión del espacio proyectivo $\mathbb{P}(V)$ como:
-    \[    dim(\mathbb{P}(V)) = dim(V) - 1 \]
+Si $V$ es un espacio vectorial, se define la dimensión del espacio proyectivo $\mathbb{P}(V)$ como:
+\[    dim(\mathbb{P}(V)) = dim(V) - 1 \]
 \end{definición}
 
 \ejemplo{
-    Si $V$ es un espacio vectorial de $dim=1$ (una recta vectorial) entonces todos los vectores de $V$ son proporcionales y por tanto $V$ solo tiene una recta vectorial. Por tanto $\mathbb{P}(V)$ es un punto y $dim(\mathbb{P}(V))=dim(V)$.    
+    Si $V$ es un espacio vectorial de $dim=1$ (una recta vectorial) entonces todos los vectores de $V$ son proporcionales y por tanto $V$ solo tiene una recta vectorial. Por tanto $\mathbb{P}(V)$ es un punto y $dim(\mathbb{P}(V))=dim(V)$.
 }
 
 \begin{observación}
-    Los subespacios generados por un vector y por todos sus proporcionales son el mismo subespacio, por ejemplo:\\
-    $$ L[\vec{u}] = L[\vec{-2u}]$$
-    \begin{center}
+Los subespacios generados por un vector y por todos sus proporcionales son el mismo subespacio, por ejemplo:\\
+$$ L[\vec{u}] = L[\vec{-2u}]$$
+\begin{center}
     \begin{tikzpicture}[scale=1.2]
-    % Ejes coordenados
-    \draw[->, gray] (0,0,0) -- (2.5,0,0) node[anchor=west] {$x$};
-    \draw[->, gray] (0,0,0) -- (0,2.5,0) node[anchor=south] {$y$};
-    \draw[->, gray] (0,0,0) -- (0,0,2.5) node[anchor=north east] {$z$};
-    % Recta generada por u menos inclinada
-    \draw[<->, gray!60] (-2.5, -1.25, -0.625) -- (2.5, 1.25, 0.625) node[anchor=south east] {Recta $\langle u \rangle$};
-    % Vector u = (2,1,0.5)
-    \draw[->, thick, blue] (0,0,0) -- (1,0.5,0.25) node[anchor=west] {$u$};
-    % Vector -2u = (-2,-1,-0.5)
-    \draw[->, thick, red] (0,0,0) -- (-2,-1,-0.5) node[anchor=east] {$-2u$};
+        % Ejes coordenados
+        \draw[->, gray] (0,0,0) -- (2.5,0,0) node[anchor=west] {$x$};
+        \draw[->, gray] (0,0,0) -- (0,2.5,0) node[anchor=south] {$y$};
+        \draw[->, gray] (0,0,0) -- (0,0,2.5) node[anchor=north east] {$z$};
+        % Recta generada por u menos inclinada
+        \draw[<->, gray!60] (-2.5, -1.25, -0.625) -- (2.5, 1.25, 0.625) node[anchor=south east] {Recta $\langle u \rangle$};
+        % Vector u = (2,1,0.5)
+        \draw[->, thick, blue] (0,0,0) -- (1,0.5,0.25) node[anchor=west] {$u$};
+        % Vector -2u = (-2,-1,-0.5)
+        \draw[->, thick, red] (0,0,0) -- (-2,-1,-0.5) node[anchor=east] {$-2u$};
     \end{tikzpicture}
-    \end{center}
+\end{center}
 \end{observación}
 
 \ejemplo{
@@ -38,25 +38,25 @@
 }
 
 \begin{observación}
-    Pensaremos salvo que se diga lo contrario que el cuerpo de coeficientes de $V$ es $\mathbb{K} = \mathbb{R}$ ó $\mathbb{K} = \mathbb{C}$. 
+Pensaremos salvo que se diga lo contrario que el cuerpo de coeficientes de $V$ es $\mathbb{K} = \mathbb{R}$ ó $\mathbb{K} = \mathbb{C}$.
 \end{observación}
 
 \begin{definición}[Espacio proyectivo canónico]
-    Se llama espacio proyectivo canónico sobre $\mathbb{K}$ de dimension $n$ al proyectivizado de $\mathbb{K}^{n+1}$.\\
-    Se denotaran por $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$ respectivamente.\\
-    Otras notaciones habituales son $\mathbb{R}\mathbb{P}^n$ y $\mathbb{C}\mathbb{P}^n$, ó $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$.
+Se llama espacio proyectivo canónico sobre $\mathbb{K}$ de dimension $n$ al proyectivizado de $\mathbb{K}^{n+1}$.\\
+Se denotaran por $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$ respectivamente.\\
+Otras notaciones habituales son $\mathbb{R}\mathbb{P}^n$ y $\mathbb{C}\mathbb{P}^n$, ó $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$.
 \end{definición}
 
 \begin{definición}[Definicion alternativa de espacio proyectivo]
-    Podemos definir el espacio proyectivo como:
-    $$ \mathbb{P}(V) = \frac{V \setminus \{\vec{0}\}}{\sim} $$
-    Donde $\sim$ es la relación de equivalencia definida como:
-    $$ \vec{u} \sim \vec{v} \iff \exists \lambda \in \mathbb{K}^* : \vec{u} = \lambda \vec{v} $$
-    Es decir, dos vectores son equivalentes si son proporcionales.
+Podemos definir el espacio proyectivo como:
+$$ \mathbb{P}(V) = \frac{V \setminus \{\vec{0}\}}{\sim} $$
+Donde $\sim$ es la relación de equivalencia definida como:
+$$ \vec{u} \sim \vec{v} \iff \exists \lambda \in \mathbb{K}^* : \vec{u} = \lambda \vec{v} $$
+Es decir, dos vectores son equivalentes si son proporcionales.
 \end{definición}
 
 \begin{definición}[Subespacio proyectivo]
-    Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios proyectivos (a veces subvariedades o variedades proyectivas) de $\mathbb{P}$ a los subconjuntos de la forma $\mathbb{P}(W)$ donde $W$ es un subespacio vectorial de $V$.
+Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios proyectivos (a veces subvariedades o variedades proyectivas) de $\mathbb{P}$ a los subconjuntos de la forma $\mathbb{P}(W)$ donde $W$ es un subespacio vectorial de $V$.
 \end{definición}
 
 \ejemplo{
@@ -66,18 +66,18 @@
 }
 
 \begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|c|c|c|}
-    \hline
-    $\dim(W)$ & Subespacios vectoriales de $V$ & Subespacios proyectivos de $\mathbb{P}$ \\
-    \hline
-    $dim = 4$ & $V$ & $\mathbb{P} = \mathbb{P}(V)$ con $\dim = dim(V) - 1 = 3$ \\
-    $dim = 3$ & Hiperplanos vectoriales & Planos proyectivos \\
-    $dim = 2$ & Planos vectoriales & Rectas proyectivas \\
-    $dim = 1$ & Rectas vectoriales & Puntos proyectivos \\
-    $dim = 0$ & $\{\vec{0}\}$ & $\emptyset$ con $dim = -1$ \\
-    \hline
-\end{tabular}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        $\dim(W)$ & Subespacios vectoriales de $V$ & Subespacios proyectivos de $\mathbb{P}$                  \\
+        \hline
+        $dim = 4$ & $V$                            & $\mathbb{P} = \mathbb{P}(V)$ con $\dim = dim(V) - 1 = 3$ \\
+        $dim = 3$ & Hiperplanos vectoriales        & Planos proyectivos                                       \\
+        $dim = 2$ & Planos vectoriales             & Rectas proyectivas                                       \\
+        $dim = 1$ & Rectas vectoriales             & Puntos proyectivos                                       \\
+        $dim = 0$ & $\{\vec{0}\}$                  & $\emptyset$ con $dim = -1$                               \\
+        \hline
+    \end{tabular}
 \end{center}
 
 \observacion{
@@ -91,4 +91,26 @@
     $$ r = \mathbb{P}(W) \ \text{con} \ W = L[\vec{u}, \vec{v}] $$
     Donde $dim(W) = 2$, $\vec{u}$ y $\vec{v}$ son independientes porque $A \neq B$.
     Asi $r = \mathbb{P}(W)$ es una recta proyectiva que contiene a $A$ y $B$.
+
+    % Ejemplo visual: dos puntos proyectivos y la recta que los contiene
+    \begin{center}
+        \begin{tikzpicture}[scale=1.2]
+            % Ejes coordenados
+            \draw[->, gray] (0,0,0) -- (2,0,0) node[anchor=west] {$x$};
+            \draw[->, gray] (0,0,0) -- (0,2,0) node[anchor=south] {$y$};
+            \draw[->, gray] (0,0,0) -- (0,0,2) node[anchor=north east] {$z$};
+            % Plano generado por u y v
+            \filldraw[fill=blue!10, opacity=0.3] (0,0,0) -- (1.5,1.5,0) -- (1.5,0,1.5) -- cycle;
+            % Vector u
+            \draw[->, thick, blue] (0,0,0) -- (1,1,0) node[anchor=west] {$\vec{u}$};
+            % Vector v
+            \draw[->, thick, red] (0,0,0) -- (1,0,1) node[anchor=west] {$\vec{v}$};
+            % Punto A
+            \filldraw[blue] (1,1,0) circle (1.5pt) node[anchor=south west] {$A$};
+            % Punto B
+            \filldraw[red] (1,0,1) circle (1.5pt) node[anchor=north west] {$B$};
+            % Recta proyectiva (intersección de plano y espacio)
+            \draw[thick, purple, dashed] (0,0,0) -- (1.2,0.6,0.6);
+        \end{tikzpicture}
+    \end{center}
 \end{lema}
