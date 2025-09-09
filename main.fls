@@ -561,56 +561,16 @@ INPUT .\Theory\Theory.tex
 INPUT .\Theory\Theory.tex
 INPUT .\Theory\Theory.tex
 INPUT Theory\Theory.tex
-INPUT .\Theory\1 - Medida de Lebesgue.tex
-INPUT .\Theory\1 - Medida de Lebesgue.tex
-INPUT .\Theory\1 - Medida de Lebesgue.tex
-INPUT .\Theory\1 - Medida de Lebesgue.tex
-INPUT Theory\1 - Medida de Lebesgue.tex
-INPUT .\Theory\2 - Funciones integrables en varias variables.tex
-INPUT .\Theory\2 - Funciones integrables en varias variables.tex
-INPUT .\Theory\2 - Funciones integrables en varias variables.tex
-INPUT .\Theory\2 - Funciones integrables en varias variables.tex
-INPUT Theory\2 - Funciones integrables en varias variables.tex
-INPUT .\Theory\3 - Teorema de Fubini.tex
-INPUT .\Theory\3 - Teorema de Fubini.tex
-INPUT .\Theory\3 - Teorema de Fubini.tex
-INPUT .\Theory\3 - Teorema de Fubini.tex
-INPUT Theory\3 - Teorema de Fubini.tex
-INPUT .\Theory\4 - Cambio de variables.tex
-INPUT .\Theory\4 - Cambio de variables.tex
-INPUT .\Theory\4 - Cambio de variables.tex
-INPUT .\Theory\4 - Cambio de variables.tex
-INPUT Theory\4 - Cambio de variables.tex
-INPUT .\Theory\5 - Funciones definidas por integrales.tex
-INPUT .\Theory\5 - Funciones definidas por integrales.tex
-INPUT .\Theory\5 - Funciones definidas por integrales.tex
-INPUT .\Theory\5 - Funciones definidas por integrales.tex
-INPUT Theory\5 - Funciones definidas por integrales.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT Theory\1 - Espacios Proyectivos.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsl10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
-INPUT .\Theory\6 - Integrales de línea.tex
-INPUT .\Theory\6 - Integrales de línea.tex
-INPUT .\Theory\6 - Integrales de línea.tex
-INPUT .\Theory\6 - Integrales de línea.tex
-INPUT Theory\6 - Integrales de línea.tex
-INPUT .\Theory\7 - Teorema de Green.tex
-INPUT .\Theory\7 - Teorema de Green.tex
-INPUT .\Theory\7 - Teorema de Green.tex
-INPUT .\Theory\7 - Teorema de Green.tex
-INPUT Theory\7 - Teorema de Green.tex
-INPUT .\Theory\8 - Superficies paramétricas.tex
-INPUT .\Theory\8 - Superficies paramétricas.tex
-INPUT .\Theory\8 - Superficies paramétricas.tex
-INPUT .\Theory\8 - Superficies paramétricas.tex
-INPUT Theory\8 - Superficies paramétricas.tex
-INPUT .\Theory\9 - Integrales de superficie.tex
-INPUT .\Theory\9 - Integrales de superficie.tex
-INPUT .\Theory\9 - Integrales de superficie.tex
-INPUT .\Theory\9 - Integrales de superficie.tex
-INPUT Theory\9 - Integrales de superficie.tex
-INPUT .\Theory\10 - Teorema de Stokes. Teorema de la divergencia de Gauss.tex
-INPUT .\Theory\10 - Teorema de Stokes. Teorema de la divergencia de Gauss.tex
-INPUT Theory\10 - Teorema de Stokes. Teorema de la divergencia de Gauss.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -620,13 +580,29 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmcsc10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsl10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsl10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
