@@ -389,17 +389,6 @@ mdframed={
 \crefname{corolario}{Corolario}{Corolarios}
 \crefname{observación}{Observación}{Observaciones}
 
-\newenvironment{problem}[2][Ejercicio]{\begin{trivlist}
-  \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-  
-
-  \newenvironment{sol}
-  {\emph{Solución:}
-  }
-  {
-  \qed
-  }
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyfoot[C]{\thepage}
@@ -407,3 +396,19 @@ mdframed={
   \href{https://github.com/Pau-Frangi}{Pau F.}\ y \ 
   \href{https://github.com/DIEGOROCU}{Diego R.}
 }}
+
+% Contador para ejercicios, se reinicia por documento
+\newcounter{ejercicio}
+\renewcommand{\theejercicio}{\arabic{ejercicio}}
+
+% Comando para ejercicios con enunciado y desarrollo usando solo \newcommand
+\newcommand{\ejercicio}[2]{%
+  \refstepcounter{ejercicio}%
+  \begin{mybox}{Ejercicio~\theejercicio}%
+    	\textbf{Enunciado:} #1
+    \par\medskip
+    \hrulefill
+    \par\medskip
+    	\textbf{Desarrollo:} #2
+  \end{mybox}%
+}
