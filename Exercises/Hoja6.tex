@@ -1,0 +1,114 @@
+% 1
+\ejercicio{ Si $\mathbb{K}=\mathbb{F}_p$ es un cuerpo de p-elementos:
+\begin{enumerate}
+    \item ¿Cuantos puntos tiene la recta proyectiva $\mathbb{P}(\mathbb{K}^2)$?
+    \item ¿Cuantos puntos tiene el espacio proyectivo de dimensión n sobre $\mathbb{K}$, $\mathbb{P}(\mathbb{K}^{n+1})$?
+\end{enumerate}
+}
+{
+    Sea $V$ espacio vectorial sobre el cuerpo $\mathbb{K}$. \\
+    \[
+    \mathbb{P}(V) = \frac{V \setminus \{0\}}{\sim}
+    \]  
+    \[
+    u \sim v \iff \exists \lambda \in \mathbb{K} \setminus \{0\} : u = \lambda v
+    \]
+    Para $V = \mathbb{K}^2$ (donde $\mathbb{K} = \mathbb{F}_p$):
+    \[
+    V \setminus \{0\} = \{(a,b) : a,b \in \mathbb{F}_p \} \setminus \{(0,0)\}
+    \]
+    Luego:
+    \[
+    \#(V \setminus \{0\}) = p^2 - 1
+    \]
+    Ahora tenemos que:
+    \[
+    (a,b) \sim (c,d) \iff \exists \lambda \in \mathbb{F}_p \setminus \{0\} : (a,b) = (\lambda c, \lambda d)
+    \]
+    Finalmente calculemos:
+    \[
+    \#(\mathbb{P}(\mathbb{K}^2)) = \frac{p^2 - 1}{p - 1} = p + 1
+    \]
+    En general:
+    \[
+    \#(\mathbb{P}(\mathbb{K}^{n+1})) = \# \left( \frac{\mathbb{K} \setminus \{0\}}{\sim} \right)
+    \]
+    \[
+    \mathbb{K}^{n+1} = (a_0, a_1, \ldots, a_n) : a_i \in \mathbb{K} \implies \#(\mathbb{K}^{n+1} \setminus \{0\}) = p^{n+1} - 1
+    \]
+    Asi finalmente:
+    \[
+    \#(\mathbb{P}(\mathbb{K}^{n+1})) = \frac{p^{n+1} - 1}{p - 1} = p^n + p^{n-1} + \ldots + p + 1
+    \]
+}
+
+% 2
+\ejercicio{}{}
+
+% 3
+\ejercicio{}{}
+
+% 4
+\ejercicio{}{}
+
+% 5
+\ejercicio{}{}
+
+% 6
+\ejercicio{
+Demuestra las siguientes afirmaciones, válidas en un espacio proyectivo cualquiera $\mathbb{P} = \mathbb{P}(V)$, donde $V$ es un espacio vectorial sobre un cuerpo $\mathbb{K}$:
+\begin{itemize}
+    \item[a)] Por dos puntos distintos pasa una única recta.
+    \item[b)] Una recta y un hiperplano que no la contiene se cortan en exactamente un punto.
+    \item[c)] Si $\dim \mathbb{P} = 3$, tres hiperplanos distintos se cortan en un punto o una recta.
+    \item[d)] Por tres puntos no alineados pasa un plano.
+    \item[e)] Dos rectas se cortan si y solo si son coplanarias.
+\end{itemize}
+}{
+    \begin{itemize}
+        \item [a)] Sean $A, B \in \mathbb{P}$ dos puntos distintos, veamos que $\exists r \subset \mathbb{P}$ recta tal que $A, B \in r$ y que es única.\\
+        \[
+        r = V(A, B) = P (L[u, v]) \text{ con } A = [u], B = [v] 
+        \]
+        Como $P(L[u, v])$ tiene dimensión 1, es una recta, y claramente esta contenido en toda recta que contenga a $A$ y $B$, la cual también tiene que ser de dimensión 1, luego es única.
+        \item [b)] Sean la recta $r$ y el hiperplano $H$ que no la contiene.\\
+        Sabemos que sus dimensiones son:
+        \begin{align*}
+            \dim(r) &= 1 \\
+            \dim(H) &= \dim(\mathbb{P}) - 1
+        \end{align*}
+        Veamos entonces que $\dim(r \cap H) = 0$, usando que $r \not\subset H$.
+        \\
+        \[
+        \dim(V(r, H)) = \dim(r) + \dim(H) - \dim(r \cap H) \implies
+        \]
+        \[
+        \dim(r \cap H) = \dim(r) + \dim(H) - \dim(V(r, H)) = 1 + (\dim(\mathbb{P}) - 1) - \dim(\mathbb{P}) = 0
+        \]
+        Esto se da ya que:
+        \[
+        r, H \subset V(r, H) \implies \dim(V(r, H)) \geq \dim(H) = \dim(\mathbb{P}) - 1 \\
+        \]
+        Como $r \not\subset H$, entonces $\dim(V(r, H)) > \dim(H)$, ya que si no serian dos hiperplanos iguales al compartir la misma dimensión y contenerse uno a otro, ya que claramente $H \subset V(r, H)$, luego $\dim(V(r, H)) = \dim(\mathbb{P})$.\\
+        Luego $\dim(r \cap H) = 0$, luego $r \cap H$ es un punto.
+        \item [c)] Sea $\dim(\mathbb{P}) = 3$ y $H_1, H_2, H_3$ tres hiperplanos distintos.\\
+        Tenemos que comprobar que $\dim(H_1 \cap H_2 \cap H_3) \in \{0, 1\}$.\\
+        Sea $X = H_1 \cap H_2$ y por la formula de Grassmann:
+        \[
+        \dim(H_1 \cap H_2 \cap H_3) = \dim(X \cap H_3) = \underbrace{\dim(H_1 \cap H_2)}_{=\dim(X)} + \dim(H_3) - \dim(V(X, H_3))
+        \]
+        \[
+        \dim(X) = \dim(H_1 \cap H_2) = \dim(H_1) + \dim(H_2) - \dim(V(H_1, H_2)) = 2 + 2 - 3 = 1
+        \]
+        Entonces como $\dim(V(X, H_3)) \geq \dim(H_3) = 2$, tenemos que:
+        \[
+        \dim(H_1 \cap H_2 \cap H_3) = \dim(X \cap H_3) = \underbrace{\dim(H_1 \cap H_2)}_{=\dim(X)} + \dim(H_3) - \dim(V(X, H_3)) \leq 1 + 2 - 2 = 1
+        \]
+        Ademas $\dim(H_1 \cap H_2 \cap H_3) \neq -1$ ya que si no:
+        \[
+        \dim(H_1 \cap H_2 \cap H_3) = -1 \implies -1 = 1 + 2 - \dim(V(X, H_3)) \implies \dim(V(X, H_3)) = 4
+        \]
+        Lo cual es claramente absurdo, ya que $\dim(\mathbb{P}) = 3$.\\
+        Luego $\dim(H_1 \cap H_2 \cap H_3) \in \{0, 1\}$.
+    \end{itemize}
+}

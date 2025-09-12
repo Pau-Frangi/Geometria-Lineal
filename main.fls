@@ -572,6 +572,9 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT .\Exercises\Hoja6.tex
+INPUT .\Exercises\Hoja6.tex
+INPUT Exercises\Hoja6.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
