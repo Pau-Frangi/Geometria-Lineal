@@ -1,5 +1,7 @@
 \section{Espacios proyectivos}
 
+\subsection{Definiciones y propiedades básicas}
+
 \begin{definición}[Espacio proyectivo]
 Dado un espacio vectorial $V$ se define el espacio proyectivo o el proyectivizado de $V$ y se denota por $\mathbb{P}(V)$ como el conjunto de rectas vectoriales de $V$.\\
 A momentos nos olvidaremos de $V$ y llamaremos $\mathbb{P} = \mathbb{P}(V)$ espacio proyectivo.
@@ -211,3 +213,102 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
     \]
 \end{proof}
 
+\begin{corolario}
+    En un plano proyectivo $P$ todo par de rectas se corta.
+\end{corolario}
+
+\begin{proof}
+    Sean $r_1, r_2$ dos rectas proyectivas de $P$, entonces:
+    \[
+    \dim(r_1 \cap r_2) + \dim(V(r_1, r_2)) = \dim(r_1) + \dim(r_2) \iff
+    \]
+    Como $V(r_1, r_2) = P$, tenemos que:
+    \[
+    \dim(V(r_1, r_2)) \leq \dim(P) = 2 
+    \]
+    Y como $r_1 \subseteq V(r_1, r_2)$:
+    \[
+    \dim(V(r_1, r_2)) \geq \dim(r_1) = 1
+    \]
+    Por tanto $\dim(V(r_1, r_2)) \in \{1, 2\}$.\\
+    Si $\dim(V(r_1, r_2)) = 1$ entonces $V(r_1, r_2) = r_1 = r_2$, y las rectas son iguales al compartir dimension y contenerse mutuamente.\\
+    Si $\dim(V(r_1, r_2)) = 2$ entonces:
+    \[
+    \dim(r_1 \cap r_2) + 2 = 1 + 1 \implies \dim(r_1 \cap r_2) = 0
+    \]
+    Luego $r_1$ y $r_2$ se cortan en un punto.
+\end{proof}
+
+Nos podemos hacer la siguiente pregunta: ¿Que subespacios se pueden generar con $3$ puntos distintos $A_1, A_2, A_3$ de un espacio proyectivo $\mathbb{P}$?\\
+Sabemos que cualquier par de puntos genera una recta $r=V(A_1, A_2) \underbracket{=}_{\text{notación}} A_1 + A_2$.\\
+Entonces nos quedan dos casos:
+\begin{itemize}
+    \item $A_3 \in r$, luego $V(A_1, A_2, A_3) = r$, ya que $r=V(A_1, A_2) \subseteq V(A_1, A_2, A_3)$ claramente, y como $A_3 \in r \implies V(A_1, A_2, A_3) \subseteq r$.
+    \item $A_3 \notin r$, luego $V(A_1, A_2, A_3)$ es un plano proyectivo ya que:
+    \[
+    \dim(\underbrace{V(A_1, A_2, A_3)}_{V(r, A_3)}) = \dim(r) + \dim(A_3) - \dim(r \cap A_3) = 1 + 0 - (-1) = 2
+    \]
+\end{itemize}
+
+Conclusión: Tres puntos distintos de un espacio proyectivo $\mathbb{P}$ generan o bien una recta (si son alineados) o bien un plano (si no lo son).
+
+\subsection{Independencia proyectiva}
+
+\begin{lema}
+    Sean $A_1 = [u_1], A_2 = [u_2], \ldots, A_r = [u_r]$ puntos distintos de un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$, entonces son equivalentes:
+    \begin{itemize}
+        \item[1)] Ningún punto pertenece al subespacio proyectivo generado por los otros, es decir:
+        \[
+        A_i \notin V(\underbrace{A_1, A_2, \ldots, \hat{A_i}, \ldots, A_r}_{\{A_1, A_2, \ldots, A_r\} \setminus \{A_i\}}) \quad \forall i=1,2,\ldots,r
+        \]
+        \item[2)] Los vectores $\{u_1, u_2, \ldots, u_r\}$ son linealmente independientes.
+    \end{itemize}
+\end{lema}
+
+\begin{proof}
+    Primero observamos que la 2ª condicion no depende de los representantes $u_i$ de los puntos $A_i$ escogidos ya que:
+    \[
+    \{u_1, u_2, \ldots, u_r\} \text{ son l.i.} \iff \{\lambda_1 u_1, \lambda_2 u_2, \ldots, \lambda_r u_r\} \text{ son l.i.} \quad \forall i \in \{1, \ldots, r\} \forall \lambda_i \in \mathbb{K}^* \setminus \{0\}
+    \]
+    Veamos ahora si la equivalencia:
+    \[
+    \{u_1, u_2, \ldots, u_r\} \text{ son l.i.} \iff
+    \]
+    \[
+    \forall i \in \{1, \ldots, r\} : u_i \notin L[u_1, \ldots, \hat{u_i}, \ldots, u_r] \iff
+    \]
+    \[
+    \forall i \in \{1, \ldots, r\} : [u_i] \cap L[u_1, \ldots, \hat{u_i}, \ldots, u_r] = \{0\} \underbrace{\iff}_{\text{pasando del vectorial al proyectivo}} 
+    \]
+    \[
+    \forall i \in \{1, \ldots, r\} : P([u_i]) \cap P(L[u_1, \ldots, \hat{u_i}, \ldots, u_r]) = P(\{0\}) = \emptyset \iff
+    \]
+    \[
+    \forall i \in \{1, \ldots, r\} : A_i \cap V(A_1, \ldots, \hat{A_i}, \ldots, A_r) = \emptyset \iff
+    \]
+    \[
+    \forall i \in \{1, \ldots, r\} : A_i \notin V(A_1, \ldots, \hat{A_i}, \ldots, A_r)
+    \]
+    Y así estaria probada la equivalencia.
+\end{proof}
+
+\begin{definición}[Independencia proyectiva]
+    Los puntos $A_1, A_2, \ldots, A_r$ de un espacio proyectivo $\mathbb{P}$ se dicen proyectivamente independientes si cumplen las condiciones del lema anterior, es decir, si ninguno de ellos pertenece al subespacio proyectivo generado por los otros, o equivalentemente, si los vectores que los representan son linealmente independientes.\\
+    A veces tambien se dice que los puntos estan "en posición general".
+\end{definición}
+
+\begin{corolario}
+    El subespacio proyectivo generado por $r$ puntos proyectivamente independientes tiene dimensión $r-1$.
+\end{corolario}
+
+\begin{proof}
+    \[
+    V(A_1, A_2, \ldots, A_r) = \mathbb{P}(\underbrace{L[u_1, u_2, \ldots, u_r]}_{\dim = r} \text{ al ser } \{u_1, \ldots, u_r\} \text{ l.i.}) \implies \dim(V(A_1, A_2, \ldots, A_r)) = r-1
+    \]
+\end{proof}
+
+\ejemplo{
+    Tres puntos $A_1, A_2, A_3$ son proyectivamente independientes si no estan alineados, es decir, si no estan en la misma recta proyectiva.\\
+    En 5 puntos proyectivamente independientes no hay 3 alineados ni 4 coplanarios (que pertenezcan al mismo plano proyectivo).\\
+    Tampoco pertenecen los 5 puntos a un subespacio de dimension 3.
+}

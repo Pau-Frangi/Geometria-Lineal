@@ -566,15 +566,13 @@ INPUT .\Theory\1 - Espacios Proyectivos.tex
 INPUT .\Theory\1 - Espacios Proyectivos.tex
 INPUT .\Theory\1 - Espacios Proyectivos.tex
 INPUT Theory\1 - Espacios Proyectivos.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsl10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
-INPUT .\Exercises\Hoja6.tex
-INPUT .\Exercises\Hoja6.tex
-INPUT Exercises\Hoja6.tex
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -590,12 +588,16 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
