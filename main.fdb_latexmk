@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758018101.99719 "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" "main.pdf" "main" 1758018106.35527 0
+["pdflatex"] 1758033999.84126 "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" "main.pdf" "main" 1758034003.6 0
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1753473397 99887 0a8f56c42814e7b8ee27899453403f52 ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1737830965 12668 44c2b6835b068e2daf954ff2dc327054 ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/tfm/public/mathabx/matha10.tfm" 1737830961 1372 84a1ef28ab0d13263326e8d7d854aaa0 ""
@@ -328,14 +328,14 @@
   "Exercises/Hoja1.tex" 1757961045 13092 3f3826cb31236fc85b271717cdf6f9ee ""
   "Preamble/Diagonal Matrix Command.tex" 1757932677 994 86797f6883aa9637224e9e09b84c6f7c ""
   "Preamble/Preamble.tex" 1757958123 12263 940972ef0d77892da1a68e143f8a5516 ""
-  "Theory/1 - Espacios Proyectivos.tex" 1758018100 20064 597814e54a3f7fec6203c81a235dac88 ""
+  "Theory/1 - Espacios Proyectivos.tex" 1758033997 20148 d554e32aa49314bf949dfeea5d4b87ec ""
   "Theory/Theory.tex" 1757958123 711 63085ef2fec477c98b2bcf85f613ac7a ""
   "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" 1757932677 2282 2b6893e25e3ad1826a002b23dd6562ef ""
   "images/logo.png" 1757932677 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1758018105 6413 80ae3da99c316b16ad5d49c04e28447a "pdflatex"
-  "main.out" 1758018105 677 95f9e4ec90ba991574520e5efb6649b3 "pdflatex"
+  "main.aux" 1758034003 6412 036263713cccfe1dfe90d0ae79a2b70d "pdflatex"
+  "main.out" 1758034003 677 95f9e4ec90ba991574520e5efb6649b3 "pdflatex"
   "main.tex" 1757932677 2282 2b6893e25e3ad1826a002b23dd6562ef ""
-  "main.toc" 1758018105 374 91c43c137d9eae8ffa50d743666ed1d3 "pdflatex"
+  "main.toc" 1758034003 374 91c43c137d9eae8ffa50d743666ed1d3 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
