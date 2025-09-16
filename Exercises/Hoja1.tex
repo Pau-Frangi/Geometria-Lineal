@@ -6,47 +6,191 @@
 \end{enumerate}
 }
 {
-    Sea $V$ espacio vectorial sobre el cuerpo $\mathbb{K}$. \\
+    Si \(V\) es un espacio vectorial sobre \(\mathbb{K}\) definimos
     \[
-    \mathbb{P}(V) = \frac{V \setminus \{0\}}{\sim}
-    \]  
-    \[
-    u \sim v \iff \exists \lambda \in \mathbb{K} \setminus \{0\} : u = \lambda v
+    \mathbb{P}(V)=\frac{V\setminus\{0\}}{\sim},
+    \qquad
+    u\sim v\iff \exists \lambda\in\mathbb{K}^\times\ \text{tal que}\ u=\lambda v.
     \]
-    Para $V = \mathbb{K}^2$ (donde $\mathbb{K} = \mathbb{F}_p$):
+    Cada punto de \(\mathbb{P}(V)\) es una \emph{clase de equivalencia} formada por todos los vectores no nulos que generan la misma recta a través del origen (es decir, todos los múltiplos escalares no nulos de un vector dado).
+    Para \(V=\mathbb{K}^{n+1}\) sabemos que \(\#\mathbb{K}=p\), así que
     \[
-    V \setminus \{0\} = \{(a,b) : a,b \in \mathbb{F}_p \} \setminus \{(0,0)\}
+    \#(\mathbb{K}^{n+1})=p^{\,n+1}.
     \]
-    Luego:
+    Quitando el vector \(0\) queda
     \[
-    \#(V \setminus \{0\}) = p^2 - 1
+    \#(\mathbb{K}^{n+1}\setminus\{0\})=p^{\,n+1}-1.
     \]
-    Ahora tenemos que:
+    
+    Sea \(v\in\mathbb{K}^{n+1}\setminus\{0\}\). Consideremos la clase
+    \([v]=\{\lambda v:\lambda\in\mathbb{K}^\times\}.\)
+    
+    Definimos la aplicación
     \[
-    (a,b) \sim (c,d) \iff \exists \lambda \in \mathbb{F}_p \setminus \{0\} : (a,b) = (\lambda c, \lambda d)
+    \varphi:\mathbb{K}^\times\longrightarrow [v],\qquad \varphi(\lambda)=\lambda v.
     \]
-    Finalmente calculemos:
+    Veamos que \(\varphi\) es biyectiva:
+    \begin{itemize}
+      \item \emph{Inyectiva.} Si \(\varphi(\lambda)=\varphi(\mu)\) entonces \(\lambda v=\mu v\). Eso implica \((\lambda-\mu)v=0\). Como \(v\neq 0\) y \(\mathbb{K}\) es un cuerpo, necesariamente \(\lambda-\mu=0\), es decir \(\lambda=\mu\).
+      \item \emph{Sobreyectiva.} Por definición, todo elemento de \([v]\) es \(\lambda v\) para algún \(\lambda\in\mathbb{K}^\times\).
+    \end{itemize}
+    Por tanto \(\varphi\) es bijectiva y
     \[
-    \#(\mathbb{P}(\mathbb{K}^2)) = \frac{p^2 - 1}{p - 1} = p + 1
+    \#([v])=\#(\mathbb{K}^\times)=p-1.
     \]
-    En general:
+    
+    Observación importante: esta demostración usa que \(\mathbb{K}\) es un cuerpo (para poder cancelar \(v\neq 0\)); por eso la cuenta funciona así.
+    
+    Las clases de equivalencia partitionan \( \mathbb{K}^{n+1}\setminus\{0\}\) en subconjuntos disjuntos, todos del mismo tamaño \(p-1\). Luego el número de clases es
     \[
-    \#(\mathbb{P}(\mathbb{K}^{n+1})) = \# \left( \frac{\mathbb{K} \setminus \{0\}}{\sim} \right)
+    \#\mathbb{P}(\mathbb{K}^{n+1})=\frac{\#(\mathbb{K}^{n+1}\setminus\{0\})}{p-1}
+    =\frac{p^{\,n+1}-1}{p-1}.
     \]
+    Usando la fórmula de la suma geométrica obtenemos la forma expandida
     \[
-    \mathbb{K}^{n+1} = (a_0, a_1, \ldots, a_n) : a_i \in \mathbb{K} \implies \#(\mathbb{K}^{n+1} \setminus \{0\}) = p^{n+1} - 1
+    \boxed{\;\#\mathbb{P}(\mathbb{K}^{n+1})=p^n+p^{n-1}+\cdots+p+1\; }.
     \]
-    Asi finalmente:
+    
+    Para \(n=1\) (es decir \(V=\mathbb{K}^2\)),
     \[
-    \#(\mathbb{P}(\mathbb{K}^{n+1})) = \frac{p^{n+1} - 1}{p - 1} = p^n + p^{n-1} + \ldots + p + 1
+    \#\mathbb{P}(\mathbb{K}^2)=\frac{p^{2}-1}{p-1}=p+1.
     \]
 }
 
 % 2
-\ejercicio{}{}
+\ejercicio{}{
 
-% 3
-\ejercicio{}{}
+    Sea \(\mathbb{K}=\mathbb{F}_2=\{0,1\}\). El espacio de coordenadas homogéneas es
+    \(\mathbb{F}_2^3\). Los puntos de \(\mathbb{P}^2(\mathbb{F}_2)\) son las rectas mediante el origen en \(\mathbb{F}_2^3\), i.e. vectores no nulos módulo el escalar \(1\) (en \(\mathbb{F}_2^\times\) sólo está \(1\)). Por tanto cada vector no nulo representa un punto distinto. Hay \(2^3-1=7\) vectores no nulos, luego 7 puntos.
+
+    Como representantes elegimos los siguientes 7 vectores:
+    \[
+    \begin{array}{ccl}
+    P_1 &=& (1:0:0)\\
+    P_2 &=& (0:1:0)\\
+    P_3 &=& (0:0:1)\\
+    P_4 &=& (1:1:0)\\
+    P_5 &=& (1:0:1)\\
+    P_6 &=& (0:1:1)\\
+    P_7 &=& (1:1:1)
+    \end{array}
+    \]
+    (Aquí $(a:b:c)$ denota la clase homogénea de $(a,b,c)$.)
+
+    Una recta en el plano proyectivo se puede describir como el conjunto de puntos que satisfacen una ecuación lineal
+    \[
+    a x + b y + c z = 0
+    \]
+    con \((a,b,c)\neq(0,0,0)\). En \(\mathbb{F}_2\) no hay escalares distintos de \(1\), luego cada vector no nulo \((a,b,c)\) define una recta distinta. Hay exactamente \(2^3-1=7\) elecciones posibles para \((a,b,c)\), por tanto 7 rectas. A continuación listamos las 7 ecuaciones y los puntos que las satisfacen:
+
+    \[
+    \begin{array}{ll}
+    \text{Recta } L_1: & x=0 \quad\text{(ecuación }1\cdot x+0\cdot y+0\cdot z=0) \\
+                    & \{(0:1:0),(0:0:1),(0:1:1)\} = \{P_2,P_3,P_6\} \\[6pt]
+
+    \text{Recta } L_2: & y=0 \\
+                    & \{(1:0:0),(0:0:1),(1:0:1)\} = \{P_1,P_3,P_5\} \\[6pt]
+
+    \text{Recta } L_3: & z=0 \\
+                    & \{(1:0:0),(0:1:0),(1:1:0)\} = \{P_1,P_2,P_4\} \\[6pt]
+
+    \text{Recta } L_4: & x+y=0 \\
+                    & \{(1:1:0),(0:0:1),(1:1:1)\} = \{P_4,P_3,P_7\} \\[6pt]
+
+    \text{Recta } L_5: & x+z=0 \\
+                    & \{(1:0:1),(0:1:0),(1:1:1)\} = \{P_5,P_2,P_7\} \\[6pt]
+
+    \text{Recta } L_6: & y+z=0 \\
+                    & \{(0:1:1),(1:0:0),(1:1:1)\} = \{P_6,P_1,P_7\} \\[6pt]
+
+    \text{Recta } L_7: & x+y+z=0 \\
+                    & \{(1:0:1),(0:1:1),(1:1:0)\} = \{P_5,P_6,P_4\}
+    \end{array}
+    \]
+
+    (Comprobación: en \(\mathbb{F}_2\) la ecuación $x+y+z=0$ significa que la suma de las coordenadas es $0$ módulo 2; por ejemplo $(1:0:1)$ satisface $1+0+1=0$.)
+
+    Por lo tanto, el plano proyectivo \(\mathbb{P}^2(\mathbb{F}_2)\) —el plano de Fano— tiene exactamente 7 puntos y 7 rectas. Además, cada recta contiene 3 puntos y por dualidad cada punto pertenece a 3 rectas. Por tanto queda comprobado explícitamente que hay tantas rectas como puntos.
+
+}
+
+\ejercicio{
+
+    Sean \(X=P(W),\; X'=P(W')\) subespacios proyectivos de \(P=P(V)\), donde \(W,W'\) son subespacios vectoriales de \(V\).
+
+    \begin{enumerate}
+    \item[a)] Prueba que \(W\subseteq W'\) si y solo si \(X\subseteq X'\).
+    \item[b)] Usando (a), deduce que si \(X=X'\) entonces \(W=W'\); así hay una biyección entre subespacios vectoriales de \(V\) (salvo el \(\{0\}\) opcional) y subespacios proyectivos de \(P\).
+    \item[c)] Demuestra que si \(X\subseteq X'\) entonces
+    \[
+    \dim(X)=\dim(X')\quad\Longleftrightarrow\quad X=X'.
+    \]
+    \end{enumerate}
+
+}{
+
+
+    \textbf{Notación y recordatorio.} Para un subespacio vectorial \(W\subseteq V\) denotamos
+    \[
+    P(W)=\frac{W\setminus\{0\}}{\sim}\subseteq P(V),
+    \]
+    donde \(u\sim v\) si existe \(\lambda\in\mathbb{K}^\times\) tal que \(u=\lambda v\). El subespacio proyectivo \(P(W)\) es el conjunto de rectas (1-dim subespacios) de \(V\) contenidas en \(W\). Además se tiene la relación entre dimensiones
+    \[
+    \dim_{\text{proj}} P(W)=\dim_{\text{vec}} W - 1,
+    \]
+    si \(W\neq\{0\}\). (Si \(W=\{0\}\) entonces \(P(W)=\varnothing\).)
+
+    \bigskip
+
+    \textbf{(a) Prueba de la equivalencia \(W\subseteq W'\iff P(W)\subseteq P(W')\).}
+
+    \emph{($\Rightarrow$)} Supongamos \(W\subseteq W'\). Si \(x\in P(W)\) entonces \(x\) es una clase de equivalencia \([v]\) con \(v\in W\setminus\{0\}\). Como \(v\in W\subseteq W'\) tenemos \(v\in W'\setminus\{0\}\), por tanto \([v]\in P(W')\). Así todo elemento de \(P(W)\) pertenece a \(P(W')\), es decir \(P(W)\subseteq P(W')\).
+
+    \emph{($\Leftarrow$)} Supongamos \(P(W)\subseteq P(W')\). Tomemos un vector arbitrario \(w\in W\). Si \(w=0\) entonces \(w\in W'\) trivialmente. Si \(w\neq0\) entonces su clase proyectiva \([w]\) pertenece a \(P(W)\), y por la hipótesis también a \(P(W')\). Por definición de \(P(W')\) existe un vector \(w'\in W'\setminus\{0\}\) y un escalar \(\lambda\in\mathbb{K}^\times\) tales que \(w=\lambda w'\). Entonces \(w\) es un múltiplo de \(w'\in W'\) y por ser \(W'\) subespacio, \(w\in W'\). Esto muestra que todo \(w\in W\) está en \(W'\), luego \(W\subseteq W'\).
+
+    Con esto queda demostrada la equivalencia.
+
+    \bigskip
+
+    \textbf{(b) Si \(P(W)=P(W')\) entonces \(W=W'\).}
+
+    Esto es un caso inmediato de (a): si \(P(W)=P(W')\) entonces \(P(W)\subseteq P(W')\) y \(P(W')\subseteq P(W)\). Aplicando (a) obtenemos \(W\subseteq W'\) y \(W'\subseteq W\), por lo que \(W=W'\).
+
+    Por tanto la aplicación
+    \[
+    W \longmapsto P(W)
+    \]
+    desde el conjunto de subespacios vectoriales de \(V\) (se puede excluir \(W=\{0\}\) si se quiere identificar con el subespacio proyectivo vacío) hacia el conjunto de subespacios proyectivos de \(P(V)\) es inyectiva. Como por definición un subespacio proyectivo \(X\subseteq P(V)\) viene dado por algún \(W\) con \(X=P(W)\), la aplicación es además sobreyectiva; ergo es una biyección entre subespacios vectoriales (salvo la convención del nulo) y subespacios proyectivos.
+
+    \bigskip
+
+    \textbf{(c) Si \(X\subseteq X'\) entonces \(\dim(X)=\dim(X')\iff X=X'\).}
+
+    Sea \(X=P(W)\) y \(X'=P(W')\). Por (a) \(X\subseteq X'\) equivale a \(W\subseteq W'\). Usamos la relación entre dimensiones vectorial y proyectiva:
+    \[
+    \dim(X)=\dim(W)-1,\qquad \dim(X')=\dim(W')-1,
+    \]
+    para \(W,W'\neq\{0\}\). (Si alguno es el subespacio nulo el caso se trata por separado: \(P(\{0\})=\varnothing\) y la afirmación es trivial.)
+
+    Ahora, si \(W\subseteq W'\) entonces \(\dim(W)\le\dim(W')\). Por tanto
+    \[
+    \dim(X)\le\dim(X').
+    \]
+    Si además \(\dim(X)=\dim(X')\) entonces \(\dim(W)=\dim(W')\). Pero para subespacios vectoriales, \(W\subseteq W'\) y \(\dim(W)=\dim(W')\) implican \(W=W'\). Con esto \(P(W)=P(W')\), es decir \(X=X'\).
+
+    La implicación inversa \((\Leftarrow)\) es inmediata: si \(X=X'\) entonces claramente \(\dim(X)=\dim(X')\).
+
+    Por tanto queda demostrado:
+    \[
+    X\subseteq X'\quad\text{y}\quad\dim(X)=\dim(X')\quad\Longleftrightarrow\quad X=X'.
+    \]
+
+    \bigskip
+
+    \textbf{Observación final.} Todas las pruebas anteriores usan de forma esencial propiedades estándar de subespacios lineales (cancelación, conteo de dimensión, y que las clases proyectivas identifican rectas pasando por el origen). Hay que tener en cuenta el caso extremo \(W=\{0\}\) que da \(P(W)=\varnothing\): si quieres incluir el subespacio vacío en la correspondencia, hay que poner la convención \(P(\{0\})=\varnothing\).
+
+
+}
 
 % 4
 \ejercicio{}{}

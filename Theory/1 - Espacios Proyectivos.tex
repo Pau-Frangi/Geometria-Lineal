@@ -312,3 +312,66 @@ Conclusión: Tres puntos distintos de un espacio proyectivo $\mathbb{P}$ generan
     En 5 puntos proyectivamente independientes no hay 3 alineados ni 4 coplanarios (que pertenezcan al mismo plano proyectivo).\\
     Tampoco pertenecen los 5 puntos a un subespacio de dimension 3.
 }
+
+\begin{lema}
+    Dados $A_1, A_2, \ldots, A_r$ puntos de un espacio proyectivo. Son equivalentes:
+    \begin{enumerate}
+        \item $A_1, A_2, \ldots, A_r$ son proyectivamente independientes.
+        \item $A_1, A_2, \ldots, A_r$ generan un subespacio proyectivo de dimension $r-1$.
+    \end{enumerate}
+\end{lema}
+
+\begin{proof}
+    Es el análogo proyectivo al enunciado vectorial.
+    \[
+        \{u_1, u_2, \ldots, u_r\} \text{ son l.i.} \iff \dim(L[u_1, u_2, \ldots, u_r]) = r
+    \]
+\end{proof}
+
+\begin{corolario}
+    En un espacio proyectivo de dimension $n$, los subconjuntos de puntos proyectivamente independientes tienen a lo sumo $n+1$ elementos.
+\end{corolario}
+
+
+\subsection{Coordenadas}
+
+Consideramos el espacio proyectivo $\mathbb{P}^2_{\mathbb{R}} = \mathbb{P}(\mathbb{R}^3)$, es decir, el proyectivizado del espacio vectorial $\mathbb{R}^3$. ¿Cómo podemos dar coordenadas para $A \in \mathbb{P}^2_{\mathbb{R}}$?
+
+Si $u = (u_0, u_1, u_2) \in \mathbb{R}^3 \setminus \{0\}$ es un vector con las coordenadas dadas en la base canónica de $\mathbb{R}^3$, entonces no podemos asignar a $A = [u]$ las coordenadas $(u_0, u_1, u_2)$ ya que si $v = \lambda u$ con $\lambda \in \mathbb{R}^* \setminus \{0\}$ entonces $[u] = [v]$ pero $(u_0, u_1, u_2) \neq (v_0, v_1, v_2)$.
+
+Por lo tanto, la asignación de unas coordenadas a un punto proyectivo $(u_0, u_1, u_2) \to A$ es adecuada entendiendo las coordenadas salvo proporcionalidad.
+
+\begin{definición} [Referencias proyectivas]
+    Una referencia proyectiva denotada por $\mathfrak{R}$ de un espacio proyectivo $\mathbb{P}$ de un espacio de dimensión $n$ es un conjunto de $n+2$ puntos $A_0, A_1, \ldots, A_n; A_{n+1}$ tales que cualesquiera $n+1$ puntos forman un conjunto de puntos proyectivamente independientes.\\
+    Al punto $A_{n+1}$ se le llama punto unidad.
+\end{definición}
+
+\ejemplo{
+    \begin{itemize}
+        \item Si $n=1$, $\mathbb{P} \equiv$ recta proyectiva, entonces cualesquiera tres puntos $A_0, A_1, A_2$ distintos forman una referencia proyectiva.
+        \item Si $n=2$, $\mathbb{P} \equiv$ plano proyectivo, una referencia proyectiva la forman cuatro puntos $A_0, A_1, A_2, A_3$ tales que no hay tres alineados.
+    \end{itemize}
+}
+
+\begin{proposición}
+    Dada una referencia proyectiva $\mathfrak{R} = \{A_0, A_1, \ldots, A_n; A_{n+1}\}$ de un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$ de dimensión $n$, existe una única base salvo proporcionalidad $\mathcal{B} = \{u_0, u_1, \ldots, u_n\}$ de $V$ tal que:
+    \[
+    A_i = [u_i] \quad i=0,1,\ldots,n \quad \text{y} \quad A_{n+1} = [u_0 + u_1 + \ldots + u_n]
+    \]
+\end{proposición}
+
+\begin{proof}
+    Tomamos $v_i \in V$ tal que $A_i = [v_i]$ para $i=0,1,\ldots,n+1$.\\
+    Como $\mathfrak{R}$ es una referencia proyectiva, $\{A_0, A_1, \ldots, A_n\}$ son proyectivamente independientes, luego $\{v_0, v_1, \ldots, v_n\}$ son linealmente independientes y por tanto forman una base de $V$.\\
+    Por lo tanto, $v_{n+1} = \lambda_0 v_0 + \lambda_1 v_1 + \ldots + \lambda_n v_n$ con $\lambda_i \in \mathbb{R}$.\\
+    Definimos $u_i = \lambda_i v_i$ para $i=0,1,\ldots,n$ y $u_{n+1} = v_{n+1}$, luego:
+    \begin{itemize}
+        \item $u_i \neq 0$ ya que $\lambda_i \neq 0$. En efecto, si $\lambda_i = 0$ entonces $A_{n+1} \in V(A_0, A_1, \ldots, \hat{A_i}, \ldots, A_n)$ lo que contradice la hipótesis de que $\mathfrak{R}$ es una referencia proyectiva, pues $\{A_0, A_1, \ldots, \hat{A_i}, \ldots, A_n, A_{n+1}\}$ serían proyectivamente dependientes.
+        \item $\mathcal{B} = \{u_0, u_1, \ldots, u_n\}$ es una base de $V$ ya que $\mathcal{B}$ se obtiene de la base $\{v_0, v_1, \ldots, v_n\}$ multiplicando cada vector por un escalar no nulo.
+    \end{itemize}
+    Además $\mathcal{B}$ es única salvo proporcionalidad:
+    \begin{itemize}
+        \item Una vez escogido $v_{n+1}$ la base es única.
+        \item Si $v'_{n+1} = \lambda v_{n+1}$ entonces la base que saldría sería $\mathcal{B}' = \{\lambda_0 \lambda v_0, \lambda_1 \lambda v_1, \ldots, \lambda_n \lambda v_n\}$ que es la misma base salvo proporcionalidad.
+    \end{itemize}
+\end{proof}
