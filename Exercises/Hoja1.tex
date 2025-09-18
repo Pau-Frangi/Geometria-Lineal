@@ -58,7 +58,9 @@
 }
 
 % 2
-\ejercicio{}{
+\ejercicio{
+    El plano proyectivo $\mathbb{P}(\mathbb{K}^3)$, donde $\mathbb{K} = \mathbb{F}_2$ es el cuerpo de dos elementos, se denomina \textit{plano de Fano}. Calcula sus rectas y comprueba que tiene tantas rectas como puntos.
+}{
 
     Sea \(\mathbb{K}=\mathbb{F}_2=\{0,1\}\). El espacio de coordenadas homogéneas es
     \(\mathbb{F}_2^3\). Los puntos de \(\mathbb{P}^2(\mathbb{F}_2)\) son las rectas mediante el origen en \(\mathbb{F}_2^3\), i.e. vectores no nulos módulo el escalar \(1\) (en \(\mathbb{F}_2^\times\) sólo está \(1\)). Por tanto cada vector no nulo representa un punto distinto. Hay \(2^3-1=7\) vectores no nulos, luego 7 puntos.
@@ -193,10 +195,41 @@
 }
 
 % 4
-\ejercicio{}{}
+\ejercicio{
+Dados $X_1 = P(W_1), \ldots, X_n = P(W_n)$ subespacios proyectivos de $P$, prueba que
+\[
+V(X_1, \ldots, X_n) = P(W_1 + \cdots + W_n)
+\]
+donde la suma $W_1 + \cdots + W_n$ denota el subespacio vectorial generado por los subespacios $W_1, \ldots, W_n$. (Sugerencia: razona por inducción en $n$.)
+}{
+    Realizamos la demostración por inducción en \(n\).
+    Primero veamos el caso base \(n=2\):
+    \[
+    V(X_1, X_2) = P(L[w_1, w_2]) = P(W_1 + W_2)
+    \]
+    donde la igualdad se sigue de la definición de la envoltura de un conjunto de subespacios proyectivos.
+
+    Supongamos que la afirmación es cierta para \(n=k\), es decir:
+    \[
+    V(X_1, \ldots, X_k) = P(W_1 + \cdots + W_k)
+    \]
+    Ahora consideremos el caso \(n=k+1\):
+    \[
+    V(X_1, \ldots, X_k, X_{k+1}) = V(V(X_1, \ldots, X_k), X_{k+1}) = V(P(W_1 + \cdots + W_k), P(W_{k+1})) =
+    \]
+    \[
+    P((W_1 + \cdots + W_k) + W_{k+1}) = P(W_1 + \cdots + W_k + W_{k+1})
+    \]
+    donde hemos usado la hipótesis de inducción en el segundo paso y la definición de la envoltura en el tercer paso.
+    Por lo tanto, por inducción, hemos demostrado que la afirmación es cierta para todo \(n\).
+}
 
 % 5
-\ejercicio{}{}
+\ejercicio{
+    Sean $A_1, A_2, \ldots, A_k, B$ puntos de un espacio proyectivo. Utilizando el ejercicio anterior, demuestra que $\{A_1, A_2, \ldots, A_k\}$ y $\{A_1, A_2, \ldots, A_k, B\}$ generan el mismo subespacio proyectivo si y solo si $B$ pertenece al subespacio proyectivo generado por $\{A_1, A_2, \ldots, A_k\}$.
+}{
+    Sea $X = P(W_1 + \cdots + W_k)$ el subespacio proyectivo generado por $\{A_1, A_2, \ldots, A_k\}$ y $Y = P(W_1 + \cdots + W_k + W_{k+1})$ el subespacio proyectivo generado por $\{A_1, A_2, \ldots, A_k, B\}$. Por el ejercicio anterior, tenemos que $X \subseteq Y$ si y solo si $W_{k+1} \subseteq W_1 + \cdots + W_k$. Esto es equivalente a que $B$ pertenezca al subespacio proyectivo generado por $\{A_1, A_2, \ldots, A_k\}$.
+}
 
 % 6
 \ejercicio{
