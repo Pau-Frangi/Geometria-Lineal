@@ -287,5 +287,67 @@ Demuestra las siguientes afirmaciones, válidas en un espacio proyectivo cualqui
         \]
         Lo cual es claramente absurdo, ya que $\dim(\mathbb{P}) = 3$.\\
         Luego $\dim(H_1 \cap H_2 \cap H_3) \in \{0, 1\}$.
+        \item[d)] Sean $A, B, C \in \mathbb{P}$ tres puntos no alineados, veamos que estan contenidos en un plano.\\
+        \[
+        \dim(V(A, B, C)) = \dim(V(A, B)) + \dim(C) - \underbrace{\dim(V(A, B) \cap C)}_{\text{no están alineados}} = 1 + 0 - (-1) = 2
+        \]
+        \item[e)] Sean $r_1, r_2 \in \mathbb{P}$ dos rectas, veamos que se cortan si y solo si son coplanarias.\\
+        \[
+        \dim(V(r_1, r_2)) = \dim(r_1) + \dim(r_2) - \dim(r_1 \cap r_2) = 1 + 1 - \dim(r_1 \cap r_2) = 2 - \dim(r_1 \cap r_2)
+        \]
+        Por tanto:
+        \[
+        \dim(V(r_1, r_2)) = 2 \iff \dim(r_1 \cap r_2) = 0
+        \]
+    \end{itemize}
+}
+
+% 7
+\ejercicio{
+    Muestra que 3 hiperplanos arbitrarios en $\mathbb{P}^3$ siempre se cortan en algún punto. Acota inferiormente la dimensión de la intersección de $k$ hiperplanos en un espacio proyectivo de dimensión $n$.
+}{
+    La primera parte es analoga al apartado c) del ejercicio anterior.\\
+    Sean $H_1, H_2, \ldots , H_k \subset \mathbb{P}^n$ hiperplanos, acotemos inferiormente la dimensión de su intersección.\\
+    Veamos que $\dim(H_1 \cap H_2 \cap \ldots \cap H_k) \geq n - k$.\\
+    Por inducción en $k \geq 2$:
+    \[
+    \underbrace{H_1, H_2}_{\text{hiperplanos}} \subset \mathbb{P}^n \implies \dim(H_1 \cap H_2) \geq n - 2
+    \]
+    \[
+    \dim(H_1 \cap H_2) = \dim(H_1) + \dim(H_2) - \dim(V(H_1, H_2)) \geq (n - 1) + (n - 1) - n = n - 2
+    \]
+    Supongamos que para cierto $k \geq 2$ se cumple que:
+    \[
+    \dim(H_1 \cap H_2 \cap \ldots \cap H_k) \geq n - k
+    \]
+    Entonces veamos que se cumple para $k + 1$, para ello primero tomemos $X = H_1 \cap H_2 \cap \ldots \cap H_k$, entonces:
+    \[
+    \dim(X \cap H_{k + 1}) = \dim(X) + \dim(H_{k + 1}) - \dim(V(X, H_{k + 1})) \underbrace{\geq}_{\text{H.I.}} (n - k) + (n - 1) - n = n - (k + 1)
+    \]
+}
+
+% 8
+\ejercicio{}{}
+
+% 9
+\ejercicio{
+    Sea $X$ un subespacio de dimensión $k$ de un espacio proyectivo de dimensión $n$, prueba que:
+    \begin{itemize}
+        \item [a)] Si $dim(Y) \geq n-k$ entonces el subespacio proyectivo $Y$ corta a $X$.
+        \item [b)] Existen subespacios proyectivos que no cortan a $X$ de cualquier dimensión menor o igual que $n - k - 1$.
+    \end{itemize}
+}{
+    \begin{itemize}
+        \item [a)] Aplicando la fórmula de Grassmann:
+        \[
+        \dim(X \cap Y) = \dim(X) + \dim(Y) - \dim(V(X, Y)) \geq k + (n - k) - n = 0
+        \]
+        Luego $X \cap Y \neq \emptyset$.
+        \item [b)] Sea $X = P(W)$ con $\dim(W) = k + 1$. Sea $U$ un complemento de $W$ en $V$, es decir, $V = W \oplus U$. Entonces $\dim(U) = n - k$. Sea $U' \subseteq U$ un subespacio de dimensión $m \leq n - k$ y sea $Y = P(U')$. Entonces:
+        \[
+        X \cap Y = P(W) \cap P(U') = P(W \cap U') = P(\{0\}) = \emptyset
+        \]
+        Luego $X$ y $Y$ no se cortan, y $\dim(Y) = m \leq n - k - 1 = \dim(U) - 1$.\\
+        Finalmente, para ver que $\exists U'$ de cualquier dimensión menor o igual que $n - k - 1$, basta con tomar un subespacio generado por $m$ vectores linealmente independientes de $U$.
     \end{itemize}
 }

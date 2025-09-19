@@ -1,0 +1,96 @@
+% Hoja 2
+\setcounter{ejercicio}{0}
+
+% 1
+\ejercicio{Calcula el subespacio proyectivo de $\mathbb{P}^3_{\mathbb{R}}$ generado por los puntos:\\
+$\underbrace{(0 : 1 : 0 : 0)}_{\text{A}}, \underbrace{(2 : -1 : 0 : 1)}_{\text{B}}, \underbrace{(-4 : 1 : 0 : 2)}_{\text{C}}$}
+{
+    Primero veamos la dimension de $V = (A, B, C)$:
+    \[
+        \dim(V(A,B,C)) =
+        rg \begin{pmatrix}
+            0 & 1 & 0 & 0 \\
+            2 & -1 & 0 & 1 \\
+            -4 & 1 & 0 & 2
+        \end{pmatrix} - 1 = 2
+    \]
+    En general si $X \subset \mathbb{P}^n$ y $\dim(X) = k$, entonces $X$ tiene $n-k$ ecuaciones implícitas. Así obtengamos las ecuaciones implícitas de $X$:
+    \[
+        \begin{pmatrix}
+            x_0 & x_1 & x_2 & x_3 \\
+            0 & 1 & 0 & 0 \\
+            2 & -1 & 0 & 1 \\
+            -4 & 1 & 0 & 2
+        \end{pmatrix} = 0 \implies V(A,B,C) : X_2 = 0
+    \]
+}
+
+% 2
+\ejercicio{En $\mathbb{P}^2_{\mathbb{C}}$ halla:
+\begin{itemize}
+    \item[a)] La ecuación de la recta que pasa por los puntos $(i : -1 : -i)$ y $(1 : 1 + i : 2)$
+    \item[b)] El punto de intersección de las rectas $r : ix_0 + x_1 - ix_2 = 0$ y $s : x_0 + (1+i)x_1 + 2x_2 = 0$
+\end{itemize}
+}{
+    \begin{itemize}
+        \item [a)] La ecuación implicita de la recta que pasa por los puntos $A = (i : -1 : -i)$ y $B = (1 : 1 + i : 2)$ es:
+        \[
+            \begin{vmatrix}
+                x_0 & x_1 & x_2 \\
+                i & -1 & -i \\
+                1 & 1 + i & 2
+            \end{vmatrix} = 0 \implies (- 3 + i)x_0 + -3ix_1 + ix_2 = 0
+        \]
+        \item [b)] El punto de intersección de las rectas $r$ y $s$ es:
+        \[
+        \left\{
+            \begin{array}{l}
+                ix_0 + x_1 - ix_2 = 0 \\
+                x_0 + (1+i)x_1 + 2x_2 = 0
+            \end{array}
+        \right.
+        \iff
+        \left\{
+            \begin{array}{l}
+                x_1 = i(x_2 - x_0) \\
+                x_0 + (1+i)(i(x_2 - x_0)) + 2x_2 = 0
+            \end{array}
+        \right.
+        \iff
+        \]
+        \[
+        \left\{
+            \begin{array}{l}
+                x_1 = i(x_2 - x_0) \\
+                x_0 + (i - 1)(x_2 - x_0) + 2x_2 = 0
+            \end{array}
+        \right.
+        \iff
+        (2-i)x_0 + (i+1)x_2 = 0 \implies x_2 = \frac{-(2-i)}{(1+i)}x_0
+        \]
+    \end{itemize}
+}
+
+% 3
+\ejercicio{}{}
+
+% 4
+\ejercicio{}{}
+
+% 5
+\ejercicio{}{}
+
+% 6
+\ejercicio{}{}
+
+% 7
+\ejercicio{}{}
+
+% 8
+\ejercicio{}{}
+
+% 9
+\ejercicio{}{}
+
+% 10
+\ejercicio{}{}
