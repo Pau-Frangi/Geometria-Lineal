@@ -513,3 +513,23 @@ Necesitamos que las ecuaciones en coordenadas sean homogéneas, como por ejemplo
     x_0 + x_1 - 2x_2 = 0
 \]
 
+\begin{definición}[Cambio de referencia proyectiva]
+    Sean $\mathfrak{R} = \{A_0, A_1, \ldots, A_n; A_{n+1}\}$ y $\mathfrak{R}' = \{A'_0, A'_1, \ldots, A'_n; A'_{n+1}\}$ dos referencias proyectivas de un espacio proyectivo $\mathbb{P}$, con bases asociadas $\mathcal{B} = \{u_0, u_1, \ldots, u_n\}$ y $\mathcal{B}' = \{u'_0, u'_1, \ldots, u'_n\}$ respectivamente.\\
+    Si $A=\left(x_0 : x_1 : \ldots : x_n\right)$ y $A'=\left(x'_0 : x'_1 : \ldots : x'_n\right)$ son las coordenadas homogéneas de un punto $A \in \mathbb{P}$ respecto a las referencias $\mathfrak{R}$ y $\mathfrak{R}'$ respectivamente, entonces:
+    \[
+    \lambda
+        \begin{pmatrix}
+            \underset{..}{x'_0} \\
+            \underset{..}{x'_1} \\
+            \underset{..}{\vdots} \\
+            x'_n
+        \end{pmatrix} = M_{\mathcal{B}'\mathcal{B}} \cdot 
+        \begin{pmatrix}
+            \underset{..}{x_0} \\
+            \underset{..}{x_1} \\
+            \underset{..}{\vdots} \\
+            x_n
+        \end{pmatrix}
+    \]
+    Para algún $\lambda \in \mathbb{K}^* \setminus \{0\}$, donde $M_{\mathcal{B}'\mathcal{B}}$ es la matriz de cambio de base de $\mathcal{B}$ a $\mathcal{B}'$, y se llamara tambien matriz de cambio de referencia o de coordenadas.
+\end{definición}

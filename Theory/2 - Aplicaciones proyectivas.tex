@@ -1,0 +1,86 @@
+\section{Aplicaciones proyectivas}
+\subsection{Definición y propiedades básicas}
+
+\begin{definición}[Aplicación proyectiva inducida]
+    Dada una aplicación lineal $\hat{f}:V \to V'$, se llama \textbf{aplicación proyectiva inducida} por $\hat{f}$ entre $\mathbb{P}(V)$ y $\mathbb{P}(V')$ a la aplicación $f:\mathbb{P}(V) \to \mathbb{P}(V')$ definida por:
+    \[
+        f : \mathbb{P} \setminus Z \to \mathbb{P}' 
+    \]
+    \[
+        A = [\vec{u}] \to f([\vec{u}]) = [\hat{f}(\vec{u})]
+    \]
+    Donde $Z = Z(f) = \mathbb{P}(\ker \hat{f})$ es el \textbf{centro de $f$}.\\
+    A veces se omite el centro en la notación y se escribe simplemente $f:\mathbb{P} \dashrightarrow \mathbb{P}'$.
+\end{definición}
+
+\begin{observación}
+    El centro es un subespacio proyectivo de $\mathbb{P}$.
+\end{observación}
+
+\begin{proposición}[Relación entre $f$ y $\hat{f}$]
+    Primero supongamos $\hat{f} \neq 0 \iff \mathbb{P} \neq Z$, entonces:
+    \begin{itemize}
+        \item[1)] $f$ es inyectiva $\iff \hat{f}$ es inyectiva $\iff Z = \emptyset$.
+        \item[2)] $f$ es sobreyectiva $\iff \hat{f}$ es sobreyectiva.
+        \item[3)] Dada otra aplicación proyectiva $g:\mathbb{P} \dashrightarrow \mathbb{P}'$:\\
+        $f = g \iff \exists \lambda \in \mathbb{K}^* \setminus \{0\} : \hat{f} = \lambda \hat{g}$.
+    \end{itemize}
+\end{proposición}
+
+\begin{proof}
+    \begin{itemize}
+        \item[1)] Veamos $f([\vec{u}]) = [\hat{f}(\vec{u})]$:
+        \begin{itemize}
+            \item[$\Rightarrow$)] Si $f$ es inyectiva pero $\hat{f} (\vec{u}) = \hat{f} (\vec{v})$ para $\vec{u} \neq \vec{v}$, entonces:
+            \[
+            \underset{\underset{f([\vec{u}])}{\shortparallel}}{[\hat{f}(\vec{u})]} = \underset{\underset{f([\vec{v}])}{\shortparallel}}{[\hat{f}(\vec{v})]}
+            \]
+            Y si $\vec{u}, \vec{v} \in \ker \hat{f}$, entonces $[\vec{u}], [\vec{v}]$ estarian fuera del dominio de $f$.\\
+            Como $[\vec{u}] \neq [\vec{v}]$, entonces $f$ no seria inyectiva, lo cual es una contradicción. Por tanto, $\hat{f}$ es inyectiva.
+            \[
+            \vec{u} = \alpha \vec{v} \implies \hat{f}(\vec{u}) = \alpha \hat{f}(\vec{v}) = \alpha \hat{f}(\vec{u}) \implies \vec{u} = \vec{v} \text{!}
+            \]
+            \item[$\Leftarrow$)] Si $\hat{f}$ es inyectiva, entonces $\ker \hat{f} = \{\vec{0}\}$, entonces $\hat{f}(\vec{u}) \neq \hat{f} (\vec{v}) \quad \forall \vec{u} \neq \vec{v}$.\\
+            De hecho, si $\vec{u}, \vec{v}$ son l.i., entonces $\hat{f}(\vec{u}), \hat{f} (\vec{v})$ tambien lo son.\\
+            \[
+            \implies f([\vec{u}]) = [\hat{f}(\vec{u})] \neq [\hat{f}(\vec{v})] = f([\vec{v}])
+            \]
+            Luego $f$ es inyectiva.
+        \end{itemize}
+        \item[2)] Veamos $f([\vec{u}]) = [\hat{f}(\vec{u})]$:
+        \begin{itemize}
+            \item[$\Rightarrow$)] Si $f$ es sobreyectiva, entonces $\forall [\vec{v}] \in \mathbb{P}'$, $\exists [\vec{u}] \in \mathbb{P} \setminus Z : f([\vec{u}]) = [\hat{f}(\vec{u})] = [\vec{v}]$.\\
+            Por tanto, $\forall \vec{v} \in V'$, $\exists \vec{u} \in V \setminus \{\vec{0}\}$ y $\lambda \in \mathbb{K}^* \setminus \{0\}$ tal que $\hat{f}(\vec{u}) = \lambda \vec{v}$.\\
+            Luego, $\hat{f}$ es sobreyectiva.
+            \item[$\Leftarrow$)] Si $\hat{f}$ es sobreyectiva, entonces $\forall [\vec{v}] \in \mathbb{P}'$, $\exists \vec{u} \in V$ y $\lambda \in \mathbb{K}^* \setminus \{0\}$ tal que $\hat{f}(\vec{u}) = \lambda \vec{v}$.\\
+            Luego, $[\hat{f}(\vec{u})] = [\lambda \vec{v}] = [\vec{v}]$, luego $f([\vec{u}]) = [\hat{f}(\vec{u})] = [\vec{v}]$.\\
+            Por tanto, $f$ es sobreyectiva.
+        \end{itemize}
+        \item[3)] Veamos ambas implicaciones:
+        \begin{itemize}
+            \item[$\Leftarrow$)] Si $\hat{f} = \lambda \hat{g}$, entonces:
+        \[
+        f([\vec{u}]) = [\hat{f}(\vec{u})] = [\lambda \hat{g}(\vec{u})] \underbrace{=}_{\lambda \text{ es escalar no nulo}} [\hat{g}(\vec{u})] = g([\vec{u}])
+        \]
+        \[
+        \forall [\vec{u}] \in \mathbb{P} \setminus Z(f) \underbrace{=}_{\ker\hat{f} = \ker\hat{g}} Z(g)
+        \]
+        \item[$\Rightarrow$)] Si $f = g$, entonces tomamos $[\vec{u}] \notin Z(f) = Z(g)$, luego:
+        \[
+        f([\vec{u}]) = [\hat{f}(\vec{u})] = [\hat{g}(\vec{u})] = g([\vec{u}])
+        \]
+        Luego $\exists \lambda_u \neq 0 : \hat{f}(\vec{u}) = \lambda_u \hat{g}(\vec{u})$.\\
+        Ahora tenemos que comprobar que $\lambda_u$ no depende de $\vec{u}$.\\
+        Sea $\hat{Z} = \ker \hat{f} = \ker \hat{g}$ porque $Z(f) = Z(g)$.\\
+        Tomamos un subespacio vectorial complementario $W$ tal que $V = \hat{Z} \oplus W$.\\
+        Si $\vec{u} \in W \implies \lambda_{\alpha u} \quad \forall \alpha \neq 0$, porque:
+        \[
+        \lambda_{\alpha u} \hat{g}(\alpha \vec{u}) = \hat{f}(\alpha \vec{u}) = \alpha \hat{f}(\vec{u}) = \alpha \lambda_u \hat{g}(\vec{u})
+        \]
+        Y también:
+        \[
+        \lambda_{\alpha u} \hat{g}(\alpha \vec{u}) = \alpha \lambda_{\alpha u} \hat{g}(\vec{u}) \implies \lambda_{\alpha u} = \lambda_u
+        \]
+        \end{itemize}
+    \end{itemize}
+\end{proof}
