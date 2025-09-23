@@ -81,6 +81,84 @@
         \[
         \lambda_{\alpha u} \hat{g}(\alpha \vec{u}) = \alpha \lambda_{\alpha u} \hat{g}(\vec{u}) \implies \lambda_{\alpha u} = \lambda_u
         \]
+        \begin{itemize}
+            \item Si $\vec{u},\vec{v} \in W$ son linealmente independientes, entonces como $\hat{f}$ es inyectiva en $W$ tenemos que $\hat{f}(\vec{u}), \hat{f}(\vec{v})$ son l.i. y
+            \[
+                \hat{u}(\vec{u} + \vec{v}) = \lambda_{u+v} \hat{g}(\vec{u} + \vec{v}) = \lambda_{u+v} (\hat{g}(\vec{u}) + \hat{g}(\vec{v}))
+            \]
+            \[
+                = \hat{f}(\vec{u}) + \hat{f}(\vec{v}) = \lambda_u \hat{g}(\vec{u}) + \lambda_v \hat{g}(\vec{v})
+            \]
+            también $\hat{g}$ es inyectiva en $W$, luego $\hat{g}(\vec{u}), \hat{g}(\vec{v})$ son l.i. y por tanto:
+            \[
+                \lambda_{u+v} = \lambda_u = \lambda_v
+            \]
+            Así se tiene que $\lambda_u$ es independiente de $\vec{u}$ para todo $\vec{u} \in W$ y como $\hat{Z} = \ker \hat{f} = \ker \hat{g}$, entonces se tiene que
+            \[
+                \hat{f} = \lambda \hat{g} \quad \forall \vec{u} \in V \iff \hat{f} = \lambda \hat{g} 
+            \]
+        \end{itemize}
         \end{itemize}
     \end{itemize}
 \end{proof}
+
+\subsection{Subespacios proyectivos}
+
+Dada $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ aplicación proyectiva:
+
+\begin{itemize}
+    \item Si $X$ es un subespacio proyectivo de $\mathbb{P}$ entonces $f(X \setminus Z)$ es un subespacio proyectivo de $\mathbb{P}'$.\\
+    Si $X = \mathbb{P}(W_x)$, entonces $f(X) = \mathbb{P}(\underbrace{\hat{f}(W_x)}_{\text{es s.e.v.}})$ es un subespacio proyectivo de $\mathbb{P}'$, puesto que las aplicaciones lineales envían subespacios vectoriales en subespacios vectoriales.
+    \item Si $Y$ es un subespacio proyectivo de $\mathbb{P}'$ entonces $f^{-1}(Y) \cup Z$ es un subespacio proyectivo de $\mathbb{P}$.\\
+    Si $Y = \mathbb{P}(W_y)$, entonces si $A = [\vec{u}] \in \mathbb{P}$, se tiene que:
+    \[
+        [\hat{f}(\vec{u})] \in W_y \iff \begin{cases}
+            \vec{u} \in \ker \hat{f} \\
+            \vec{u} \in \hat{f}^{-1}(W_y)
+        \end{cases} \iff \vec{u} \in \hat{f}^{-1}(W_y) 
+    \]
+    Por lo tanto, $A \in f^{-1}(Y) \cup Z = \mathbb{P}(\hat{f}^{-1}(W_y))$ es un subespacio proyectivo de $\mathbb{P}$.
+\end{itemize}
+
+\ejemplo{
+    \textbf{Proyección cónica:}\\
+    Sea $\mathbb{P} = \mathbb{P}(V)$ espacio proyectivo con $\dim (\mathbb{P}) = n$ e $Y,Z$ subespacios proyectivos de $\mathbb{P}$ tales que
+    \[
+        \begin{cases}
+            Y \cap Z = \emptyset \\
+            V(Y,Z) = Y + Z = \mathbb{P}
+        \end{cases}
+    \]
+    Entonces, la \textbf{proyección cónica} de centro $Z$ sobre $Y$ es la aplicación proyectiva:
+    \[
+        \begin{matrix}
+            f:\mathbb{P} \setminus Z \to Y \\
+            A \mapsto V(A,Z) \cap Y := f(A)
+        \end{matrix}
+    \]
+    Comprobamos que  $f(A)$ es un punto. Las hipótesis sobre $Y,Z$ implican \[
+        \dim(Y) + \dim(Z) = \dim(\mathbb{P}) + \dim(\emptyset) = n + (-1) = n - 1
+    \]
+    \[
+        \dim(V(A,Z)) = \dim(A) + \dim(Z) - \dim(\underbrace{A \cap Z}_{\emptyset}) = 0 + \dim(Z) - (-1) = \dim(Z) + 1
+    \]
+    \[
+        \dim(V(A,Z) \cap Y) = \dim(V(A,Z)) + \dim(Y) - \dim(\mathbb{P}) \underbrace{=}_{V(A,Z,Y) = V(Z,Y) = \mathbb{P}} (\dim(Z) + 1) + \dim(Y) - n = 0
+    \]
+    puesto que $\dim(Y) + \dim(Z) = n - 1$. Luego $f(A)$ es un punto.
+    \[
+        Y = \mathbb{P}(W_y), \quad Z = \mathbb{P}(W_z), \qquad \begin{cases}
+            W_y \cap W_z = \{\vec{0}\} \\
+            W_y + W_z = V
+        \end{cases} \implies V = W_y \oplus W_z
+    \]
+    Resulta que 
+    \[
+        \begin{matrix}
+            \hat{f} : V = W_y \oplus W_z \to V \\
+            \vec{u} = \vec{w_y} + \vec{w_z} \mapsto u_y
+        \end{matrix}
+    \]
+    la programación lineal sobre $W_y$ es una aplicación lineal asociada a $f$
+}
+
