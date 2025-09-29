@@ -68,19 +68,28 @@ $\underbrace{(0 : 1 : 0 : 0)}_{\text{A}}, \underbrace{(2 : -1 : 0 : 1)}_{\text{B
         \iff
         (2-i)x_0 + (i+1)x_2 = 0 \implies x_2 = \frac{-(2-i)}{(1+i)}x_0
         \]
+        Analogamente se obtiene $x_1 = i \left(\frac{-(2-i)}{(1+i)}x_0 \right)x_0$. Por tanto, el punto de intersección se obtiene dando un valor arbitrario a $x_0$, excepto $0$ que nos daría el punto $(0:0:0)$ que no está en el espacio proyectivo. Si tomamos $x_0 = 1$, obtenemos:
+        \[
+            \left(1 : i \left(\frac{-(2-i)}{(1+i)} \right) : \frac{-(2-i)}{(1+i)} \right) = \left( (1+i)(1-i) : i(-(2-i)) : -(2-i) \right) = (2 : 1 + 2i : -2 + i)
+        \]
     \end{itemize}
 }
 
 % 3
 \ejercicio{En el plano proyectivo $\mathbb{P}^2_{\mathbb{R}}$
 se consideran los tres puntos $A = (2 : 0 : 1)$, $B = (1 : -1 : 1)$ y $C = (3 : -1 : 2)$. Decide si están alineados, es decir, si existe una recta que contenga a los tres}{
-    Los puntos $A, B, C$ están alineados si y sólo si $\dim(V(A,B,C)) = 1$. Calculamos:
+    Los puntos $A, B, C$ están alineados si y sólo si $\dim(V(A,B,C)) = 1 \iff \dim(L[\vec{u_0}, \vec{u_1}, \vec{u_2}]) = 2 \iff 
+    rg \begin{pmatrix}
+        A \\
+        B \\
+        C
+    \end{pmatrix} = 2$, calculamos:
     \[
-        \dim(V(A,B,C)) = rg \begin{pmatrix}
+        rg \begin{pmatrix}
             2 & 0 & 1 \\
             1 & -1 & 1 \\
             3 & -1 & 2
-        \end{pmatrix} - 1 = 2
+        \end{pmatrix} = 2 \implies \dim(V(A,B,C)) = 1 \implies \text{Los puntos son colineales}
     \]
     Por tanto, los puntos no están alineados.
 }
@@ -97,7 +106,87 @@ x_0 \qquad \qquad \qquad - x_4 = 0 \\
 \right.
 \]
 Halla un plano que corte a $\pi$ únicamente en un punto de $r$.
-}{}
+}{
+    Primero comprobamos que claramente $A \notin r \implies V(A,r) = \pi$ es un plano\\
+    Ahora debemos intentar obtener un sistema de generadores de $r$:
+    \[
+    r = \begin{cases}
+        x_0 = x_4 \\
+        x_1 = x_3 \\
+        x_2 = 0
+    \end{cases}
+    = V\left\{ (1 : 0 : 0 : 0 : 1), (0 : 1 : 0 : 1 : 0) \right\}
+    = V\{B, C\}
+    \]
+    Ahora sabemos que $\pi = V(A, B, C)$, por tanto tiene $2$ ecuaciones implícitas, por lo que:
+    \[
+    rg =
+    \begin{pmatrix}
+        x_0 & x_1 & x_2 & x_3 & x_4 \\
+        1 & 1 & 1 & 0 & 0 \\
+        1 & 0 & 0 & 0 & 1 \\
+        0 & 1 & 0 & 1 & 0
+    \end{pmatrix}
+    = 3
+    \]
+    Ahora debemos coger menores de orden $4$ y ver que den $0$, para que así el rango sea $3$:
+    \[
+    \begin{cases} 
+        \begin{vmatrix}
+            x_0 & x_1 & x_2 & x_3 \\
+            1 & 1 & 1 & 0 \\
+            1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 1
+        \end{vmatrix} = 0 \implies x_1 - x_2 - x_3 = 0 \\
+        \\
+        \begin{vmatrix}
+            x_0 & x_2 & x_3 & x_4 \\
+            1 & 1 & 0 & 0 \\
+            1 & 0 & 0 & 1 \\
+            0 & 0 & 1 & 0
+        \end{vmatrix} = 0 \implies -x_0 + x_2 - x_3 + x_4 = 0
+    \end{cases}
+    \]
+    Obteniendo así el plano:
+    \[
+        \pi :
+        \begin{cases}
+            x_1 - x_2 - x_3 = 0 \\
+            -x_0 + x_2 + x_4 = 0
+        \end{cases}
+    \]
+    Ahora debemos hallar un plano $\pi'$ tal que $\pi \cap \pi' \in r$. Sabemos que el punto $(1 : 0 : 0 : 0 : 1) \in r \cap \pi$, por tanto, podemos construir el plano:
+    \[
+        \pi' :
+        \begin{cases}
+            x_0 - x_4 = 0 \\
+            x_1 + x_2 = 0
+        \end{cases}
+    \]
+    Ahora comprobemos que $\pi \cap \pi' \in r$:
+    \[
+        \pi \cap \pi' =
+        \begin{cases}
+            x_1 - x_2 - x_3 = 0 \\
+            -x_0 + x_2 + x_4 = 0 \\
+            x_0 - x_4 = 0 \\
+            x_1 + x_2 = 0
+        \end{cases}
+        \iff
+        \begin{cases}
+            x_1 - x_3 = 0\\
+            x_2 = 0\\
+            x_0 - x_4 = 0 \\
+            x_1 = 0
+        \end{cases}
+        \iff
+        \begin{cases}
+            x_0 = x_4 \\
+            x_1 = x_2 = x_3 = 0
+        \end{cases}
+    \]
+    Obteniendo así que $\pi \cap \pi' = (x_0 : 0 : 0 : 0 : x_0) = (1 : 0 : 0 : 0 : 1) \in r$.
+}
 
 % 5
 \ejercicio{En el espacio proyectivo canónico $\mathbb{P}^3_{\mathbb{R}}$ se tienen el punto $A = (1 : 0 : 0 : -1)$ y dos rectas $r_1$ y $r_2$ de ecuaciones implícitas:
@@ -121,7 +210,47 @@ x_0 + 2x_3 = 0
 \right.
 \]
 Calcula una recta $s$ (si existe) que pase por $A$ y corte tanto a $r_1$ como a $r_2$.
-Sugerencia: Si $s$ existe, ha de estar contenida en los planos auxiliares $\pi_i$ que contienen a $r_i$ y a $A$.}{}
+Sugerencia: Si $s$ existe, ha de estar contenida en los planos auxiliares $\pi_i$ que contienen a $r_i$ y a $A$.}{
+    Sabemos que si $\exists s$, entonces:
+    \[
+    \begin{cases}
+        s \subset \pi_1 = V(A, r_1) \\
+        s \subset \pi_2 = V(A, r_2)
+    \end{cases}
+    \implies s \subset \pi_1 \cap \pi_2 = V(A, r_1) \cap V(A, r_2) = V(A, r_1, r_2)
+    \]
+    Podemos obtener los puntos que generan $r_1$ y $r_2$:
+    \[
+        r_1 = V\{(1 : 0 : -1 : 1), (0 : 1 : 0 : 2)\}
+        \qquad
+        r_2 = V\{(-2 : -2 : 0 : 1), (0 : 0 : 1 : 0)\}
+    \]
+    Obteniendo los planos:
+    \[
+    \begin{cases}
+        \pi_1 = 
+        \begin{vmatrix}
+            x_0 & x_1 & x_2 & x_3 \\
+            1 & 0 & 0 & -1 \\
+            1 & 0 & -1 & 1 \\
+            0 & 1 & 0 & 2
+        \end{vmatrix} = 0
+        \\
+        \\
+        \pi_2 =
+        \begin{vmatrix}
+            x_0 & x_1 & x_2 & x_3 \\
+            1 & 0 & 0 & -1 \\
+            -2 & -2 & 0 & 1 \\
+            0 & 0 & 1 & 0
+        \end{vmatrix} = 0
+    \end{cases}
+    \]
+    Obteniendo así la recta:
+    \[
+    s = V(r_1, A) \cap V(r_2, A) = \pi_1 \cap \pi_2
+    \]
+}
 
 % 6
 \ejercicio{Sea $\mathbb{P}$ un espacio proyectivo de dimensión $n$. Se pide:
