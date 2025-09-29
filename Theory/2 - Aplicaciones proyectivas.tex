@@ -265,3 +265,100 @@ Dada $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ aplicación proyectiva:
         \]
     \end{itemize}
 \end{proof}
+
+\begin{observación}
+    Sea $r,r'$ dos rectas proyectivas, dadas dos ternas de puntos
+    \[
+        R = \{A,B,C\} \subset r, \quad R' = \{A',B',C'\} \subset r'
+    \]
+    Como las ternas formas referencias en sus respectivas rectas, por el teorema fundamental de la geometría proyectiva existe una única homografía $f:r \to r'$ que envía $R$ en $R'$.\\
+    Si quitamos un punto, entonces no tiene por qué darse la unicidad, mientras que si añadimos un cuarto punto $D$, entonces no tiene por qué darse la existencia, pues $f(D)$ viene determinado por $f(A),f(B),f(C)$ y puede que no coincida con $D'$.
+\end{observación}
+
+Si $r,r'$ son rectas proyectivas de un plano proyectivo, ¿cómo se caracterizan las perspectividades entre $r$ y $r'$?\\
+Sea $C = r \cap r'$, entonces $C$ es un punto fijo de la perspectividad, es decir, $f(C) = C$ siendo $f:r \to r'$ la perspectividad de centro $Z$.\\
+
+\begin{proposición}
+    Dada una homografía $f:r \to r'$ entre dos rectas proyectivas de un plano proyectivo, y sea $C$ la intersección de ambas rectas, entonces $f$ es una perspectividad si y solo si $f(C) = C$.
+\end{proposición}
+
+\begin{proof}
+    \leavevmode
+    \begin{itemize}
+        \item ($\Leftarrow$): Tomamos $A,B \in r$ dos puntos distintos de $C$, entonces las rectas $V(A,f(A))$ y $V(B,f(B))$ son distintas y denotamos $Z = V(A,f(A)) \cap V(B,f(B))$.\\
+        Veamos que $f$ coincide con la perspectividad $g:r \to r'$ de centro $Z$.
+        \[
+            g(A) = V(A,Z) \cap r' = f(A), \quad g(B) = V(B,Z) \cap r' = f(B), \quad g(C) = C \underbrace{=}_{\text{hipótesis}} f(C)            
+        \]
+        Luego $f \restriction_R = g \restriction_R$ con $R = \{A,B,C\}$ referencia de $r$, luego $f = g$.
+    \end{itemize}
+\end{proof}
+
+
+\subsection{Matriz de una aplicación proyectiva}
+
+Sean $\mathbb{P},\mathbb{P}'$ espacios proyectivos y $\mathfrak{R}, \mathfrak{R}'$ referencias proyectivas con bases asociadas $\mathcal{B}, \mathcal{B}'$ respectivamente. Dada la aplicación proyectiva $f:\mathbb{P} \dashrightarrow \mathbb{P}'$, entonces la matriz de $f$ respecto a las referencias $\mathfrak{R}$ y $\mathfrak{R}'$ es la que, dado $A = (x_0 : x_1 : \ldots : x_n)_\mathfrak{R}$ y $f(A) = (y_0 : y_1 : \ldots : y_m)_{\mathfrak{R}'}$, cumple que:
+
+\[
+    \lambda\begin{pmatrix}
+        y_0 \\
+        y_1 \\
+        \vdots \\
+        y_m
+        \end{pmatrix}_{\mathfrak{R}'} = M_{\mathfrak{R},\mathfrak{R}'}(f) \begin{pmatrix}
+        x_0 \\
+        x_1 \\
+        \vdots \\
+        x_n
+        \end{pmatrix}_{\mathfrak{R}} \quad \text{para algún } \lambda \geq 0
+\]
+
+para $M_{\mathfrak{R},\mathfrak{R}'}(f) := M_{\mathcal{B},\mathcal{B}'}(\hat{f})$ teniendo en cuenta que la matriz $M_{\mathfrak{R},\mathfrak{R}'}(f)$ está definida salvo proporcionalidad.\\
+
+\textbf{Propiedades:}
+\begin{itemize}
+    \item \textbf{Composición:} Si $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ y $g:\mathbb{P}' \dashrightarrow \mathbb{P}''$ son aplicaciones proyectivas, entonces:
+    \[
+        M_{\mathfrak{R},\mathfrak{R}''}(g \circ f) = M_{\mathfrak{R}',\mathfrak{R}''}(g) M_{\mathfrak{R},\mathfrak{R}'}(f)
+    \]
+    \item \textbf{Inversa:} Si $f:\mathbb{P} \to \mathbb{P}'$ es una homografía, entonces:
+    \[
+        M_{\mathfrak{R}',\mathfrak{R}}(f^{-1}) = (M_{\mathfrak{R},\mathfrak{R}'}(f))^{-1}
+    \]
+\end{itemize}
+
+
+\begin{teorema} [Teorema de Desangues]
+    Sean $A,B,C$ y $A',B',C'$ dos triángulos en un plano proyectivo. Denotamos:
+    \[
+        \begin{matrix}
+            D = V(B,C) \cap V(B',C') \\
+            E = V(A,C) \cap V(A',C') \\
+            F = V(A,B) \cap V(A',B')
+        \end{matrix}    
+    \]
+    Entonces, los puntos $D,E,F$ son colineales si y solo si las rectas $V(A,A'), V(B,B')$ y $V(C,C')$ son concurrentes.
+\end{teorema}
+
+\begin{proof}
+    \leavevmode
+    \begin{itemize}
+        \item ($\Leftarrow$): Supongamos que las rectas $V(A,A'), V(B,B')$ y $V(C,C')$ son concurrentes en un punto $O$.\\
+        \[
+            V(A,A') \cap V(B,B') \cap V(C,C') = \{O\}
+        \]
+        Si $O$ coincide con algnuno de los vértices entonces la conclusión es sencilla de ver, y también si
+        \[
+            V(D,E) \cap V(A,A') = O = V(E,F) \cap V(A,A') 
+        \]
+        Podemos suponer que $Q = V(D,E) \cap V(A,A') \neq O$. Condideramos las perspectividades
+        \[
+            \begin{cases}
+            \pi_1 : V(A,A') \to V(C,C'), \quad \text{de centro } E \\
+            \pi_2 : V(C,C') \to V(B,B'), \quad \text{de centro } D \\                
+            \end{cases}
+        \]
+        Entonces la composición $\pi_2 \circ \pi_1 : V(A,A') \to V(B,B')$ cumple que $\pi(A) = \pi_2 \circ \pi_1(A) = C$. 
+        
+    \end{itemize}
+\end{proof}
