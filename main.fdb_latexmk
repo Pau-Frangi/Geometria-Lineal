@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1759144985.5612 "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" "main.pdf" "main" 1759144991.89803 0
+["pdflatex"] 1759227674.922 "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" "main.pdf" "main" 1759227682.61569 0
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758970766 100429 9f340704fc725afd3c8f7d744bd01efd ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1737830965 12668 44c2b6835b068e2daf954ff2dc327054 ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/tfm/public/mathabx/matha10.tfm" 1737830961 1372 84a1ef28ab0d13263326e8d7d854aaa0 ""
@@ -336,14 +336,15 @@
   "Preamble/Preamble.tex" 1757958123 12263 940972ef0d77892da1a68e143f8a5516 ""
   "Preamble/content.tex" 1759142200 76 7a2fa340aee0f4bee5a36fb46a4787a0 ""
   "Theory/1 - Espacios Proyectivos.tex" 1758912189 26712 a1e23415fa7ef4a0d81fb8019666bc1b ""
-  "Theory/2 - Aplicaciones proyectivas.tex" 1759144978 19589 5779e3a324cd7734de18a73f4e49f12b ""
-  "Theory/Theory.tex" 1759142178 655 1973a14ccb6426635d5936f4685b3586 ""
+  "Theory/2 - Aplicaciones proyectivas.tex" 1759225686 20406 3f9ca98f950606181cae8dc3f86cd3b2 ""
+  "Theory/3 - Espacio Dual.tex" 1759227673 2834 4ad30e8aea8014aec98623f7d2e6a440 ""
+  "Theory/Theory.tex" 1759225784 656 49b8e88555e49e6fab5c702e49543d45 ""
   "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" 1758540433 2289 48d5d2005c3ce6ceb07cb1bb2bbed5e3 ""
   "images/logo.png" 1757932677 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1759144991 10591 4fbce57867ef082a1775e5c25507498e "pdflatex"
-  "main.out" 1759144991 1497 4a053c62d69e5e779533a67df4ff43fb "pdflatex"
+  "main.aux" 1759227681 11275 3e404176a6f3e8f23a9a3d574a92d1c2 "pdflatex"
+  "main.out" 1759227681 1661 c6bf4e0dd753fbe4095f7d223905cb3d "pdflatex"
   "main.tex" 1758540433 2289 48d5d2005c3ce6ceb07cb1bb2bbed5e3 ""
-  "main.toc" 1759144991 749 b57ce2e935f9b461a010edf8d9e45bd1 "pdflatex"
+  "main.toc" 1759227681 829 10306183b335f9374ec37d40ee0de3ff "pdflatex"
   (generated)
   "main.aux"
   "main.log"

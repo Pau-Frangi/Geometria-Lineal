@@ -1,0 +1,66 @@
+\section{Espacio proyectivo dual}
+
+\begin{definición} [Espacio Vectorial Dual]
+    Sea $V$ un espacio vectorial de dimensión $n+1$ sobre un cuerpo $\mathbb{K}$. El \textbf{espacio vectorial dual} de $V$, denotado por $V^*$, es el conjunto de todas las aplicaciones lineales de $V$ en $\mathbb{K}$. Es decir,
+    \[
+        V^* = \{ h : V \to \mathbb{K} \mid h \text{ es lineal} \}.
+    \]
+\end{definición}
+
+Dada un base $\mathcal{B} = \{ \vec{u}_0, \vec{u}_1, \ldots, \vec{u}_n \}$ de $V$, existe una base dual $\mathcal{B}^* = \{ h_0, h_1, \ldots, h_n \}$ de $V^*$, donde cada $h_i$ es una forma lineal definida por:
+
+\[
+    \begin{matrix}
+        h_i : V  \to  \mathbb{K} \\
+        \vec{u}_j  \mapsto  \delta_{ij} =
+        \begin{cases}
+            1 & \text{si } i = j \\
+            0 & \text{si } i \neq j
+        \end{cases}
+    \end{matrix}
+\]
+
+es base de $V^*$. Por lo tanto, $\dim(V^*) = n+1$. En este caso decimos que $\mathcal{B}^*$ es la \textbf{base dual} de $\mathcal{B}$.
+
+\begin{definición} [Espacio Proyectivo Dual]
+    En las condiciones anteriores, el \textbf{espacio proyectivo dual} de $\mathbb{P}=\mathbb{P}(V)$, denotado por $\mathbb{P}^*=\mathbb{P}(V^*)$, es el espacio proyectivo asociado a $V^*$. Es decir,
+    \[
+        \mathbb{P}^* = \mathbb{P}(V^*) = \{ [h] \mid h \in V^* \setminus \{0\} \}.
+    \]
+\end{definición}
+
+Se tiene que $\dim(\mathbb{P}^*) = \dim(V^*) - 1 = \dim(\mathbb{P}) = n$.
+
+\textbf{Interpretación:} Los puntos de $\mathbb{P}^*$ corresponden a los hiperplanos de $\mathbb{P}$. En efecto,
+
+\[
+    \underbrace{[h] \in \mathbb{P}^*}_{\text{punto}} \iff \underbrace{h \in V^* \setminus \{0\}}_{\text{recta vectorial}} \iff \underbrace{H = \{h = 0\} \subset V}_{\text{hiperplano vectorial}} \iff \underbrace{H \subset \mathbb{P}}_{\text{hiperplano proyectivo}}
+\]
+
+En coordenadas, 
+
+\[
+    \mathfrak{R} \text{ referencia en } \mathbb{P} \quad \Rightarrow \quad \mathcal{B} \text{ base de } V  
+\]
+
+\[
+    \mathfrak{R}^* \text{ referencia en } \mathbb{P}^* \quad \Rightarrow \quad \mathcal{B}^* \text{ base dual de } V^*
+\]
+
+\[
+    \mathbb{P}^* \ni [h] = [a_0 : a_1 : \ldots : a_n]_{\mathfrak{R}^*} \quad \Leftrightarrow \quad \mathbb{P} \supset H \equiv a_0x_0 + a_1x_1 + \ldots + a_nx_n = 0
+\]
+siendo $[x_0 : x_1 : \ldots : x_n]_{\mathfrak{R}}$ las coordenadas de un punto cualquiera de $\mathbb{P}$.
+
+Dualidad entre los subespacios de $\mathbb{P}$ y $\mathbb{P}^*$:
+
+\[
+    \{ \text{Subespacios proyectivos de } \mathbb{P} \} \rightleftarrows  \{ \text{Subespacios proyectivos de } \mathbb{P}^* \}
+\]
+\[  
+    X \to D(X) = \left\{[h] \in \mathbb{P}^* \mid X \subset H = \{h = 0\} \text{ (hiperplano proyectivo)} \right\}
+\]
+\[
+    \Delta(X^*) := \bigcap_{[h] \in X^*} \{h = 0\} \subset \mathbb{P} \leftarrow X^* 
+\]
+$Delta(X^*)$ es el \textbf{subespacio proyectivo} de $\mathbb{P}$ por ser intersección de hiperplanos proyectivos de $\mathbb{P}$.

@@ -354,11 +354,27 @@ para $M_{\mathfrak{R},\mathfrak{R}'}(f) := M_{\mathcal{B},\mathcal{B}'}(\hat{f})
         Podemos suponer que $Q = V(D,E) \cap V(A,A') \neq O$. Condideramos las perspectividades
         \[
             \begin{cases}
-            \pi_1 : V(A,A') \to V(C,C'), \quad \text{de centro } E \\
-            \pi_2 : V(C,C') \to V(B,B'), \quad \text{de centro } D \\                
+            \pi_1 : V(A,A') \to V(C,C'), \quad \text{perspectividad de centro } E \\
+            \pi_2 : V(C,C') \to V(B,B'), \quad \text{perspectividad de centro } D \\                
             \end{cases}
         \]
-        Entonces la composición $\pi_2 \circ \pi_1 : V(A,A') \to V(B,B')$ cumple que $\pi(A) = \pi_2 \circ \pi_1(A) = C$. 
+        Entonces la composición $\pi = \pi_2 \circ \pi_1 : V(A,A') \to V(B,B')$ cumple que 
+        \[
+            \begin{cases}
+                \pi(A) = \pi_2 \circ \pi_1(A) = \pi_2(C) = B \\
+                \pi(A') = \pi_2 \circ \pi_1(A') = \pi_2(C') = B' \\
+                \pi(O) = \pi_2 \circ \pi_1(O) = \pi_2(Q) = Q
+            \end{cases} \implies \pi \text{ es la perspectividad de centro } F
+        \]
+
+        \[
+            \begin{cases}
+                Q, \pi(Q), E \text{ colineales} (\pi_1 \text{ es perspectividad de centro }E) \\
+                Q, D, E \text{ colineales (por definición de } Q) \\
+                \pi_1(Q), \pi(Q), D \text{ colineales } (\pi_2 \text{ es perspectividad de centro }D) \\
+                Q, \pi(Q), F \text{ colineales } (\pi \text{ es perspectividad de centro }F)
+            \end{cases} \implies D,E,F \text{ colineales}
+        \]
         
     \end{itemize}
 \end{proof}
