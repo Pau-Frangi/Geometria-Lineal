@@ -58,9 +58,118 @@ Dualidad entre los subespacios de $\mathbb{P}$ y $\mathbb{P}^*$:
     \{ \text{Subespacios proyectivos de } \mathbb{P} \} \rightleftarrows  \{ \text{Subespacios proyectivos de } \mathbb{P}^* \}
 \]
 \[  
-    X \to \Delta(X) = \left\{[h] \in \mathbb{P}^* \mid X \subset H = \{h = 0\} \text{ (hiperplano proyectivo)} \right\}
+    X \to D(X) = \left\{[h] \in \mathbb{P}^* \mid X \subset H = \{h = 0\} \text{ (hiperplano proyectivo)} \right\}
 \]
 \[
-    \Delta(X^*) := \bigcap_{[h] \in X^*} \{h = 0\} \subset \mathbb{P} \leftarrow X^* 
+    \Delta(X^*) = \bigcap_{[h] \in X^*} \{h = 0\} \subset \mathbb{P} \leftarrow X^* 
 \]
-$\Delta(X^*)$ es el \textbf{subespacio proyectivo} de $\mathbb{P}$ por ser intersección de hiperplanos proyectivos de $\mathbb{P}$.
+
+$\Delta(X^*)$ es el \textbf{subespacio proyectivo} de $\mathbb{P}$ por ser intersección de hiperplanos proyectivos de $\mathbb{P}$.\\
+
+$D(X)$ es \textbf{subespacio proyectivo} ya que si $X=P(W)$:\\
+\[
+    X \subset H \iff 
+    W \subset \underbrace{\hat{H}}_{\text{hiperplano vectorial}} = \ker(h) \iff 
+    h_{|W} = 0
+\]
+
+Por tanto:
+
+\[
+    X \subset H \iff
+    h_{|W} = 0 \iff
+    [h] \in \underbrace{Anu(W)}_{\text{anulador de } W} = \underbrace{\{ g \in V^* \mid g_{|W} = 0 \}}_{\text{subespacio vectorial de } V^*}
+\]
+
+Y decimos $D(X) = P(Anu(W))$.
+
+\begin{lema}
+    Sean $H, H_1, H_2, \ldots, H_k$ hiperplanos proyectivos de $\mathbb{P}$, entonces son equivalentes:
+    \begin{enumerate}
+        \item $H \supset H_1 \cap H_2 \cap \ldots \cap H_k$
+        \item $H \in V \left( H_1, H_2, \ldots, H_k \right)$ en $\mathbb{P}^*$
+        \item $[h] \in V \left( [h_1], [h_2], \ldots, [h_k] \right)$ en $\mathbb{P}^*$, donde $H_i = \{h_i = 0\} \quad \forall i = 1, 2, \ldots, k$
+    \end{enumerate}
+\end{lema}
+
+\begin{proof}
+    \[
+    H \supset H_1 \cap H_2 \cap \ldots \cap H_k \text{ en } \mathbb{P} \iff
+    \]
+    \[
+    \hat{H} \supset \hat{H}_1 \cap \hat{H}_2 \cap \ldots \cap \hat{H}_k \text{ en } V \iff
+    \]
+    \[
+    h_1=0, h_2=0, \ldots, h_k=0 \implies h=0 \text{ en } V \iff
+    \]
+    \[
+    h \in L \left( h_1, h_2, \ldots, h_k \right) \text{ en } V^* \iff
+    \]
+    \[
+    [h] \in V\left( [h_1], [h_2], \ldots, [h_k] \right) \text{ en } \mathbb{P}^*
+    \]
+\end{proof}
+
+Veamos la inyectividad de $\Delta$:
+
+\begin{proof}
+    Supongamos:
+    \[
+    \Delta(Y^*) \supset \Delta(X^*) \implies
+    H \supset \Delta(X^*) \quad \forall H = \{h = 0\}: [h] \in Y^*
+    \]
+    Si ahora:
+    \[
+    X^* = V(H_0, H_1, \ldots, H_k) \underbrace{\implies}_{\text{Lema}}
+    \Delta(X^*) = \bigcap_{i=0}^k H_i \implies
+    \forall H \in Y^*: H \supset \Delta(X^*) = \bigcap_{i=0}^k H_i \iff
+    \]
+    \[
+    \forall H \in Y^* \quad H \in V(H_0, H_1, \ldots, H_k) = X^* \implies
+    Y^* \subset X^*
+    \]
+    Por tanto, finalmente:
+    \[
+    \Delta(Y^*) = \Delta(X^*) \implies
+    \begin{cases}
+        Y^* \subset X^* \\
+        X^* \subset Y^*
+    \end{cases} \implies
+    X^* = Y^*
+    \]
+\end{proof}
+
+Veamos la sobreyectividad de $D$:
+
+\begin{proof}
+    Dado $X^* = V(H_0, H_1, \ldots, H_r)$ subespacio proyectivo de $\mathbb{P}^*$, luego si definimos $X = \bigcap_{i=0}^r H_i$ tenemos que:
+    \[
+    D(X) =
+    \{H \in P^* \mid X = \bigcap_{i=0}^r H_i \subset H \text{ en } \mathbb{P} \} \underbrace{=}_{\text{Lema}}
+    V(H_0, H_1, \ldots, H_r) = X^* \text{ en } \mathbb{P}^*
+    \] 
+\end{proof}
+
+Ademas, como $\Delta \circ D = \text{identidad}$, deducimos que $\Delta, D$ son biyecciones diccionario entre subespacios proyectivos del primal y dual.
+
+\begin{observación}
+    \textbf{Notación: } A partir de ahora, denotaremos $X^*=D(X)$ y diremos que $X^*$ es el subespacio proyectivo dual de $X$.\\
+    Además, si $X$ es subespacio proyectivo, $X$ es intersección de hiperplanos proyectivos:
+    \[
+    \exists H_0, H_1, \ldots, H_k \text{ hiperplanos proyectivos tales que } X = \bigcap_{i=0}^k H_i
+    \]
+    Con ademas $\dim(X) = \underbrace{\dim(\mathbb{P})}_{n} - (k+1) = n - k - 1$.\\
+    Entonces $X^* = V(H_0, H_1, \ldots, H_k)$ con $\dim(X^*) = k$, por tanto:
+    \[
+    \dim(X) + \dim(X^*) = n - k - 1 + k = n - 1
+    \]
+\end{observación}
+
+\begin{proposición}[Propiedades fundamentales de la dualidad]
+    Sea $\mathbb{P}$ un espacio proyectivo de dimensión $n$ y $X, Y \subset \mathbb{P}$ subespacios proyectivos. Entonces:
+    \begin{enumerate}
+        \item $X \subset Y \implies Y^* \subset X^*$
+        \item $(X \cap Y)^* = V(X^*, Y^*)$
+        \item $V(X, Y)^* = X^* \cap Y^*$
+    \end{enumerate}
+\end{proposición}
