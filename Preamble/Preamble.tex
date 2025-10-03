@@ -41,6 +41,8 @@
 \usetikzlibrary{arrows}
 
 \usepackage{hyperref}
+\usepackage{etoc}
+
 
 \usetikzlibrary{calc}
 \newcommand{\s}{\text{ }}%Space in math mode
@@ -404,4 +406,30 @@ mdframed={
     \par\medskip
     	\textbf{Desarrollo:} #2
   \end{mybox}%
+}
+
+% Contador para hojas de ejercicios
+\newcounter{hoja}
+\renewcommand{\thehoja}{\arabic{hoja}}
+
+% Comando personalizado para título de hoja de ejercicios
+\newcommand{\hojaejercicio}[1]{%
+  \refstepcounter{hoja}%
+  \section*{Hoja de Ejercicios \thehoja: #1}%
+  \addcontentsline{toc}{section}{Hoja \thehoja: #1}%
+  \setcounter{ejercicio}{0}% Reiniciar contador de ejercicios para cada hoja
+}
+
+% Contador para apéndices
+\newcounter{apendice}
+\renewcommand{\theapendice}{\Alph{apendice}}
+
+% Comando personalizado para título de apéndice
+\newcommand{\apendice}[1]{%
+  \refstepcounter{apendice}%
+  \section*{Apéndice \theapendice: #1}%
+  \addcontentsline{toc}{section}{Apéndice \theapendice: #1}%
+  % Reiniciar contador de subsecciones y configurar su formato
+  \setcounter{subsection}{0}%
+  \renewcommand{\thesubsection}{\theapendice.\arabic{subsection}}%
 }
