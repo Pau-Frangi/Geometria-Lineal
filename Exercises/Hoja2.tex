@@ -298,7 +298,116 @@ Se pide:
     \item[(ii)] Encontrar la matriz de cambio $M_{RR'}$.
     \item[(iii)] Dada la recta $r$ de ecuación $x_0 - x_1 + x_2 = 0$ en la referencia $R$, hallar su ecuación en la referencia $R'$.
 \end{enumerate}
-}{}
+}{
+
+    \[
+        R : \begin{pmatrix}
+            1 & 1 & 0 \\
+            0 & -1 & 2 \\
+            0 & 0 & -1
+        \end{pmatrix} = 1 \neq 0 \implies R \{(1 : 0 : 0), (1 : -1 : 0), (0 : 2 : -1)\} \text{ es base de } \mathbb{R}^3
+    \]
+    \[
+        [u_3] = [u_0 + u_1 + u_2]
+    \]
+    \[
+        \iff \exists \lambda, \lambda_0, \lambda_1, \lambda_2 \in \mathbb{R} : \lambda_0 u_0 + \lambda_1 u_1 + \lambda_2 u_2 = \lambda u_3 
+    \]
+    \[
+        \iff \lambda (3, -3, 1) = \lambda_0(1, 0, 0) + \lambda_1(1, -1, 0) + \lambda_2(0, 2, -1)
+    \]
+    \[
+        \implies \begin{cases}
+            \lambda_0 = 2 \lambda \\
+            \lambda_1 = \lambda \\
+            \lambda_2 = -\lambda
+        \end{cases} \quad (\lambda = 1)
+    \] 
+    \[
+        \mathcal{B} = \{\underbrace{(1, 0, 0)}_{\lambda_0u_0}, \underbrace{(1, -1, 0)}_{\lambda_1u_1}, \underbrace{(0, 2, -1)}_{\lambda_2u_2}\}
+    \]
+    \[
+        R' : \begin{pmatrix}
+            0 & 1 & 2 \\
+            0 & 0 & 1 \\
+            1 & 1 & 1
+        \end{pmatrix} = 1 \neq 0 \implies R' \{(0 : 0 : 1), (1 : 0 : 1), (2 : 1 : 1)\} \text{ es base de } \mathbb{R}^3
+    \]
+    \[
+        [u_3'] = [u_0' - u_1' + 2u_2']
+    \]
+    \[
+        \iff \exists \lambda, \lambda_0, \lambda_1, \lambda_2 \in \mathbb{R} : \lambda_0 u_0' + \lambda_1 u_1' + \lambda_2 u_2' = \lambda u_3'
+    \]
+    \[
+        \iff \lambda (0, -1, 2) = \lambda_0(0, 0, 1) + \lambda_1(1, 0, 1) + \lambda_2(2, 1, 1)
+    \]
+    \[
+        \implies \begin{cases}
+            \lambda_0 = \lambda_1 \\
+            \lambda_1 = 2 \lambda \\
+            \lambda_2 = -\lambda
+        \end{cases} (\lambda = 1) 
+    \]
+    \[
+        \mathcal{B}' = \{\underbrace{(0, 0, 1)}_{\lambda_0u_0'}, \underbrace{(2, 0, 2)}_{\lambda_1u_1'}, \underbrace{(-2, -1, -1)}_{\lambda_2u_2'}\}
+    \]
+    \[
+        R \xrightarrow{M_{RR_c}} R_c \xrightarrow{(M_{R'R_c})^{-1}} R' \implies M_{RR'} = (M_{R'R_c})^{-1} M_{RR_c}
+    \]
+    \[
+        M_{RR_c} = 
+        \begin{pmatrix}
+            1 & 1 & 0 \\
+            0 & -1 & 2 \\
+            0 & 0 & -1
+        \end{pmatrix}
+        \quad
+        M_{R'R_c} = 
+        \begin{pmatrix}
+            0 & 1 & 2 \\
+            0 & 0 & 1 \\
+            1 & 1 & 1
+        \end{pmatrix}
+    \]
+    \[
+        M_{RR'} = \begin{pmatrix}
+            -2 & -1 & 1 \\
+            1 & 3/2 & 2 \\
+            0 & 1 & 2
+        \end{pmatrix}
+    \]
+    La recta $r$ tiene las ecuaciones $r : x_0 - x_1 + x_2 = 0$ en la referencia $R$. Para hallar su ecuación en la referencia $R'$:
+    \[
+        r : (1,-1,1) \begin{pmatrix}
+            x_0 \\
+            x_1 \\
+            x_2
+            \end{pmatrix}_R = 0 \qquad \text{y} \qquad M_{RR'} \begin{pmatrix}
+            x_0 \\
+            x_1 \\
+            x_2
+            \end{pmatrix}_R = \begin{pmatrix}
+            x_0' \\
+            x_1' \\
+            x_2'
+            \end{pmatrix}_{R'}           
+    \]
+    \[
+            r : (1,-1,1) (M_{RR'})^{-1} \begin{pmatrix}
+            x_0' \\
+            x_1' \\
+            x_2'
+            \end{pmatrix}_{R'} = 0 \iff (4,9,-\frac{21}{2}) \begin{pmatrix}
+            x_0' \\
+            x_1' \\
+            x_2'
+            \end{pmatrix}_{R'} = 0 
+    \]
+    \[
+            \iff r : 8x_0' + 18x_1' - 21x_2' = 0
+    \]
+}
 
 % 10
 \ejercicio{En el espacio proyectivo $\mathbb{P}^3_{\mathbb{R}} = \mathbb{P}(\mathbb{R}^4)$, en el sistema de referencia proyectivo canónico, se consideran el punto $A = (1 : 0 : -1 : 0)_{R_c}$ y el plano $\pi$ generado por $B_1 = (0 : 1 : 1 : 2)_{R_c}$, $B_2 = (-1 : 0 : 0 : 0)_{R_c}$ y $B_3 = (0 : 2 : 1 : 0)_{R_c}$. Encontrar un nuevo sistema de referencia proyectivo $R$ (expresando sus elementos en $R_c$) tal que:

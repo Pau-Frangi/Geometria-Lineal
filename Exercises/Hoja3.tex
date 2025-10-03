@@ -1,0 +1,135 @@
+
+% Ejercicio 3
+\ejercicio{
+    Se considera la aplicación proyectiva 
+    \[
+    g : \mathbb{P}^2_{\mathbb{C}} \longrightarrow \mathbb{P}^2_{\mathbb{C}}
+    \]
+    que tiene por matriz, respecto del sistema de referencia proyectivo canónico,
+    \[
+    \begin{pmatrix}
+    0 & 1 & 2 \\
+    0 & 1 & 0 \\
+    0 & 0 & 2
+    \end{pmatrix}.
+    \]
+    
+    Halla centro e imagen de $g$.
+
+}{
+
+    La aplicación lineal asociada es
+    \[
+    \hat{g} : \mathbb{C}^3 \longrightarrow \mathbb{C}^3, \quad M_{B_c,B_c}(\hat{g}) = \begin{pmatrix}
+    0 & 1 & 2 \\
+    0 & 1 & 0 \\
+    0 & 0 & 2
+    \end{pmatrix}.
+    \]
+    El centro de $g$ viene dado por
+    \[
+    Z(g) = \mathbb{P}(\ker(\hat{g})) 
+    \]
+    \[
+        \ker(\hat{g}) = L[(1,0,0)] \qquad Im(\hat{g}) = L[(1,1,0),(2,0,2)]
+    \]
+    \[
+        Z(g) = \mathbb{P}(\ker(\hat{g})) = \{(1:0:0)\}
+    \]
+    \[
+        Im(g) = \mathbb{P}(Im(\hat{g})) = V((1:1:0),(2:0:2)) : x_0 - x_1 + x_2 = 0
+    \]
+
+}
+
+% Ejercicio 6
+\ejercicio{
+
+Prueba que la homografía $h$ de la recta $x_0 - x_1 + x_2 = 0$ sobre la recta 
+$x_1 - x_2 = 0$ (rectas de $\mathbb{P}^2_{\mathbb{R}}$) que transforma los puntos 
+\[
+A = (1 : 1 : 0), \quad 
+B = (1 : 2 : 1), \quad 
+C = (1 : 0 : -1)
+\]
+en 
+\[
+A' = (1 : 0 : 0), \quad 
+B' = (1 : 1 : 1), \quad 
+C' = (1 : -1 : -1),
+\]
+respectivamente, es una perspectividad. 
+
+\medskip
+
+Halla la matriz y escribe las ecuaciones de $h$ respecto de las referencias 
+\[
+\mathcal{R} = \{A, B; C\} \quad \text{y} \quad 
+\mathcal{R}' = \{A', B'; C'\}.
+\]
+
+}{
+
+    $h$ perspectividad $\iff$ el punto de intersección de las rectas es un punto fijo.
+
+    \[
+    \mathfrak{R} = \{(1:1:0),(1:2:1);(1:0:-1)\}
+    \]
+    Veamos que es una referencia
+    \[
+        \exists \lambda, \lambda_0, \lambda_1 \in  \mathbb{R} : \lambda(1,0,-1) = \lambda_0(1,1,0) + \lambda_1(1,2,1)
+    \]
+    \[
+        \implies \begin{cases}
+            \lambda_0+\lambda_1 = \lambda \\
+            \lambda_0 + 2\lambda_1 = 0 \\
+            \lambda_1 = -\lambda
+        \end{cases} \implies \begin{cases}
+            \lambda_0 = 2\lambda \\
+            \lambda_1 = -\lambda
+        \end{cases} (\lambda = 1)
+    \]
+    \[
+        \mathcal{B} = \{(2,2,0),(-1,-2,-1)\} \text{ base asociada a } \mathfrak{R}
+    \]
+    \[
+        \mathfrak{R}' = \{(1:0:0),(1:1:1);(1:-1:-1)\}
+    \]
+    Veamos que es una referencia
+    \[
+        \exists \mu, \mu_0, \mu_1 \in  \mathbb{R} : \mu(1,-1,-1) = \mu_0(1,0,0) + \mu_1(1,1,1)
+    \]
+    \[
+        \implies \begin{cases}
+            \mu_0+\mu_1 = \mu \\
+            \mu_1 = -\mu
+        \end{cases} \implies \begin{cases}
+            \mu_0 = 2\mu \\
+            \mu_1 = -\mu
+        \end{cases} (\mu = 1)
+    \]
+    \[
+        \mathcal{B}' = \{(2,0,0),(-1,-1,-1)\} \text{ base asociada a } \mathfrak{R}'
+    \]
+    \[
+        M_{\mathfrak{R},\mathfrak{R}'}(h) = \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix}
+    \]
+
+    \[
+        r \cap r' : \begin{cases}
+            x_0 = 0 \\
+            x_1 - x_2 = 0
+        \end{cases} = \{(0:1:1)\}
+    \]
+    \[
+        (0,1,1) = \lambda(2,2,0) + \beta(-1,-2,-1)
+    \]
+    \[
+        (0,1,1) = \lambda'(2,0,0) + \beta'(-1,-1,-1)
+    \]
+    como en ambas referencias tiene coordenadas $(1:2)$ y el cambio de la referencia $\mathfrak{R}$ a $\mathfrak{R}'$ es la identidad, el punto es fijo y por tanto $h$ es una perspectividad.
+
+}
