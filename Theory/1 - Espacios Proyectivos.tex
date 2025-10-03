@@ -3,20 +3,19 @@
 \subsection{Definiciones y propiedades básicas}
 
 \begin{definición}[Espacio proyectivo]
-Dado un espacio vectorial $V$ se define el espacio proyectivo o el proyectivizado de $V$ y se denota por $\mathbb{P}(V)$ como el conjunto de rectas vectoriales de $V$.\\
+Dado un espacio vectorial $V$ se define el \textbf{espacio proyectivo} o el \textbf{proyectivizado} de $V$ y se denota por $\mathbb{P}(V)$ como el conjunto de rectas vectoriales de $V$ (esto es, los subespacios vectoriales de dimensión 1 de $V$).
 A momentos nos olvidaremos de $V$ y llamaremos $\mathbb{P} = \mathbb{P}(V)$ espacio proyectivo.
 \end{definición}
 
 \begin{definición}[Dimension de un espacio proyectivo]
-Si $V$ es un espacio vectorial, se define la dimensión del espacio proyectivo $\mathbb{P}(V)$ como:
+Si $V$ es un espacio vectorial, se define la \textbf{dimensión} del espacio proyectivo $\mathbb{P}(V)$ como:
 \[    dim(\mathbb{P}(V)) = dim(V) - 1 \]
 \end{definición}
 
 \ejemplo{
-    Si $V$ es un espacio vectorial de $dim=1$ (una recta vectorial) entonces todos los vectores de $V$ son proporcionales y por tanto $V$ solo tiene una recta vectorial. Por tanto $\mathbb{P}(V)$ es un punto y $dim(\mathbb{P}(V))=dim(V)$.
+    Si $V$ es un espacio vectorial de $dim=1$ (una recta vectorial) entonces todos los vectores de $V$ son proporcionales y por tanto $V$ solo tiene una recta vectorial. Por tanto $\mathbb{P}(V)$ es un punto y $dim(\mathbb{P}(V))=dim(V)-1=1-1=0$.
 }
 
-\begin{observación}
 Los subespacios generados por un vector y por todos sus proporcionales son el mismo subespacio, por ejemplo:\\
 $$ L[\vec{u}] = L[\vec{-2u}]$$
 \begin{center}
@@ -26,39 +25,33 @@ $$ L[\vec{u}] = L[\vec{-2u}]$$
         \draw[->, gray] (0,0,0) -- (0,2.5,0) node[anchor=south] {$y$};
         \draw[->, gray] (0,0,0) -- (0,0,2.5) node[anchor=north east] {$z$};
         % Recta generada por u menos inclinada
-        \draw[<->, gray!60] (-2.5, -1.25, -0.625) -- (2.5, 1.25, 0.625) node[anchor=south east] {Recta $\langle u \rangle$};
+        \draw[<->, gray!60] (-2.5, -1.25, -0.625) -- (2.5, 1.25, 0.625) node[anchor=south east] {Recta $L[u ]$};
         % Vector u = (2,1,0.5)
         \draw[->, thick, blue] (0,0,0) -- (1,0.5,0.25) node[anchor=west] {$u$};
         % Vector -2u = (-2,-1,-0.5)
         \draw[->, thick, red] (0,0,0) -- (-2,-1,-0.5) node[anchor=east] {$-2u$};
     \end{tikzpicture}
 \end{center}
-\end{observación}
 
 \ejemplo{
     Si $V = \{\vec{0}\}$ entonces $\mathbb{P}(V) = \emptyset$ y $dim(\mathbb{P}(V)) = dim(V) - 1 = 0 - 1 = -1$.
 }
 
-\begin{observación}
-Pensaremos salvo que se diga lo contrario que el cuerpo de coeficientes de $V$ es $\mathbb{K} = \mathbb{R}$ ó $\mathbb{K} = \mathbb{C}$.
-\end{observación}
+\textbf{Nota:} Pensaremos salvo que se diga lo contrario que el cuerpo de coeficientes de $V$ es $\mathbb{K} = \mathbb{R}$ ó $\mathbb{K} = \mathbb{C}$.\\
 
 \begin{definición}[Espacio proyectivo canónico]
-Se llama espacio proyectivo canónico sobre $\mathbb{K}$ de dimension $n$ al proyectivizado de $\mathbb{K}^{n+1}$.\\
-Se denotaran por $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$ respectivamente.\\
-Otras notaciones habituales son $\mathbb{R}\mathbb{P}^n$ y $\mathbb{C}\mathbb{P}^n$, ó $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$.
+Se llama \textbf{espacio proyectivo canónico} sobre $\mathbb{K}$ de dimension $n$ al proyectivizado de $\mathbb{K}^{n+1}$.\\
+Se denotaran por $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$ respectivamente. Otras notaciones habituales son $\mathbb{R}\mathbb{P}^n$ y $\mathbb{C}\mathbb{P}^n$, ó $\mathbb{P}^n(\mathbb{R})$ y $\mathbb{P}^n(\mathbb{C})$.
 \end{definición}
 
-\begin{definición}[Definicion alternativa de espacio proyectivo]
-Podemos definir el espacio proyectivo como:
+Alternativamente, podemos definir el espacio proyectivo como:
 $$ \mathbb{P}(V) = \frac{V \setminus \{\vec{0}\}}{\sim} $$
 Donde $\sim$ es la relación de equivalencia definida como:
 $$ \vec{u} \sim \vec{v} \iff \exists \lambda \in \mathbb{K}^* : \vec{u} = \lambda \vec{v} $$
-Es decir, dos vectores son equivalentes si son proporcionales.
-\end{definición}
+Es decir, dos vectores son equivalentes si son proporcionales.\\
 
 \begin{definición}[Subespacio proyectivo]
-Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios proyectivos (a veces subvariedades o variedades proyectivas) de $\mathbb{P}$ a los subconjuntos de la forma $\mathbb{P}(W)$ donde $W$ es un subespacio vectorial de $V$.
+Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos \textbf{subespacios proyectivos} (a veces subvariedades o variedades proyectivas) de $\mathbb{P}$ a los subconjuntos de la forma $\mathbb{P}(W)$ donde $W$ es un subespacio vectorial de $V$.
 \end{definición}
 
 \ejemplo{
@@ -93,12 +86,11 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
 }
 
 \begin{lema}
-    Dados dos puntos distintos $A$ y $B$ de un espacio proyectivo $\mathbb{P}$ existe una recta que los contiene.
-    $$ A=[\vec{u}], B=[\vec{v}]$$
-    La recta que los contiene es:
-    $$ r = \mathbb{P}(W) \ \text{con} \ W = L[\vec{u}, \vec{v}] $$
-    Donde $dim(W) = 2$, $\vec{u}$ y $\vec{v}$ son independientes porque $A \neq B$.
-    Asi $r = \mathbb{P}(W)$ es una recta proyectiva que contiene a $A$ y $B$.
+    Dados dos puntos distintos $A$ y $B$ de un espacio proyectivo $\mathbb{P}$ existe una única recta que los contiene.
+\end{lema}
+
+\begin{proof}
+    Sea $\mathbb{P} = \mathbb{P}(V)$, entonces $A = [\vec{u}]$ y $B = [\vec{v}]$ con $\vec{u}, \vec{v} \in V \setminus \{\vec{0}\}$.
 
     % Ejemplo visual: dos puntos proyectivos y la recta que los contiene
     \begin{center}
@@ -121,17 +113,37 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
             \draw[thick, purple, dashed] (0,0,0) -- (1.2,0.6,0.6);
         \end{tikzpicture}
     \end{center}
-\end{lema}
+
+    Por ser $A \neq B$ tenemos que $\vec{u}$ y $\vec{v}$ no son proporcionales, luego son linealmente independientes. Así, tenemos que en $V$ el subespacio vectorial generado por $\vec{u}$ y $\vec{v}$ es:
+    $$ W = L[\vec{u}, \vec{v}] \text{ con } dim(W) = 2 $$
+    Por construcción $\vec{u}, \vec{v} \in W$ y por tanto $A, B \in \mathbb{P}(W)$. Dado que $dim(W) = 2$ tenemos que $\dim(\mathbb{P}(W)) = dim(W) - 1 = 1$, luego $\mathbb{P}(W)$ es una recta proyectiva.\\
+    Además es única: si $W' \subset V$ es otro subespacio vectorial de dimensión 2 con $A, B \in \mathbb{P}(W')$ entonces $\vec{u}, \vec{v} \in W'$ y por tanto $W = L[\vec{u}, \vec{v}] \subseteq W'$. Como ambos tienen dimensión 2, $W = W'$ y por tanto $\mathbb{P}(W) = \mathbb{P}(W')$.
+\end{proof}
 
 \begin{proposición}[Propiedades de espacios proyectivos]
     Sea $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo de dimensión $n$.
-    \begin{itemize}
+    \vspace{-1em}
+    \begin{enumerate}
         \item $\mathbb{P}$ envia todos los subespacios vectoriales de $V$ en subespacios proyectivos de $\mathbb{P}$.
         \item $\mathbb{P}$ es sobreyectiva.
         \item $\mathbb{P}$ es inyectiva, es decir, $\mathbb{P}(W_1) = \mathbb{P}(W_2) \iff W_1 = W_2$.
         \item Si $W_1 \subseteq W_2 \implies \mathbb{P}(W_1) \subseteq \mathbb{P}(W_2)$.
-    \end{itemize}
+    \end{enumerate}
 \end{proposición}
+
+\begin{proof}
+    \leavevmode
+    \begin{enumerate}
+        \item Sean $W\subseteq V$ un subespacio vectorial. Por definición,
+        \[
+        \mathbb{P}(W)=\{[\vec w]\in\mathbb{P}(V)\ :\ \vec w\in W\setminus\{0\}\}.
+        \]
+        Si $W=\{0\}$ entonces $\mathbb{P}(W)=\emptyset$, que se considera el subespacio proyectivo vacío. Si $W\neq\{0\}$, sea $\dim W = r\ge 1$. Tomando una base $\{\vec w_1,\dots,\vec w_r\}$ de $W$ vemos que todo $[\vec w]\in\mathbb{P}(W)$ tiene un representante en el subespacio de dimensión $r$, por tanto $\mathbb{P}(W)$ es una variedad proyectiva de dimensión $r-1$. Es decir, $\mathbb{P}(W)$ es un subespacio proyectivo de $\mathbb{P}(V)$ y $\dim\mathbb{P}(W)=\dim W-1$.
+        \item La aplicación $\pi:V\setminus\{0\}\to\mathbb{P}(V)$, $\pi(\vec v)=[\vec v]$, es por definición la proyección canónica que asigna a cada vector no nulo su clase de proporcionalidad. Dado cualquier punto $P\in\mathbb{P}(V)$ existe por definición algún $\vec v\in V\setminus\{0\}$ con $P=[\vec v]$, luego $\pi(\vec v)=P$. Por tanto $\pi$ es sobreyectiva.
+        \item Supongamos primero que $W_1=W_2$. Entonces claramente $\mathbb{P}(W_1)=\mathbb{P}(W_2)$. Recíprocamente, supongamos $\mathbb{P}(W_1)=\mathbb{P}(W_2)$. Sea $\vec x\in W_1$. Si $\vec x=\vec0$ no hay nada que probar; si $\vec x\neq\vec0$ entonces $[\vec x]\in\mathbb{P}(W_1)=\mathbb{P}(W_2)$. Por definición de $\mathbb{P}(W_2)$ existe $\vec y\in W_2\setminus\{0\}$ y $\lambda\in K^\times$ tales que $\vec x=\lambda\vec y$ (porque representan la misma clase proyectiva). Entonces $\vec x\in W_2$. Hemos probado $W_1\subseteq W_2$. Intercambiando los papeles de $W_1$ y $W_2$ obtenemos la inclusión inversa, por lo que $W_1=W_2$.
+        \item Si $W_1\subseteq W_2$ y $[\vec w]\in\mathbb{P}(W_1)$, entonces $\vec w\in W_1\setminus\{0\}\subseteq W_2\setminus\{0\}$, de modo que $[\vec w]\in\mathbb{P}(W_2)$. Por tanto $\mathbb{P}(W_1)\subseteq\mathbb{P}(W_2)$.
+    \end{enumerate}
+\end{proof}
 
 \begin{proposición}[Intersección de subespacios proyectivos]
     Dados $\{X_i : i \in I\}$ subespacios proyectivos de $\mathbb{P} = \mathbb{P}(V)$, entonces su intersección $\bigcap_{i \in I} X_i$ es un subespacio proyectivo de $\mathbb{P}$.\\
@@ -145,18 +157,16 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
 \end{proof}
 
 \begin{definición}[Subespacio generado]
-    Sea $S \subseteq \mathbb{P} = \mathbb{P}(V)$ un subconjunto, se define el subespacio proyectivo generado por $S$, y se denota por $V(S)$ como el menor subespacio proyectivo que contiene a $S$.\\
+    Sea $S \subseteq \mathbb{P} = \mathbb{P}(V)$ un subconjunto, se define el \textbf{subespacio proyectivo generado} por $S$, y se denota por $V(S)$ como el menor subespacio proyectivo que contiene a $S$.\\
 \end{definición}
 
-\begin{proof}
-    Veamos que la definicion tiene sentido, es decir que $V(S)$ existe y es único, definiendolo de la siguiente manera:
-    \[
-    V(S) = \bigcap_{\substack{X \subseteq \mathbb{P} \\ S \subseteq X}} X
-    \]
-    Este conjunto es no vacío porque $\mathbb{P}$ es un subespacio proyectivo contenido en $\mathbb{P}$ y contiene a $S$.\\
-    Evidentemente $S \subset \bigcap_{\substack{X \subseteq \mathbb{P} \\ S \subseteq X}} X$, y la intersección es un subespacio proyectivo por la proposición anterior, y si no fuera el menor estaríamos intersecando también el menor.\\
-    En el caso en que $S$ es la unión de subespacios proyectivos (puntos, rectas, planos, etc) $X_1, X_2, \ldots, X_k$, el subespacio generado se denota por $V(X_1, X_2, \ldots, X_k)$ ó $X_1 + X_2 + \ldots + X_k$.
-\end{proof}
+Veamos que la definicion tiene sentido, es decir que $V(S)$ existe y es único, definiéndolo de la siguiente manera:
+\[
+V(S) = \bigcap_{\substack{X \subseteq \mathbb{P} \\ S \subseteq X}} X
+\]
+Este conjunto es no vacío porque $\mathbb{P}$ es un subespacio proyectivo contenido en $\mathbb{P}$ y contiene a $S$.\\
+Evidentemente $S \subset \bigcap_{\substack{X \subseteq \mathbb{P} \\ S \subseteq X}} X$, y la intersección es un subespacio proyectivo por la proposición anterior, y si no fuera el menor estaríamos intersecando también el menor.\\
+En el caso en que $S$ es la unión de subespacios proyectivos (puntos, rectas, planos, etc) $X_1, X_2, \ldots, X_k$, el subespacio generado se denota por $V(X_1, X_2, \ldots, X_k)$ ó $X_1 + X_2 + \ldots + X_k$.
 
 \ejemplo{
     Sean $A,B$ dos puntos distintos de un espacio proyectivo $\mathbb{P}$, sabemos que $\exists r : A,B \in r$ la recta proyectiva que los contiene, siendo esta el menor subespacio proyectivo que contiene a $A$ y $B$, es decir:
@@ -185,59 +195,77 @@ Dado $\mathbb{P} = \mathbb{P}(V)$ un espacio proyectivo, llamaremos subespacios 
     \end{center}
 }
 
-\begin{observación}[Formula de Grassmann para espacios proyectivos]
+\begin{proposición}[Formula de Grassmann para espacios proyectivos]
     Si $X_1, X_2$ son subespacios proyectivos de $\mathbb{P}$ entonces:
     \[
     \dim(X_1 \cap X_2) + \dim(V(X_1, X_2)) = \dim(X_1) + \dim(X_2)
     \]
-\end{observación}
+\end{proposición}
 
 \begin{proof}
-    Sean $X_1 = \mathbb{P}(W_1)$ y $X_2 = \mathbb{P}(W_2)$, entonces:\\
+    Por definición
     \[
-    X_1 \cap X_2 = \mathbb{P}(W_1 \cap W_2) = V(X_1, X_2) = \mathbb{P}(L[W_1, W_2])
+    X_1\cap X_2=\mathbb{P}(W_1\cap W_2),\qquad V(X_1,X_2)=\mathbb{P}(L[W_1,W_2]),
     \]
-    Esta ultima igualdad se puede generalizar como:
+    donde \(L[W_1,W_2]\) denota el subespacio lineal generado por \(W_1\) y \(W_2\).
+    
+    Aplicando la fórmula de Grassmann en el espacio vectorial \(V\) obtenemos
     \[
-    V(X_1, X_2 \ldots, X_k) = \mathbb{P}(L[W_1, W_2, \ldots, W_k])
+    \dim(W_1\cap W_2)+\dim(L[W_1,W_2])=\dim W_1+\dim W_2.
     \]
-    Por la fórmula de Grassmann (vectorial) sabemos que:
+    
+    Recordando la relación entre dimensiones vectorial y proyectiva, para un subespacio no nulo \(W\) se tiene
+    \(\dim\mathbb{P}(W)=\dim W-1\), y además, si \(W=\{0\}\) entonces \(\mathbb{P}(W)=\emptyset\) y adoptamos \(\dim\emptyset=-1\). Restando \(1\) en ambos lados de la identidad vectorial anterior se obtiene
     \[
-    \dim(W_1 \cap W_2) + \dim(L[W_1, W_2]) = \dim(W_1) + \dim(W_2) \iff
+    (\dim(W_1\cap W_2)-1)+(\dim(L[W_1,W_2])-1)=(\dim W_1-1)+(\dim W_2-1).
     \]
+    Pero cada término entre paréntesis es precisamente la dimensión proyectiva correspondiente:
     \[
-    \dim(X_1 \cap X_2) + \dim(V(X_1, X_2)) = \dim(X_1) + \dim(X_2) \iff
+    \dim\mathbb{P}(W_1\cap W_2)+\dim\mathbb{P}(L[W_1,W_2])
+    =\dim\mathbb{P}(W_1)+\dim\mathbb{P}(W_2).
     \]
+    Es decir,
     \[
-    \dim(W_1 \cap W_2) - 1 + \dim(L[W_1, W_2]) - 1 = \dim(W_1) - 1 + \dim(W_2) - 1 
+    \dim(X_1\cap X_2)+\dim(V(X_1,X_2))=\dim(X_1)+\dim(X_2),
     \]
+    como queríamos demostrar.
 \end{proof}
 
 \begin{corolario}
-    En un plano proyectivo $P$ todo par de rectas se corta.
+    En un plano proyectivo $\mathbb{P}$ todo par de rectas se corta.
 \end{corolario}
 
 \begin{proof}
-    Sean $r_1, r_2$ dos rectas proyectivas de $P$, entonces:
+    Sea \(\mathbb{P}\) un plano proyectivo (es decir, \(\dim\mathbb{P}=2\)) y sean
+    \(r_1,r_2\) dos rectas proyectivas de \(\mathbb{P}\) (es decir, subespacios proyectivos de dimensión \(1\)).
+    Aplicamos la fórmula de Grassmann para espacios proyectivos:
     \[
-    \dim(r_1 \cap r_2) + \dim(V(r_1, r_2)) = \dim(r_1) + \dim(r_2) \iff
+    \dim(r_1\cap r_2)+\dim(V(r_1,r_2))=\dim(r_1)+\dim(r_2).
     \]
-    Como $V(r_1, r_2) = P$, tenemos que:
+    Como \(\dim(r_1)=\dim(r_2)=1\), la igualdad queda
     \[
-    \dim(V(r_1, r_2)) \leq \dim(P) = 2 
+    \dim(r_1\cap r_2)+\dim(V(r_1,r_2))=2.
     \]
-    Y como $r_1 \subseteq V(r_1, r_2)$:
+    
+    Por la definición de $V(r_1,r_2)$ sabemos que \(r_1\subseteq V(r_1,r_2)\) y \(r_2\subseteq V(r_1,r_2)\), luego
     \[
-    \dim(V(r_1, r_2)) \geq \dim(r_1) = 1
+    1=\dim(r_i)\le \dim(V(r_1,r_2))\le \dim(\mathbb{P})=2,
     \]
-    Por tanto $\dim(V(r_1, r_2)) \in \{1, 2\}$.\\
-    Si $\dim(V(r_1, r_2)) = 1$ entonces $V(r_1, r_2) = r_1 = r_2$, y las rectas son iguales al compartir dimension y contenerse mutuamente.\\
-    Si $\dim(V(r_1, r_2)) = 2$ entonces:
-    \[
-    \dim(r_1 \cap r_2) + 2 = 1 + 1 \implies \dim(r_1 \cap r_2) = 0
-    \]
-    Luego $r_1$ y $r_2$ se cortan en un punto.
+    es decir \(\dim(V(r_1,r_2))\in\{1,2\}\).
+        
+    \begin{itemize}
+        \item \textbf{Caso 1.} \(\dim(V(r_1,r_2))=1\).  
+        Entonces \(V(r_1,r_2)\) es una recta que contiene a \(r_1\) y a \(r_2\). Por tanto \(r_1=r_2\). En este caso
+        \(\dim(r_1\cap r_2)=\dim(r_1)=1\), es decir, la intersección es la recta completa (las rectas coinciden). 
+        \item \textbf{Caso 2.} \(\dim(V(r_1,r_2))=2\).  
+        Sustituyendo en la igualdad anterior:
+        \[
+        \dim(r_1\cap r_2)+2=2 \quad\Rightarrow\quad \dim(r_1\cap r_2)=0.
+        \]
+        Por tanto \(r_1\cap r_2\) es un punto (dimensión \(0\)).
+    \end{itemize}   
 \end{proof}
+    
 
 Nos podemos hacer la siguiente pregunta: ¿Que subespacios se pueden generar con $3$ puntos distintos $A_1, A_2, A_3$ de un espacio proyectivo $\mathbb{P}$?\\
 Sabemos que cualquier par de puntos genera una recta $r=V(A_1, A_2) \underbracket{=}_{\text{notación}} A_1 + A_2$.\\
