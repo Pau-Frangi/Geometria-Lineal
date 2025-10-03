@@ -54,10 +54,69 @@
 
 \end{titlepage}
 
-\newpage
+% =====================================
+% TABLA DE CONTENIDOS GENERAL
+% =====================================
+\renewcommand{\contentsname}{Índice General}
 \tableofcontents
 \newpage
 
-\input{Preamble/content.tex}
+% =====================================
+% PARTE I: TEORÍA
+% =====================================
+\part{Teoría}\label{part:teoria}
+
+% Tabla de contenidos específica para teoría
+\renewcommand{\contentsname}{Índice de Teoría}
+\etocsettocstyle{\section*{\contentsname}}{}
+\etocsettocdepth{subsection}
+\localtableofcontents{}
+\newpage
+
+% Incluir la teoría
+\input{Theory/Theory.tex}
+
+\newpage
+
+% =====================================
+% PARTE II: EJERCICIOS
+% =====================================
+\part{Ejercicios}\label{part:ejercicios}
+
+% Reiniciar contadores de secciones y ejercicios (mantener numeración de páginas continua)
+\setcounter{section}{0}
+\setcounter{ejercicio}{0}
+
+% Tabla de contenidos específica para ejercicios
+\renewcommand{\contentsname}{Índice de Ejercicios}
+\etocsettocstyle{\section*{\contentsname}}{}
+\etocsettocdepth{section}
+\localtableofcontents{}
+\newpage
+
+% Incluir las hojas de ejercicios
+\input{Exercises/Hojas.tex}
+
+% =====================================
+% PARTE III: APÉNDICE
+% =====================================
+\part{Apéndice}\label{part:apendice}
+
+% Reiniciar contadores de secciones (mantener numeración de páginas continua)
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+
+% Configurar numeración de subsecciones para apéndices
+\renewcommand{\thesubsection}{\Alph{apendice}.\arabic{subsection}}
+
+% Tabla de contenidos específica para apéndice
+\renewcommand{\contentsname}{Índice de Apéndice}
+\etocsettocstyle{\section*{\contentsname}}{}
+\etocsettocdepth{subsection}
+\localtableofcontents{}
+\newpage
+
+% Incluir el apéndice
+\input{Appendix/Appendix.tex}
 
 \end{document}
