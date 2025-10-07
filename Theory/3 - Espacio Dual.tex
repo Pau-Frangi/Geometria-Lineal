@@ -173,3 +173,140 @@ Ademas, como $\Delta \circ D = \text{identidad}$, deducimos que $\Delta, D$ son 
         \item $V(X, Y)^* = X^* \cap Y^*$
     \end{enumerate}
 \end{proposición}
+
+\textbf{Nota: } El espacio vectorial $(V^*)^*=V^{**}$ se denomina como espacio vectorial bidual de $V$, y podemos definir el siguiente isomorfismo lineal canónico de $V$ en $V^{**}$:
+\[
+    \begin{matrix}
+        V \to  V^{**} \\
+        \vec{u} \mapsto  \Theta_{\vec{u}} : V^* \to \mathbb{K} \\
+        \qquad \qquad \quad h \mapsto h(\vec{u})
+    \end{matrix}
+\]
+Este isomorfismo nos permite identificar $\mathbb{P}$ con su bidual $\mathbb{P}^{**} = \mathbb{P}(V^{**})$, ademas de cualquier subespacio proyectivo $X \subset \mathbb{P}$ con su bidual $X^{**} \subset \mathbb{P}^{**}$.
+
+\begin{proposición}[Principio de dualidad]
+    Sea $\mathbb{P}$ un espacio proyectivo de dimensión $n$, y tengamos una proposición $P$ que involucra subespacios proyectivos, contenidos, intersecciones, uniones y dimensiones. Entonces, si se obtiene otra proposición intercambiando los términos obtenemos una proposición $P'$ analoga en el espacio proyectivo dual $\mathbb{P}^*$:
+    \begin{itemize}
+        \item Subespacio proyectivo $X \leftrightarrow X^*$
+        \item Contención $X \subset Y \leftrightarrow Y^* \subset X^*$
+        \item Intersección $X \cap Y \leftrightarrow V(X^*, Y^*)$ Suma
+        \item Suma $V(X, Y) \leftrightarrow X^* \cap Y^*$ Intersección
+        \item Dimensión $\dim(X) = k \leftrightarrow\dim(X^*) = n - 1 - k$
+    \end{itemize}
+\end{proposición}
+
+\ejemplo{
+    En un espacio proyectivo $\mathbb{P}$ de dimensión $n$ tenemos que:
+    \begin{itemize}
+        \item Dados $2$ puntos de un plano proyectivo, $\exists !$ recta que los contiene:
+        \[
+        r = V(A,B)
+        \]
+    \end{itemize}
+    Por dualidad, en el espacio proyectivo dual $\mathbb{P}^*$ de dimensión $n$ tenemos que:
+    \begin{itemize}
+        \item Dadas $2$ rectas de un plano proyectivo, $\exists !$ punto que pertenece a ambas:
+        \[
+        (r=V(A,B))^* \implies
+        r^* = (V(A,B))^* =
+        A^* \cap B^*
+        \]
+    \end{itemize}
+}
+
+Veamos que las proposiciones $P$ y $P'$ son equivalentes:
+
+\begin{proof}
+    Veamos ambas implicaciones:
+    \begin{itemize}
+        \item[$\implies )$] Tomamos un espacio proyectivo $\mathbb{P}$ de dimensión $n$ y una proposición $P$ cierta en él, entonces veamos que $P'$ es cierta en el espacio proyectivo dual $\mathbb{P}^*$.\\
+        $P$ es cierta en cualquier espacio proyectivo de dimension $n$, luego es cierta en $\mathbb{P}^*$. Como $P$ es cierta en $\mathbb{P}^*$, $P'$ es cierta en $(\mathbb{P}^*)^* = \mathbb{P}$.
+        \item[$\impliedby )$] Inmediatamente porque $(P')' = P$, y utilizamos $\implies )$ cambiando $P$ por $P'$.
+    \end{itemize}
+\end{proof}
+
+\ejemplo{
+    Tengamos $3$ puntos alineados en un plano proyectivo, que pasaran a ser $3$ rectas concurrentes en el espacio proyectivo dual:
+    
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            % Dibujo izquierdo: puntos alineados
+            \begin{scope}[shift={(-4,0)}]
+                \draw[thick] (-3,0) -- (3,0);
+                \filldraw[red] (-2,0) circle (2pt) node[anchor=north, black] {$A$};
+                \filldraw[yellow] (0,0) circle (2pt) node[anchor=north, black] {$B$};
+                \filldraw[blue] (2,0) circle (2pt) node[anchor=north, black] {$C$};
+                \node[below] at (0,-0.5) {$\mathbb{P}$ (primal)};
+            \end{scope}
+            
+            % Flecha
+            \draw[->, thick, purple] (-0.5,0) -- (0.5,0);
+            \node[above, purple] at (0,0.3) {dualidad};
+            
+            % Dibujo derecho: rectas concurrentes
+            \begin{scope}[shift={(4,0)}]
+                \draw[thick, red] (-2,-2) -- (2,2) node[anchor=south west, black] {$A^*$};
+                \draw[thick, blue] (-2,2) -- (2,-2) node[anchor=north west, black] {$C^*$};
+                \draw[thick, yellow] (0,-2) -- (0,2) node[anchor=south, black] {$B^*$};
+                \filldraw[black] (0,0) circle (2pt) node[anchor=west, black] {$r^*$};
+                \node[below] at (0,-2.5) {$\mathbb{P}^*$ (dual)};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}
+    Teniendo así la correspondencia:
+    \[
+    r = V(A,B,C) \quad \leftrightarrow \quad r^* = A^* \cap B^* \cap C^*
+    \]
+}
+
+Podemos volver al teorema de desargues, que nos mostraba lo siguiente:\\
+\begin{center}
+    \include{TikZ/desargues_tikz}
+\end{center}
+Lo cual nos deja los puntos:
+\begin{itemize}
+    \item $D = V(B,C) \cap V(B',C')$
+    \item $E = V(A,C) \cap V(A',C')$
+    \item $F = V(A,B) \cap V(A',B')$
+\end{itemize}
+
+Y teniamos que probar:
+\[
+    D, E, F \text{ son colineales} \iff
+    V(A,A') \cap V(B,B') \cap V(C,C') \neq \emptyset
+\]
+
+Y ya habiamos probado la implicación $\impliedby )$. Por dualidad, la implicación $\implies )$ es cierta:
+
+\begin{proof}
+    Dualizamos primero la proposición ya demostrada:
+    \begin{itemize}
+        \item[$P$ )] Si $V(A,A') \cap V(B,B') \cap V(C,C') \neq \emptyset$, entonces $D, E, F$ son colineales.
+        \item[$P'$ )] Como $A,B,C,A',B',C'$ son puntos, entonces $A^* = a, B^* = b, C^* = c, A'^* = a', B'^* = b', C'^* = c'$ son rectas en el espacio proyectivo dual.\\
+        Ahora tenemos que:
+        \begin{itemize}
+            \item $V(A,A')^* = a \cap a'$ es un punto.
+            \item $V(B,B')^* = b \cap b'$ es un punto.
+            \item $V(C,C')^* = c \cap c'$ es un punto.
+        \end{itemize}
+        Ahora podemos ver como transformar $D, E, F$ a sus duales:
+        \begin{itemize}
+            \item Tenemos:
+            \[
+            D^* = 
+            (V(B,C) \cap V(B',C'))^* =
+            V(V(B,C)^*, V(B',C')^*) =
+            V(B^* \cap C^*, B'^* \cap C'^*) =
+            V(b \cap c, b' \cap c')
+            \]
+            \item Analogamente obtenemos:
+            \[
+            E^* = V(a \cap c, a' \cap c')
+            \]
+            \item Y finalmente:
+            \[
+            F^* = V(a \cap b, a' \cap b')
+            \]
+        \end{itemize}
+    \end{itemize}
+\end{proof}
