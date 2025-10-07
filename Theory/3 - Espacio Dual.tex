@@ -287,25 +287,26 @@ Y ya habiamos probado la implicación $\impliedby )$. Por dualidad, la implicaci
         \begin{itemize}
             \item $V(A,A')^* = a \cap a'$ es un punto.
             \item $V(B,B')^* = b \cap b'$ es un punto.
-            \item $V(C,C')^* = c \cap c'$ es un punto
+            \item $V(C,C')^* = c \cap c'$ es un punto.
         \end{itemize}
         Ahora podemos ver como transformar $D, E, F$ a sus duales:
-    \begin{itemize}
-        \item 
-        \[
-        D^* = 
-        (V(B,C) \cap V(B',C'))^* =
-        V(V(B,C)^*, V(B',C')^*) =
-        V(B^* \cap C^*, B'^* \cap C'^*) =
-        V(b \cap c, b' \cap c')
-        \]
-        \item Analogamente obtenemos:
-        \[
-        E^* = V(a \cap c, a' \cap c')
-        \]
-        \item Y finalmente:
-        \[
-        F^* = V(a \cap b, a' \cap b')
-        \]
+        \begin{itemize}
+            \item Tenemos:
+            \[
+            D^* = 
+            (V(B,C) \cap V(B',C'))^* =
+            V(V(B,C)^*, V(B',C')^*) =
+            V(B^* \cap C^*, B'^* \cap C'^*) =
+            V(b \cap c, b' \cap c')
+            \]
+            \item Analogamente obtenemos:
+            \[
+            E^* = V(a \cap c, a' \cap c')
+            \]
+            \item Y finalmente:
+            \[
+            F^* = V(a \cap b, a' \cap b')
+            \]
+        \end{itemize}
     \end{itemize}
 \end{proof}
