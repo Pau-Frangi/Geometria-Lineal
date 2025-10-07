@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1759824209.90845 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1759824216.29682 0
+["pdflatex"] 1759826312.52728 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1759826319.0172 0
   "Appendix/Appendix.tex" 1759475012 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1759474986 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758714164 81424 a723decfc5bddf73a572af9da400adf4 ""
@@ -341,16 +341,18 @@
   "Exercises/Hojas.tex" 1758398901 78 bf3236ab2ac4cc89d0bae09a3a7fc609 ""
   "Preamble/Diagonal Matrix Command.tex" 1757327696 994 86797f6883aa9637224e9e09b84c6f7c ""
   "Preamble/Preamble.tex" 1759475347 13020 c17c06c487a14db12349ff5912487777 ""
+  "Theory/1 - Espacios Proyectivos.tex" 1759658124 30397 23b6563ccf019c8b664f13de8967152e ""
+  "Theory/2 - Aplicaciones proyectivas.tex" 1759307717 20441 badfa3c586aec0504e3d2a3cae44e6fe ""
   "Theory/3 - Espacio Dual.tex" 1759824208 12778 c7705639cb414c61b7bdfea2e75bfb62 ""
-  "Theory/Theory.tex" 1759746936 153 32c42bc4df5871324d6f5cd7dc2918c8 ""
-  "TikZ/desargues_tikz.aux" 1759824214 1453 ae7117eed3beac516c0e2e45f9febc37 "pdflatex"
+  "Theory/Theory.tex" 1759826304 151 264979ead9facfdb09f53e32c228c5f6 ""
+  "TikZ/desargues_tikz.aux" 1759826317 1458 6d9220199ab50f078f07ce0d8d46578f "pdflatex"
   "TikZ/desargues_tikz.tex" 1759307717 5055 d6ea420859568e02ab67d330d89f20d1 ""
   "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" 1759475445 4081 f9b4ad90690db052e64f7899eaf3a9f0 ""
   "images/logo.png" 1757327696 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1759824215 3256 0c0b4ffc5f4eb58c1085b266f36bee9a "pdflatex"
-  "main.out" 1759824215 672 a76a7a9e4f3152e968b53f79e7ab815d "pdflatex"
+  "main.aux" 1759826318 12712 d28f60b264751d4b47ae560344035613 "pdflatex"
+  "main.out" 1759826318 2186 244104f6e77ae3e32336dfdd15b1811a "pdflatex"
   "main.tex" 1759475445 4081 f9b4ad90690db052e64f7899eaf3a9f0 ""
-  "main.toc" 1759824215 623 1278d56bbee90b1771c0285081d3267d "pdflatex"
+  "main.toc" 1759826318 1343 0971b0bc3e4d4c212a8af38885bba96f "pdflatex"
   (generated)
   "TikZ/desargues_tikz.aux"
   "main.aux"
