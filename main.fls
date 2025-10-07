@@ -567,28 +567,27 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT .\Theory\Theory.tex
 INPUT .\Theory\Theory.tex
 INPUT Theory\Theory.tex
-INPUT .\Theory\3 - Espacio Dual.tex
-INPUT .\Theory\3 - Espacio Dual.tex
-INPUT .\Theory\3 - Espacio Dual.tex
-INPUT .\Theory\3 - Espacio Dual.tex
-INPUT Theory\3 - Espacio Dual.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT Theory\1 - Espacios Proyectivos.tex
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
-INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
-INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
-INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
-INPUT .\TikZ\desargues_tikz.tex
-INPUT .\TikZ\desargues_tikz.tex
-OUTPUT TikZ\desargues_tikz.aux
-INPUT .\TikZ\desargues_tikz.tex
-INPUT .\TikZ\desargues_tikz.tex
-INPUT TikZ\desargues_tikz.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT Theory\2 - Aplicaciones proyectivas.tex
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
@@ -596,6 +595,23 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm5.tfm
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha5.tfm
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+OUTPUT TikZ\desargues_tikz.aux
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+INPUT TikZ\desargues_tikz.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT Theory\3 - Espacio Dual.tex
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+OUTPUT TikZ\desargues_tikz.aux
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+INPUT TikZ\desargues_tikz.tex
 INPUT .\Exercises\Hojas.tex
 INPUT .\Exercises\Hojas.tex
 INPUT Exercises\Hojas.tex
@@ -614,6 +630,7 @@ INPUT Appendix\PruebaApendice.tex
 INPUT main.aux
 INPUT .\TikZ\desargues_tikz.aux
 INPUT .\TikZ\desargues_tikz.aux
+INPUT TikZ\desargues_tikz.aux
 INPUT TikZ\desargues_tikz.aux
 INPUT .\main.out
 INPUT .\main.out
