@@ -308,5 +308,102 @@ Y ya habiamos probado la implicación $\impliedby )$. Por dualidad, la implicaci
             F^* = V(a \cap b, a' \cap b')
             \]
         \end{itemize}
+        Y la proposicion $P'$ queda:
+        \[
+            a \cap a', b \cap b', c \cap c' \text{ son colineales} \iff
+            V(b \cap c, b' \cap c') \cap V(a \cap c, a' \cap c') \cap V(a \cap b, a' \cap b') \neq \emptyset
+        \]
+        Esto ultimo tambien es equivalente a que $D^*, E^*, F^*$ son concurrentes.\\
+        Podemos usar la siguiente notación:
+        \[
+            \alpha = b \cap c, \quad \alpha' = b' \cap c', \quad
+            \beta = a \cap c, \quad \beta' = a' \cap c', \quad
+            \gamma = a \cap b, \quad \gamma' = a' \cap b'
+        \]
+        Y nos queda:
+        \[
+            a = V(\beta, \gamma), \quad a' = V(\beta', \gamma'), \quad
+            b = V(\alpha, \gamma), \quad b' = V(\alpha', \gamma'), \quad
+            c = V(\alpha, \beta), \quad c' = V(\alpha', \beta')
+        \]
+        La primera definicion se ve ya que $\beta \neq \gamma \iff a,b,c$ no son concurrentes.\\
+        Ahora reescribiendo $P'$ en funcion de $\alpha, \beta, \gamma$ tenemos: \\
+        $P'$: Dados $2$ ternas de puntos no alineados $\alpha, \beta, \gamma$ y $\alpha', \beta', \gamma'$, en un plano proyectivo, entonces si:
+        \[
+        V(\beta, \gamma) \cap V(\beta', \gamma'), \qquad
+        V(\alpha, \gamma) \cap V(\alpha', \gamma'), \qquad
+        V(\alpha, \beta) \cap V(\alpha', \beta')
+        \]
+        Son colineales, entonces las rectas
+        \[
+        V(\alpha, \alpha'), \qquad
+        V(\beta, \beta'), \qquad
+        V(\gamma, \gamma')
+        \]
+        Son concurrentes.\\
+        Finalmente, como $P$ es cierta, $P'$ tambien lo es, probando asi la implicación $\implies )$ del teorema de Desargues.
     \end{itemize}
 \end{proof}
+
+\subsection{Aplicación proyectiva dual}
+
+Recordemos que dada una aplicación lineal $\hat{f}: V \to V'$, su dual es la aplicación lineal $\hat{f}^*: V'^* \to V^*$ definida por:
+\[
+    \hat{f}^* : V'^* \to V^* \quad / \quad
+    h \mapsto h \circ \hat{f}
+\]
+
+Se puede comprobar rapidamente la linealidad de $\hat{f}^*$ y que:
+\[
+\hat{f}^*(\lambda h' + \mu g') =
+(\lambda h' + \mu g') \circ \hat{f} =
+\lambda (h' \circ \hat{f}) + \mu (g' \circ \hat{f}) =
+\lambda \hat{f}^*(h') + \mu \hat{f}^*(g')
+\]
+
+\begin{definición}[Aplicación Proyectiva Dual]
+    Dada una aplicación proyectiva $f: \mathbb{P} \to \mathbb{P}'$, asociada a la aplicación lineal $\hat{f}: V \to V'$, la \textbf{aplicación proyectiva dual} de $f$ es la aplicación proyectiva $f^*: \mathbb{P}'^* \to \mathbb{P}^*$ asociada a la aplicación lineal dual $\hat{f}^*: V'^* \to V^*$.
+\end{definición}
+
+Dadas $B, B'$ bases de $V, V'$ respectivamente, y sus bases duales $B^*, B'^*$, se tiene que:
+
+\[
+    M_{B'^*, B^*}(\hat{f}^*) = (M_{B, B'}(\hat{f}))^T
+\]
+
+Y pasando a coordenadas proyectivas, con referencias $\mathfrak{R}, \mathfrak{R}'$ asociadas a las bases $B, B'$ respectivamente, y sus referencias duales $\mathfrak{R}^*, \mathfrak{R}'^*$ asociadas a las bases duales $B^*, B'^*$ respectivamente, se tiene que:
+
+\[
+    M_{\mathfrak{R}'^*, \mathfrak{R}^*}(f^*) =
+    (M_{\mathfrak{R}, \mathfrak{R}'}(f))^T
+\]
+
+Entendiendo esta igualdad salvo proporcionalidad.
+
+
+\subsection{Relación entre espacios proyectivos y espacios afines}
+
+\textbf{Objetivo: } Justificar que:
+\begin{itemize}
+    \item Un espacio proyectivo de dimensión $n$ menos un hiperplano proyectivo es un espacio afín de dimensión $n$.
+    \item Un espacio afín de dimensión $n$ se puede completar a un espacio proyectivo de dimensión $n$.
+\end{itemize}
+
+\ejemplo{
+    Tengamos $\mathbb{P}^2_{\mathbb{R}} = \mathbb{P}(\mathbb{R}^3)$.
+    \begin{center}
+        \begin{tikzpicture}[scale=2,tdplot_main_coords]
+            % Ejes
+            \draw[->,thick] (0,0,0) -- (1.2,0,0) node[anchor=north east] {$x_0$};
+            \draw[->,thick] (0,0,0) -- (0,1.2,0) node[anchor=west] {$x_1$};
+            \draw[->,thick] (0,0,0) -- (0,0,1.2) node[anchor=south] {$x_2$};
+            % Origen
+            \filldraw (0,0,0) circle (0.5pt) node[below left] {O};
+        \end{tikzpicture}
+    \end{center}
+    Si tenemos un plano afin $x_0 = 1$ las rectas no contenidas en $x_0 = 0$ cortan a este plano en un único punto.\\
+    Podemos definir la aplicación:\\
+    $\pi \to \text{rectas vectoriales}$\\
+    $A \to r=L[\vec{0A}]$\\
+    $(1, x_1, x_2) \to (1 : x_1 : x_2)$\\
+}
