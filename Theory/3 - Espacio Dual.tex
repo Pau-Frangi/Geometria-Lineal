@@ -394,16 +394,64 @@ Entendiendo esta igualdad salvo proporcionalidad.
     \begin{center}
         \begin{tikzpicture}[scale=2,tdplot_main_coords]
             % Ejes
-            \draw[->,thick] (0,0,0) -- (1.2,0,0) node[anchor=north east] {$x_0$};
-            \draw[->,thick] (0,0,0) -- (0,1.2,0) node[anchor=west] {$x_1$};
+            \draw[->,thick] (0,0,0) -- (1.2,0,0) node[anchor=north east] {$x_1$};
+            \draw[->,thick] (0,0,0) -- (0,1.5,0) node[anchor=west] {$x_0$};
             \draw[->,thick] (0,0,0) -- (0,0,1.2) node[anchor=south] {$x_2$};
             % Origen
-            \filldraw (0,0,0) circle (0.5pt) node[below left] {O};
+            \filldraw (0,0,0) circle (0.5pt) node[above left] {O};
+            % Plano azul x_0=1
+            % Plano azul x_1=1
+            \filldraw[fill=blue!20,draw=blue,opacity=0.5] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            \draw[blue,thick] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            % Dibuja una recta que corta el plano x_0=1
+            \draw[thick,red,->] (0,0,0) -- (0.25,1,0.5); % recta desde el origen
+            % Punto de corte con el plano x_0=1
+            \node[blue] at (-1,1.25,1.25) {$\pi: x_0=1$};
+            \filldraw[red] (0.25,1,0.5) circle (1.2pt) node[above right] {$A=(1:x_1:x_2)$};
+            \node[red] at (0.7,0.7,0.7) {$r$};
         \end{tikzpicture}
     \end{center}
     Si tenemos un plano afin $x_0 = 1$ las rectas no contenidas en $x_0 = 0$ cortan a este plano en un único punto.\\
     Podemos definir la aplicación:\\
-    $\pi \to \text{rectas vectoriales}$\\
-    $A \to r=L[\vec{0A}]$\\
-    $(1, x_1, x_2) \to (1 : x_1 : x_2)$\\
+    \[
+    \pi \to \mathbb{P}^2, \quad (x_1, x_2) \mapsto (1 : x_1 : x_2)
+    \]
+    Todo punto de $\mathbb{P}^2$ está en la imagen de $\pi$ salvo los puntos de $\mathbb{P}(\{ x_0 = 0\})$, que es una recta proyectiva en $\mathbb{P}^2$.
+    Podemos definir entonces la siguiente funcion que va del espacio afin asociado a $\mathbb{R}^2$, al cual denotaremos por $\mathbb{A}^2_{\mathbb{R}}$, al espacio proyectivo $\mathbb{P}^2_{\mathbb{R}}$ menos la recta proyectiva $\mathbb{H} = \mathbb{P}(\{ x_0 = 0\})$, asociada al hiperplano vectorial $\{ x_0 = 0\}$:
+    \[
+    \mathbb{A}^2_{\mathbb{R}} \to \mathbb{U} = \mathbb{P}^2_{\mathbb{R}} \setminus \mathbb{H}, \quad (x_1, x_2) \mapsto (1 : x_1 : x_2)
+    \]
+    Esta funcion es una biyección que "encaja" el plano afín en el plano proyectivo menos una recta proyectiva.\\
+    A $\mathbb{U} = \{ x_0 \neq 0 \}$ se le llama carta afín de $\mathbb{P}^2_{\mathbb{R}}$.\\
+    Ademas, es facil ver que las cartas afines $\{x_0 \neq 0\}$, $\{x_1 \neq 0\}$ y $\{x_2 \neq 0\}$ cubren todo $\mathbb{P}^2_{\mathbb{R}}$.
 }
+
+Veamos ahora la relacion entre rectas proyectivas y rectas afines:\\
+
+Tengamos la recta afin en $\pi$ definida por la ecuación:
+\[
+    \{\underbrace{(1,a_1,a_2)}_{A} + t(0,v_1,v_2) \mid t \in \mathbb{R} \} \subset \pi
+\]
+Que en parametricas es:
+\[
+    \begin{cases}
+        x_0 = 1 \\
+        x_1 = a_1 + t v_1 \\
+        x_2 = a_2 + t v_2
+    \end{cases} \in \mathbb{R}^3, \quad t \in \mathbb{R}
+\]
+Tambien tenemos que el plano que contiene a la recta $r_A$ es el generado por los vectores $\{(1,a_1,a_2), (0,v_1,v_2)\}$, es decir:
+\[
+    \begin{cases}
+        x_0 = s \\
+        x_1 = s a_1 + t v_1 \\
+        x_2 = s a_2 + t v_2
+    \end{cases} \in \mathbb{R}^3, \quad s,t \in \mathbb{R}
+\]
+Determinando aso la recta proyectiva en $\mathbb{P}^2_{\mathbb{R}}$ definida por la ecuacion:
+\[
+    r_{\mathbb{P}} = \{ (s : s a_1 + t v_1 : s a_2 + t v_2) \mid s,t \in \mathbb{R}, (s,t) \neq (0,0) \} \subset \mathbb{P}^2_{\mathbb{R}}
+\]
+Y de hecho, podemos identificar $(s:t) \in \mathbb{P}^1_{\mathbb{R}}$
+
+Ademas $r_{\mathbb{P}}$ contiene a la recta afin $r_A$ de partida y ademas al punto $(0:v_1:v_2)$, que corresponde al vector director de la recta afin $r_A$.\\
