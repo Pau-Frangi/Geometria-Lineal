@@ -1,3 +1,52 @@
+% Ejercicio 1
+\ejercicio{
+
+
+Sea 
+\[
+f : P \setminus Z \to P'
+\]
+una aplicación proyectiva.
+
+\begin{enumerate}
+    \item[(a)] Muestra que 
+    \[
+    \dim f(P \setminus Z) = \dim P - \dim Z - 1.
+    \]
+    
+    \item[(b)] Aplica el apartado anterior a $f|_X$ para probar la fórmula análoga para subespacios proyectivos:
+    \[
+    \dim f(X \setminus Z) = \dim X - \dim X \cap Z - 1.
+    \]
+    
+    \item[(c)] Concluir que 
+    \[
+    \dim f(X \setminus Z) \leq \dim X
+    \]
+    y la igualdad se satisface si y solo si $X \cap Z = \varnothing$, si y solo si $f|_X$ es inyectiva.
+\end{enumerate}
+
+}{
+
+\begin{enumerate}
+    \item [(a)] $\mathbb{P} = \mathbb{P}(V), \quad \exists \hat{f} : V \to V' \text{ lineal tal que } f(\mathbb{P} \setminus Z) = \mathbb{P}(Im(\hat{f}))$ y $Z = \mathbb{P}(\ker(\hat{f}))$
+    \[
+        V / \ker(\hat{f}) \cong Im(\hat{f}) \implies \dim V = \dim \ker(\hat{f}) + \dim Im(\hat{f})
+    \]
+    \[
+        \dim \mathbb{P} = \dim V - 1 = \underbrace{\dim \ker(\hat{f})}_{\dim(Z)+1} + \underbrace{\dim Im(\hat{f}) - 1}_{\dim f(\mathbb{P} \setminus Z)}
+    \]
+    \item [(b)] $X \subset \mathbb{P}$ subespacio proyectivo, $Z(f|_X) = Z \cap X$
+    \[
+        \dim(f(X \setminus Z)) = \dim X - \dim(X \cap Z) - 1 = \dim X - [\dim(X \cap Z) + 1] \implies \dim(f(X \setminus Z)) \leq \dim(X) \text{ y } \dim(f(X \setminus Z)) = \dim(X) => \dim(X) \iff \dim(X \cap Z) = \emptyset \iff f |_X \text{ inyectiva}
+    \] 
+    Aplicando el apartado (a) a $f|_X : X \setminus Z \to P'$
+
+}
+
+
+% Ejercicio 2
+\ejercicio{}{}
 
 % Ejercicio 3
 \ejercicio{
@@ -131,5 +180,133 @@ Halla la matriz y escribe las ecuaciones de $h$ respecto de las referencias
         (0,1,1) = \lambda'(2,0,0) + \beta'(-1,-1,-1)
     \]
     como en ambas referencias tiene coordenadas $(1:2)$ y el cambio de la referencia $\mathfrak{R}$ a $\mathfrak{R}'$ es la identidad, el punto es fijo y por tanto $h$ es una perspectividad.
+
+}
+
+% Ejercicio 7
+\ejercicio{}{}
+
+
+% Ejercicio 8
+\ejercicio{
+
+
+Halla (si es que existe) una homografía $f$ del plano proyectivo $\mathbb{P}^2_{\mathbb{R}}$ que:
+
+\begin{enumerate}
+    \item transforme los puntos 
+    \[
+    A_0 = (1 : 0 : 0), \quad 
+    A_1 = (1 : 1 : 0), \quad 
+    A_2 = (0 : 1 : 1)
+    \]
+    en 
+    \[
+    f(A_0) = (1 : 2 : 0), \quad 
+    f(A_1) = (1 : 1 : -1), \quad 
+    f(A_2) = (-1 : 1 : 1);
+    \]
+    
+    \item transforme la recta 
+    \[
+    r : x_0 + x_1 + x_2 = 0
+    \]
+    en 
+    \[
+    f(r) : x_0 - x_2 = 0.
+    \]
+\end{enumerate}
+
+\noindent\textbf{Pista:} Encuentra un cuarto punto $A_3$ del que se puede conocer indirectamente su imagen por $f$, 
+\[
+A_3 = r \cap (A_0 + A_1).
+\]
+
+}{
+
+    \[
+        \mathfrak{R} = \{ A_0, A_1, A_2; Q \}, \quad \text{ referencia proyectiva en } \mathbb{P}^2_{\mathbb{R}}
+    \]
+    \[
+        Q = V(P_{01},A_2) \cap V(P_{12},A_0) 
+    \]
+    Si $f$ existe
+    \[
+        f(Q) = V(f(P_{01}),f(A_2)) \cap V(f(P_{12}),f(A_0)) 
+    \]
+    \[
+        P_{01} = r \cap V(A_0,A_1) = \{x_0 + x_1 + x_2 = 0\} \cap \{x_2 = 0\} = (1:-1:0)
+    \]
+    \[
+        P_{12} = r \cap V(A_1,A_2) = \{x_0 + x_1 + x_2 = 0\} \cap \{x_0 - x_1 + x_2 = 0\} = \begin{cases}
+            x_0 + x_2 = 0 \\
+            x_1 = 0
+        \end{cases} = (1:0:-1)
+    \]
+    \[ 
+        V(P_{01},A_2) : x_0 + x_1 - x_2 = 0, \quad V(P_{12},A_0) : x_1 = 0  \implies Q = (1:0:1)
+    \]
+    \[
+        \mathfrak{R} = \{ A_0, A_1, A_2; Q \} \quad \text{ referencia proyectiva en } \mathbb{P}^2_{\mathbb{R}} \text{ con base asociada}
+    \]
+    \[
+        \mathcal{B} = \{(2,0,0),(-1,-1,0),(0,1,1)\}
+    \]
+    \[
+        f(A_0) = (1:2:0), \quad f(A_1) = (1:1:-1), \quad f(A_2) = (-1:1:1)
+    \]
+    \[
+        f(r) = \{x_0 - x_2 = 0\} \quad f(Q) = V(f(P_{01}),f(A_2)) \cap V(f(P_{12}),f(A_0))
+    \]
+    \[
+        f(P_{01}) = f(r \cap V(A_0,A_1)) = f(r) \cap V(f(A_0),f(A_1)) 
+    \] 
+    \[
+    = \begin{cases}
+            x_0 - x_2 = 0 \\
+            2x_0 - x_1 + x_2 = 0
+        \end{cases} = \begin{cases}
+            x_0 = x_2 \\
+            x_1 = 3x_0
+        \end{cases} = (1:3:1)
+    \]
+    \[
+        f(P_{12}) = f(r \cap V(A_1,A_2)) = f(r) \cap V(f(A_1),f(A_2))
+    \]
+    \[
+        = \begin{cases}
+            x_0 - x_2 = 0 \\
+            x_0 + x_2 = 0
+        \end{cases} = (0:1:0)            
+    \]
+    \[
+        f(Q) = V(f(P_{01}),f(A_2)) \cap V(f(P_{12}),\underbrace{f(A_0)}_{x_2=0}) = (1:1:0)
+    \]
+    \[
+        \mathfrak{R}' = \{ f(A_0), f(A_1), f(A_2); f(Q) \} \quad \text{ referencia proyectiva en } \mathbb{P}^2_{\mathbb{R}} \text{ con base asociada}
+    \]
+    \[
+        \mathcal{B}' = \{(2,4,0),(-1,-1,1),(1,-1,-1)\}
+    \]
+    \[
+        M_{\mathfrak{R}_c,\mathfrak{R}_c}(f) = M_{\mathfrak{R}',\mathfrak{R}_c}M_{\mathfrak{R},\mathfrak{R}_c}^{-1} 
+    \]
+    \[
+        = \begin{pmatrix}
+        2 & -1 & 1 \\
+        4 & -1 & -1 \\
+        0 & 1 & -1
+        \end{pmatrix} \begin{pmatrix}
+        2 & -1 & 0 \\
+        0 & -1 & 1 \\
+        0 & 0 & 1
+        \end{pmatrix}^{-1} = \begin{pmatrix}
+            1 & 0 & 1 \\
+            2 & -1 & 0 \\
+            0 & -1 & 1
+        \end{pmatrix}
+    \]
+
+
 
 }
