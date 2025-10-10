@@ -7,7 +7,7 @@
         f : \mathbb{P} \setminus Z \to \mathbb{P}' 
     \]
     \[
-        A = [\vec{u}] \to f([\vec{u}]) = [\hat{f}(\vec{u})]
+        A = [\vec{u}] \mapsto f([\vec{u}]) = [\hat{f}(\vec{u})]
     \]
     Donde $Z = Z(f) = \mathbb{P}(\ker \hat{f})$ es el \textbf{centro de $f$}.\\
     A veces se omite el centro en la notación y se escribe simplemente $f:\mathbb{P} \dashrightarrow \mathbb{P}'$.
@@ -18,16 +18,21 @@
 \end{observación}
 
 \begin{proposición}[Relación entre $f$ y $\hat{f}$]
-    Primero supongamos $\hat{f} \neq 0 \iff \mathbb{P} \neq Z$, entonces:
-    \begin{itemize}
-        \item[1)] $f$ es inyectiva $\iff \hat{f}$ es inyectiva $\iff Z = \emptyset$.
-        \item[2)] $f$ es sobreyectiva $\iff \hat{f}$ es sobreyectiva.
-        \item[3)] Dada otra aplicación proyectiva $g:\mathbb{P} \dashrightarrow \mathbb{P}'$:\\
-        $f = g \iff \exists \lambda \in \mathbb{K}^* \setminus \{0\} : \hat{f} = \lambda \hat{g}$.
-    \end{itemize}
+    Sea $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ una aplicación proyectiva con representación lineal $\hat{f}$. Entonces se cumplen las siguientes afirmaciones:
+    
+    \begin{enumerate}
+        \item $f$ es inyectiva $\iff \hat{f}$ es inyectiva $\iff Z = \emptyset$.
+        \item $f$ es sobreyectiva $\iff \hat{f}$ es sobreyectiva.
+        \item Sea $g:\mathbb{P} \dashrightarrow \mathbb{P}'$ otra aplicación proyectiva. Entonces:
+        \[
+            f = g \iff \exists \lambda \in \mathbb{K}^* : \hat{f} = \lambda \hat{g}.
+        \]
+    \end{enumerate}
 \end{proposición}
+    
 
 \begin{proof}
+    \leavevmode
     \begin{itemize}
         \item[1)] Veamos $f([\vec{u}]) = [\hat{f}(\vec{u})]$:
         \begin{itemize}
@@ -112,7 +117,7 @@ Dada $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ aplicación proyectiva:
     \item Si $Y$ es un subespacio proyectivo de $\mathbb{P}'$ entonces $f^{-1}(Y) \cup Z$ es un subespacio proyectivo de $\mathbb{P}$.\\
     Si $Y = \mathbb{P}(W_y)$, entonces si $A = [\vec{u}] \in \mathbb{P}$, se tiene que:
     \[
-        [\hat{f}(\vec{u})] \in W_y \iff \begin{cases}
+        [\hat{f}(\vec{u})] \in Y \iff \begin{cases}
             \vec{u} \in \ker \hat{f} \\
             \vec{u} \in \hat{f}^{-1}(W_y)
         \end{cases} \iff \vec{u} \in \hat{f}^{-1}(W_y) 
