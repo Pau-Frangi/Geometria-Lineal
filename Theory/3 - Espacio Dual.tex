@@ -380,6 +380,83 @@ Y pasando a coordenadas proyectivas, con referencias $\mathfrak{R}, \mathfrak{R}
 
 Entendiendo esta igualdad salvo proporcionalidad.
 
+\subsection{Recordatorio del espacio Afín}
+
+\begin{definición}[Espacio Afín]
+    Dado $\mathbb{A} \neq \emptyset$ conjunto, se le denomina \textbf{espacio afín} si tiene asociado:
+    \begin{itemize}
+        \item Un espacio vectorial $\vec{\mathbb{A}}$, espacio de direcciones.
+        \item Una aplicación $\varphi: \mathbb{A} \times \mathbb{A} \to \vec{\mathbb{A}}$, definida por $\varphi(A, B) = \overrightarrow{AB}$, que cumple:
+        \begin{itemize}
+            \item $\forall A \in \mathbb{A}$, la aplicación $\varphi_A = (A, \cdot): \mathbb{A} \to \vec{\mathbb{A}}$ definida por $B \mapsto \overrightarrow{AB}$ es biyectiva.
+            \item $\forall A, B, C \in \mathbb{A}$, se cumple que $\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}$.
+        \end{itemize}
+    \end{itemize}
+\end{definición}
+
+\begin{corolario}
+    Podemos deducir rapidamente que:
+    \begin{itemize}
+        \item $\forall A \in \mathbb{A}$, $\overrightarrow{AA} = \vec{0}$.
+        \item $\forall A, B \in \mathbb{A}$, $\overrightarrow{AB} = -\overrightarrow{BA}$.
+    \end{itemize}
+\end{corolario}
+
+Heuristicamente en un espacio afin se pueden "restar" $2$ puntos:
+\[
+B - A = \overrightarrow{AB}
+\]
+
+Y tambien se pueden "sumar" un punto y un vector:
+\[
+A + \overrightarrow{AB} = B
+\]
+
+\ejemplo{
+    Todo espacio vectorial $V$ se puede ver como un espacio afín con $\vec{V} = V$ y $\varphi(u,v) : V \times V \to \vec{V} = V$ definida por $\varphi(u,v) = v - u$.
+}
+
+\begin{definición}[Referencia afín]
+    Una \textbf{referencia afín} $\mathfrak{R} = \{O ; \quad P_1, P_2, \ldots, P_n\}$ son $n+1$ puntos de $\mathbb{A}$ tales que los vectores $\{\overrightarrow{OP_1}, \overrightarrow{OP_2}, \ldots, \overrightarrow{OP_n}\}$ son base de $\vec{\mathbb{A}}$.\\
+\end{definición}
+
+\textbf{Nota: } $\dim(\mathbb{A}) = \dim(\vec{\mathbb{A}}) = n$.
+
+\begin{definición}[Coordenadas afines]
+    Sea $A \in \mathbb{A}$, sus cordenadas afines respecto a la referencia afín $\mathfrak{R}$ son:
+    \[
+        A = (X_1, X_2, \ldots, X_n)_{\mathfrak{R}} \iff
+        \overrightarrow{OA} = X_1 \overrightarrow{OP_1} + X_2 \overrightarrow{OP_2} + \ldots + X_n \overrightarrow{OP_n}
+    \]
+\end{definición}
+
+\begin{proposición}[Cambio de referencia afín]
+    Sean $\mathfrak{R} = \{O ; P_1, P_2, \ldots, P_n\}$ y $\mathfrak{R}' = \{O' ; P_1', P_2', \ldots, P_n'\}$ dos referencias afines de $\mathbb{A}$. Entonces:
+    \[
+        \begin{matrix}
+            A = (X_1, X_2, \ldots, X_n)_{\mathfrak{R}} \\
+            A = (X_1', X_2', \ldots, X_n')_{\mathfrak{R}'}
+        \end{matrix} \implies
+        \begin{pmatrix}
+            1 \\ X_1' \\ X_2' \\ \vdots \\ X_n'
+        \end{pmatrix} =
+        \begin{pmatrix}
+            1 & 0 & 0 & \cdots & 0 \\
+            q_1 & & & & \\
+            q_2 & & M_{B, B'} & & \\
+            \vdots & & & & \\
+            q_n & & & &
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 \\ X_1 \\ X_2 \\ \vdots \\ X_n
+        \end{pmatrix}
+    \]
+    Siendo $\underbrace{O}_{\text{origen de } \mathfrak{R}}= (q_1, q_2, \ldots, q_n)_{\mathfrak{R}'}$.
+\end{proposición}
+
+\begin{definición}[Subespacio afín]
+    Los subespacios afines de $\mathbb{A}$ son los conjuntos de la forma $ \{ A + \vec{v} \mid \vec{v} \in \vec{B} \}$, siendo $A \in \mathbb{A}$ y $\vec{B} \subset \vec{\mathbb{A}}$ un subespacio vectorial.
+\end{definición}
 
 \subsection{Relación entre espacios proyectivos y espacios afines}
 
@@ -456,52 +533,69 @@ Y de hecho, podemos identificar $(s:t) \in \mathbb{P}^1_{\mathbb{R}}$
 
 Ademas $r_{\mathbb{P}}$ contiene a la recta afin $r_A$ de partida y ademas al punto $(0:v_1:v_2)$, que corresponde al vector director de la recta afin $r_A$.\\
 
-\subsection{Recordatorio del espacio Afín}
+Ahora podemos ver la $\textbf{complección de un espacio afín a un espacio proyectivo}$:
 
-\begin{definición}[Espacio Afín]
-    Dado $\mathbb{A} \neq \emptyset$ conjunto, se le denomina \textbf{espacio afín} si tiene asociado:
-    \begin{itemize}
-        \item Un espacio vectorial $\vec{\mathbb{A}}$, espacio de direcciones.
-        \item Una aplicación $\varphi: \mathbb{A} \times \mathbb{A} \to \vec{\mathbb{A}}$, definida por $\varphi(A, B) = \overrightarrow{AB}$, que cumple:
-        \begin{itemize}
-            \item \forall $A \in \mathbb{A}$, la aplicación $\varphi_A = (A, \cdot): \mathbb{A} \to \vec{\mathbb{A}}$ definida por $B \mapsto \overrightarrow{AB}$ es biyectiva.
-            \item \forall $A, B, C \in \mathbb{A}$, se cumple que $\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}$.
-        \end{itemize}
-    \end{itemize}
-\end{definición}
-
-\begin{corolario}
-    Podemos deducir rapidamente que:
-    \begin{itemize}
-        \item \forall $A \in \mathbb{A}$, $\overrightarrow{AA} = \vec{0}$.
-        \item \forall $A, B \in \mathbb{A}$, $\overrightarrow{AB} = -\overrightarrow{BA}$.
-    \end{itemize}
-\end{corolario}
-
-Heuristicamente en un espacio afin se pueden "restar" $2$ puntos:
-\[
-B - A = \overrightarrow{AB}
-\]
-
-Y tambien se pueden "sumar" un punto y un vector:
-\[
-A + \overrightarrow{AB} = B
-\]
-
-\ejemplo{
-    Todo espacio vectorial $V$ se puede ver como un espacio afín con $\vec{V} = V$ y $\varphi(u,v) : V \times V \to \vec{V} = V$ definida por $\varphi(u,v) = v - u$.
-}
-
-\begin{definición}[Referencia afín]
-    Una \textbf{referencia afín} $\mathfrak{R} = \{O ; \quad P_1, P_2, \ldots, P_n\}$ son $n+1$ puntos de $\mathbb{A}$ tales que los vectores $\{\overrightarrow{OP_1}, \overrightarrow{OP_2}, \ldots, \overrightarrow{OP_n}\}$ son base de $\vec{\mathbb{A}}$.\\
-\end{definición}
-
-\textbf{Nota: } $\dim(\mathbb{A}) = \dim(\vec{\mathbb{A}}) = n$.
-
-\begin{definición}[Coordenadas afines]
-    Sea $A \in \mathbb{A}$, sus cordenadas afines respecto a la referencia afín $\mathfrak{R}$ son:
+\begin{proposición}
+    Sea $\mathbb{A}$ un espacio afín, y sea $\vec{\mathbb{A}}$ su espacio vectorial. Consideremos entonces el espacio vectorial $\mathbb{K} \times \vec{\mathbb{A}}$:
+    \begin{center}
+        \begin{tikzpicture}[scale=2,tdplot_main_coords]
+            % Ejes
+            \draw[->,thick] (0,0,0) -- (1.2,0,0) node[anchor=north east] {};
+            \draw[->,thick] (0,0,0) -- (0,1.5,0) node[anchor=west] {$\mathbb{K}$};
+            \draw[->,thick] (0,0,0) -- (0,0,1.2) node[anchor=south] {$\vec{\mathbb{A}}$};
+            % Plano azul x_0=1
+            % Plano azul x_1=1
+            \filldraw[fill=blue!20,draw=blue,opacity=0.5] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            \draw[blue,thick] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            % Punto de corte con el plano x_0=1
+            \node[blue] at (-1,1.25,1.25) {$\mathbb{A} \equiv \{x_0 = 1\} \in \mathbb{K} \times \vec{\mathbb{A}}$};
+            % Punto origen de A
+            \filldraw (0,1,0) circle (0.5pt) node[above left] {O};
+            % Vector e0
+            \draw[->,thick,red] (0,0,0) -- (0,1,0);
+            \node[anchor=east, red] at (0,0.5,-0.15) {$\vec{e}_0 = (1,0,0)$};
+            % Plano verde x_0=0
+            \filldraw[fill=green!20,draw=green,opacity=0.4] (-1,0,-0.25) -- (1,0,-0.25) -- (1,0,1) -- (-1,0,1) -- cycle;
+            \draw[green,thick] (-1,0,-0.25) -- (1,0,-0.25) -- (1,0,1) -- (-1,0,1) -- cycle;
+            \node[green!60!black] at (1.2,0,1.1) {$\vec{0} \times \vec{\mathbb{A}}$};
+            % Dibuja una recta que corta el plano x_0=1
+            \draw[thick,red,->] (0,0,0) -- (0.25,1,0.5); % recta desde el origen
+            % Punto de corte con el plano x_0=1
+            \filldraw[red] (0.25,1,0.5) circle (1.2pt) node[above right] {$A$};
+            \node[red] at (0.7,0.7,0.7) {$r$};
+        \end{tikzpicture}
+    \end{center}
+    Teniendo asi el cambio $\mathbb{A} \to \{1\} \times \vec{\mathbb{A}}$ definido por $(X_1, X_2, \ldots, X_n)_{\mathfrak{R}} \mapsto (1, X_1, X_2, \ldots, X_n)_{\overline{B}}$ de $\mathbb{K} \times \vec{\mathbb{A}}$ (como espacio afin). Siendo $\mathfrak{R} = \{O ; \ldots \}$ una referencia afín de $\mathbb{A}$ y con base asociada $B$ de $\vec{\mathbb{A}}$, y $\overline{B} = \{e_0,B\}$ la base de $\mathbb{K} \times \vec{\mathbb{A}}$ con $e_0 = (1,0,\ldots,0)$.\\
+    Ahora podemos proyectivizar:
     \[
-        A = (X_1, X_2, \ldots, X_n)_{\mathfrak{R}} \iff
-        \overrightarrow{OA} = X_1 \overrightarrow{OP_1} + X_2 \overrightarrow{OP_2} + \ldots + X_n \overrightarrow{OP_n}
+    \{1\} \times \vec{\mathbb{A}} \to 
+    \mathbb{P}(\mathbb{K} \times \vec{\mathbb{A}}) = 
+    \widetilde{A}
     \]
-\end{definición}
+    \[
+    (1, X_1, X_2 \ldots X_n)_{\overline{B}} \mapsto 
+    (1 : X_1 : X_2 : \ldots : X_n)_{R_{\text{proy}}}
+    \]
+    Así, obtenemos $\widetilde{A}$ completando el proyectivo de $\mathbb{A}$, y obtenemos $R_{\text{proy}}$ la referencia proyectiva asociada a la base $\overline{B}$.\\
+    En resumen, tenemos una biyeccion:
+    \[
+    \mathbb{A} \to \widetilde{A} \setminus \mathbb{P}(\vec{\mathbb{A}})
+    \]
+    \[
+    (X_1, X_2, \ldots, X_n)_{\mathfrak{R}} \mapsto 
+    (1 : X_1 : X_2 : \ldots : X_n)_{R_{\text{proy}}}
+    \]
+    El hiperplano proyectivo $\mathbb{P}(\vec{\mathbb{A}}) = \mathbb{A}_{\infty}$ se conoce como el hiperplano de puntos de infinito (en cordenadas aqui es $\{x_0 = 0\}$).\\
+    Así, se puede escribir:
+    \[
+    \underbrace{\widetilde{\mathbb{A}}}_{\text{espacio proyectivo de dim } n} =
+    \underbrace{\mathbb{A}}_{\text{espacio afín de dim } n} \cup
+    \underbrace{\mathbb{A}_{\infty}}_{\text{hiperplano de puntos en el infinito de dim } n-1}
+    \]
+\end{proposición}
+
+\begin{proposición}[Construccion inversa]
+    Dado un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$ y un hiperplano proyectivo $\mathbb{H} = \mathbb{P}(\hat{H})$, entonces $\mathbb{P} \setminus \mathbb{H}$ tiene estructura de espacio afín de dimensión $\dim(\mathbb{P})$.
+\end{proposición}
+
+
