@@ -455,3 +455,53 @@ Determinando aso la recta proyectiva en $\mathbb{P}^2_{\mathbb{R}}$ definida por
 Y de hecho, podemos identificar $(s:t) \in \mathbb{P}^1_{\mathbb{R}}$
 
 Ademas $r_{\mathbb{P}}$ contiene a la recta afin $r_A$ de partida y ademas al punto $(0:v_1:v_2)$, que corresponde al vector director de la recta afin $r_A$.\\
+
+\subsection{Recordatorio del espacio Afín}
+
+\begin{definición}[Espacio Afín]
+    Dado $\mathbb{A} \neq \emptyset$ conjunto, se le denomina \textbf{espacio afín} si tiene asociado:
+    \begin{itemize}
+        \item Un espacio vectorial $\vec{\mathbb{A}}$, espacio de direcciones.
+        \item Una aplicación $\varphi: \mathbb{A} \times \mathbb{A} \to \vec{\mathbb{A}}$, definida por $\varphi(A, B) = \overrightarrow{AB}$, que cumple:
+        \begin{itemize}
+            \item \forall $A \in \mathbb{A}$, la aplicación $\varphi_A = (A, \cdot): \mathbb{A} \to \vec{\mathbb{A}}$ definida por $B \mapsto \overrightarrow{AB}$ es biyectiva.
+            \item \forall $A, B, C \in \mathbb{A}$, se cumple que $\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}$.
+        \end{itemize}
+    \end{itemize}
+\end{definición}
+
+\begin{corolario}
+    Podemos deducir rapidamente que:
+    \begin{itemize}
+        \item \forall $A \in \mathbb{A}$, $\overrightarrow{AA} = \vec{0}$.
+        \item \forall $A, B \in \mathbb{A}$, $\overrightarrow{AB} = -\overrightarrow{BA}$.
+    \end{itemize}
+\end{corolario}
+
+Heuristicamente en un espacio afin se pueden "restar" $2$ puntos:
+\[
+B - A = \overrightarrow{AB}
+\]
+
+Y tambien se pueden "sumar" un punto y un vector:
+\[
+A + \overrightarrow{AB} = B
+\]
+
+\ejemplo{
+    Todo espacio vectorial $V$ se puede ver como un espacio afín con $\vec{V} = V$ y $\varphi(u,v) : V \times V \to \vec{V} = V$ definida por $\varphi(u,v) = v - u$.
+}
+
+\begin{definición}[Referencia afín]
+    Una \textbf{referencia afín} $\mathfrak{R} = \{O ; \quad P_1, P_2, \ldots, P_n\}$ son $n+1$ puntos de $\mathbb{A}$ tales que los vectores $\{\overrightarrow{OP_1}, \overrightarrow{OP_2}, \ldots, \overrightarrow{OP_n}\}$ son base de $\vec{\mathbb{A}}$.\\
+\end{definición}
+
+\textbf{Nota: } $\dim(\mathbb{A}) = \dim(\vec{\mathbb{A}}) = n$.
+
+\begin{definición}[Coordenadas afines]
+    Sea $A \in \mathbb{A}$, sus cordenadas afines respecto a la referencia afín $\mathfrak{R}$ son:
+    \[
+        A = (X_1, X_2, \ldots, X_n)_{\mathfrak{R}} \iff
+        \overrightarrow{OA} = X_1 \overrightarrow{OP_1} + X_2 \overrightarrow{OP_2} + \ldots + X_n \overrightarrow{OP_n}
+    \]
+\end{definición}
