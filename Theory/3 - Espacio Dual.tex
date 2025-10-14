@@ -595,7 +595,87 @@ Ahora podemos ver la $\textbf{complección de un espacio afín a un espacio proy
 \end{proposición}
 
 \begin{proposición}[Construccion inversa]
-    Dado un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$ y un hiperplano proyectivo $\mathbb{H} = \mathbb{P}(\hat{H})$, entonces $\mathbb{P} \setminus \mathbb{H}$ tiene estructura de espacio afín de dimensión $\dim(\mathbb{P})$.
+    Dado un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$ y un hiperplano proyectivo $\mathbb{H} = \mathbb{P}(\hat{H})$, entonces $\mathbb{P} \setminus \mathbb{H}$ tiene estructura de espacio afín de dimensión $\dim(\mathbb{P})$.\\
+        Tomamos en $\mathbb{P}$ una referencia proyectiva adaptada a $\mathbb{H}$:
+        \[
+        \mathfrak{R}_{\text{proy}} = \{ \underbrace{P_0}_{\notin \mathbb{H}} = [\vec{u_0}], \underbrace{\ldots}_{\text{Puntos de } \mathbb{H}}; * \}
+        \]
+        Que tiene por base asociada:
+        \[
+        B' = \{\vec{u_0}, \underbrace{B}_{\text{base de } \hat{H}} \}
+        \]
+        En cordenadas respecto de la referencia adaptada, tenemos que:
+        \[
+        \mathbb{H} : x_0 = 0 \leftrightarrow \hat{H} : X_0 = 0
+        \]
+        Y la carta afín $\mathbb{P} \setminus \mathbb{H}$ se ecribe $\{ x_0 \neq 0 \}$, y la biyección es:
+        \[
+        \mathbb{P} \setminus \mathbb{H} \to \vec{u_0} + \hat{H}
+        \]
+        \[
+        [\vec{v}] \mapsto [\vec{v}] \cap (\vec{u_0} + \hat{H})
+        \]
+        \[
+        (x_0 : x_1 : \ldots : x_n)_{\mathfrak{R}_{\text{proy}}} \mapsto
+        (X_1 = \frac{x_1}{x_0}, X_2 = \frac{x_2}{x_0}, \ldots, X_n = \frac{x_n}{x_0})_{\mathfrak{R}_{\text{afín}}}
+        \]
+        Siendo este ultimo un hiperplano afín de $V$, y siendo $\mathfrak{R}_{\text{afín}} = \{ O = \vec{u_0} ; P_1 = \vec{u_1}, P_2 = \vec{u_2}, \ldots, P_n = \vec{u_n} \}$ la referencia afín con base asociada $B = \{\vec{u_1}, \vec{u_2}, \ldots, \vec{u_n}\}$ de $\hat{H}$.
 \end{proposición}
 
+Todo esto nos deja la siguiente correspondencia entre subespacios proyectivos y afines:
+\[
+\text{Afín} \leftrightarrow \text{Vectorial} \leftrightarrow \text{Proyectivo}
+\]
+\[
+S = A + \vec{S} \rightarrow 
+\hat{S} = t \vec{0A} + \vec{S}, t \in \mathbb{K} \rightarrow
+\mathbb{P}(\hat{S}) = S \cup \underbrace{\mathbb{P}(\vec{S})}_{S_{\infty}} = \widetilde{S}
+\]
+\[
+S=\widetilde{S} \setminus H = \widetilde{S} \cap (\mathbb{P} \setminus H) 
+\leftarrow \qquad \leftarrow 
+\widetilde{S}
+\]
+Siendo $\rightarrow$ la compleción, y $\leftarrow$ la restricción.\\
+Obteniendo así $\widetilde{S}$, el subespacio completado con los puntos de $\infty$ de $S$.
+Ademas $\widetilde{S} \cap (\mathbb{P} \setminus H)$ es el subespacio afín (si la interseccion es no vacia), y al completar $S=\widetilde{S} \setminus H$ recuperamos el $\widetilde{S}$.\\
 
+Ahora veamos como pasar ecuaciones y cordenadas afines a proyectivas:
+
+\[
+c_0 + c_1 X_1 + \ldots + c_n X_n = 0 
+\underbrace{\longrightarrow}_{\text{Homogenizacion}}
+c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0
+\]
+\[
+X_1 = \frac{x_1}{x_0}, X_2 = \frac{x_2}{x_0}, \ldots, X_n = \frac{x_n}{x_0}
+\]
+\[
+c_0 + c_1 X_1 + \ldots + c_n X_n = 0 
+\underbrace{\longleftarrow}_{\text{Deshomogenizacion}}
+c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0
+\]
+
+Tiene sentido homogenizar y deshomogenizar, ya que cualquier ecuacion polinomica: $1 + x_1 + x_2^2 = 0 \leftrightarrow x_0^2 + x_0 x_1 + x_2^2 = 0$ define el mismo conjunto de ceros en $\mathbb{P}^2$, salvo el punto $(0:0:1)$ que no pertenece a la carta afín.\\
+
+A partir de ahora, a veces no utilizaremos notacion distinta para coordenadas afines y proyectivas.
+
+\begin{observación}[Paralelismo]
+    Si $S,T \subset \mathbb{A}$ son subespacios afines, entonces son paralelis si:
+    \begin{itemize}
+        \item $S \cap T = \emptyset$
+        \item $\vec{S} \subset \vec{T}$ o $\vec{S} \supset \vec{T}$
+    \end{itemize}
+    Al completar, tenemos que $\widetilde{S}, \widetilde{T} \subset \widetilde{\mathbb{A}}$ son subespacios proyectivos del completado proyectivo $\widetilde{\mathbb{A}}$ que cumplen:
+    \[
+    \widetilde{S} = S \cup S_{\infty} = S \cup \mathbb{P}(\vec{S}), \qquad
+    \widetilde{T} = T \cup T_{\infty} = T \cup \mathbb{P}(\vec{T}),
+    \]
+    Se tiene que $\widetilde{S} \cap \widetilde{T} = S_{\infty} \cap T_{\infty} \subset \mathbb{A}_{\infty}$ siendo este el hiperplano de puntos en el infinito (siendo tambien $S$ y $T$ paralelos).\\
+    En conclusion:
+    \[
+    S, T \text{paralelos} \iff
+    S_{\infty} \subset T_{\infty} \text{ o } S_{\infty} \supset T_{\infty}  
+    \]
+    En particular, dos rectas afines son paralelas si y solo si sus completadas se cortan en un punto del hiperplano de puntos en el infinito.
+\end{observación}

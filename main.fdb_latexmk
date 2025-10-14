@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1760354728.95559 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1760354733.00476 0
+["pdflatex"] 1760437482.0587 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1760437488.59276 0
   "Appendix/Appendix.tex" 1759475012 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1759474986 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758714164 81424 a723decfc5bddf73a572af9da400adf4 ""
@@ -357,16 +357,16 @@
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Preamble/Diagonal Matrix Command.tex" 1757327696 994 86797f6883aa9637224e9e09b84c6f7c ""
   "Preamble/Preamble.tex" 1759832818 13269 f21f4beef0403743a04b64b74df20194 ""
-  "Theory/3 - Espacio Dual.tex" 1760354728 27419 1d7bc5490c79624a6a0ff2aa0ebf8583 ""
+  "Theory/3 - Espacio Dual.tex" 1760437474 31546 a407c2961ff7ef9a69f9a2eb450ecc12 ""
   "Theory/Theory.tex" 1760351949 153 32c42bc4df5871324d6f5cd7dc2918c8 ""
-  "TikZ/desargues_tikz.aux" 1760354732 1453 ae7117eed3beac516c0e2e45f9febc37 "pdflatex"
+  "TikZ/desargues_tikz.aux" 1760437487 1453 ae7117eed3beac516c0e2e45f9febc37 "pdflatex"
   "TikZ/desargues_tikz.tex" 1759307717 5055 d6ea420859568e02ab67d330d89f20d1 ""
   "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" 1760352180 4082 08e63e979ead98949ff67a783c93b345 ""
   "images/logo.png" 1757327696 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1760354732 5933 73f203a1b9daa4e8296a59bc7bc51698 "pdflatex"
-  "main.out" 1760354732 1223 e13a575216fee0dff14e4491fe7b1b20 "pdflatex"
+  "main.aux" 1760437487 6294 e51bcf24c73750862acefcc706ff7bc6 "pdflatex"
+  "main.out" 1760437487 1223 e13a575216fee0dff14e4491fe7b1b20 "pdflatex"
   "main.tex" 1760352180 4082 08e63e979ead98949ff67a783c93b345 ""
-  "main.toc" 1760354732 831 20c143f5ff3100bfc255004adb637b41 "pdflatex"
+  "main.toc" 1760437487 831 ea70022e0ec37e016cc41457b50f9427 "pdflatex"
   (generated)
   "TikZ/desargues_tikz.aux"
   "main.aux"
