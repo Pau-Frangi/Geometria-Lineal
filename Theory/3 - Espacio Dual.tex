@@ -533,9 +533,8 @@ Y de hecho, podemos identificar $(s:t) \in \mathbb{P}^1_{\mathbb{R}}$
 
 Ademas $r_{\mathbb{P}}$ contiene a la recta afin $r_A$ de partida y ademas al punto $(0:v_1:v_2)$, que corresponde al vector director de la recta afin $r_A$.\\
 
-Ahora podemos ver la $\textbf{complección de un espacio afín a un espacio proyectivo}$:
+Ahora podemos ver la $\textbf{compleción de un espacio afín a un espacio proyectivo}$:
 
-\begin{proposición}
     Sea $\mathbb{A}$ un espacio afín, y sea $\vec{\mathbb{A}}$ su espacio vectorial. Consideremos entonces el espacio vectorial $\mathbb{K} \times \vec{\mathbb{A}}$:
     \begin{center}
         \begin{tikzpicture}[scale=2,tdplot_main_coords]
@@ -592,10 +591,82 @@ Ahora podemos ver la $\textbf{complección de un espacio afín a un espacio proy
     \underbrace{\mathbb{A}}_{\text{espacio afín de dim } n} \cup
     \underbrace{\mathbb{A}_{\infty}}_{\text{hiperplano de puntos en el infinito de dim } n-1}
     \]
-\end{proposición}
 
 \begin{proposición}[Construccion inversa]
-    Dado un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$ y un hiperplano proyectivo $\mathbb{H} = \mathbb{P}(\hat{H})$, entonces $\mathbb{P} \setminus \mathbb{H}$ tiene estructura de espacio afín de dimensión $\dim(\mathbb{P})$.
+    Dado un espacio proyectivo $\mathbb{P} = \mathbb{P}(V)$ y un hiperplano proyectivo $H = \mathbb{P}(\hat{H})$, entonces $\mathbb{P} \setminus H$ tiene estructura de espacio afín de dimensión $\dim(\mathbb{P})$.
 \end{proposición}
 
+Tomamos en $\mathbb{P}$ una referencia proyectiva adaptada a $H$:
 
+\[
+    \mathfrak{R}_{\text{proy}} = \{\underbrace{P_0}_{\notin H} = [\vec{u}_0], \underbrace{\ldots}_{\text{puntos de $H$}}; *\}
+\]
+que tiene por base asociada 
+\[
+    \mathcal{B}' = \{\vec{u}_0, \underbrace{\mathcal{B}}_{\text{base de $\hat{H}$}}\}
+\]
+En coordenadas respecto de la referencia adaptada $H : x_0 = 0 \iff \hat{H} : x_0 = 0$.
+y la carta afín $\mathbb{P} \setminus H$ se escibe como $\{x_0 \neq 0\}$. Así,
+\[
+    \begin{matrix}
+        \mathbb{P} \setminus H \rightarrow \vec{u}_0 + \hat{H} \quad \text{hiperplano afín en} V \\
+        [\vec{v}] \mapsto [\vec{v}] \cap (\vec{u}_0 + \hat{H})\\
+        (x_0 : x_1 : \ldots : x_n)_{\mathfrak{R}_\text{proy}} \mapsto (X_1, X_2, \ldots, X_n)_{\mathfrak{R}_\text{afín}}
+    \end{matrix}
+\]
+siendo $\mathfrak{R}_\text{afín} = \{0 = \vec{u}_0, \ldots \}$ con base asociada $\mathcal{B}$ de $\hat{H}$.
+
+\subsection{Subespacios}
+
+\[
+    \begin{matrix}
+        \text{Afín} & \quad & \text{Vectorial} & \quad & \text{Proyectivo} \\
+        S = A + \vec{S} & \longrightarrow & \hat{S} = t \vec{OA} + \vec{S} \ t \in \mathbb{K} & \longrightarrow & \mathbb{P}(\hat{S}) = S \cup \mathbb{P}(\vec{S}) = S_{\infty} \\
+    \end{matrix}
+\]
+
+\[
+    S \longrightarrow \widetilde{S} = S \cup S_{\infty} \quad \text{subespacio completado de } S
+\]
+
+\[
+\begin{matrix}
+    \text{Afín} & \quad & \text{Proyectivo} \\
+    S := \widetilde{S} \setminus H = \widetilde{S} \cap (\mathbb{P} \setminus H) & \longleftarrow & \widetilde{S} \quad \text{subespacio proyectivo} S \\
+\end{matrix}
+\]
+donde $\widetilde{S} \cap (\mathbb{P} \setminus H)$ es subespacio afín si la intersección es no vacía. Además, al completar $S = \widetilde{S} \setminus H$ obtenemos $\widetilde{S}$.
+
+\textbf{Ecuaciones / Coordenadas (en referencias adaptadas)}\\
+
+\[
+    \begin{matrix}
+        \text{Afín} & \quad & \text{Proyectivo} \\
+        c_0 + c_1 X_1 + \ldots + c_n X_n = 0 & \xrightarrow{\text{homogeneizar}} & c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0 \\
+        c_0 + c_1 X_1 + \ldots + c_n X_n = 0 & \xleftarrow{\text{deshomogeneizar}} & c_ox_0 + c_1 x_1 + \ldots + c_n x_n = 0 \\
+    \end{matrix}
+\]
+al deshomogeneizar, imponemos que $x_0 = 1$.
+\[
+    X_1 = \frac{x_1}{x_0}, \quad X_2 = \frac{x_2}{x_0}, \quad \ldots, \quad X_n = \frac{x_n}{x_0}
+\]
+Tiene sentido homogeneizar y deshomogeneizar cualquier ecuación polinómica.
+\[
+    1 + x_1 + x_2^2 = 0 \quad \leftrightarrow \quad x_0^2 + x_0 x_1 + x_2^2 = 0
+\]
+
+A partir de ahora, no utilizaremos notación distinta para coordenadas afines y proyectivas.
+
+\begin{observación}
+    Paralelismo. $S,T \subset \mathbb{A}$ subespacios afines paralelos $\iff$ $S \cap T = \emptyset$ y $\vec{S} \subset \vec{T}$ (o $\vec{T} \subset \vec{S}$).\\
+    Al completar, $\widetilde{S}, \widetilde{T} \subset \widetilde{\mathbb{A}}$ son subespacios proyectivos del completado proyectivo $\widetilde{\mathbb{A}}$.
+\end{observación}
+
+\[
+    \begin{cases}
+        \widetilde{S} = S \cup S_{\infty} = S \cup \mathbb{P}(\vec{S}) \\
+        \widetilde{T} = T \cup T_{\infty} = T \cup \mathbb{P}(\vec{T})
+    \end{cases}
+\]
+se tiene que $\widetilde{S} \cap \widetilde{T} \underbrace{=}_{S,T \text{ paralelos}} S_{\infty} \cap T_{\infty} \subset \mathbb{A}_{\infty}$ (hiperplano de puntos en el infinito).\\
+En conclusión, $S,T$ son paralelos $\iff S_{\infty} \subset T_{\infty}$ o $T_{\infty} \subset S_{\infty}$. En particular, dos rectas fines son paralelas si y solo si sus completadas se cortan en un punto del infinito.
