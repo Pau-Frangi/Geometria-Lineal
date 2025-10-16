@@ -1,5 +1,9 @@
 # Fdb version 4
+<<<<<<< HEAD
 ["pdflatex"] 1760616020.39574 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1760616028.97221 0
+=======
+["pdflatex"] 1760354728.95559 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1760354733.00476 0
+>>>>>>> 5ec20f6e7e3a5363ea725ce5819136cdfca98095
   "Appendix/Appendix.tex" 1759475012 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1759474986 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758714164 81424 a723decfc5bddf73a572af9da400adf4 ""
@@ -360,6 +364,7 @@
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Preamble/Diagonal Matrix Command.tex" 1757327696 994 86797f6883aa9637224e9e09b84c6f7c ""
   "Preamble/Preamble.tex" 1759832818 13269 f21f4beef0403743a04b64b74df20194 ""
+<<<<<<< HEAD
   "Theory/1 - Espacios Proyectivos.tex" 1760089623 30397 b12e377f4ad50fa042e8b1be2b06326d ""
   "Theory/2 - Aplicaciones proyectivas.tex" 1760089623 20572 d743d971036331492a3b755454c7835b ""
   "Theory/3 - Espacio Dual.tex" 1760616019 38441 1f748e19f86207913add9540d201a76e ""
@@ -372,6 +377,18 @@
   "main.out" 1760616028 2738 a86a1a86ea8da4540bbd35d9d3abd392 "pdflatex"
   "main.tex" 1760352180 4082 08e63e979ead98949ff67a783c93b345 ""
   "main.toc" 1760616028 1551 50d7b1b1ac9c7205773561251e5d4e99 "pdflatex"
+=======
+  "Theory/3 - Espacio Dual.tex" 1760354728 27419 1d7bc5490c79624a6a0ff2aa0ebf8583 ""
+  "Theory/Theory.tex" 1760351949 153 32c42bc4df5871324d6f5cd7dc2918c8 ""
+  "TikZ/desargues_tikz.aux" 1760354732 1453 ae7117eed3beac516c0e2e45f9febc37 "pdflatex"
+  "TikZ/desargues_tikz.tex" 1759307717 5055 d6ea420859568e02ab67d330d89f20d1 ""
+  "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" 1760352180 4082 08e63e979ead98949ff67a783c93b345 ""
+  "images/logo.png" 1757327696 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
+  "main.aux" 1760354732 5933 73f203a1b9daa4e8296a59bc7bc51698 "pdflatex"
+  "main.out" 1760354732 1223 e13a575216fee0dff14e4491fe7b1b20 "pdflatex"
+  "main.tex" 1760352180 4082 08e63e979ead98949ff67a783c93b345 ""
+  "main.toc" 1760354732 831 20c143f5ff3100bfc255004adb637b41 "pdflatex"
+>>>>>>> 5ec20f6e7e3a5363ea725ce5819136cdfca98095
   (generated)
   "TikZ/desargues_tikz.aux"
   "main.aux"
