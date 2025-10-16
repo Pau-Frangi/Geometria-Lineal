@@ -440,13 +440,16 @@ A + \overrightarrow{AB} = B
         \begin{pmatrix}
             1 \\ X_1' \\ X_2' \\ \vdots \\ X_n'
         \end{pmatrix} =
-        \begin{pmatrix}
-            1 & 0 & 0 & \cdots & 0 \\
+        \left(
+        \begin{array}{c|cccc}
+            1 & 0 & 0 & \ldots & 0 \\
+            \hline
             q_1 & & & & \\
-            q_2 & & M_{B, B'} & & \\
+            q_2 & & M_{\mathcal{B}', \mathcal{B}} & & \\
             \vdots & & & & \\
             q_n & & & &
-        \end{pmatrix}
+        \end{array}
+        \right)
         \begin{pmatrix}
             1 \\ X_1 \\ X_2 \\ \vdots \\ X_n
         \end{pmatrix}
@@ -679,3 +682,142 @@ A partir de ahora, a veces no utilizaremos notacion distinta para coordenadas af
     \]
     En particular, dos rectas afines son paralelas si y solo si sus completadas se cortan en un punto del hiperplano de puntos en el infinito.
 \end{observación}
+
+\begin{definición}[Aplicación afín]
+    Una aplicación $f: \mathbb{A} \to \mathbb{A}'$ entre espacios afines es una \textbf{aplicación afín} si existe una aplicación lineal $\vec{f}: \vec{\mathbb{A}} \to \vec{\mathbb{A}}'$ tal que:
+    \[
+    \forall Q \in \mathbb{A}: \quad f(Q) = f(0) + \vec{f}(\overrightarrow{0Q})
+    \]
+\end{definición}
+
+\begin{proposición}[Propiedades de las aplicaciones afines]
+    Si $f: \mathbb{A} \to \mathbb{A}'$ es una aplicación afín, entonces:
+    \begin{itemize}
+        \item $f$ es inyectiva y/o sobreyectiva $\iff$ $\vec{f}$ es inyectiva y/o sobreyectiva.
+        \item $f,g$ son aplicaciones afines $\implies$ $g \circ f$ es una aplicación afín, y $\vec{g \circ f} = \vec{g} \circ \vec{f}$.
+        \item Si $S$ es un subespacio afín de $\mathbb{A}$, entonces $f(S)$ es un subespacio afín de $\mathbb{A}'$ y $\vec{f(S)} = \vec{f}(\vec{S})$.
+        \item $f$ es afín y biyectiva $\implies$ $f^{-1}$ es afín y $\vec{f^{-1}} = \vec{f}^{-1}$.
+    \end{itemize}
+\end{proposición}
+
+Veamos como escribir coordenadas afines.\\
+
+Si $\mathfrak{R}_{\text{af}}$, $\mathfrak{R}_{\text{af}}'$ son referencias afines de $\mathbb{A}, \mathbb{A}'$ respectivamente, y $B, B'$ sus bases asociadas, con ademas $0$ el origen de $\mathfrak{R}_{\text{af}}$, entonces si $f(x_1, x_2, \ldots, x_n)_{\mathfrak{R}_{\text{af}}} = (y_1, y_2, \ldots, y_n)_{\mathfrak{R}_{\text{af}}'}$, tenemos que:
+\[
+    \begin{pmatrix}
+        1 \\ y_1 \\ y_2 \\ \vdots \\ y_n
+    \end{pmatrix} =
+    \left(
+    \begin{array}{c|ccc}
+        1 & 0 & \cdots & 0 \\
+        \hline
+        q_1 & & & \\
+        q_2 & & M_{B, B'}(\vec{f}) & \\
+        \vdots & & & \\
+        q_n & & & \\
+    \end{array}
+    \right)
+    \begin{pmatrix}
+        1 \\ x_1 \\ x_2 \\ \vdots \\ x_n
+    \end{pmatrix}
+\]
+
+Siendo $f(0) = (q_1, q_2, \ldots, q_n)_{\mathfrak{R}_{\text{af}}'}$.
+
+\begin{definición}[Completada proyectica de una aplicación afín]
+    Sea $f: \mathbb{A} \to \mathbb{A}'$ una aplicación afín, la forma de extenderla a $\widetilde{f}: \widetilde{\mathbb{A}} \dashrightarrow \widetilde{\mathbb{A}}'$ es la siguiente:
+    \[
+    \begin{array}{ccc}
+        \widetilde{\mathbb{A}} & \overset{\widetilde{f}}{\dashrightarrow} & \widetilde{\mathbb{A}}'  \\
+        \| & & \| \\
+        \mathbb{A} & \overset{f}{\rightarrow} & \mathbb{A}' \\
+        \cup & & \cup \\
+        \mathbb{A}_{\infty} = \mathbb{P}(\vec{\mathbb{A}}) & \overset{f_{\infty}}{\dashrightarrow} & \mathbb{A}_{\infty}' = \mathbb{P}(\vec{\mathbb{A}}') \\
+    \end{array}
+    \]
+    Siendo $f_{\infty}$ la aplicación proyectiva asociada a la aplicación lineal $\vec{f}: \vec{\mathbb{A}} \to \vec{\mathbb{A}}'$.\\
+\end{definición}
+
+Veamos una representación:
+
+\begin{center}
+        \begin{tikzpicture}[scale=2,tdplot_main_coords]
+            % Ejes
+            \draw[->,thick] (0,0,0) -- (1.2,0,0);
+            \draw[->,thick] (0,0,0) -- (0,1.5,0);
+            \draw[->,thick] (0,0,0) -- (0,0,1.2);
+            % Origen
+            \filldraw (0,1,0) circle (0.5pt) node[above left] {O};
+            % Plano azul x_0=1
+            % Plano azul x_1=1
+            \filldraw[fill=blue!20,draw=blue,opacity=0.5] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            \draw[blue,thick] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            % Dibuja una recta que corta el plano x_0=1
+            \draw[thick,orange,->] (0,0,0) -- (0.25,1,0.5); % recta desde el origen
+            % Punto de corte con el plano x_0=1
+            \node[blue] at (-1,1.25,1.25) {$\mathbb{A}: x_0=1$};
+            \filldraw[orange] (0.25,1,0.5) circle (1.2pt) node[above right] {$Q$};
+            \node[orange] at (0.7,0.7,0.7) {$\vec{u} = \vec{e_0} + \vec{0Q}$};
+            % Vector e0
+            \draw[->,thick,red] (0,0,0) -- (0,1,0);
+            \node[anchor=east, red] at (0,0.5,-0.15) {$\vec{e}_0$};
+            % Vector 0Q
+            \draw[->,thick,green] (0,1,0) -- (0.25,1,0.5);
+            \node[anchor=west, green] at (0.15,1,0.25) {$\vec{0Q}$};
+        \end{tikzpicture}
+    \end{center}
+
+Y $f$ lo transforma en:
+\begin{center}
+    \begin{tikzpicture}
+        % Ejes
+            \draw[->,thick] (0,0,0) -- (1.2,0,0);
+            \draw[->,thick] (0,0,0) -- (0,1.5,0);
+            \draw[->,thick] (0,0,0) -- (0,0,1.2);
+            % Origen
+            \filldraw (0,1,0) circle (0.5pt) node[above left] {$f(0)$};
+            % Plano azul x_0=1
+            % Plano azul x_1=1
+            \filldraw[fill=blue!20,draw=blue,opacity=0.5] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            \draw[blue,thick] (-1,1,-0.25) -- (1,1,-0.25) -- (1,1,1) -- (-1,1,1) -- cycle;
+            % Dibuja una recta que corta el plano x_0=1
+            \draw[thick,orange,->] (0,0,0) -- (0.25,1,0.5); % recta desde el origen
+            % Punto de corte con el plano x_0=1
+            \node[blue] at (-1,1.25,1.25) {$\mathbb{A}'$};
+            \filldraw[orange] (0.25,1,0.5) circle (1.2pt) node[above right] {$Q$};
+            \node[orange] at (0.7,0.7,0.7) {$\vec{v}$};
+            % Vector e0
+            \draw[->,thick,red] (0,0,0) -- (0,1,0);
+            \node[anchor=east, red] at (0,0.5,-0.15) {$\vec{e}_0$};
+            % Vector 0Q
+            \draw[->,thick,green] (0,1,0) -- (0.25,1,0.5);
+            \node[anchor=west, green] at (0.15,1,0.25) {$\vec{f\vec{0Q}}$};
+    \end{tikzpicture}
+\end{center}
+
+Tenemos que:
+\[
+\mathbb{K} \times \vec{\mathbb{A}} \overset{id \times \vec{f}}{\longrightarrow} \mathbb{K} \times \vec{\mathbb{A}}'
+\]
+Envia $\vec{u} = \vec{e_0} + \vec{0Q}$ a:
+\[
+\vec{v} =
+\vec{e_0} + \vec{f}(\vec{0Q}) =
+(id \times \vec{f})(\vec{e_0} + \vec{0Q}) =
+(id \times \vec{f})(\vec{u})
+\]
+
+Asi, la aplicación $id \times \vec{f}$ induce la aplicación proyectiva:
+\[
+f : \widetilde{\mathbb{A}} = \mathbb{P}(\mathbb{K} \times \vec{\mathbb{A}}) \dashrightarrow \mathbb{P}(\mathbb{K} \times \vec{\mathbb{A}}') = \widetilde{\mathbb{A}}'
+\]
+
+La construccion inversa es:
+
+\begin{proposición}
+    Si $\widetilde{f} : \mathbb{P} \dashrightarrow \mathbb{P}'$ es una aplicación proyectiva, y $\mathbb{H}, \mathbb{H}'$ son hiperplanos proyectivos de $\mathbb{P}, \mathbb{P}'$ respectivamente, tales que $\widetilde{f}(\mathbb{H}) \subset \mathbb{H}'$, y ademas $\widetilde{f}(\mathbb{P} \nsubseteq \mathbb{H}')$, entonces la restricción:
+    \[
+    f = \widetilde{f}_{|\mathbb{P} \setminus \mathbb{H}} : \mathbb{P} \setminus \mathbb{H} \to \mathbb{P}' \setminus \mathbb{H}'
+    \]
+    Es la restriccion de $\widetilde{f}$ a la carta afín $\mathbb{P} \setminus \mathbb{H}$, y es una aplicación afín cuya completada proyectiva es $\widetilde{f}$.
+\end{proposición}
