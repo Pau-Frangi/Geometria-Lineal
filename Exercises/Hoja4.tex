@@ -1,0 +1,172 @@
+
+
+% Ejercicio 1
+\ejercicio{
+Dualiza los siguientes enunciados:
+\begin{enumerate}[label=\alph*)]
+    \item Dos rectas diferentes de un plano proyectivo se cortan exactamente en un punto.
+    \item Un punto $A$ no pertenece a la recta generada por los puntos $B$ y $C$.
+    \item Consideramos un hiperplano $H$ y dos puntos $A,B$ de forma que $A \in H$ pero $B \notin H$.
+    \item Si $r, r'$ son dos rectas disjuntas de un espacio proyectivo de dimensión $3$ y $\pi$ es un plano que no contiene a ninguna de ellas, entonces existe exactamente una recta $s$ contenida en $\pi$ que interseca a $r$ y a $r'$.
+    \item En un espacio proyectivo de dimensión $6$, la subvariedad generada por dos planos está contenida en un hiperplano.
+\end{enumerate}
+
+}{
+
+\begin{enumerate}[label=\alph*)]
+    \item $V_1, V_2 \subset \mathbb{R}^2$, $r_1 \neq r_2$, $r_1 \cap r_2 = \{\text{punto}\}$, $\dim(r_1 \cap r_2) = 0$, $\dim(r_1) = \dim(r_2) = 1$.
+    \[
+        r_1^* \in \mathbb{P}^{2*}, \quad \dim(r_i^*) = 2 - 1 - 1 = 0
+    \]
+    \[
+        \dim(V(r_1^*,r_2^*)) = 2 - 0 - 1 = 1
+    \]
+    \[
+        \mathbb{P}: \text{ dos puntos distintos determinan una recta.}
+    \]
+
+    \item[d)] $\dim(r) = \dim(r') = 1$, $\dim(r \cap r') = -1$, $\dim(\pi) = 2$, $\dim(S) = 1$.
+    \[
+        \dim(S \cap r) > -1 \quad \text{y} \quad \dim(S \cap r') > -1
+    \]
+    \[
+        r^*, r'^* \in \mathbb{P}^{3*}
+    \]
+    \[
+        \begin{cases}
+            \dim(r^*) = \dim(r'^*) = 3 - 1 - 1 = 1,\\
+            \dim(V(r^*,r'^*)) = 3 - (-1) - 1 = 3,\\
+            \dim(\pi^*) = 3 - 2 - 1 = 0.
+        \end{cases}
+    \]
+    \[
+        \pi^* \notin r^*, \quad \pi^* \notin r'^*, \quad \dim(S^*) = 1, \quad \pi^* \in S^*
+    \]
+    \[
+        \begin{cases}
+            V(S^*, r^*) \neq \mathbb{P}^{3*},\\
+            V(S^*, r'^*) \neq \mathbb{P}^{3*}.
+        \end{cases}
+    \]
+    \[
+        P : \text{Si $r$ y $r'$ son dos rectas que generan $\mathbb{P}^3$ y $A$ es un punto tal que $A \notin r$, $A \notin r'$, entonces existe una recta $S$ que pasa por $A$ y } V(S,r) \neq \mathbb{P}^3, \, V(S,r') \neq \mathbb{P}^3.
+    \]
+
+    \item[e)] Tenemos $\pi_1, \pi_2$ planos en un espacio proyectivo de dimensión $6$. Luego $\dim(\pi_i) = 2$.
+    \[
+        \exists H \subset \mathbb{P}^6 \text{ tal que } \dim(H) = 5, \quad V(\pi_1, \pi_2) \subset H, \quad \dim(V(\pi_1, \pi_2)) < 5.
+    \]
+    \[
+        \pi_1^*, \pi_2^* \in \mathbb{P}^{6*}, \quad \dim(\pi_i^*) = 6 - 2 - 1 = 3
+    \]
+    \[
+        \implies \dim(\pi_1^* \cap \pi_2^*) \geq 6 - 5 - 1 = 0
+    \]
+    \[
+        P^* : \text{Dos subespacios de dimensión $3$ de un espacio proyectivo de dimensión $6$ siempre se cortan.}
+    \]
+\end{enumerate}
+
+
+}
+
+
+\ejercicio{
+
+En $\mathbb{P}^3_{\mathbb{R}}$ se consideran el punto $A = (-2 : 0 : 1 : 2)$ y la recta $r$ de ecuaciones implícitas 
+\[
+r : x_0 + x_3 = x_0 - x_1 + 2x_2 = 0,
+\]
+que lo contiene. Calcula ecuaciones implícitas de sus objetos duales 
+\[
+A^* = D(A), \quad r^* = D(r),
+\]
+que son un plano y una recta de $(\mathbb{P}^3_{\mathbb{R}})^*$ respectivamente. Puesto que $\{A\} \subseteq r$, ha de verificarse que 
+\[
+r^* \subseteq \{A\}^*.
+\]
+Comprueba que en efecto esto es así.
+
+
+}{
+
+\[
+    A = (-2 : 0 : 1 : 2) \implies A^* : -2X_0^* + X_2^* + 2X_3^* = 0
+\]      
+\[
+    r = \{X_0 + X_3 = 0, X_0 - X_1 + 2X_2 = 0\} \implies r^* = V\left( (1:0:0:1), (1:-1:2:0) \right)
+\]
+\[
+    r^* : \begin{cases}
+        X_0^* + X_1^* - X_3^* = 0 \\
+        X_2^* + 2X_1^* = 0
+    \end{cases} \implies r^* \subseteq A^*
+\]
+
+}
+
+% Ejercicio 5
+
+\ejercicio{
+
+Calcula una parametrización del haz de rectas $\mathcal{F}$ del plano $\mathbb{P}^2_{\mathbb{R}}$ con base el punto $A = (2 : 0 : 1)$. Haz esto de dos maneras:
+
+\begin{enumerate}[label=\alph*)]
+    \item Interpretando el haz como el conjunto de rectas duales de los puntos de la recta $A^*$ del dual.
+    
+    \item Directamente en $\mathbb{P}^2_{\mathbb{R}}$ tomando la recta auxiliar 
+    \[
+        r : x_0 - x_1 + x_2 = 0
+    \]
+    (por ejemplo) e intersecando cada recta de $\mathcal{F}$ con $r$. Compara con la parametrización obtenida en (a) calculando la relación entre los parámetros de una y de otra.
+    
+    \item ¿Cómo se interpreta geométricamente la parametrización de (b) en el plano dual?
+\end{enumerate}
+
+}{
+
+    \begin{enumerate}[label=\alph*)]
+        \item    
+        \[
+            A^* : 2X_0^* + X_2^* = 0 \implies X_2^* = -2X_0^*
+        \]
+        \[
+            \{(X_0^* : X_1^* : X_2^*) : (X_0^* : X_1^*) \in \mathbb{P}^1_{\mathbb{R}}\} 
+        \]
+        \[
+            A^* = \{(t_0 : t_1 : -2t_0) : (t_0 : t_1) \in \mathbb{P}^1_{\mathbb{R}}\}
+        \]
+        \[
+            \begin{matrix}
+                \mathbb{P}_{\mathbb{R}}^1 & \longrightarrow & A^* \\
+                (t_0 : t_1) & \mapsto & (t_0 : t_1 : -2t_0)
+            \end{matrix} \quad \text{ es biyectiva}
+        \]
+        En $\mathbb{P}^2_{\mathbb{R}}$,
+        \[
+            \mathcal{F} : t_0X_0 + t_1X_1 - 2t_0X_2 = 0 \quad (t_0 : t_1) \in \mathbb{P}^1_{\mathbb{R}}
+        \]
+        \item 
+        \[
+            r : X_0 - X_1 + X_2 = 0 \implies \begin{cases}
+                X_1 = X_0 + X_2 \\
+                X_0 = S_0 \\
+                X_2 = S_1
+            \end{cases}
+        \]
+        \[
+            r = \{(S_0 : S_0 + S_1 : S_1) : (S_0 : S_1) \in \mathbb{P}^1_{\mathbb{R}}\}
+        \]
+        \[
+            Q = (S_0 : S_0 + S_1 : S_1) \in r \qquad V(Q,A) \in \mathcal{F}
+        \]
+        \[
+            \begin{matrix}
+                \Phi : r & \longrightarrow & \mathcal{F} \\
+                Q & \mapsto & V(Q,A)
+            \end{matrix} \quad \text{ es biyectiva}
+        \]
+    \end{enumerate}
+
+
+}
