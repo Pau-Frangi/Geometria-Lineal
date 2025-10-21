@@ -1,0 +1,192 @@
+\hojaejercicio{5}{Relación entre espacio afín y proyectivo}
+
+% Ejercicio 1
+\ejercicio{
+En el plano proyectivo $\mathbb{P}^2_{\mathbb{R}}$ se consideran las rectas
+\[r_1 : x_0 - x_1 - 2x_2 = 0, \quad r_2 : x_0 - 2x_2 = 0, \quad r_3 : 2x_0 - x_1 - 4x_2 = 0.\]
+Encuentra, si es posible, una carta afín en la que (las partes afines de) las tres rectas sean paralelas, calculando además sus ecuaciones.
+}{
+
+}
+
+% Ejercicio 2
+\ejercicio{
+En el espacio proyectivo $\mathbb{P}^3_{\mathbb{R}}$ se considera la carta afín $U$ que tiene por hiperplano del infinito a $H_\infty : x_0 + x_2 = 0$. Se pide:
+\begin{enumerate}
+    \item[(i)] Encuentra un sistema de referencia $R$ adaptado, esto es, $R = \{A_0, A_1, A_2, A_3; A_4\}$ con $A_1, A_2, A_3 \in H_\infty$.
+    \item[(ii)] Dada la recta proyectiva de ecuaciones $\tilde{r} : x_0 - 2x_1 + x_2 - x_3 = x_1 + x_2 = 0$, encuentra sus ecuaciones en la referencia $R$.
+    \item[(iii)] Halla ecuaciones de la parte afín de la recta $r = \tilde{r} \cap U$.
+    \item[(iv)] Determina un plano afín $\pi$ paralelo a $r$ en la carta $U$ y complétalo a un plano proyectivo $\tilde{\pi}$. Comprueba que $\tilde{r}$ y $\tilde{\pi}$ se cortan en un punto del hiperplano del infinito, como ha de ocurrir por ser completaciones de objetos afines paralelos.
+\end{enumerate}
+}{
+    \begin{enumerate}
+        \item[(i)] Si nos piden un sistema de referencia adaptado a $H_\infty : x_0 + x_2 = 0$, debemos encontar un sistema de referencia donde $H_\infty$ tenga de ecuación $x'_0 = 0$, entonces buscamos:
+        \[
+        \mathfrak{R} = \{A_0, \underbrace{A_1, A_2, A_3}_{\in H_\infty}; A_4\}
+        \]
+        Y asi nos garantizaria que $H_\infty$ tiene de ecuación $x'_0 = 0$, ya que es el hiperplano definido por los puntos $A_1, A_2, A_3$ y por tanto no puede contener a $A_0$. Podemos tomar:
+        \[
+        H_\infty \in
+        \begin{cases}
+            A_1 = (0 : 1 : 0 : 0) \\
+            A_2 = (0 : 0 : 0 : 1) \\
+            A_3 = (1 : 0 : -1 : 0) \\
+        \end{cases}
+        \quad A_0 = (1 : 0 : 0 : 0), \quad A_4 = ?
+        \]
+        Para obtener $A_4$ tomamos la base asociada $B = \{(1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 0, 1), (1, 0, -1, 0)\}$ y tomamos $A_4$ como la combinación lineal de los vectores de la base con coeficientes todos iguales a 1 $A_4 = (1 : 1 : 0 : 1)$, obteniendo así la referencia:
+        \[
+        \mathfrak{R} = \{(1 : 0 : 0 : 0), (0 : 1 : 0 : 0), (0 : 0 : 0 : 1), (1 : 0 : -1 : 0); (1 : 1 : 0 : 1)\}
+        \]
+        Obteniendo así las matrices de cambio de base:
+        \[
+        C_{\mathfrak{R}, \mathfrak{R}_C} = 
+        C_{B,B_C} =
+        \begin{pmatrix}
+        1 & 0 & 0 & 1 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & -1 \\
+        0 & 0 & 1 & 0
+        \end{pmatrix}
+        \]
+        \item[(ii)] Sea $\tilde{r} : \begin{cases}x_0 - 2x_1 + x_2 - x_3 = 0 \\ x_1 + x_2 = 0 \end{cases}$, de $\mathbb{P}^3_{\mathbb{R}}$. Para hallar sus ecuaciones en la referencia $\mathfrak{R}$, debemos hacer el cambio de variable:
+        \[
+        \begin{cases}
+            x_0 = x'_0 + x'_3 \\
+            x_1 = x'_1 \\
+            x_2 = -x'_3\\
+            x_3 = x'_2 \\
+        \end{cases}
+        \implies
+        \tilde{r} :
+        \begin{cases}
+            x'_0 -2x'_1 - x'_2 = 0 \\
+            x'_1 - x'_3 = 0\\
+        \end{cases}
+        \]
+        \item[(iii)] Tenemos que la carta afín $U$ está dada por $H_\infty : x_0 + x_2 = 0$, luego en la carta afín tenemos $x_2 = -x_0$. Entonces, sustituyendo en las ecuaciones de la recta $\tilde{r}$:
+        \[
+        r = \tilde{r} \cap U :
+        \begin{cases}
+            2x'_1 + x'_2 = 1 \\
+            x'_1 - x'_3 = 0
+        \end{cases}
+        \]
+        \item[(iv)] Para determinar un plano afín $\pi$ paralelo a $r$ en la carta $U$, debemos buscar un plano que no corte a $r$. Si tomamos el plano:
+        \[
+        \tilde{\pi} : 2x'_1 + x'_2 = 0
+        \]
+        Vemos que este plano no corta a la recta $r$ en la carta afín $U$, ya que si igualamos las ecuaciones de $\tilde{\pi}$ y $r$ obtenemos:
+        \[
+            2x'_1 + x'_2 = 1 \\
+            x'_1 - x'_3 = 0
+        \]
+        Que no tiene solución. Por tanto, el plano afín paralelo a $r$ en la carta $U$ es:
+        \[
+            \tilde{\pi} : 2x'_1 + x'_2 = 0
+        \]
+        Ahora, para comprobar que $\tilde{r}$ y $\tilde{\pi}$ se cortan en un punto del hiperplano del infinito, debemos resolver el sistema:
+        \[
+        \begin{cases}
+            x'_0 -2x'_1 - x'_2 = 0 \\
+            x'_1 - x'_3 = 0 \\
+            2x'_1 + x'_2 = 0
+        \end{cases}
+        \]
+        Que nos da como solución:
+        \[
+        P = (0 : 1 : -2 : 1)
+        \]
+    \end{enumerate}
+}
+
+
+% Ejercicio 3
+\ejercicio{
+Determina la ecuación de una recta $\ell_\infty$ de $\mathbb{P}^2_{\mathbb{C}}$ de forma que los puntos $A = (1 : 0 : 1)$, $B = (1 : -1 : 0)$, $C = (0 : 2 : 1)$ y $D = (0 : 0 : 1)$ sean los vértices de un paralelogramo en el plano afín $\mathbb{P}^2_{\mathbb{C}} \setminus \ell_\infty$ (de lados $AB$, $BC$, $CD$, $DA$). ¿Es única la recta $\ell_\infty$ en estas condiciones?
+}{
+    Primero podemos calcular:
+    \[
+    AD \cap BC = Q = (2 : 0 : 1), \quad AB \cap CD = P = (0 : 1 : 1)
+    \]
+    Obteniendo así las diagonales del paralelogramo. La recta del infinito ha de ser la que pasa por estos dos puntos, luego:
+    \[
+    \ell_\infty : x_0 + 2x_1 - 2x_2 = 0
+    \]
+}
+
+% Ejercicio 4
+\ejercicio{
+Da las ecuaciones de la aplicación proyectiva $\tilde{f} : \mathbb{P}^2_{\mathbb{R}} \to \mathbb{P}^3_{\mathbb{R}}$ que extiende la aplicación afín $f : \mathbb{A}^2_{\mathbb{R}} \to \mathbb{A}^3_{\mathbb{R}}$ definida por: 
+\[f(1, 0) = (1, 0, 2), \quad f(1, 2) = (0, 1, 1), \quad f(2, 0) = (2, 0, 0).\]
+}{}
+
+% Ejercicio 5
+\ejercicio{
+Sea $f$ la homografía de $\mathbb{P}^2_{\mathbb{R}}$ que tiene por matriz, respecto de la referencia proyectiva canónica,
+\[\begin{pmatrix}
+4 & -2 & 2 \\
+0 & 4 & 0 \\
+0 & -2 & 6
+\end{pmatrix}\]
+\begin{enumerate}
+    \item[(i)] Calcula los puntos fijos de $f$, es decir, los puntos $A \in \mathbb{P}^2_{\mathbb{R}}$ tales que $f(A) = A$.
+    \item[(ii)] Comprueba que la recta $r : x_1 = x_2$ es invariante. Halla ecuaciones de la aplicación afín obtenida al restringir $f$ a $\mathbb{P}^2_{\mathbb{R}} \setminus r$.
+    \item[(iii)] ¿Qué tipo de aplicación es la del apartado anterior?
+    \item[(iv)] Comprueba que la recta $s : x_1 = 0$ es invariante. Halla ecuaciones de la restricción de $f$ al complementario de $s$.
+\end{enumerate}
+}{}
+
+% Ejercicio 6
+\ejercicio{
+Sean $P = (1 : 0 : 0)$, $Q = (0 : 0 : 1)$ y $r : x_0 + x_1 + x_2 = 0$. En el plano afín $\mathbb{P}^2_{\mathbb{R}} \setminus r$ se considera la traslación $g$ que transforma $P$ en $Q$. Calcula la imagen por $g$ del punto $(1 : 0 : 1)$.
+}{
+    Primero obtengamos las cordenadas en la carta afín asociada a $r$:
+    \[
+    \mathfrak{R} = \{A_0 = (1 : 0 : 0), \underbrace{A_1 = (0 : 1 : -1), A_2 = (0 : 0 : 1)}_{\in r}; A_3 = (3 : -1 : -1)\}
+    \]
+    Con base asociada:
+    \[B = \{(1, 0, 0), (0, 1, -1), (0, 0, 1)\}\]
+    Entonces la matriz de cambio de referencia es:
+    \[
+    C_{\mathfrak{R}, \mathfrak{R}_C} =
+    C_{B, B_C} =
+    \begin{pmatrix}
+        1 & 1 & 1 \\
+        0 & -1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}
+    \]
+    Invirtiendo la matriz obtenemos:
+    \[
+    C_{\mathfrak{R}_C, \mathfrak{R}} =
+    C_{B_C, B} =
+    \begin{pmatrix}
+        1 & 1 & 1 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1 
+    \end{pmatrix}
+    \]
+    Así, podemos expresar $P, Q, A$ en la carta afín:
+    \[
+    P = (1 : 0 : 0)_{\mathfrak{R}}, \quad Q = (1 : 0 : -1)_{\mathfrak{R}}, \quad A = (2 : 0 : -1)_{\mathfrak{R}}
+    \]
+    Pasando a la referencia afín asociada a $\mathfrak{R}$:
+    \[
+    P = (0, 0)_{R_A}, \quad Q = (0, -1)_{R_A}, \quad A = (0, -\frac{1}{2})_{R_A}
+    \]
+    Y por tanto $\vec{PQ} = (0, -1)_{B}$ con $B$ la base asociada a $R_A$. Luego la traslación $g$ en la carta afín viene dada por:
+    \[g(x, y) = (x, y - 1)\]
+    Por tanto, la imagen de $A$ por $g$ es:
+    \[g(0, -\frac{1}{2}) = (0, -\frac{3}{2})\]
+    Pasando al proyectivo con nuestra referencia, y despues usando $C_{\mathfrak{R}, \mathfrak{R}_C}$ para volver a la referencia canónica:
+    \[
+    (0, -\frac{3}{2})_{R_A} = (2 : 0 : -3)_{\mathfrak{R}} = (-1 : 0 : 3)_{\mathfrak{R}_C}
+    \]
+    Otra forma de hacerlo, es aplicar que $g(B) = B \quad \forall B \in r$ y $g(P) = Q$.
+}
+
+% Ejercicio 7
+\ejercicio{
+Sea el plano afín obtenido al quitar a $\mathbb{P}^2_{\mathbb{R}}$ la recta $x_1 - x_2 = 0$. Determina la razón de la homotecia de centro $(1 : 0 : -1)$ que transforma el punto $(1 : -1 : 0)$ en el punto $(0 : 1 : -1)$. Da las ecuaciones de la extensión proyectiva de dicha homotecia.
+}{}
