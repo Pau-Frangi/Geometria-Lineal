@@ -405,6 +405,7 @@ mdframed={
 % Comando para ejercicios con enunciado y desarrollo usando solo \newcommand
 \newcommand{\ejercicio}[2]{%
   \refstepcounter{ejercicio}%
+  \vspace{0.25em}
   \begin{mybox}{Ejercicio~\theejercicio}%
     	\textbf{Enunciado:} #1
     \par\medskip
@@ -412,6 +413,7 @@ mdframed={
     \par\medskip
     	\textbf{Desarrollo:} #2
   \end{mybox}%
+  \vspace{0.25em}
 }
 
 % Contador para hojas de ejercicios
