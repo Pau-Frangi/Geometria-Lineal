@@ -900,3 +900,142 @@ La construccion inversa es:
         \item La completada proyectiva $\widetilde{f} : \widetilde{\mathbb{A}} \dashrightarrow \widetilde{\mathbb{A}}'$ es una aplicación proyectiva que fija el hiperplano de puntos en el infinito, es decir, $\widetilde{f}(\mathbb{A}_{\infty}) = \mathbb{A}_{\infty}'$.
     \end{itemize}
 \end{proposición}
+
+
+\subsection{Cálculo de puntos fijos e hiperplanos invariantes}
+
+\begin{definición}
+    Sea $f: \mathbb{P} \to \mathbb{P}$ una homografía.
+    \begin{itemize}
+        \item Un punto $A \in \mathbb{P}$ es un \textbf{punto fijo} de $f$ si $f(A) = A$.
+        \item Un hiperplano $\mathbb{H} \subset \mathbb{P}$ es un \textbf{hiperplano invariante} de $f$ si $f(\mathbb{H}) = \mathbb{H}$.
+        \item En general, un subespacio proyectivo $\mathbb{X} \subset \mathbb{P}$ es un \textbf{subespacio invariante} de $f$ si $f(\mathbb{X}) = \mathbb{X}$.
+    \end{itemize}
+\end{definición}
+
+Fijamos un a referencia proyectiva $\mathfrak{R}_{\text{proy}}$, tengo la matriz $M_{\mathfrak{R}_{\text{proy}}}(f)$. Considerando $A = (x_0: x_1: \ldots : x_n)$ un punto fijo de $f$, tenemos que:
+\[
+M_{\mathfrak{R}_{\text{proy}}}(f) \begin{pmatrix}
+    x_0 \\ x_1 \\ \vdots \\ x_n
+\end{pmatrix} = \lambda \begin{pmatrix}
+    x_0 \\ x_1 \\ \vdots \\ x_n
+\end{pmatrix}, \quad \lambda \in \mathbb{K}^*
+\]
+
+Por tanto, $A=(x_0: x_1: \ldots : x_n)$ es un punto fijo de $f$ si y solo si es el autovector de algún autovalor $\lambda$ de $M_{\mathfrak{R}_{\text{proy}}}(f)$.
+
+Denotamos 
+\[
+    \text{Fix}(f) = \{ A \in \mathbb{P} \mid f(A) = A \}
+\]
+Por cada $\lambda$ autovalor de $M_{\mathfrak{R}_{\text{proy}}}(f)$, considero su autoespacio
+\[
+    V_\lambda = \ker\{M_{\mathfrak{R}_{\text{proy}}}(f) - \lambda I\}
+\]
+Por lo general, acabamos de ver que
+\[
+    \text{Fix}(f) = \bigcup_{\lambda \in \text{Spec}(M_{\mathfrak{R}_{\text{proy}}}(f))} \mathbb{P}(V_\lambda)
+\]
+donde $\text{Spec}(M_{\mathfrak{R}_{\text{proy}}}(f))$ es el conjunto de autovalores de $M_{\mathfrak{R}_{\text{proy}}}(f)$.\\
+
+\ejemplo{
+    Sea $f: \mathbb{P}^2(\mathbb{R}) \circlearrowright $ con matriz en la referencia canónica:
+    \[
+    M_{\mathfrak{R}_{\text{proy}}}(f) = \begin{pmatrix}
+        4 & -2 & 2 \\
+        0 & 4 & 0 \\
+        0 & -2 & 6
+    \end{pmatrix}
+    \]
+    Entonces tenenmos los autovalores:
+    \[
+        \begin{vmatrix}
+            4 - \lambda & -2 & 2 \\
+            0 & 4 - \lambda & 0 \\
+            0 & -2 & 6 - \lambda
+        \end{vmatrix} = 0 \iff (4 - \lambda)^2 (6 - \lambda) = 0 \implies \lambda_1 = 2, \lambda_2 = 6
+    \]
+    con multiplicidades $m(\lambda_1) = 2$, $m(\lambda_2) = 1$.
+    \[
+        V_{\lambda=4} = \ker\begin{pmatrix}
+            0 & -2 & 2 \\
+            0 & 0 & 0 \\
+            0 & -2 & 2
+        \end{pmatrix}
+    \]
+    por lo tanto la base de $V_{\lambda=4}$ es $\{(1:0:0), (0:1:1)\}$, luego $\mathbb{P}(V_{\lambda=4})$ es una recta proyectiva generada por los puntos $(1:0:0), (0:1:1)$.
+    \[
+        V_{\lambda=6} = \ker\begin{pmatrix}
+            -2 & -2 & 2 \\
+            0 & -2 & 0 \\
+            0 & -2 & 0
+        \end{pmatrix} 
+    \]
+    por lo tanto la base de $V_{\lambda=6}$ es $\{(1, 0, 1)\}$, luego $\mathbb{P}(V_{\lambda=6})$ es el punto $(1:0:1)$.
+}
+
+\textbf{Cálculo de hiperplanos invariantes}\\
+
+Todo hiperplano $H$ se puede escribir como:
+\[
+H: c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0 \quad \text{coordenadas en referencia canónica}
+\]
+o que es lo mismo:
+\[
+    \begin{pmatrix}
+        c_0 & c_1 & \cdots & c_n
+    \end{pmatrix} \begin{pmatrix}
+        x_0 \\ x_1 \\ \vdots \\ x_n
+    \end{pmatrix} = 0
+\]
+
+Antes de ver cómo hallar los hiperplanos invariantes, observemos que si nos dan un hiperplano $H : c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0$, y una homografía $f: \mathbb{P} \to \mathbb{P}$ con matriz $M_{\mathfrak{R}}(f)$, entonces ¿cuáles serán las ecuaciones de $f^{-1}(H)$?
+
+\[
+    (x_0: x_1: \ldots : x_n) \in f^{-1}(H) \iff f((x_0: x_1: \ldots : x_n)) \in H
+\]
+\[
+    \iff (c_0, c_1, \ldots, c_n)_{\mathfrak{R}} \cdot \underbrace{M_{\mathfrak{R}}(f)}_{\text{coordenadas de $f(x_0 : \ldots : x_n)_{\mathfrak{R}}$}} \begin{pmatrix}
+        x_0 \\ x_1 \\ \vdots \\ x_n
+    \end{pmatrix} = 0 
+\]
+\[
+    \iff \text{los coeficientes de las ecuaciones de } f^{-1}(H) \text{ son } (c_0', c_1', \ldots, c_n') = (c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}}(f)
+\]
+Si busco $H : c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0$ hiperplano invariante, tenemos que:
+\[
+    f(H) = H \underbrace{\iff}_{\text{$f$ biyección}} f^{-1}(H) = H
+\]
+\[
+    \iff \text{las ecuaciones los coeficientes $(c_0, c_1, \ldots, c_n)$ y $(c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}}(f)$ determinan el mismo hiperplano}
+\] 
+\[
+    \iff \text{los coeficientes son proporcionales}
+\]
+Por otro lado, $H$ es un hiperplano invariante si y solo si existe $\mu \in \mathbb{K}^*$ tal que:
+\[
+    (c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}}(f) = \mu (c_0, c_1, \ldots, c_n)
+\]
+\[
+    \underbrace{\iff}_{\text{trasponiendo}} M_{\mathfrak{R}}(f)^T \begin{pmatrix}
+        c_0 \\ c_1 \\ \vdots \\ c_n
+    \end{pmatrix} = \mu \begin{pmatrix}
+        c_0 \\ c_1 \\ \vdots \\ c_n
+    \end{pmatrix}
+\]
+
+\begin{observación}
+    Hay una correlación entre los puntos fijos de $f$ y los hiperplanos invariantes de $f$ a través de la homografía dual $f^* : \mathbb{P}^* \to \mathbb{P}^*$. Pues
+    \[
+        M_{\mathfrak{R}^*}\begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix} = \lambda \begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix} \iff M_{\mathfrak{R}}(f)^T \begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix} = \lambda \begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix}
+    \]
+    entonces los autovalores y autovectores de $M_{\mathfrak{R}}(f)^T$ son los mismos que los de $M_{\mathfrak{R}}(f)$ y con la misma multiplicidad geométrica.
+\end{observación}
