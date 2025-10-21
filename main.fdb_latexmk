@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1761042342.67727 "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" "main.pdf" "main" 1761042352.72539 0
+["pdflatex"] 1761043305.23431 "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" "main.pdf" "main" 1761043315.26143 0
   "Appendix/Appendix.tex" 1759478188 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1759478188 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/paufr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1758970766 100429 9f340704fc725afd3c8f7d744bd01efd ""
@@ -360,16 +360,16 @@
   "Preamble/Preamble.tex" 1761039342 13307 2ea1f08eac49ff07c2ef0211985efb2a ""
   "Theory/1 - Espacios Proyectivos.tex" 1759947778 30397 b12e377f4ad50fa042e8b1be2b06326d ""
   "Theory/2 - Aplicaciones proyectivas.tex" 1759949234 20572 d743d971036331492a3b755454c7835b ""
-  "Theory/3 - Espacio Dual.tex" 1761042340 45286 0edd7812a8949eacd1b3b5176fb3e483 ""
+  "Theory/3 - Espacio Dual.tex" 1761043303 46864 61b3fc9d88f65e9b56a2cea27025977d ""
   "Theory/Theory.tex" 1760625544 151 264979ead9facfdb09f53e32c228c5f6 ""
-  "TikZ/desargues_tikz.aux" 1761042350 1458 7b1e62ecd7113e816de367c880f2916e "pdflatex"
+  "TikZ/desargues_tikz.aux" 1761043312 1458 7b1e62ecd7113e816de367c880f2916e "pdflatex"
   "TikZ/desargues_tikz.tex" 1759306878 5055 d6ea420859568e02ab67d330d89f20d1 ""
   "c:/Users/paufr/OneDrive/Escritorio/Geometria-Lineal/main.tex" 1761040377 4081 f9b4ad90690db052e64f7899eaf3a9f0 ""
   "images/logo.png" 1757932677 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1761042351 16963 6f6e7ae7d4c24108b5dea566c17988cd "pdflatex"
-  "main.out" 1761042351 3164 ac2cbdd35c0e26ed87fc8ec82d37eaf6 "pdflatex"
+  "main.aux" 1761043314 17249 2cd47c567da4dac1a43cbbf30f9688e2 "pdflatex"
+  "main.out" 1761043314 3164 ac2cbdd35c0e26ed87fc8ec82d37eaf6 "pdflatex"
   "main.tex" 1761040377 4081 f9b4ad90690db052e64f7899eaf3a9f0 ""
-  "main.toc" 1761042351 1720 5cd446708733fec1eb1eb2aabed30fdd "pdflatex"
+  "main.toc" 1761043314 1720 e834d3f1c3a66740d48b608e804d4415 "pdflatex"
   (generated)
   "TikZ/desargues_tikz.aux"
   "main.aux"

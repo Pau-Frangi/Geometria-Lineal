@@ -989,16 +989,53 @@ o que es lo mismo:
     \end{pmatrix} = 0
 \]
 
-Antes de ver cómo hallar los hiperplanos invariantes, observemos que si nos dan un hiperplano $H : c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0$, y una homografía $f: \mathbb{P} \to \mathbb{P}$ con matriz $M_{\mathfrak{R}_{\text{proy}}}(f)$, entonces ¿cuáles serán las ecuaciones de $f^{-1}(H)$?
+Antes de ver cómo hallar los hiperplanos invariantes, observemos que si nos dan un hiperplano $H : c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0$, y una homografía $f: \mathbb{P} \to \mathbb{P}$ con matriz $M_{\mathfrak{R}}(f)$, entonces ¿cuáles serán las ecuaciones de $f^{-1}(H)$?
 
 \[
     (x_0: x_1: \ldots : x_n) \in f^{-1}(H) \iff f((x_0: x_1: \ldots : x_n)) \in H
 \]
 \[
-    \iff (c_0, c_1, \ldots, c_n) \cdot \underbrace{M_{\mathfrak{R}_{\text{proy}}}(f)}_{\text{coordenadas de $f(x_0 : \ldots : x_n)_{\mathfrak{R}}$}} \begin{pmatrix}
+    \iff (c_0, c_1, \ldots, c_n)_{\mathfrak{R}} \cdot \underbrace{M_{\mathfrak{R}}(f)}_{\text{coordenadas de $f(x_0 : \ldots : x_n)_{\mathfrak{R}}$}} \begin{pmatrix}
         x_0 \\ x_1 \\ \vdots \\ x_n
     \end{pmatrix} = 0 
 \]
 \[
-    \iff \text{los coeficientes de las ecuaciones de } f^{-1}(H) \text{ son } (c_0', c_1', \ldots, c_n') = (c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}_{\text{proy}}}(f)
+    \iff \text{los coeficientes de las ecuaciones de } f^{-1}(H) \text{ son } (c_0', c_1', \ldots, c_n') = (c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}}(f)
 \]
+Si busco $H : c_0 x_0 + c_1 x_1 + \ldots + c_n x_n = 0$ hiperplano invariante, tenemos que:
+\[
+    f(H) = H \underbrace{\iff}_{\text{$f$ biyección}} f^{-1}(H) = H
+\]
+\[
+    \iff \text{las ecuaciones los coeficientes $(c_0, c_1, \ldots, c_n)$ y $(c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}}(f)$ determinan el mismo hiperplano}
+\] 
+\[
+    \iff \text{los coeficientes son proporcionales}
+\]
+Por otro lado, $H$ es un hiperplano invariante si y solo si existe $\mu \in \mathbb{K}^*$ tal que:
+\[
+    (c_0, c_1, \ldots, c_n) \cdot M_{\mathfrak{R}}(f) = \mu (c_0, c_1, \ldots, c_n)
+\]
+\[
+    \underbrace{\iff}_{\text{trasponiendo}} M_{\mathfrak{R}}(f)^T \begin{pmatrix}
+        c_0 \\ c_1 \\ \vdots \\ c_n
+    \end{pmatrix} = \mu \begin{pmatrix}
+        c_0 \\ c_1 \\ \vdots \\ c_n
+    \end{pmatrix}
+\]
+
+\begin{observación}
+    Hay una correlación entre los puntos fijos de $f$ y los hiperplanos invariantes de $f$ a través de la homografía dual $f^* : \mathbb{P}^* \to \mathbb{P}^*$. Pues
+    \[
+        M_{\mathfrak{R}^*}\begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix} = \lambda \begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix} \iff M_{\mathfrak{R}}(f)^T \begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix} = \lambda \begin{pmatrix}
+            x_0 \\ x_1 \\ \vdots \\ x_n
+        \end{pmatrix}
+    \]
+    entonces los autovalores y autovectores de $M_{\mathfrak{R}}(f)^T$ son los mismos que los de $M_{\mathfrak{R}}(f)$ y con la misma multiplicidad geométrica.
+\end{observación}
