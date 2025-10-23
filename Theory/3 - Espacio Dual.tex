@@ -1039,3 +1039,66 @@ Por otro lado, $H$ es un hiperplano invariante si y solo si existe $\mu \in \mat
     \]
     entonces los autovalores y autovectores de $M_{\mathfrak{R}}(f)^T$ son los mismos que los de $M_{\mathfrak{R}}(f)$ y con la misma multiplicidad geométrica.
 \end{observación}
+
+\ejemplo{
+    Volvemos al ejemplo anterior con la matriz:
+    \[
+    M_{\mathfrak{R}_{\text{proy}}}(f) = \begin{pmatrix}
+        4 & -2 & 2 \\
+        0 & 4 & 0 \\
+        0 & -2 & 6
+    \end{pmatrix}
+    \]
+    Que nos daba los autovalores $\lambda_1 = 4, \lambda_2 = 6$ con multiplicidades $m(\lambda_1) = 2, m(\lambda_2) = 1$.\\
+    Si proyectivizamos obtenemos:
+    \[
+    \mathbb{P}(V_{\lambda=6}) = \{ (0:1:-1) \}
+    \]
+    \[
+    \mathbb{P}(V_{\lambda=4}) = \text{recta proyectiva generada por } (1:0:0), (0:1:1) \equiv r: x_1 - x_2 = 0
+    \]
+    De lo que obtenemos los nucleos:
+    \[
+    \ker (M^t - 6I) = \ker \begin{pmatrix}
+        -2 & 0 & 0 \\
+        -2 & -2 & -2 \\
+        2 & 0 & 0
+    \end{pmatrix} = 
+    \langle (0,1,-1) \rangle
+    \]
+    Obteniendo el hiperplano invariante:
+    \[
+    H : x_1 - x_2 = 0
+    \]
+    Ahora podemos obtener el otro nucleo:
+    \[
+    \ker (M^t - 4I) = \ker \begin{pmatrix}
+        0 & 0 & 0 \\
+        -2 & 0 & -2 \\
+        2 & 0 & 2
+    \end{pmatrix} = 
+    \langle (1,0,0), (0,1,1) \rangle
+    \]
+    En realidad cualquier recta con coeficientes $\alpha (1,0,-1) + \beta (0,1,0)$, $\alpha, \beta \in \mathbb{R}$ sera invariante:
+    \[
+    H : \alpha x_0 + \beta x_1 - \alpha x_2 = 0, \quad \forall \alpha, \beta
+    \]
+    Teniendo así un haz de rectas de centro el punto $(1:0:1)$.
+}
+
+\begin{observación}
+    Hay una correspondencia (dualidad) entre los puntos fijos de una homografía $f: \mathbb{P} \to \mathbb{P}$ y los hiperplanos invariantes de $f$, ya que:
+    \begin{itemize}
+        \item Los autovalores de $M_{\mathfrak{R}}(f)$ y $M_{\mathfrak{R}}(f)^T$ son los mismos.
+        \item La dimensión del autoespacio asociado a cada autovalor es la misma tanto para $M_{\mathfrak{R}}(f)$ como para $M_{\mathfrak{R}}(f)^T$ (aunque los autoespacios en general difieren).
+    \end{itemize}
+    Esto se debe a que la trasposición de matrices mantiene determinantes y rangos respectivamente.
+    \[
+    \begin{array}{ccccccc}
+        Fix(f) & = & \{Pto\} & \underbrace{\cup}_{+} & \{Pto\} & \underbrace{\cup}_{+} & recta \\
+        & & \updownarrow & & \updownarrow & & \updownarrow \\
+        & & H_{inv} & \underbrace{\cup}_{+} & H_{inv} & \underbrace{\cup}_{+} & haz\; de\; hiperplanos \\ 
+    \end{array}
+    \]
+\end{observación}
+
