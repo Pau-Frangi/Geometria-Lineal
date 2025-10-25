@@ -1,1 +1,212 @@
 \hojaejercicio{6}{Clasificación de las homografías}
+% Ejercicio 1
+\ejercicio{
+    Halla los puntos fijos y las rectas invariantes de la homografía de $\mathbb{P}^2_{\mathbb{R}}$ que tiene por matriz
+    \[
+        M =
+        \begin{pmatrix}
+            1 & 1 & -1 & \\
+            0 & 2 & -1 &  \\
+            0 & 1 & 0 & \\
+        \end{pmatrix}
+        \]
+}{
+Sabemos que 
+\[ 
+\text{Fix}(f) = \bigcup_{\lambda \in \text{Spec}(M_{\mathfrak{R}_{\text{proy}}}(f))} \mathbb{P}(V_\lambda)
+\]
+Calculamos los autovalores de la matriz asociada a f : \\
+\[
+\text{Autovalores} =  \lambda_1=1 \text{ malg}=3\\
+\]
+Por lo tanto, los puntos fijos Fix(f) $= V_1 = Ker(M - I) $.\\
+Calculamos el núcleo:
+\[
+M - I =
+\begin{pmatrix}
+0 & 1 & -1 \\
+0 & 1 & -1 \\
+0 & 1 & -1
+\end{pmatrix}
+\]
+Entonces, el espacio de puntos fijos es:
+\[
+V_1 = \left\lbrace (x, y, z) \in \mathbb{R}^3 \mid y - z = 0 \right\rbrace
+\]
+Luego, los puntos fijos son:
+\[
+\text{Fix}(f) = \{(x_0:x_1:x_2) \in \mathbb{P}^2_{\mathbb{R}} \mid x_1 - x_2 = 0 \}
+\]
+Ahora, para hallar las rectas invariantes, calculamos los autovectores de la matriz transpuesta (puesto que son los hiperplanos invariantes, es decir, 
+los puntos invariantes en el espacio dual, que tiene por referencia la transpuesta de la matriz de la aplicación original):
+\[
+M^t =
+\begin{pmatrix}
+1 & 0 & 0 \\
+1 & 2 & 1 \\ 
+-1 & -1 & 0
+\end{pmatrix}
+\]
+Los autovalores son los mismos que los de M, por lo que nos centramos en $\lambda_1 = 1$. Calculamos el núcleo de $M^t - I$:
+\[ 
+M^t - I =
+\begin{pmatrix}
+0 & 0 & 0 \\
+1 & 1 & 1 \\
+-1 & -1 & -1
+\end{pmatrix}
+\]
+Luego, los coeficientes de las rectas invariantes que cumplen $x_0 + x_1 + x_2 = 0$. Son invariantes \\
+Es decir, los coeficientes están generados por los vectores $(1, 1, -2)$ y $(0, 1, -1)$. \\
+Por tanto, las rectas invariantes son, por ejemplo:
+\[r_1 : c_0 + c_1 - 2c_2 = 0\]
+\[r_2 : c_1 - c_2 = 0\] 
+
+}
+% Ejercicio 2
+\ejercicio{
+    Sea $f : \mathbb{P}^2_{\mathbb{R}} \to \mathbb{P}^2_{\mathbb{R}}$ una aplicación
+    proyectiva que tiene por matriz, respecto de la referencia canónica:
+    \[
+        M_f =
+        \begin{pmatrix}
+            1 & -1 & 0 & -1\\
+            -1 & 0 & 4 & -2 \\
+            0 & -1 & 1 & -1 \\
+            0 & -1 & -1 & 1
+        \end{pmatrix}
+    \]
+    (i) Calcula los puntos fijos de f . A partir de ellos, construir una recta invariante para f .\\
+(ii) Comprueba que la recta $r : \{x0 - x2 = x0 - x3 = 0\}$ es invariante por f pero que no
+contiene ningún punto fijo.\\
+(iii) Calcula los planos invariantes por f.
+}
+{
+(i) Calculamos puntos fijos : \\
+Primero hallamos los autovalores de la matriz asociada a f : \\
+\[
+\text{Autovalores} =  \lambda_1=1 \text{ malg}=1, \lambda_2= 2\text{ malg}=1\\
+\]
+Por lo tanto, los puntos fijos Fix(f) $= V_1 = Ker(M_{\mathfrak{R}_{\text{proy}}}(f) - I) $.\\
+Calculamos el núcleo:
+\[
+M_{\mathfrak{R}_{\text{proy}}}(f) - I =
+\begin{pmatrix}
+-1 & -1 & 4 & -2 \\
+    0 & -1 & 0 & -1 \\
+    0 & -1 & -1 & 0
+\end{pmatrix}
+\]
+Resolvemos el sistema asociado:
+\[
+\begin{cases}
+    -x_1 - x_3 = 0 \\
+    -x_0 - x_1 + 4x_2 - 2x_3 = 0 \\
+    -x_1 - x_3 = 0 \\
+    -x_1 - x_2 = 0
+\end{cases}
+\]
+Obtenemos que: \\
+$V_{\lambda_1} = \langle 3,-1,1,1 \rangle$. \\
+Hacemos lo mismo con $\lambda_2 = 2$: $V_{\lambda_2} = \langle 0,-1,0,1 \rangle$. \\
+Luego, los puntos fijos son:\\
+Fix$(f)= \{(3 : -1 : 1 : 1), (0:-1:0:1)\}$.
+\\
+Una recta invariante que pasa por estos puntos es: \\
+ 
+\[
+r :
+\begin{cases}
+    x_1 + -3x_2 = 0 \\
+    x_1 - x_3 = 0
+\end{cases}
+\]
+(ii)\\
+Sacamos dos puntos de la recta r : \\
+\[A = (0:1:0:0), B = (1:0:0:1)\] 
+Calculamos sus imágenes: \\
+\[f(A) = ( 1:0:-1:1)\in r, f(B) = (0:1:0:0)\in r\] 
+Luego, r es invariante. \\
+Ahora, comprobamos que no contiene puntos fijos. Pero como $A \notin r$ y $B \notin r$ y los puntos fijos son $ (3 : -1 : 1 : 1), (0:-1:0:1)$, concluimos que r no contiene puntos fijos.\\
+(iii)\\
+Calculamos los planos invariantes, para ello calculamos los autovectores de la matriz transpuesta (puesto que son los hiperplanos invariantes, es decir, 
+los puntos invariantes en el espacio dual, que tiene por referencia la transpuesta de la matriz de la aplicación original):
+\[
+M^t=
+\begin{pmatrix}
+    1 & -1 & 0 & 0\\
+    -1 & 0 & -1 & -1 \\
+    0 & 4 & 1 & -1 \\
+    -1 & -2 & -1 & 1
+\end{pmatrix}
+\]
+Los autovalores son los mismos que los de M, por lo que nos centramos en $\lambda_1 = 1$. Calculamos el núcleo de $M^t - I$:
+\[
+M^t - I =
+\begin{pmatrix}
+    0 & -1 & 0 & 0\\
+    -1 & -1 & -1 & -1 \\
+    0 & 4 & 0 & -1 \\
+    -1 & -2 & -1 & 0
+\end{pmatrix}
+\]
+Resolvemos el sistema asociado:
+\[
+\begin{cases}
+    -x_1 = 0 \\
+    -x_0 - x_1 - x_2 - x_3 = 0 \\
+    4x_1 - x_3 = 0 \\
+    -x_0 - 2x_1 - x_2 = 0
+\end{cases}
+\]
+Obtenemos que: \\
+$V_{\lambda_1} = \langle 1,0,-1,0 \rangle$. \\
+Hacemos lo mismo con $\lambda_2 = 2$: $V_{\lambda_2} = \langle 1,-1,4,-2 \rangle$. \\
+Luego, los planos invariantes son:\\
+$\pi_1 : x_0 - x_2 = 0$ \\
+$\pi_2 : x_0 - x_1 + 4x_2 - 2x_3 = 0$ \\
+
+
+}
+% Ejercicio 3
+\ejercicio{
+}{
+
+}
+% Ejercicio 4
+\ejercicio{
+}{
+
+}
+% Ejercicio 5
+\ejercicio{
+    Prueba que si dos rectas de puntos fijos se cortan entonces todos los puntos del plano que
+generan son también fijos
+}{
+(por revisar)
+Si dos rectas de puntos fijos r1, r2 tienen intersección no vacía, entonces generan un espacio de dimensión 2, es decir, un plano.
+Sea f una homografía de un espacio proyectivo P, entonces tiene asociada una aplicación lineal  $\overline{f}$ entre los espacios vectoriales que definen P, $\overline{f}$.
+Si pasamos al vectorial, las rectas invariantes pasan a ser planos de rectas invariantes por $\overline{f}$. Entonces
+Sea A $\in$ r1 $\cap$ r2, y sean B $\in$ r1 y C $\in$ r2, y cojamos en el vectorial sus correspondientes vectores $\overline{A}$, $\overline{B}$ y $\overline{C}$.
+Tenemos que \[
+\overline{r1} = \langle \overline{A}, \overline{B} \rangle \quad \overline{r2} = \langle \overline{A}, \overline{C} \rangle.
+\]
+Ahora,cogemos un punto cualquiera del plano generado por r1 y r2, es decir, un punto D $\in$ P tal que D $\in$ $\langle$ r1, r2 $\rangle$.
+Entonces, en el vectorial, \[
+\overline{D} = \alpha \overline{A} + \beta \overline{B} + \gamma \overline{C} \quad \text{con } \alpha, \beta, \gamma \in K.
+\]
+Como r1, r2 son rectas de puntos fijos, entonces 
+\[
+r1 \in Ker(\overline{f} - \lambda_1Id) \quad r2 \in Ker(\overline{f} - \lambda_2Id).
+\]
+Como tienen intersección no vacía, $\lambda_1 = \lambda_2 = \lambda$. Entonces,
+\[
+\overline{f}(\overline{A}) = \lambda \overline{A}, \quad \overline{f}(\overline{B}) = \lambda \overline{B}, \quad \overline{f}(\overline{C}) = \lambda \overline{C}.
+\]
+Luego,
+\[
+\overline{f}(\overline{D}) = \overline{f}(\alpha \overline{A} + \beta \overline{B} + \gamma \overline{C}) = \alpha \overline{f}(\overline{A}) + \beta \overline{f}(\overline{B}) + \gamma \overline{f}(\overline{C}) = \lambda (\alpha \overline{A} + \beta \overline{B} + \gamma \overline{C}) = \lambda \overline{D}.
+\]
+Por tanto, D es un punto fijo de f. \\
+}
+
