@@ -1,0 +1,22 @@
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|p{2.4cm}|p{2.8cm}|p{3.0cm}|p{3.4cm}|p{2.8cm}|p{2.8cm}|}
+\hline
+Nombre & Descripción & Definición (forma afín) & Matriz (coordenadas homogéneas) & Puntos fijos & Identificación / observación \\
+\hline
+Identidad & Aplicación identidad & $f(x)=x$ & $\displaystyle\begin{pmatrix} I & 0\\[2pt] 0 & 1\end{pmatrix}$ & Todo $\mathbb{A}^n$ & Elemento neutro del grupo afín. \\
+\hline
+Traslación de vector $\vec{v}$ & Desplazamiento uniforme & $T_{\vec{v}}(Q) = Q + \vec{v} \; \vec{v}\neq 0$ & $\displaystyle\begin{pmatrix} I & \vec{v}\\[2pt] 0 & 1\end{pmatrix}$ & Ninguno (no hay puntos fijos) & Conjugadas entre sí por cambios lineales; tipo puro de rango de la parte lineal $I$. \\
+\hline
+Afín con punto fijo único & Linealizable por traslación & $f(x)=A x + b,\; \det(I-A)\neq0$ & $\displaystyle\begin{pmatrix} A & b\\[2pt] 0 & 1\end{pmatrix}$ & Único $p=(I-A)^{-1}b$ & Conjugada por la traslación $x\mapsto x-p$ a la aplicación lineal $x\mapsto A x$. \\
+\hline
+Homotecia (dilatación) & Escalado respecto a un centro & $f(x)=\lambda(x-c)+c=\lambda x+(1-\lambda)c$ & $\displaystyle\begin{pmatrix} \lambda I & (1-\lambda)c\\[2pt] 0 & 1\end{pmatrix}$ & Centro único $c$ si $\lambda\neq1$ & Conjugada a $\lambda\mathrm{Id}$ mediante traslación; caso $\lambda=1$ da identidad o traslación si $c$ varía. \\
+\hline
+Unipotente / Cizalla & Parte lineal con autovalor $1$ & $f(x)=A x + b,\;1\in\operatorname{spec}(A)$ & $\displaystyle\begin{pmatrix} A & b\\[2pt] 0 & 1\end{pmatrix}$ & Si $b\in\operatorname{Im}(I-A)$ entonces conjunto de puntos fijos es un subespacio afín $p+\ker(I-A)$ & Conjugada a una aplicación lineal unipotente si existe punto fijo; si no, es un caso afín con eje de invariancia. \\
+\hline
+Afín sin puntos fijos & Obstrucción para resolver $(I-A)p=b$ & $f(x)=A x + b$ con $b\notin\operatorname{Im}(I-A)$ & $\displaystyle\begin{pmatrix} A & b\\[2pt] 0 & 1\end{pmatrix}$ & Ninguno & No admite punto fijo; la obstrucción mide la componente de traslación fuera de $\operatorname{Im}(I-A)$. \\
+\hline
+\end{tabular}
+\caption{Clasificación breve de aplicaciones afines en $\mathbb{A}^n$.}
+\end{table}

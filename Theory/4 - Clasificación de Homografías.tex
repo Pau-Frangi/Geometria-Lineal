@@ -1,0 +1,80 @@
+\section{Clasificación de Homografías}
+\subsection{Clasificación de Homografías}
+
+\begin{definición}[Puntos fijos de una homografía]
+    Sea $f: \mathbb{P}^n \to \mathbb{P}^n$ una homografía. Un punto $P \in \mathbb{P}^n$ es un \textbf{punto fijo} de $f$ si $f(P) = P$, es decir:
+    \[
+    Fix(f) =
+    \{ x \in \mathbb{P} : x = f(x) \} =
+    \bigcup_{\lambda \text{ autovalor de } f} P(V_{\lambda})
+    \]
+\end{definición}
+
+Recordemos que $V_{\lambda} = \ker(\hat{f} - \lambda \, id) = \text{ autoespacio de } \lambda$.
+
+\begin{definición}[Hiperplanos invariantes]
+    Sea $f: \mathbb{P}^n \to \mathbb{P}^n$ una homografía. Un hiperplano $H \subseteq \mathbb{P}^n$ es un \textbf{hiperplano invariante} de $f$ si $f(H) = H \iff f^{-1}(H) = H$.\\
+    En coordenadas tenemos que:
+    \[
+    H = c_0'x_0 + c_1'x_1 + \ldots + c_n'x_n = 0
+    \]
+    \[
+    f^{-1}(H) = c_0x_0 + c_1x_1 + \ldots +c_nx_n = 0
+    \]
+    Teniendo que con la aplicacion dual asociada $f^*$:
+    \[
+    f^* (c_0' : c_1' : \ldots : c_n') = (c_0 : c_1 : \ldots : c_n)
+    \]
+    Por tanto, $H$ es invariante si y solo si $(c_0' : c_1' : \ldots : c_n')$ es un punto fijo de $f^*$ bajo la referencia dual.
+\end{definición}
+
+Sabemos que $M(f^*) = M(f)^t$ bajo referencias duales, y ademas los autovalores de ambas matrices coinciden, incluyendo sus multiplicidades algebraicas y geométricas ya que $\dim \ker (A - \lambda I) = \dim \ker (A^t - \lambda I)$.
+
+Por tanto, una homografía $f$ tiene tantos puntos fijos como hiperplanos invariantes.
+
+\ejemplo{
+    Si tenemos una homografía $f$ que cumple que $Fix(f) = \{\text{punto}\} \cup \{\text{recta}\}$, entonces las pasando a la dual tenemos que:
+    \[
+    \begin{array}{ccccc}
+        Fix(f) & = & \{\text{punto}\} & \cup & \{\text{recta}\} \\
+        \Downarrow & & \Downarrow & & \Downarrow \\
+        \text{Rectas invariantes} & = & \{\text{recta de puntos fijos}\} & \cup & \{\text{haz de rectas invariantes}\}
+    \end{array}
+    \]
+    Siendo un haz de rectas invariantes las que pasan por el punto fijo de $f$, ya que la interseccion de 2 o mas rectas invariantes es un punto fijo.
+}
+
+\begin{proposición}[Propiedades de subespacios invariantes]
+    Sea $f: \mathbb{P}^n \to \mathbb{P}^n$ una homografía, y sean $X, Y \subseteq \mathbb{P}^n$ subespacios invariantes por $f$, es decir, $f(X) = X$ y $f(Y) = Y$. Entonces:
+    \begin{itemize}
+        \item $V(X,Y)$ es invariante por $f$.
+        \item $X \cap Y$ es invariante por $f$.
+    \end{itemize}
+\end{proposición}
+
+\begin{proof}
+    Veamos cada una de las afirmaciones:
+    \begin{itemize}
+        \item $f(V(X,Y)) = V(f(X), f(Y)) = V(X,Y)$, luego $V(X,Y)$ es invariante.
+        \item Sea $P \in X \cap Y$. Entonces, $f(P) \in f(X) = X$ y $f(P) \in f(Y) = Y$, luego $f(P) \in X \cap Y$. Por tanto, $X \cap Y$ es invariante.
+    \end{itemize}
+\end{proof}
+
+\subsection{Clasificación de aplicaciones afines}
+
+Realicemos un breve repaso de la clasificación de aplicaciones afines en el espacio afín $\mathbb{A}^n$, en forma de tabla:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{|p{2.4cm}|p{2.8cm}|p{3.0cm}|p{3.4cm}|p{2.8cm}|p{2.8cm}|}
+\hline
+Nombre & Descripción & Definición (forma afín) & Matriz (coordenadas homogéneas) & Puntos fijos & Identificación / observación \\
+\hline
+Traslación de vector $\vec{v}$ & Desplazamiento uniforme & $T_{\vec{v}}(Q) = Q + \vec{v} \; \vec{v}\neq 0$ & $\displaystyle\begin{pmatrix} 1 & 0\\[2pt] \vec{v} & I\end{pmatrix}$ & $Fix(T_{\vec{v}}) = \emptyset$ & $M(\vec{T}_{\vec{v}}) = I$, con $\vec{v} = \vec{QT_v(Q)}$ para cualquier $Q \in \mathbb{A}^n$. \\
+\hline
+Homotecia de centro $0$ y razon $\lambda$ & Escalado respecto a un centro & $f_{\lambda}(Q) = 0 + \lambda \vec{0Q}$ & $\displaystyle\begin{pmatrix} 1 & 0\\[2pt] 0 & \lambda I\end{pmatrix}$ & $Fix(H_{\lambda}) = \{0\}$ el centro& $M(\vec{H}_{\lambda}) = \lambda I$; si $\lambda = 1$ es la identidad, ademas $\lambda = \frac{\vec{0}f(Q)}{\vec{0Q}}$. \\
+\hline
+\end{tabular}
+\caption{Clasificación breve de aplicaciones afines en $\mathbb{A}^n$.}
+\end{table}
