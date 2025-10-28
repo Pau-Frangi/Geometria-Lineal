@@ -75,6 +75,120 @@ Traslación de vector $\vec{v}$ & Desplazamiento uniforme & $T_{\vec{v}}(Q) = Q 
 \hline
 Homotecia de centro $0$ y razon $\lambda$ & Escalado respecto a un centro & $f_{\lambda}(Q) = 0 + \lambda \vec{0Q}$ & $\displaystyle\begin{pmatrix} 1 & 0\\[2pt] 0 & \lambda I\end{pmatrix}$ & $Fix(H_{\lambda}) = \{0\}$ el centro& $M(\vec{H}_{\lambda}) = \lambda I$; si $\lambda = 1$ es la identidad, ademas $\lambda = \frac{\vec{0}f(Q)}{\vec{0Q}}$. \\
 \hline
+Proyección paralela a $W^{n-k} \subset \vec{\mathbb{A}}$ sobre $X^k \subset \mathbb{A}^n$ subespacio afín & Proyecta puntos sobre un subespacio afín siguiendo direcciones paralelas a un subespacio vectorial & $\pi(Q) = (Q+W) \cap X$ siendo $W \oplus \vec{X} = \vec{\mathbb{A}}$ & $\displaystyle\begin{pmatrix} 1 & 0 & 0 \\ 0 & 0^{n-k} & 0 \\ 0 & 0 & I^k \end{pmatrix}$ tomando origen en $X$. & $Fix(\pi) = X$ & $\pi \circ \pi = \pi$; $X = Im(\pi)$ y $W = \{\overrightarrow{Q \pi(Q)} \, | \, Q \in \mathbb{A}^n\}$. \\
+\hline
+Simetrías respecto de $X^k \subset \mathbb{A}^n$ subespacio afín en la dirección de $W^{n-k} \subset \vec{\mathbb{A}}$ & Refleja puntos respecto a un subespacio afín siguiendo direcciones paralelas a un subespacio vectorial & $\sigma(Q) = 2 \pi(Q) - Q$ si y sólo si $\pi(Q) = \frac{Q}{2} + \frac{\sigma(Q)}{2}$ teniendo que $W \oplus \vec{X} = \vec{\mathbb{A}}$ & $\displaystyle\begin{pmatrix} 1 & 0 & 0 \\ 0 & -I^{n-k} & 0 \\ 0 & 0 & I^k \end{pmatrix}$ & $Fix(\sigma) = X$ & $\sigma \circ \sigma = id$; $X = \{ \frac{Q + \sigma(Q)}{2} \, | \, Q \in \mathbb{A}^n\}$ y $W = \{\overrightarrow{Q \sigma(Q)} \, | \, Q \in \mathbb{A}^n\}$. \\
+\hline
 \end{tabular}
 \caption{Clasificación breve de aplicaciones afines en $\mathbb{A}^n$.}
 \end{table}
+
+\subsection{Clasificación de homografías en $\mathbb{P}^1$}
+
+Vamos a trabajar con la recta proyectiva canónica $\mathbb{P}^1 = \mathbb{P}(\mathbb{K}^2)$, siendo $\mathbb{K} = \mathbb{R}$ ó $\mathbb{C}$. Si cambiamos de referencia, la matriz de la homografía $f: \mathbb{P}^1_{\mathbb{R}} \to \mathbb{P}^1_{\mathbb{R}}$ cambia 
+\[
+    M(f)_{\mathfrak{R}} = Q \cdot M(f)_{\mathfrak{R}_c} \cdot Q^{-1}
+\]
+siendo $Q$ la matriz de cambio de referencia de $\mathfrak{R}_c$ a $\mathfrak{R}$. Esto es, $M(f)_{\mathfrak{R}}$ y $M(f)_{\mathfrak{R}_c}$ son matrices semejantes. Además si $A$ es semejante a $M(f)_{\mathfrak{R}_c}$, entonces 
+\[
+    A = Q \cdot M(f)_{\mathfrak{R}_c} \cdot Q^{-1}, \quad Q \in GL_2(\mathbb{K})
+\]
+siendo $Q = M_{\mathfrak{R}_c, \mathfrak{R}}$ para alguna referencia, luego $A = M(f)_{\mathfrak{R}}$.
+
+Por lo tanto, clasificar homografías (salvo cambio de referencia) equivale a clasificar matrices por semejanza, es decir, a clasificar las formas canónicas de Jordan.
+
+\textbf{Posibles formas de Jordan de matrices de dimensión 2:}
+\begin{itemize}
+    \item Autovalor doble:
+    \[
+        \begin{pmatrix}
+            \mu & 0 \\
+            0 & \mu
+        \end{pmatrix} \equiv \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix}
+    \]
+    donde $\mu \neq 0$ y considerando la equivalencia de matrices salvo proporcionalidad.
+    \[
+        \begin{pmatrix}
+            \mu & 1 \\
+            0 & \mu
+        \end{pmatrix} \equiv \begin{pmatrix}
+            1 & \frac{1}{\mu} \\
+            0 & 1
+        \end{pmatrix} \equiv \begin{pmatrix}
+            1 & 1 \\
+            0 & 1
+        \end{pmatrix}
+    \]
+    \item Autovalores simples:
+    \[
+        \begin{pmatrix}
+            \mu & 0 \\
+            0 & \lambda
+        \end{pmatrix} \equiv \begin{pmatrix}
+            1 & 0 \\
+            0 & \rho
+        \end{pmatrix}
+    \]
+    donde $\mu, \lambda \neq 0$, $\mu \neq \lambda$ y $\rho = \frac{\lambda}{\mu}$.
+    \item Sin autovalores (sólo en $\mathbb{R}$):
+    \[
+        \begin{pmatrix}
+            \alpha & -\beta \\
+            \beta & \alpha
+        \end{pmatrix} \equiv \begin{pmatrix}
+            \cos(\theta) & -\sin(\theta) \\
+            \sin(\theta) & \cos(\theta)
+        \end{pmatrix}
+    \] 
+    dividiendo por $\sqrt{\alpha^2 + \beta^2}$ y considerando $\cos(\theta) = \frac{\alpha}{\sqrt{\alpha^2 + \beta^2}}$, $\sin(\theta) = \frac{\beta}{\sqrt{\alpha^2 + \beta^2}}$.
+\end{itemize}
+
+Entonces si $f$ es homografía de la recta proyectiva, en alguna referencia entonces
+\[  
+    M(f) = \left\{ \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix}, \begin{pmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{pmatrix}, \begin{pmatrix}
+        1 & 0 \\
+        0 & \rho
+    \end{pmatrix}, \underbrace{\begin{pmatrix}
+        \cos(\theta) & -\sin(\theta) \\
+        \sin(\theta) & \cos(\theta)
+    \end{pmatrix}}_{\text{solo en } \mathbb{R}} \right\}
+\]
+
+\begin{itemize}
+    \item Si $M(f) = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix}$, entonces $f = id_{\mathbb{P}^1}$.
+    \item Si $M(f) = \begin{pmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{pmatrix}$, entonces $Fix(f) = \{(1:0)_\mathfrak{R}\}$.\\
+    Si quitamos el punto $(1:0)_\mathfrak{R}$, obtenemos la recta afín que tiene ecuaciones $\{x_1 \neq 0\}$.
+    \[
+        \{x_1 \neq 0\} \xrightarrow{f} \{x_1 \neq 0\}
+    \]
+    \[
+        \mathbb{K} \owns t \equiv (t:1) \mapsto f(t:1) = (t+1:1) \equiv t + 1 \in \mathbb{K}
+    \]
+    Luego tenemos una traslación en la recta afín.
+    \item Si $M(f) = \begin{pmatrix}
+        1 & 0 \\
+        0 & \rho
+    \end{pmatrix}$, con $\rho \neq 1$, entonces $Fix(f) = \{(1:0)_\mathfrak{R}, (0:1)_\mathfrak{R}\}$.\\
+    \[
+        \{x_1 \neq 0\} \xrightarrow{f} \{x_1 \neq 0\}
+    \]
+    \[
+        \mathbb{K} \owns t \equiv (1:t) \mapsto f(1:t) = (1:\rho t) \equiv \rho t \in \mathbb{K}
+    \]
+    Luego tenemos una homotecia en la recta afín. En el caso de que la razón de la homotecia sea $-1$, tenemos una simetría respecto al punto medio entre los dos puntos fijos.
+\end{itemize}
