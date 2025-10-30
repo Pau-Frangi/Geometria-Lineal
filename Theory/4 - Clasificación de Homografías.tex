@@ -67,7 +67,7 @@ Realicemos un breve repaso de la clasificación de aplicaciones afines en el esp
 \begin{table}[h]
 \centering
 \small
-\begin{tabular}{|p{2.4cm}|p{2.8cm}|p{3.0cm}|p{3.4cm}|p{2.8cm}|p{2.8cm}|}
+\begin{tabular}{|p{2.0cm}|p{2.4cm}|p{3.0cm}|p{3.0cm}|p{2.8cm}|p{2.8cm}|}
 \hline
 Nombre & Descripción & Definición (forma afín) & Matriz (coordenadas homogéneas) & Puntos fijos & Identificación / observación \\
 \hline
@@ -167,7 +167,7 @@ Entonces si $f$ es homografía de la recta proyectiva, en alguna referencia ento
     \item Si $M(f) = \begin{pmatrix}
         1 & 0 \\
         0 & 1
-    \end{pmatrix}$, entonces $f = id_{\mathbb{P}^1}$.
+    \end{pmatrix}$, entonces $f = id_{\mathbb{P}^1}$, y por tanto $Fix(f) = \mathbb{P}^1$.
     \item Si $M(f) = \begin{pmatrix}
         1 & 1 \\
         0 & 1
@@ -191,4 +191,103 @@ Entonces si $f$ es homografía de la recta proyectiva, en alguna referencia ento
         \mathbb{K} \owns t \equiv (1:t) \mapsto f(1:t) = (1:\rho t) \equiv \rho t \in \mathbb{K}
     \]
     Luego tenemos una homotecia en la recta afín. En el caso de que la razón de la homotecia sea $-1$, tenemos una simetría respecto al punto medio entre los dos puntos fijos.
+    \item Si $M(f) = \begin{pmatrix}
+        \cos(\theta) & -\sin(\theta) \\
+        \sin(\theta) & \cos(\theta)
+    \end{pmatrix}\, \quad \theta \neq \{0, k\pi : k \in \mathbb{Z} \}$, entonces $Fix(f) = \emptyset$.\\
 \end{itemize}
+
+Entonces, podemos identificar las homografías de la recta proyectiva $\mathbb{P}^1$ según su número de puntos fijos:
+\begin{itemize}
+    \item $\infty$ puntos fijos: identidad.
+    \item 1 punto fijo: traslación en la recta afín.
+    \item 2 puntos fijos: homotecia o simetría en la recta afín.
+    \item 0 puntos fijos (sólo en $\mathbb{R}$): rotación en la recta afín.
+\end{itemize}
+
+Ademas, en el caso de la rotacion, $\hat{f}$ es tambien una rotacion en el espacio vectorial $\mathbb{R}^2$ asociado a la recta proyectiva $\mathbb{P}^1_{\mathbb{R}}$, de angulo tambien $\theta$, y esta construccion se puede hacer tambien a la inversa.
+
+\subsection{Clasificación de homografías en $\mathbb{P}^1_{\mathbb{C}}$}
+
+Tenemos que $\mathbb{P}^1_{\mathbb{C}} = \{ (z_0 : z_1) \, | \, z_0, z_1 \in \mathbb{C}, \, (z_0, z_1) \neq (0,0) \}$, que es la union de las cartas afines:
+\[
+\{ z_0 \neq 0 \}
+\, \quad
+\{ z_1 \neq 0 \}
+\]
+
+Veamos las circunferencias $C_\rho$ con $\rho \in \mathbb{R}^+$ definidas como:
+\[
+C_\rho = \{ (z_0 : z_1) \in \mathbb{P}^1_{\mathbb{C}} \setminus \{(0:1)\} :
+\left| \frac{z_1}{z_0} \right| = \rho \}
+\]
+
+Así, en la carta afín $\{ z_0 \neq 0 \}$, tenemos las circunferencias $C_1 = \{ |z| = 1 \}$, $C_2 = \{ |z| = 2 \}$, etc.\\
+En particular:
+\[
+C_2 =
+\{ (1:z) : |z| = 2 \} =
+\{ (\frac{1}{z} : 1) : |z| = 2 \} =
+\{ (w : 1) : |w| = \frac{1}{2} \}
+\]
+En la carta afín $\{ z_0 \neq 0 \}$:
+\begin{center}
+    \begin{tikzpicture}[scale=2]
+        % Marco cuadrado donde dibujaremos las circunferencias
+        \draw[gray!30] (-3,-3) rectangle (3,3);
+        % Circunferencias
+        \draw[yellow] (0,0) circle (0.5);
+        \draw[blue] (0,0) circle (1);
+        % Nombres de las circunferencias
+        \node[yellow] at (1.2,0) {\large $C_1$};
+        \node[blue] at (2.2,0) {\large $C_2$};
+        % Centro (1:0)
+        \fill[red] (0,0) circle (2pt);
+        \node[red] at (0.3,0.3) {\large $(1:0)$};
+        % Punto (0:2)
+        \fill[blue] (0,2) circle (2pt);
+        \node[blue] at (0,2.3) {\large $(0:2)$};
+        % Nombre de la carta afín
+        \node at (2.5,-2.5) {\large $\{ z_0 \neq 0 \}$};
+    \end{tikzpicture}
+\end{center}
+
+Y en la carta afín $\{ z_1 \neq 0 \}$:
+\begin{center}
+    \begin{tikzpicture}[scale = 2]
+        % Marco cuadrado donde dibujaremos las circunferencias
+        \draw[gray!30] (-3,-3) rectangle (3,3);
+        % Circunferencias
+        \draw[blue] (0,0) circle (1);
+        \draw[yellow] (0,0) circle (2);
+        % Nombres de las circunferencias
+        \node[blue] at (1.2,0) {\large $C_2$};
+        \node[yellow] at (2.2,0) {\large $C_1$};
+        % Centro (0:1)
+        \fill[red] (0,0) circle (2pt);
+        \node[red] at (0.3,0.3) {\large $(0:1)$};
+    \end{tikzpicture}
+\end{center}
+
+Dejandonos así ver que las circunferencias $C_\rho$ son imagenes unas de otras al cambiar de carta afín, cambiando el radio por su inverso.\\
+
+Ademas tenemos que:
+\[
+\mathbb{P}^1_{\mathbb{C}} =
+\mathbb{C} \cup \{\infty\} =
+\hat{\mathbb{C}} =
+\text{Esfera de Riemann}
+\]
+En coordenadas, las homografias de $\mathbb{P}^1_{\mathbb{C}}$ son:
+\[
+f(z_0 : z_1) = (c z_0 + d z_1 : a z_0 + b z_1) \implies
+f(1 : z) = (1 : \frac{a + b z}{c + d z}) \, \quad z=\frac{z_1}{z_0}
+\]
+O tambien escrita como:
+\[
+z \mapsto \frac{a + b z}{c + d z}
+\]
+Entendiendo que: $\begin{cases}
+    (0:1) \equiv \infty \mapsto \frac{a}{c} \\
+    (1:-\frac{c}{d}) \equiv -\frac{c}{d} \mapsto \infty \equiv (0:1)
+\end{cases}$
