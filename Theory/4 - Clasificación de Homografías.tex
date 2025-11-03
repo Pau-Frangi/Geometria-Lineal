@@ -236,11 +236,11 @@ En la carta afín $\{ z_0 \neq 0 \}$:
         % Marco cuadrado donde dibujaremos las circunferencias
         \draw[gray!30] (-3,-3) rectangle (3,3);
         % Circunferencias
-        \draw[yellow] (0,0) circle (0.5);
-        \draw[blue] (0,0) circle (1);
+        \draw[yellow] (0,0) circle (1);
+        \draw[blue] (0,0) circle (2);
         % Nombres de las circunferencias
-        \node[yellow] at (1.2,0) {\large $C_1$};
-        \node[blue] at (2.2,0) {\large $C_2$};
+        \node[yellow] at (0.6,0) {\large $C_1$};
+        \node[blue] at (1.2,0) {\large $C_2$};
         % Centro (1:0)
         \fill[red] (0,0) circle (2pt);
         \node[red] at (0.3,0.3) {\large $(1:0)$};
@@ -258,8 +258,8 @@ Y en la carta afín $\{ z_1 \neq 0 \}$:
         % Marco cuadrado donde dibujaremos las circunferencias
         \draw[gray!30] (-3,-3) rectangle (3,3);
         % Circunferencias
-        \draw[blue] (0,0) circle (1);
-        \draw[yellow] (0,0) circle (2);
+        \draw[blue] (0,0) circle (0.5);
+        \draw[yellow] (0,0) circle (1);
         % Nombres de las circunferencias
         \node[blue] at (1.2,0) {\large $C_2$};
         \node[yellow] at (2.2,0) {\large $C_1$};
@@ -291,3 +291,118 @@ Entendiendo que: $\begin{cases}
     (0:1) \equiv \infty \mapsto \frac{a}{c} \\
     (1:-\frac{c}{d}) \equiv -\frac{c}{d} \mapsto \infty \equiv (0:1)
 \end{cases}$
+
+\subsection{Razón Doble}
+
+\textbf{Motivación: } Caracterizar aplicaciones afines.\\
+
+Si tenemos una aplicación afín $f: \mathbb{A} \to \mathbb{A}'$ y tenemos $A,B,C$ 3 puntos alineados entonces, usando que $\vec{v} = \lambda \vec{u} \iff \vec{f}(\vec{v}) = \lambda \vec{f}(\vec{u})$, tenemos que:
+\[
+\frac{\vec{AC}}{\vec{AB}} =
+\frac{\vec{f(A)f(C)}}{\vec{f(A)f(B)}}
+\]
+Es la razón simple de los puntos $A,B,C$, que se conserva al aplicar $f$.\\
+
+Si tenemos una aplicación biyectiva $f: \mathbb{A} \to \mathbb{A}'$, entonces se tiene que:
+\[
+f \text{ afín } \iff f \text{ conserva la alineación de puntos y la razón simple}
+\]
+
+La extensión a la geometría proyectiva necesariamente involucra un cuarto punto, ya que si tenemos $A,B,C \in r \, \quad A',B',C' \in r'$ entonces existe una homografía $h: r \to r'$ tal que $h(A) = A'$, $h(B) = B'$, $h(C) = C'$.\\
+
+Tengamos la siguiente notación:
+
+\[
+\begin{array}{ccc}
+    \mathbb{P}_{\mathbb{K}}^1 & \longleftrightarrow & \mathbb{K} \cup \{\infty\} \\
+    (x_0 : x_1) & \longleftrightarrow & \frac{x_1}{x_0} \\
+\end{array}
+\implies
+\begin{cases}
+    (0:1) \mapsto \infty \\
+    (1:0) \mapsto 0 \\
+    (1:1) \mapsto 1
+\end{cases}
+\]
+
+\begin{definición}[Razón doble]
+    Sean $A,B,C,D \in r \subseteq \mathbb{P}^1_{\mathbb{K}}$ 4 puntos distintos de una recta proyectiva $r$. Sea $f: r \to \mathbb{P}^1_{\mathbb{K}}$ una homografía tal que:
+    \[
+    \begin{array}{ccccc}
+        f(A) & = & (0:1) & \equiv & \infty \\
+        f(B) & = & (1:0) & \equiv & 0 \\
+        f(C) & = & (1:1) & \equiv & 1
+    \end{array}
+    \]
+    Entonces, la \textbf{razón doble} de los puntos $A,B,C,D$ es:
+    \[
+    \left[ A, B, C, D \right] = f(D) \in \mathbb{K}
+    \]
+\end{definición}
+
+\begin{teorema}
+    Sean $A,B,C,D \in r \subseteq \mathbb{P}^1_{\mathbb{K}}$, y $A',B',C',D' \in r' \subseteq \mathbb{P}^1_{\mathbb{K}}$ 4 puntos distintos de sus respectivas rectas proyectivas. Entonces son equivalentes:
+    \begin{enumerate}
+        \item Existe una homografía $h: r \to r'$ tal que $h(A) = A'$, $h(B) = B'$, $h(C) = C'$, $h(D) = D'$.
+        \item $\left[ A, B, C, D \right] = \left[ A', B', C', D' \right]$.
+    \end{enumerate}
+\end{teorema}
+
+\begin{proof}
+    Tenemos que ver que $1 \iff 2$.\\
+    Sean las homografías:
+        \[
+        \begin{array}{cccccccc}
+            g: & r & \to & r' & \quad & A,B,C & \underbrace{\mapsto}_{g} & A',B',C' \\
+            f: & r & \to & \mathbb{P}^1_{\mathbb{K}} & \quad & A,B,C & \underbrace{\mapsto}_{f} & \infty ,0,1 \\
+            f': & r' & \to & \mathbb{P}^1_{\mathbb{K}} & \quad & A',B',C' & \underbrace{\mapsto}_{f'} & \infty,0,1
+        \end{array}
+        \]
+        Dejando el diagrama conmutativo:
+        \[
+        \begin{tikzcd}
+            r \arrow{r}{g} \arrow{rd}{f} & r' \arrow{d}{f'} \\
+            & \mathbb{P}^1_{\mathbb{K}}
+        \end{tikzcd}
+        \]
+        De hecho, $f' \circ g = f$ ya que coinciden en $A,B,C$ que es una referencia
+    \begin{itemize}
+        \item[$\implies$] Si existe $h$ es necesariamente igual a $g$, $h = g$, luego:
+        \[
+        \left[ A, B, C, D \right] =
+        f(D) =
+        f' \circ g(D) =
+        f' \circ h(D) =
+        f'(D') =
+        \left[ A', B', C', D'\right]
+        \]
+        \item[$\impliedby$] Si $f(D) = \left[ A, B, C, D \right] = \left[ A', B', C', D' \right] = f'(D')$, entonces como $f = f' \circ g$ tenemos que:
+        \[
+        f'(D') =
+        f(D) =
+        f' \circ g(D) \underbrace{\implies}_{f' \text{ biyectiva}} 
+        g(D) = 
+        D'
+        \]
+        Por lo que basta tomar $h = g$.
+    \end{itemize}
+\end{proof}
+
+\begin{corolario}
+    Las homografías entre rectas proyectivas son las aplicaciones biyectivas que conservan la razón doble (en una caracterización).
+\end{corolario}
+
+\begin{proof}
+    Por el teorema anterior, las homografias conservan la razón doble, es decir, si $h: r \to r'$ es homografía, entonces:
+    \[
+    \left[ A, B, C, D \right] =
+    \left[ h(A), h(B), h(C), h(D) \right]
+    \]
+    Veamos la implicación contraria, es decir, si $g: r \to r'$ es biyectiva y conserva la razón doble, es decir, $\left[ A, B, C, D \right] = \left[ g(A), g(B), g(C), g(D) \right]$, entonces $g$ es homografía.\\
+    
+    Tomemos $A,B,C \in r$ 3 puntos distintos, y definamos $A' = g(A)$, $B' = g(B)$, $C' = g(C)$. Entonces, por el teorema anterior, sabemos que existe una homografía $h: r \to r'$ tal que $h(A) = A'$, $h(B) = B'$, $h(C) = C'$.\\
+
+    Tomamos entonces otro punto $D \in r$, veamos que $g(D) = h(D) \implies g = h \implies g$ es homografía. \\
+
+    Como $g$ conserva la razón doble, si $D' = g(D)$, entonces $\left[ A, B, C, D \right] = \left[ A', B', C', D' \right]$, y por el teorema anterior, existe una homografía $k: r \to r'$ tal que $k(A) = A'$, $k(B) = B'$, $k(C) = C'$, $k(D) = D'$, que tiene que ser necesariamente $h$ ya que coinciden en 3 puntos, luego $h(D) = D' = g(D) \implies g = h$ como queríamos ver.
+\end{proof}
