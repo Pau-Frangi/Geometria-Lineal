@@ -117,8 +117,8 @@ Una recta invariante que pasa por estos puntos es: \\
 \[
 r :
 \begin{cases}
-    x_1 + -3x_2 = 0 \\
-    x_1 - x_3 = 0
+    x_0 - 3x_1 = 0\\
+    x_1 + x_3 = 0
 \end{cases}
 \]
 (ii)\\
@@ -185,20 +185,20 @@ Luego, los planos invariantes son:\\
 generan son también fijos
 }{
 (por revisar)
-Si dos rectas de puntos fijos r1, r2 tienen intersección no vacía, entonces generan un espacio de dimensión 2, es decir, un plano.
-Sea f una homografía de un espacio proyectivo P, entonces tiene asociada una aplicación lineal  $\vec{f}$ entre los espacios vectoriales que definen P, $\vec{f}$.
-Si pasamos al vectorial, las rectas invariantes pasan a ser planos de rectas invariantes por $\vec{f}$. Entonces
-Sea A $\in$ r1 $\cap$ r2, y sean B $\in$ r1 y C $\in$ r2, y cojamos en el vectorial sus correspondientes vectores $\vec{A}$, $\vec{B}$ y $\vec{C}$.
+Si dos rectas de puntos fijos r1, r2 tienen intersección no vacía, entonces generan un espacio de dimensión 2, es decir, un plano.\\
+Sea f una homografía de un espacio proyectivo P, entonces tiene asociada una aplicación lineal  $\vec{f}$ entre los espacios vectoriales que definen P, $\vec{f}$.\\
+Si pasamos al vectorial, las rectas de puntos fijos pasan a ser planos de rectas invariantes por $\vec{f}$. Entonces:\\
+Sea $A \in r_1 \cap r_2$, y sean $B \in r_1$ y $C \in r_2$, y cojamos en el vectorial sus correspondientes vectores $\vec{A}$, $\vec{B}$ y $\vec{C}$.
 Tenemos que \[
-\vec{r1} = \langle \vec{A}, \vec{B} \rangle \quad \vec{r2} = \langle \vec{A}, \vec{C} \rangle.
+\vec{r_1} = \langle \vec{A}, \vec{B} \rangle \quad \vec{r_2} = \langle \vec{A}, \vec{C} \rangle.
 \]
-Ahora,cogemos un punto cualquiera del plano generado por r1 y r2, es decir, un punto D $\in$ P tal que D $\in$ v(r1, r2).
+Ahora,cogemos un punto cualquiera del plano generado por $r_1$ y $r_2$, es decir, un punto $D \in P$ tal que $D \in V(r_1, r_2)$. \\
 Entonces, en el vectorial, \[
 \vec{D} = \alpha \vec{A} + \beta \vec{B} + \gamma \vec{C} \quad \text{con } \alpha, \beta, \gamma \in K.
 \]
-Como r1, r2 son rectas de puntos fijos, entonces 
+Como $r_1$, $r_2$ son rectas de puntos fijos, entonces
 \[
-r1 \in Ker(\vec{f} - \lambda_1Id) \quad r2 \in Ker(\vec{f} - \lambda_2Id).
+\vec{r_1} \subseteq Ker(\vec{f} - \lambda_1Id) \quad \vec{r_2} \subseteq Ker(\vec{f} - \lambda_2Id).
 \]
 Como tienen intersección no vacía, $\lambda_1 = \lambda_2 = \lambda$. Entonces,
 \[
