@@ -450,7 +450,7 @@ Tengamos la siguiente notación:
     \]
     Así,
     \[
-        (d_0,d_1)_\mathcal{B} \mapsto (d_1,d_0) \implies f(D) = ((d_1 : d_0)_\mathfrak{R}) = (d_1 : d_0) = (1: \frac{d_0}{d_1}) = \frac{d_0}{d_1}
+        (d_0,d_1)_\mathcal{B} \mapsto (d_1,d_0) \implies f(D) = ((d_0 : d_1)_\mathfrak{R}) = (d_1 : d_0) = (1: \frac{d_0}{d_1}) = \frac{d_0}{d_1}
     \]
 \end{proof}
 
@@ -512,7 +512,9 @@ Veamos la clasificación de las homografías de la recta proyectiva.
 \end{proposición}
 
 \begin{proof}
-    Si $f \in \mathcal{G}_1 \setminus \{id\}$, y $\mathfrak{R}$ referencia tal que $A = (1:0)_\mathfrak{R}$, 
+    Veamos ambas afirmaciones:
+    \begin{enumerate}
+        \item Si $f \in \mathcal{G}_1 \setminus \{id\}$, y $\mathfrak{R}$ referencia tal que $A = (1:0)_\mathfrak{R}$, 
     \[
         M(f)_\mathfrak{R} = \begin{pmatrix}
             \lambda & \mu \\
@@ -535,5 +537,113 @@ Veamos la clasificación de las homografías de la recta proyectiva.
             0 & 1
         \end{pmatrix} \quad k \in \mathbb{K}
     \]
+    Así, el grupo $\mathcal{G}_1$ es isomorfo a $(\mathbb{K}, +)$, ya que:
+    \[
+        \begin{pmatrix}
+            1 & k_1 \\
+            0 & 1
+        \end{pmatrix}
+        \cdot
+        \begin{pmatrix}
+            1 & k_2 \\
+            0 & 1
+        \end{pmatrix} =
+        \begin{pmatrix}
+            1 & k_1 + k_2 \\
+            0 & 1
+        \end{pmatrix}
+    \]
+    \item Tomando una referencia $\mathfrak{R} = \{A, *; *\}$, de $\mathbb{P}^1_{\mathbb{K}}$, tenemos que:
+    \[
+    M(f)_{\mathfrak{R}} =
+    \begin{pmatrix}
+        1 & \tau
+        0 & 1
+    \end{pmatrix}
+    \]
+    Tomando con cuidado la referencia, podemos asumir $\tau = 1$.\\
+    Aun asi, si $A=(1:0)_\mathfrak{R}$, $B=(b:1)_\mathfrak{R}$, $f(B) = (b+\tau:1)$, y $f^2(B) = (b+2\tau:1)$, que en cordenadas afines en la carta $\{ x_1 \neq 0 \}$ son $b$, $b+\tau$, $b+2\tau$. Luego:
+    \[
+    [A, B, f(B), f^2(B)] =
+    \frac{(b + 2 \tau) - b}{(b + \tau) - b} =
+    2
+    \]
+    Graficamente se puede ver la razon simple (proporcion) entre los vectores $\vec{Bf(B)}$ y $\vec{Bf^2(B)}$, que da $\frac{(b + 2 \tau) - b}{(b + \tau) - b} = 2$:
+    \begin{center}
+        \begin{tikzpicture}
+            % Recta horizontal
+            \draw[thick,->] (0,0) -- (8,0);
+
+            % Puntos A, B, f(B), f^2(B)
+            \filldraw[red] (1,0) circle (2pt) node[below] {$A$} node[above] {$\infty$};
+            \filldraw[blue] (3,0) circle (2pt) node[below] {$B$} node[above] {$b$};
+            \filldraw[green] (5,0) circle (2pt) node[below] {$f(B)$} node[above] {$b + \tau$};
+            \filldraw[orange] (7,0) circle (2pt) node[below] {$f^2(B)$} node[above] {$b + 2\tau$};
+        \end{tikzpicture}
+    \end{center}
+    \end{enumerate}
 \end{proof}
 
+\begin{proposición}
+    Sean $A,A' \in \mathbb{P}^1_{\mathbb{K}}$ y consideremos el conjunto $\mathcal{G}_2$ de homografías que tienen como puntos fijos a $A$ y $A'$, es decir, $f \in \mathcal{G}_2 \iff Fix(f) = \{A,A'\}$ ó $Fix(f) = \mathbb{P}^1_{\mathbb{K}}$. Entonces:
+    \begin{enumerate}
+        \item $[A, A', B, f(B)] = \rho_f$ es independiente del punto $B \neq A, A'$, solo depende de la homografía $f$.
+        \item $(\mathcal{G}_2, \circ)$ es un grupo isomorfo a $(\mathbb{K} \setminus \{0\}, \cdot)$.
+    \end{enumerate}
+\end{proposición}
+
+\begin{proof}
+    Veamos ambas afirmaciones, aunque primero veamos que $(\mathcal{G}_2, \circ)$ es un subgrupo de homografias de $\mathbb{P}^1_{\mathbb{K}}$, ya que si $f,g \in \mathcal{G}_2$, entonces $f \circ g^-1 \in \mathcal{G}_2$ ya que fija $A$ y $A'$.
+    \begin{enumerate}
+        \item Fijemos una referencia $\mathfrak{R} = \{A', A; *\}$. Si $f \in \mathcal{G}_2$, entonces:
+        \[
+        M(f)_{\mathfrak{R}} =
+        \begin{pmatrix}
+            1 & 0 \\
+            0 & \rho
+        \end{pmatrix}
+        \, \qquad
+        \rho \neq 0
+        \]
+        Si $B = (1:b)_\mathfrak{R}$, con $b \neq 0$, entonces $f(B) = (1: \rho b)_\mathfrak{R}$, y por tanto:
+        \[
+        \left[ A, A', B, f(B) \right] =
+        \left[ \underbrace{(0:1)}_{\infty}, (1:0), (1:b), (1:b \rho) \right] =
+        [\infty, 0, b, \rho b] =
+        \frac{\rho b - 0}{b-0} = \rho = 
+        \rho_f \text{ no depende de } B
+        \]
+        \item
+        \[
+        \begin{array}{ccc}
+            (\mathcal{G}_2, \circ) & \longrightarrow & (\mathbb{K} \setminus \{0\}, \cdot) \\
+            f & \mapsto & \rho_f
+        \end{array}
+        \]
+        Es claramente un isomorfismo de grupos, y si tomamos $H = \left( \{ \begin{pmatrix}
+            1 & 0 \\ 0 & \lambda
+        \end{pmatrix} : \lambda \in \mathbb{K} \setminus \{0\} \}, \cdot \right)$, tenemos que $(\mathcal{G}_2, \circ) \backsimeq H < GL(2, \mathbb{K})$ donde a cada $f$ le equivale $M(f)_{\mathfrak{R}}$.\\
+        Ahora bien $(H, \cdot) \longrightarrow (\mathbb{K} \setminus \{0\}, \cdot)$ donde a cada $M= \begin{pmatrix}
+            1 & 0 \\ 0 & \lambda
+        \end{pmatrix} \mapsto \lambda$, por lo que:
+        \[
+        M \cdot M' =
+        \begin{pmatrix}
+            1 & 0 \\ 0 & \lambda
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & 0 \\ 0 & \lambda'
+        \end{pmatrix} =
+        \begin{pmatrix}
+            1 & 0 \\ 0 & \lambda \lambda'
+        \end{pmatrix}
+        \]
+        Es un isomorfismo de grupos
+    \end{enumerate}
+\end{proof}
+
+Volviendo a las transformaciones de Möbius, son equivalentes a homografias en $\mathbb{P}^1_{\mathbb{C}}$, las cuales envian rectas y circunferencias a rectas y circunferencias.
+
+\begin{lema}
+    Si $A,B,C,D \in \mathbb{P}^1_{\mathbb{C}}$, etonces $[A,B,C,D] \in \mathbb{R} \iff A,B,C,D$ están alineados.
+\end{lema}
