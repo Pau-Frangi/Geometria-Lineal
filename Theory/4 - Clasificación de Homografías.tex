@@ -406,3 +406,141 @@ Tengamos la siguiente notación:
 
     Como $g$ conserva la razón doble, si $D' = g(D)$, entonces $\left[ A, B, C, D \right] = \left[ A', B', C', D' \right]$, y por el teorema anterior, existe una homografía $k: r \to r'$ tal que $k(A) = A'$, $k(B) = B'$, $k(C) = C'$, $k(D) = D'$, que tiene que ser necesariamente $h$ ya que coinciden en 3 puntos, luego $h(D) = D' = g(D) \implies g = h$ como queríamos ver.
 \end{proof}
+
+\textbf{Cálculo en coordenadas}
+
+\begin{lema}
+    Sean  $A,B,C,D$ cuarto puntos de una recta proyectiva y $\mathfrak{R} = \{A,B;C\}$ una referencia. Si $D=(d_0,d_1)_\mathfrak{R}$, entonces:
+    \[
+    \left[ A, B, C, D \right] = \frac{d_0}{d_1}
+    \]
+\end{lema}
+
+\begin{proof}
+    La recta $r= \mathbb{P}^1_{V^2}$, $\mathcal{B} = \{\vec{u}_0, \vec{u}_1\}$ base de $V^2$ asociada a la referencia $\mathfrak{R} = \{A,B;C\}$, siendo:
+    \[
+        \begin{matrix}
+            A = [\vec{u}_0] = (1:0)_\mathfrak{R} \\
+            B = [\vec{u}_1] = (0:1)_\mathfrak{R} \\
+            C = [\vec{u}_0 + \vec{u}_1] = (1:1)_\mathfrak{R} \\
+        \end{matrix}
+    \]
+    Para construir $f: r \to \mathbb{P}^1_{\mathbb{K}}$ homografía tal que:
+    \[
+        \begin{array}{ccccc}
+            f(A) & = & (0:1) & \equiv & \infty \\
+            f(B) & = & (1:0) & \equiv & 0 \\
+            f(C) & = & (1:1) & \equiv & 1
+        \end{array}
+    \]
+    necesitamos $\hat{f}: V^2 \to \mathbb{K}^2$ lineal tal que:
+    \[
+        \begin{matrix}
+            \vec{u}_0 = (1,0) & \mapsto & (0, 1) = \vec{e}_1 \\
+            \vec{u}_1 = (0,1) & \mapsto & (1, 0) = \vec{e}_0
+        \end{matrix} \implies (1,1)_\mathcal{B} \mapsto (1,1)
+    \]
+    Luego
+    \[
+        \begin{matrix}
+            f(A) = f((1:0)_\mathfrak{R}) = (0:1) = \infty \\
+            f(B) = f((0:1)_\mathfrak{R}) = (1:0) = 0 \\
+            f(C) = f((1:1)_\mathfrak{R}) = (1:1) = 1 \\
+        \end{matrix}
+    \]
+    Así,
+    \[
+        (d_0,d_1)_\mathcal{B} \mapsto (d_1,d_0) \implies f(D) = ((d_1 : d_0)_\mathfrak{R}) = (d_1 : d_0) = (1: \frac{d_0}{d_1}) = \frac{d_0}{d_1}
+    \]
+\end{proof}
+
+\begin{lema} (Cálculo general)
+    Sea $\mathfrak{R}$ una referencia de la recta y $A=(a_0:a_1)_\mathfrak{R}$, $B=(b_0:b_1)_\mathfrak{R}$, $C=(c_0:c_1)_\mathfrak{R}$, $D=(d_0:d_1)_\mathfrak{R}$ cuatro puntos distintos de la recta proyectiva. Entonces:
+    \[
+    \left[ A, B, C, D \right] =
+    \frac{
+        \begin{vmatrix}
+            c_0 & a_0 \\
+            c_1 & a_1
+        \end{vmatrix}
+        \cdot
+        \begin{vmatrix}
+            d_0 & b_0 \\
+            d_1 & b_1
+        \end{vmatrix}
+    }{
+        \begin{vmatrix}
+            c_0 & b_0 \\
+            c_1 & b_1
+        \end{vmatrix}
+        \cdot
+        \begin{vmatrix}
+            d_0 & a_0 \\
+            d_1 & a_1
+        \end{vmatrix}
+    }
+    \]
+\end{lema}
+
+\textbf{Casos particulares:}\\
+
+\begin{itemize}
+    \item Afín : $A = (1: a)_\mathfrak{R}$, $B = (1: b)_\mathfrak{R}$, $C = (1: c)_\mathfrak{R}$, $D = (1: d)_\mathfrak{R}$, entonces 
+    \[
+    \left[ A, B, C, D \right] =
+    \frac{c - a}{c - b} \cdot \frac{d - b}{d - a}
+    \]
+    \item Afín + A en $\infty$:\\
+    \[
+        A = (1: a)_\mathfrak{R}, \quad B = (1: b)_\mathfrak{R}, \quad C = (0:1)_\mathfrak{R} \equiv \infty, \quad D = (1: d)_\mathfrak{R}
+    \]
+    entonces 
+    \[
+        [ A, B, C, D ] = \frac{d - b}{c - b}
+    \]
+    es la razón simple de los puntos $B,C,D$.
+\end{itemize}
+
+Veamos la clasificación de las homografías de la recta proyectiva.
+
+\begin{proposición}
+    Fijado un punto $A \in \mathbb{P}^1_{\mathbb{K}}$, y sea $\mathcal{G}_1$ el conjunto de homografías cuyo único punto fijo es $A$ ó todo $\mathbb{P}^1_{\mathbb{K}}$. Entonces, 
+    \begin{enumerate}
+        \item $(\mathcal{G}_1, \circ)$ es un grupo isomorfo a $(\mathbb{K}, +)$.
+        \item $\forall f \in \mathcal{G}_1 \setminus \{id\}$, y $\forall B \neq A$, entonces $[A, B, f(B), f^2(B)] = 2$.
+    \end{enumerate}
+\end{proposición}
+
+\begin{proof}
+    Si $f \in \mathcal{G}_1 \setminus \{id\}$, y $\mathfrak{R}$ referencia tal que $A = (1:0)_\mathfrak{R}$, 
+    \[
+        M(f)_\mathfrak{R} = \begin{pmatrix}
+            \lambda & \mu \\
+            0 & \lambda
+        \end{pmatrix} \equiv \begin{pmatrix}
+            1 & \frac{\mu}{\lambda} \\
+            0 & 1
+        \end{pmatrix}
+    \]
+    por ser $A$ el único punto fijo. Luego, 
+    \[
+        \mathcal{G}_1 \simeq H = \left\{ M \in GL_2(\mathbb{K}) : M = \begin{pmatrix}
+            1 & k \\
+            0 & 1
+        \end{pmatrix}, k \in \mathbb{K} \right\} < GL_2(\mathbb{K}) 
+    \]
+    \[
+        f \mapsto M(f)_\mathfrak{R} = \begin{pmatrix}
+            1 & k \\
+            0 & 1
+        \end{pmatrix} \quad k \in \mathbb{K}
+    \]
+\end{proof}
+
+Dadas la rectas proyectivas $r, r'$ del plano proyectivo y un punto $F$ del mismo, queremos trazar la recta que pasa por $F$ y que corta a la intersección de $r$ y $r'$, teniendo en cuenta que la intersección está fuera de los límites del papel.
+
+Para ello, comenzamos eligiendo dos puntos $A, B$ en el segemento visible de la recta $r$. Mismamente elegimos dos puntos $A', B'$ en el segmento visible de la recta $r'$, y trazamos las rectas $AA'$ y $BB'$. Aunque la elección de estos puntos es arbitraria (aunque no se pueden escoger de forma que las rectas $AA'$ y $BB'$ queden paralelas), conviene escogerlos con idea, pues el siguiente paso será hallar su intersección, que podría quedar fuera de los límites del papel según la elección de los puntos.
+
+Denotamos $O = AA' \cap BB'$. Trazamos una nueva recta $s$ desde $O$ de forma que corte a las rectas $r$ y $r'$. Así, obtenemos los puntos $C = s \cap r$ y $C' = s \cap r'$. Trazamos las rectas $CB$ y $C'B'$, y su intersección es el punto $D$. Finalmente, la recta que buscamos es la que une los puntos $F$ y $D$.
+
+En efecto, por el teorema de Desargues, las rectas $AA'$, $BB'$, $CC'$ son concurrentes en el punto $O$, así los puntos $F = AC \cap A'C'$, $D = BC \cap B'C'$ y $E = AB \cap A'B' = r \cap r'$ son colineales, luego con hallar la recta que pasa por $F$ y $D$ sabemos que pasa por $E$, que es la intersección de las rectas $r$ y $r'$.
