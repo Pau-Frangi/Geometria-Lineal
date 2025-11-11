@@ -21,7 +21,7 @@ Recordemos que $V_{\lambda} = \ker(\hat{f} - \lambda \, id) = \text{ autoespacio
     \[
     f^{-1}(H) = c_0x_0 + c_1x_1 + \ldots +c_nx_n = 0
     \]
-    Teniendo que con la aplicacion dual asociada $f^*$:
+    Teniendo que con la aplicación dual asociada $f^*$:
     \[
     f^* (c_0' : c_1' : \ldots : c_n') = (c_0 : c_1 : \ldots : c_n)
     \]
@@ -278,7 +278,7 @@ Ademas tenemos que:
 \hat{\mathbb{C}} =
 \text{Esfera de Riemann}
 \]
-En coordenadas, las homografias de $\mathbb{P}^1_{\mathbb{C}}$ son:
+En coordenadas, las homografías de $\mathbb{P}^1_{\mathbb{C}}$ son:
 \[
 f(z_0 : z_1) = (c z_0 + d z_1 : a z_0 + b z_1) \implies
 f(1 : z) = (1 : \frac{a + b z}{c + d z}) \, \quad z=\frac{z_1}{z_0}
@@ -393,7 +393,7 @@ Tengamos la siguiente notación:
 \end{corolario}
 
 \begin{proof}
-    Por el teorema anterior, las homografias conservan la razón doble, es decir, si $h: r \to r'$ es homografía, entonces:
+    Por el teorema anterior, las homografías conservan la razón doble, es decir, si $h: r \to r'$ es homografía, entonces:
     \[
     \left[ A, B, C, D \right] =
     \left[ h(A), h(B), h(C), h(D) \right]
@@ -593,7 +593,7 @@ Veamos la clasificación de las homografías de la recta proyectiva.
 \end{proposición}
 
 \begin{proof}
-    Veamos ambas afirmaciones, aunque primero veamos que $(\mathcal{G}_2, \circ)$ es un subgrupo de homografias de $\mathbb{P}^1_{\mathbb{K}}$, ya que si $f,g \in \mathcal{G}_2$, entonces $f \circ g^-1 \in \mathcal{G}_2$ ya que fija $A$ y $A'$.
+    Veamos ambas afirmaciones, aunque primero veamos que $(\mathcal{G}_2, \circ)$ es un subgrupo de homografías de $\mathbb{P}^1_{\mathbb{K}}$, ya que si $f,g \in \mathcal{G}_2$, entonces $f \circ g^-1 \in \mathcal{G}_2$ ya que fija $A$ y $A'$.
     \begin{enumerate}
         \item Fijemos una referencia $\mathfrak{R} = \{A', A; *\}$. Si $f \in \mathcal{G}_2$, entonces:
         \[
@@ -642,8 +642,98 @@ Veamos la clasificación de las homografías de la recta proyectiva.
     \end{enumerate}
 \end{proof}
 
-Volviendo a las transformaciones de Möbius, son equivalentes a homografias en $\mathbb{P}^1_{\mathbb{C}}$, las cuales envian rectas y circunferencias a rectas y circunferencias.
+Volviendo a las transformaciones de Möbius, son equivalentes a homografías en $\mathbb{P}^1_{\mathbb{C}}$, las cuales envian rectas y circunferencias a rectas y circunferencias.
 
 \begin{lema}
     Si $A,B,C,D \in \mathbb{P}^1_{\mathbb{C}}$, etonces $[A,B,C,D] \in \mathbb{R} \iff A,B,C,D$ están alineados.
 \end{lema}
+
+\begin{corolario}
+    Las homografías de $\mathbb{P}^1_{\mathbb{C}}$ envian rectas afines (reales) y circunferencias en rectas afines (reales) y circunferencias.
+\end{corolario}
+
+\begin{proof}
+    Las homografías son las transformaciones de Möbius, y estas satisfacen la propiedad.
+\end{proof}
+
+\begin{observación}
+    La razón doble de puntos $\mathbb{R}$-alineados y $\mathbb{C}$-alineados coincide: si $\mathbb{P}$ es un espacio proyectivo complejo, $A,B,C,D \in r_{\mathbb{C}} \subseteq \mathbb{P}$, siendo $r_{\mathbb{C}}$ una recta proyectiva compleja de $\mathbb{P}$, y resulta que $A,B,C,D$ viven en un recta afín real de $r_{\mathbb{C}} \setminus \{ \infty \}$, entonces resulta que:
+    \[
+    [A,B,C,D]_{\mathbb{C}} = [A,B,C,D]_{\mathbb{R}}
+    \] 
+\end{observación}
+
+\subsection{Haces de hiperplanos}
+
+Recordamos que un a recta $r \subset \mathbb{P}^*$ corresponde a una familia de hiperplanos en $\mathbb{P}$ que contiene al subespacio $r^*\subset \mathbb{P}$.
+\[
+    \dim(r^*) = \dim(\mathbb{P}) - \dim(r) - 1 = \dim(\mathbb{P}) - 2
+\]
+
+\begin{definición} [Haz de hiperplanos de base X]
+    Dado un sibespacio proyectivo $X$ de codimensión 2, se llama haz de hiperplanos de base $X$ a la familia $\mathcal{F}$ de hiperplanos que contienen a $X$.
+\end{definición}
+
+\ejemplo{
+    Sea $\mathbb{P} = \mathbb{P}^2$, entonces $\dim(\mathbb{P}) = 2$. En el plano proyectivo se tiene que 
+    \[
+        \text{haz de hiperplanos con base } X \equiv \text{haz de rectas que pasan por } X
+    \]
+}
+
+\textbf{Nota:} Se define la razón doble de los cuatro hiperplanos de un haz como la razón doble de los puntos correspondientes en el dual.
+
+\begin{proposición}
+    Sea $\mathcal{F}$ un haz de hiperplanos de base $X$ y $r$ un recta que no pasa por $X$. Se define la aplicación:
+    \[
+        \begin{matrix}
+            \varphi : r & \to & \mathcal{F} \\
+            A & \mapsto & V(A,X)
+        \end{matrix}
+    \]
+    Entonces $\varphi$ es una homografía (entendiendo $\mathcal{F}$ como una recta proyectiva en el espacio dual), de inversa:
+    \[
+        \begin{matrix}
+            \varphi^{-1} : \mathcal{F} & \to & r \\
+            H & \mapsto & H \cap r
+        \end{matrix}
+    \]
+\end{proposición}
+
+\begin{proof}
+    Vamos a ver que $\varphi$ es aplicación proyectiva, encontrando $\hat{\varphi}$ lineal tal que la induce.
+    \[
+        \mathcal{F} = V(H_0,H_1) \quad H_0 : h_0 = 0, \, H_1 : h_1 = 0 \text{ hiperplanos del haz}
+    \]
+    esto es,
+    \[
+        \mathcal{F} = \mathbb{P}(L[h_0, h_1]) 
+    \]
+    siendo $L[h_0, h_1] = W_\mathcal{F}$ un plano vectorial de $V^*$.\\
+    Supongamos que $r = \mathbb{P}(W_r)$, 
+    \[
+        V \supset \dim(W_r) = 2 = \dim(W_\mathcal{F}) \subset V^*
+    \]
+    \[
+        \begin{matrix}
+            \hat{\varphi} : W_r & \to & W_\mathcal{F} \\
+            \vec{u} & \mapsto & h_1(\vec{u}) h_0 - h_0(\vec{u}) h_1 \in V^*
+        \end{matrix}
+    \]
+    Ahora si $A = [\vec{u}]$, comprobamos que $\hat{\varphi}(\vec{u})$ se anula en $\vec{u}$ si y sólo si $A \in \text{hiperplano } \hat{\varphi}(\vec{u}) = 0$, esto es, si se anula en $\varphi([\vec{u}])$.
+    \[
+        \hat{\varphi}(\vec{u})(\vec{u}) =
+        h_1(\vec{u}) h_0(\vec{u}) - h_0(\vec{u}) h_1(\vec{u}) = 0
+    \]
+    $\hat{\varphi}(\vec{u})$ se anula en $W_X$, siendo $X = \mathbb{P}(W_X)$, porque $h_0 |_{W_X} = h_1 |_{W_X} = 0$, donde $H_0, H_1 \supset X$. Luego, $\hat{\varphi}(\vec{u})$ se anula en $L(\vec{u}, W_X)$, y por tanto $\hat{\varphi}$ es lineal por serlo $h_0, h_1$, que satisfacen
+    \[
+        [\hat{\varphi}(\vec{u})] = \varphi([\vec{u}]) = \varphi(A) = V(A,X)
+    \]
+    como $[\varphi(\vec{u})]$ se anula en $\mathbb{P}(L(\vec{u}, W_X)) = V([\vec{u}], X) = V(A,X)$ se sigue que $\hat{\varphi}$ induce a $\varphi$.\\
+    Como $\hat{\varphi}$ es sobreyectiva (porque $\dim(Im(\hat{\varphi})) = 2$, $Im(\hat{\varphi}) = L[h_0, h_1]$), entonces $\varphi$ es sobreyectiva $\implies \varphi$ es homografía.\\
+    Inversa de $\varphi$:
+    \[
+        A \to V(A,X) = H  \to H \cap r
+    \]
+    es un punto porque $\dim(H \cap r) = \dim(H) + \dim(r) - \dim(V(H,r)) = (n-1) + 1 - n = 0$.
+\end{proof}
