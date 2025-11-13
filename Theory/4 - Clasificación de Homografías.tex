@@ -802,24 +802,24 @@ Recordamos que un a recta $r \subset \mathbb{P}^*$ corresponde a una familia de 
                 \draw[->] (0,0,0) -- (0,0,4) node[anchor=south]{$z$};
 
             % Dibuja los hiperplanos paralelos en 3D
-            \fill[blue!20,opacity=0.5] (1,0,0) -- (1,0,4) -- (1,4,4) -- (1,4,0) -- cycle; % Hiperplano H1
-            \fill[red!20,opacity=0.5] (2.5,0,0) -- (2.5,0,4) -- (2.5,4,4) -- (2.5,4,0) -- cycle; % Hiperplano H2
-            \fill[green!20,opacity=0.5] (4,0,0) -- (4,0,4) -- (4,4,4) -- (4,4,0) -- cycle; % Hiperplano H3
+            \fill[blue!20,opacity=0.5] (1,0,-2) -- (1,0,4) -- (1,4,4) -- (1,4,-2) -- cycle; % Hiperplano H1
+            \fill[red!20,opacity=0.5] (2.5,0,-2) -- (2.5,0,4) -- (2.5,4,4) -- (2.5,4,-2) -- cycle; % Hiperplano H2
+            \fill[green!20,opacity=0.5] (4,0,-2) -- (4,0,4) -- (4,4,4) -- (4,4,-2) -- cycle; % Hiperplano H3
 
             % Dibuja las rectas r y r' con sus nombres
-            \draw[thick,orange] plot [domain=0:4,samples=20] (\x, 1+\x/5, 0); % Recta r
-            \draw[thick,purple] plot [domain=0:4,samples=20] (\x, 1+\x/-5,0); % Recta r'
+            \draw[thick,orange] plot [domain=0:4,samples=20] (\x, 1+\x/5, \x/5); % Recta r
+            \draw[thick,purple] plot [domain=0:4,samples=20] (\x, 1+\x/-5,\x/5); % Recta r'
             \node at (4,1.8,0) [right] {$r$};
             \node at (4,0.2,0) [right] {$r'$};
 
             % Puntos de intersección
-            \filldraw[black] (1,1.2,0) circle (2pt) node[above right] {$A_1$};
-            \filldraw[black] (2.5,1.5,0) circle (2pt) node[above right] {$A_2$};
-            \filldraw[black] (4,1.8,0) circle (2pt) node[above right] {$A_3$};
+            \filldraw[black] (1,1.2,0.2) circle (2pt) node[above right] {$A_1$};
+            \filldraw[black] (2.5,1.5,0.5) circle (2pt) node[above right] {$A_2$};
+            \filldraw[black] (4,1.8,0.8) circle (2pt) node[above right] {$A_3$};
 
-            \filldraw[black] (1,0.8,0) circle (2pt) node[below right] {$A_1'$};
-            \filldraw[black] (2.5,0.5,0) circle (2pt) node[below right] {$A_2'$};
-            \filldraw[black] (4,0.2,0) circle (2pt) node[below right] {$A_3'$};
+            \filldraw[black] (1,0.8,0.2) circle (2pt) node[below right] {$A_1'$};
+            \filldraw[black] (2.5,0.5,0.5) circle (2pt) node[below right] {$A_2'$};
+            \filldraw[black] (4,0.2,0.8) circle (2pt) node[below right] {$A_3'$};
             
         \end{tikzpicture}
     \end{center}
