@@ -737,3 +737,114 @@ Recordamos que un a recta $r \subset \mathbb{P}^*$ corresponde a una familia de 
     \]
     es un punto porque $\dim(H \cap r) = \dim(H) + \dim(r) - \dim(V(H,r)) = (n-1) + 1 - n = 0$.
 \end{proof}
+
+\begin{corolario}
+    Sean $H_1, H_2, H_3, H_4 \in \mathcal{F}$ 4 hiperplanos distintos de un haz de hiperplanos de base $X$, y sea $r$ una recta que no pasa por $X$. Entonces, si denominamos $A_i = H_i \cap r$, se tiene que:
+    \[
+        [H_1, H_2, H_3, H_4] = [A_1, A_2, A_3, A_4]
+    \]
+    Entiendiendo $H_i$ como puntos de la recta proyectiva $\mathcal{F}$ en el espacio dual.
+
+    \begin{center}
+        \begin{tikzpicture}
+
+            % Fondo blanco para que se vea bien
+            \fill[white] (-4,-2.5) rectangle (5,5);
+
+            % Ejes de 3 dimensiones
+                \draw[->] (0,0,0) -- (4,0,0) node[anchor=north east]{$x$};
+                \draw[->] (0,0,0) -- (0,4,0) node[anchor=north west]{$y$};
+                \draw[->] (0,0,0) -- (0,0,4) node[anchor=south]{$z$};
+
+                % Hiperplanos del haz
+                \fill[blue!20,opacity=0.5] (0,0,0) -- (4,0,0) -- (4,4,0) -- (0,4,0) -- cycle; % Plano 1
+                \fill[red!20,opacity=0.5] (0,0,0) -- (4,0,4) -- (4,4,4) -- (0,4,0) -- cycle; % Plano 2
+                \fill[green!20,opacity=0.5] (0,0,0) -- (1,0,6) -- (1,4,6) -- (0,4,0) -- cycle; % Plano 3
+                \fill[purple!20,opacity=0.5] (0,0,0) -- (-2,0,3) -- (-2,4,3) -- (0,4,0) -- cycle; % Plano 4
+
+                % Recta r curva que corta a los planos - cuarto de circunferencia en y=2
+                \draw[thick,orange] plot [domain=0:90,samples=20] ({3*cos(\x)}, 2, {3*sin(\x)});
+                % Extensión de la recta a la parte negativa de x
+                \draw[thick,orange] plot [domain=90:120,samples=20] ({3*cos(\x)}, 2, {3*sin(\x)});
+
+                % Puntos de intersección
+                \filldraw[black] (3,2,0) circle (2pt) node[above right] {$A_1$};
+                \filldraw[black] (3,2.5,3) circle (2pt) node[above right] {$A_2$};
+                \filldraw[black] (1,3.15,6) circle (2pt) node[above right] {$A_3$};
+                \filldraw[black] (-1.5,2,2.6) circle (2pt) node[above left] {$A_4$};
+        \end{tikzpicture}
+    \end{center}
+\end{corolario}
+
+\begin{proof}
+    La aplicacion $\varphi: \mathcal{F} \to r$ que envia $\varphi (H) = H \cap r$ es homografía, al ser la inversa de la proposición anterior, luego conserva la razón doble, es decir:
+    \[
+        [H_1, H_2, H_3, H_4] =
+        [\varphi(H_1), \varphi(H_2), \varphi(H_3), \varphi(H_4)] =
+        [A_1, A_2, A_3, A_4]
+    \]
+\end{proof}
+
+\begin{teorema}[Teorema de Tales]
+    Sea $\mathbb{A}$ un espacio afín y sean $H_1, H_2, H_3$ hiperplanos paralelos.\\
+    Sean ahora $r,r'$ dos rectas no paralelas entre sí y no paralelas a los hiperplanos $H_i$. Si $A_i = H_i \cap r$ y $A_i' = H_i \cap r'$, entonces:
+    \[
+        \frac{\vec{A_1 A_3}}{\vec{A_1 A_2}} = \frac{\vec{A_1' A_3'}}{\vec{A_1' A_2'}}
+    \] 
+    \begin{center}
+        \begin{tikzpicture}
+            % Fondo blanco para que se vea bien
+            \fill[white] (-3.5,-2.5) rectangle (5,5);
+
+            % Ejes de 3 dimensiones
+                \draw[->] (0,0,0) -- (4,0,0) node[anchor=north east]{$x$};
+                \draw[->] (0,0,0) -- (0,4,0) node[anchor=north west]{$y$};
+                \draw[->] (0,0,0) -- (0,0,4) node[anchor=south]{$z$};
+
+            % Dibuja los hiperplanos paralelos en 3D
+            \fill[blue!20,opacity=0.5] (1,0,0) -- (1,0,4) -- (1,4,4) -- (1,4,0) -- cycle; % Hiperplano H1
+            \fill[red!20,opacity=0.5] (2.5,0,0) -- (2.5,0,4) -- (2.5,4,4) -- (2.5,4,0) -- cycle; % Hiperplano H2
+            \fill[green!20,opacity=0.5] (4,0,0) -- (4,0,4) -- (4,4,4) -- (4,4,0) -- cycle; % Hiperplano H3
+
+            % Dibuja las rectas r y r' con sus nombres
+            \draw[thick,orange] plot [domain=0:4,samples=20] (\x, 1+\x/5, 0); % Recta r
+            \draw[thick,purple] plot [domain=0:4,samples=20] (\x, 1+\x/-5,0); % Recta r'
+            \node at (4,1.8,0) [right] {$r$};
+            \node at (4,0.2,0) [right] {$r'$};
+
+            % Puntos de intersección
+            \filldraw[black] (1,1.2,0) circle (2pt) node[above right] {$A_1$};
+            \filldraw[black] (2.5,1.5,0) circle (2pt) node[above right] {$A_2$};
+            \filldraw[black] (4,1.8,0) circle (2pt) node[above right] {$A_3$};
+
+            \filldraw[black] (1,0.8,0) circle (2pt) node[below right] {$A_1'$};
+            \filldraw[black] (2.5,0.5,0) circle (2pt) node[below right] {$A_2'$};
+            \filldraw[black] (4,0.2,0) circle (2pt) node[below right] {$A_3'$};
+            
+        \end{tikzpicture}
+    \end{center}
+\end{teorema}
+
+\begin{proof}
+    Completamos $\mathbb{A}$ a un espacio proyectivo $\widetilde{\mathbb{A}}$ añadiendo el hiperplano del infinito $\mathbb{A}_\infty$. Entonces, los hiperplanos $H_1, H_2, H_3$ se completan a hiperplanos proyectivos $\widetilde{H}_i = H_i \cup H_\infty$.\\
+    Denotemos $\widetilde{H}_i=H_i \cup P(\vec{H}_i)$ siendo $P(\vec{H}_i)$ el mismo para los tres hiperplanos, ya que son paralelos.\\
+    Por tanto, si $X=P(\vec{H}_1)$ deducimos que $H_\infty, \widetilde{H}_1, \widetilde{H}_2, \widetilde{H}_3$ son hiperplanos del haz de base $X$ en $\widetilde{\mathbb{A}}$.\\
+    Las completadas $\widetilde{r}, \widetilde{r'}$ de las rectas $r,r'$ no pasan por $X$, ya que si $\infty = P(\vec{r}), \infty' = P(\vec{r'})$ tenemos que:
+    \[
+    \infty, \infty' \implies
+    \widetilde{r} \cap X = \emptyset = \widetilde{r'} \cap X
+    \]
+    Y por el corolario anterior:
+    \[
+    [\underbrace{\infty}_{\widetilde{H_\infty} \cap \widetilde{r}}, A_1, A_2, A_3] =
+    [H_\infty, \widetilde{H_1}, \widetilde{H_2}, \widetilde{H_3}] =
+    [\underbrace{\infty'}_{\widetilde{H_\infty} \cap \widetilde{r'}}, A_1', A_2', A_3']
+    \]
+    Y se cumple, pues:
+    \[
+    \frac{\vec{A_1 A_3}}{\vec{A_1 A_2}} =
+    [\infty, A_1, A_2, A_3] =
+    [\infty', A_1', A_2', A_3'] =
+    \frac{\vec{A_1' A_3'}}{\vec{A_1' A_2'}}
+    \]
+\end{proof}
