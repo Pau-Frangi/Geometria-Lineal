@@ -1,0 +1,146 @@
+\section{Cuadricas Proyectivas}
+\subsection{Cuadricas Proyectivas}
+
+Veamos un ejemplo de una cónica proyectiva que motive este concepto.
+
+\ejemplo{
+    En $\mathbb{P}^2$ consideremos la cónica dada por la ecuación:
+    \[
+    C :
+    x_0^2 - x_1^2 = 0 = (x_0 + x_1)(x_0 - x_1)
+    \]
+    Siendo así $C$ la union de 2 rectas:
+    \[
+    r_1 : x_0 + x_1 = 0 \quad 
+    \text{y} \quad 
+    r_2 : x_0 - x_1 = 0
+    \]  
+    En la carta afín $\{ x_0 \neq 0 \}$, con coordenadas afines $X = \frac{x_1}{x_0}$, $Y = \frac{x_2}{x_0}$, la cónica $C$ viene dada por la ecuación:
+    \[
+    C \cap \{ x_0 \neq 0 \} :
+    1 - X^2 = 0 \implies X = \pm 1
+    \]
+    Que son dos rectas afines paralelas.\\
+    Como antes teniamos que la intersección de $r_1$ y $r_2$ en $\mathbb{P}^2$ era el punto $(0 : 0 : 1)$, podemos tomar una carta afin que no lo contenga, por ejemplo la carta $\{ x_2 \neq 0 \}$, con coordenadas afines $X' = \frac{x_0}{x_2}$, $Y' = \frac{x_1}{x_2}$. En esta carta la cónica $C$ viene dada por la ecuación:
+    \[
+    C \cap \{ x_2 \neq 0 \} :
+    X'^2 - Y'^2 = 0 \iff
+    X' = \pm Y'
+    \]
+    Que son dos rectas afines que se cortan en el punto $(0,0)$.
+}
+
+En general, el polinomio (homogeneo) que define la ecuacion puede no estar determinado por las soluciones en $\mathbb{P}_{\mathbb{R}}^2$, como por ejemplo:
+\[
+C : x_0^2 + x_1^2 + x_2^2 = 0
+\]
+Cuya unica solucion en $\mathbb{P}_{\mathbb{R}}^2$ seria el punto $(0 : 0 : 0)$, que no pertenece a $\mathbb{P}_{\mathbb{R}}^2$.\\
+Algo analogo le ocurre a la conica:
+\[
+C : x_0^2 + x_1^2 + 2x_2^2 = 0
+\]
+Que tampoco tiene soluciones en $\mathbb{P}_{\mathbb{R}}^2$, por lo que debemos encontrar una manera de trabajar con estas curvas que no dependa de las soluciones de sus ecuaciones.\\
+
+\begin{definición}[Cuádrica Proyectiva]
+    Una \textbf{cuádrica proyectiva} en $\mathbb{P}=\mathbb{P} (V)$, con $V$ un espacio vectorial, es una clase de equivalencia por proporcionalidad de formas bilineales simétricas:
+    \[
+    \hat{\varphi} : V \times V \to \mathbb{K}
+    \]
+    Denotaremos $\varphi$ a la cuádrica proyectiva asociada a $\hat{\varphi}$.
+\end{definición}
+
+\begin{definición}[Conjunto de ceros de una cuádrica proyectiva]
+    Sea $\varphi$ una cuádrica proyectiva en $\mathbb{P}$, su conjunto de ceros es el conjunto:
+    \[
+    C_\varphi = 
+    \mathbb{P} ( \{ \vec{u} \in V : \hat{\varphi} (\vec{u}, \vec{u}) = 0 \} )
+    \]
+\end{definición}
+
+\begin{observación}
+    Notese que:
+    \[
+    \lambda \hat{\varphi}(\mu \vec{u}, \mu \vec{u}) = 0 \quad 
+    \forall \lambda, \mu \neq 0 \iff
+    \hat{\varphi}(\vec{u}, \vec{u}) = 0
+    \]
+    Por lo que $\{ \vec{u} \in V : \hat{\varphi} (\vec{u}, \vec{u}) = 0 \}$ es una union de rectas vectoriales de $V$, y es el mismo para cualquier $\lambda \hat{\varphi}$ con $\lambda \neq 0$, es decir, depende solo de la cuádrica proyectiva $\varphi$.
+\end{observación}
+
+\subsection{Cuadricas en coordenadas}
+
+Sea $B = \{ \vec{u_0}, \vec{u_1}, \ldots , \vec{u_n} \}$ una base de $V$, entonces la matriz de $\hat{\varphi}$ en la base $B$ es la matriz que satisface:
+\[
+    \hat{\varphi}(\vec{u}, \vec{v}) =
+    \begin{pmatrix}
+        x_0 & x_1 & \ldots & x_n
+    \end{pmatrix}
+    M(\hat{\varphi})_B
+    \begin{pmatrix}
+        y_0 \\ y_1 \\ \vdots \\ y_n
+    \end{pmatrix}
+\]
+Siendo $\vec{u} = (x_0, x_1, \ldots , x_n)_B$ y $\vec{v} = (y_0, y_1, \ldots , y_n)_B$, por lo que:
+\[
+    M(\hat{\varphi})_B = (m_{ij}) \quad \text{con} \quad
+    m_{ij} = \hat{\varphi}(\vec{u_i}, \vec{u_j})
+\]
+Así, $\hat{\varphi}$ es simetrica $\iff$ su matriz respecto de alguna base es simetrica $\iff$ su matriz respecto de cualquier base es simetrica.\\
+
+Dada la cuadrica $\varphi$, la matriz de $\varphi$ respecto de la referencia $\mathfrak{R}$ de $\mathbb{P}$ es:
+\[
+    M(\varphi)_{\mathfrak{R}} :=
+    M(\hat{\varphi})_B
+\]
+Siendo $B$ la base de $V$ asociada a la referencia $\mathfrak{R}$, y $\hat{\varphi}$ una representante de $\varphi$, por lo que $M(\varphi)_{\mathfrak{R}}$ es una matriz simetrica definida unicamente salvo proporcionalidad.\\
+
+Así, obtenemos que el conjunto de ceros de $\varphi$ en coordenadas es:
+\[
+C_\varphi =
+\begin{pmatrix}
+    x_0 & : & x_1 & : & \ldots & : & x_n
+\end{pmatrix}
+\underbrace{M(\varphi)_{\mathfrak{R}}}_{M(\hat{\varphi})_B}
+\begin{pmatrix}
+    x_0 \\ x_1 \\ \vdots \\ x_n
+\end{pmatrix}
+= 0
+\]
+
+Por ejemplo, si consideramos la cuádrica proyectiva $\varphi$ en $\mathbb{P}^2(\mathbb{R})$ dada por la ecuacion:
+\[
+C_\varphi : x_0^2 - x_1^2 = 0 \iff
+\left( x_0 : x_1 : x_2 \right)
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & -1 & 0 \\
+    0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+    x_0 \\ x_1 \\ x_2
+\end{pmatrix}
+= 0
+\]
+
+\subsection{Cuadricas en la recta proyectiva}
+Cualquier forma bilineal simetrica $\hat{\varphi} : V \times V \to \mathbb{K}$, define por restricción una forma bilineal simétrica $\hat{\varphi}_{|W} : W \times W \to \mathbb{K}$, siendo $W$ un subespacio vectorial cualquiera de $V$.\\
+Por tanto, una cuadrica proyectica $\varphi$ en $\mathbb{P}$ define, por restricción, cuadricas proyectivas en cualquier subespacio proyectivo $\mathbb{P}(W) \subseteq \mathbb{P}(V)$.\\
+
+Si el subespacio es una recta proyectiva $r \subseteq \mathbb{P}(V)$, entonces con $r=\mathbb{P}(W)$, siendo $W = \langle \vec{u}_0, \vec{u}_1 \rangle$ (y por tanto $\dim(W) = 2$). Ahora tomemos la base formada por $\vec{u}_0$ y $\vec{u}_1$, que tiene asociada una referencia $\mathfrak{R}$ en $r$:
+\[
+    \left[ \lambda \vec{u}_0 + \mu \vec{u}_1 \right]_{\mathfrak{R}} =
+    ( \lambda : \mu )_{\mathfrak{R}} \in
+    \mathbb{P}(W) = r
+\]
+
+Si $\varphi$ es una cuadrica en $\mathbb{P}$, entonces $\hat{\varphi} : V \times V \to \mathbb{K}$, la ecuacion del lugar de ceros de $\varphi_{|r}$ es:
+\[
+0 = \hat{\varphi} (\vec{u}, \vec{u}), \quad 
+\vec{u} = \lambda \vec{u}_0 + \mu \vec{u}_1 \in W \implies
+\]
+\[
+    0 = \lambda^2 \hat{\varphi}(\vec{u}_0, \vec{u}_0) +
+    2 \lambda \mu \hat{\varphi}(\vec{u}_0, \vec{u}_1) +
+    \mu^2 \hat{\varphi}(\vec{u}_1, \vec{u}_1) =
+    \lambda^2 a + 2 \lambda \mu b + \mu^2 c
+\]
