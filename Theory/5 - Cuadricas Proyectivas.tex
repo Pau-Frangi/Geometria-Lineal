@@ -128,9 +128,8 @@ Por tanto, una cuadrica proyectica $\varphi$ en $\mathbb{P}$ define, por restric
 
 Si el subespacio es una recta proyectiva $r \subseteq \mathbb{P}(V)$, entonces con $r=\mathbb{P}(W)$, siendo $W = \langle \vec{u}_0, \vec{u}_1 \rangle$ (y por tanto $\dim(W) = 2$). Ahora tomemos la base formada por $\vec{u}_0$ y $\vec{u}_1$, que tiene asociada una referencia $\mathfrak{R}$ en $r$:
 \[
-    \left[ \lambda \vec{u}_0 + \mu \vec{u}_1 \right]_{\mathfrak{R}} =
-    ( \lambda : \mu )_{\mathfrak{R}} \in
-    \mathbb{P}(W) = r
+    r \equiv \{[\lambda \vec{u}_0 + \mu \vec{u}_1] : 
+    (\lambda : \mu) \in \mathbb{P}_\mathbb{K}^1 \} = \mathbb{P}(W)
 \]
 
 Si $\varphi$ es una cuadrica en $\mathbb{P}$, entonces $\hat{\varphi} : V \times V \to \mathbb{K}$, la ecuacion del lugar de ceros de $\varphi_{|r}$ es:
@@ -144,3 +143,79 @@ Si $\varphi$ es una cuadrica en $\mathbb{P}$, entonces $\hat{\varphi} : V \times
     \mu^2 \hat{\varphi}(\vec{u}_1, \vec{u}_1) =
     \lambda^2 a + 2 \lambda \mu b + \mu^2 c
 \]
+
+Lugar de ceros de $\varphi_{|r}$ en coordenadas respecto de la referencia $\mathfrak{R}$:
+
+\[
+C_{\varphi_{|r}} = C_\varphi \cap r : \quad 0 = a \lambda^2 + 2 b \lambda \mu + c \mu^2
+\]
+
+Discutimos las soluciones en función de $a, b, c$:
+
+\begin{itemize}
+    \item Si $a = 0$, $b = 0$ y $c = 0$, entonces $\varphi_{|W} \equiv 0$ y $C_{\varphi_{|r}} = r \iff C_\varphi$ contiene a $r$.
+    \item Si $a = 0$, $b = 0$ y $c \neq 0$, entonces tenemos
+    \[
+        0= c \mu^2 \iff \mu = 0 \iff C_{\varphi_{|r}} = \{ (\lambda : \mu) = (1 : 0) \}
+    \] 
+    \item Si $a = 0$, $b \neq 0$, entonces tenemos
+    \[
+        0 = 2 b \lambda \mu + c \mu^2 \iff
+        \mu (2 b \lambda + c \mu) = 0 \iff (\lambda : \mu) =
+        (1 : 0) \text{ o } (c : -2b)
+    \]
+    Así $C_{\varphi_{|r}}$ tiene 2 puntos distintos.
+    \item Si $a \neq 0$, entonces en este caso $\mu \neq 0$, en efecto, si $\mu = 0$ entonces $0 = a \lambda^2 \implies \lambda = 0 \implies (\lambda : \mu) = (0 : 0)$, que no es un punto de $\mathbb{P}^1_\mathbb{K}$. Por tanto, podemos dividir por $\mu^2$ y obtener:
+    \[
+        0 = a \left( \frac{\lambda}{\mu} \right)^2 + 2 b \left( \frac{\lambda}{\mu} \right) + c
+    \]
+    Tenemos una ecuación de segundo grado en $\frac{\lambda}{\mu}$, por lo que podemo tener 0, 1 o 2 soluciones en $\mathbb{K}$, dependiendo del discriminante y del cuerpo. Luego $C_{\varphi_{|r}}$ puede tener 0, 1 o 2 puntos distintos.
+\end{itemize}
+
+El lugar de cero de una cuádrica proyectiva es una recta ($\iff$ intereseción de una recta con $C_{\varphi}$) puede ser:
+
+\begin{itemize}
+    \item La recta completa (si la cuádrica contiene a la recta).
+    \item Un punto (doble).
+    \item Dos puntos distintos.
+    \item Ningún punto (solamente si $\mathbb{K} = \mathbb{R}$).
+\end{itemize}
+
+
+\subsection{Polaridad asociada a una cuádrica proyectiva}
+
+Dada una forma bilineal $\hat{\varphi} : V \times V \to \mathbb{K}$, podemos definir la aplicación lineal:
+
+\[
+    \begin{matrix}
+        \hat{f} : V & \to & V^* \\
+        \vec{u} & \mapsto & \hat{\varphi}(\vec{u}, \cdot)
+    \end{matrix}
+\]
+
+Por ser $\hat{\varphi}$ bilineal, $\hat{f}(\vec{u}) = \hat{\varphi}(\vec{u}, \cdot)$ es un forma lineal $\implies \hat{f}(\vec{u}) \in V^*$, y además $\hat{f}$ es lineal.
+
+Proyectivizando, si tenemos una cuádrica $\varphi$ en $\mathbb{P}(V)$, obtenemos una aplicación proyectiva:
+
+\[
+    \begin{matrix}
+        f : \mathbb{P}(V) & \to & \mathbb{P}(V^*) \\
+        [\vec{u}] & \mapsto & [\hat{\varphi}(\vec{u}, \cdot)]
+    \end{matrix}
+\]
+
+Esta asociación está bien definida, porque $\hat{\varphi}(\lambda \vec{u}, \cdot) = \lambda \hat{\varphi}(\vec{u}, \cdot)$, por lo que definen el mismo punto en $\mathbb{P}(V^*)$.\\
+
+\begin{definición} [Polaridad asociada a una cuádrica proyectiva]
+    La aplicación proyectiva $f : \mathbb{P}(V) \dashrightarrow  \mathbb{P}(V^*)$ se denomina \textbf{polaridad asociada} a la cuádrica proyectiva $\varphi$.
+\end{definición}
+
+El centro $Z = \mathbb{P}(\ker(\hat{f})) = \mathbb{P}(\{\vec{u} \in V : \hat{\varphi}(\vec{u}, \cdot) \equiv 0 \})$ y sus puntos se donminan puntos singulares de $\varphi$.
+
+\[
+    Z = Sing(C_{\varphi}) 
+\]
+
+Obsérvese que todos los puntos singulares están en $C_{\varphi}$, pues $[\vec{u}] = A \in Z \implies \hat{\varphi}(\vec{u}, \cdot) \equiv 0 \implies \hat{\varphi}(\vec{u}, \vec{u}) = 0 \implies [\vec{u}] = A \in C_{\varphi}$.
+
+Los puntos de $C_{\varphi} \setminus Z$ se denominan puntos regulares de $\varphi$, y así $C_{\varphi} = Reg(C_{\varphi}) \cup Sing(C_{\varphi})$.
