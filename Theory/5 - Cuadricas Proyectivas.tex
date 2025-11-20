@@ -219,3 +219,93 @@ El centro $Z = \mathbb{P}(\ker(\hat{f})) = \mathbb{P}(\{\vec{u} \in V : \hat{\va
 Obsérvese que todos los puntos singulares están en $C_{\varphi}$, pues $[\vec{u}] = A \in Z \implies \hat{\varphi}(\vec{u}, \cdot) \equiv 0 \implies \hat{\varphi}(\vec{u}, \vec{u}) = 0 \implies [\vec{u}] = A \in C_{\varphi}$.
 
 Los puntos de $C_{\varphi} \setminus Z$ se denominan puntos regulares de $\varphi$, y así $C_{\varphi} = Reg(C_{\varphi}) \cup Sing(C_{\varphi})$.
+
+\begin{definición}[Hiperplano polar]
+    Dada una polaridad $f : \mathbb{P} \dashrightarrow \mathbb{P}^*$ asociada a una cuádrica proyectiva $\varphi$, y un punto $A \in \mathbb{P}$, denominamos \textbf{hiperplano polar} de $A$ al hiperplano:
+    \[
+        \text{Polar}_\varphi(A) := f(A) \in \mathbb{P}^*
+    \]
+\end{definición}
+
+\begin{observación}
+    Todos los puntos de $\mathbb{P}$ excepto los singulares tienen un hiperplano polar asociado.
+\end{observación}
+
+Veamos algunas propiedades:
+
+\begin{proposición}
+    Sea $\varphi$ una cuádrica proyectiva en $\mathbb{P}(V)$, con polaridad asociada $f : \mathbb{P}(V) \dashrightarrow \mathbb{P}(V^*)$. Entonces:
+    \begin{itemize}
+        \item $A \in \text{Polar}_\varphi(A) \iff A \text{ es regular (pertenece a } C_{\varphi} \text{)}$
+    \end{itemize}
+\end{proposición}
+
+\begin{proof}
+    Sea $A=[\vec{u}]$, la ecuacion polar de $A$ en el vectorial es $\hat{\varphi}(\vec{u}, \cdot) = 0$, por lo tanto $B=[\vec{v}] \in \text{Polar}_\varphi(A) \iff \hat{\varphi}(\vec{u}, \vec{v}) = 0$.\\ 
+    En particular, si $A = B$, entonces $A \in \text{Polar}_\varphi(A) \iff \hat{\varphi}(\vec{u}, \vec{u}) = 0 \iff A \in C_{\varphi}$.\\
+    Esta ultima ecuacion ($\hat{\varphi}(\vec{u}, \vec{u}) = 0$) se satisface en $C_{\varphi}$, pero el polar solo está definido fuera de los puntos singulares, luego solo los puntos regulares están en su hiperplano polar.
+\end{proof}
+
+\begin{proposición}
+    Sea $\varphi$ una cuádrica proyectiva en $\mathbb{P}(V)$, con polaridad asociada $f : \mathbb{P}(V) \dashrightarrow \mathbb{P}(V^*)$. Entonces:
+    \begin{itemize}
+        \item \textbf{Simetría: } $B \in \text{Polar}_\varphi(A) \iff A \in \text{Polar}_\varphi(B)$
+    \end{itemize}
+\end{proposición}
+
+\begin{proof}
+    Esto es consecuencia de que $\hat{\varphi}(\vec{u}, \vec{v}) = \hat{\varphi}(\vec{v}, \vec{u})$, por ser $\hat{\varphi}$ simétrica.
+\end{proof}
+
+\begin{proposición}
+    Sea $\varphi$ una cuádrica proyectiva en $\mathbb{P}(V)$, con polaridad asociada $f : \mathbb{P}(V) \dashrightarrow \mathbb{P}(V^*)$. Entonces:
+    \begin{itemize}
+        \item $\text{Sing} (C_{\varphi}) \subset \text{Polar}_\varphi(A) \quad \forall A \in \mathbb{P}(V) \text{ (no singular)}$
+    \end{itemize}
+\end{proposición}
+
+\begin{proof}
+    \[
+    B = [\vec{v}] \in \text{Sing}(C_{\varphi}) \iff
+    \hat{\varphi}(\vec{v}, \cdot) \equiv 0
+    \]
+    En particular:
+    \[
+    \hat{\varphi}(\vec{v}, \vec{u}) = 0 \forall \vec{u} \in V \iff
+    \hat{\varphi}(\vec{u}, \vec{v}) = 0 \forall \vec{u} \in V \iff
+    B \in \text{Polar}_\varphi(A) \forall A = [\vec{u}] \in \mathbb{P}(V)
+    \]
+\end{proof}
+    
+\begin{proposición}
+    Sea $\varphi$ una cuádrica proyectiva en $\mathbb{P}(V)$, con polaridad asociada $f : \mathbb{P}(V) \dashrightarrow \mathbb{P}(V^*)$. Entonces:
+    \begin{itemize}
+        \item Si $A \in C_{\varphi}$ es un punto regular en $C_{\varphi}$, y $B \in C_{\varphi} \cap \text{Polar}_\varphi(A)$, entonces $V(A,B) \subseteq C_{\varphi}$
+    \end{itemize}
+\end{proposición}
+
+\begin{proof}
+    Sean $A=[\vec{u}]$ y $B=[\vec{v}]$, con:
+    \[
+    \begin{cases}
+        A \in C_{\varphi} \iff \hat{\varphi}(\vec{u}, \vec{u}) = 0 \\
+        B \in C_{\varphi} \iff \hat{\varphi}(\vec{v}, \vec{v}) = 0 \\
+        B \in \text{Polar}_\varphi(A) \iff \hat{\varphi}(\vec{u}, \vec{v}) = 0
+    \end{cases}
+    \implies \hat{\varphi}(\lambda \vec{u} + \mu \vec{v}, \lambda \vec{u} + \mu \vec{v}) = 0 \quad \forall \lambda, \mu \in \mathbb{K} \implies
+    \]
+    \[
+    \lambda^2 \hat{\varphi}(\vec{u}, \vec{u}) +
+    2 \lambda \mu \hat{\varphi}(\vec{u}, \vec{v}) +
+    \mu^2 \hat{\varphi}(\vec{v}, \vec{v}) = 0 \quad \forall \lambda, \mu \in \mathbb{K} \implies
+    V(A,B) = \{ [\lambda \vec{u} + \mu \vec{v}] : \lambda, \mu \in \mathbb{K} \} \subseteq C_{\varphi}
+    \]
+\end{proof}
+
+\begin{definición}[Hiperplano tangente a una cuádrica proyectiva]
+    Dado un punto regular $A \in C_{\varphi}$, se denomina \textbf{hiperplano tangente} a la cuadrica $\varphi$ en $A$ (o mejor dicho, a su lugar de ceros $C_{\varphi}$) al hiperplano polar de $A$ $\text{Polar}_\varphi(A)$. y sedenota por $T_A (C_{\varphi})$.
+\end{definición}
+
+\begin{definición}[Recta tangente a una cuádrica proyectiva]
+    Las rectas de $T_A (C_{\varphi})$ que pasan por $A$ se denominan \textbf{rectas tangentes} a la cuádrica $\varphi$ (o a su lugar de ceros $C_{\varphi}$) en $A$.
+\end{definición}
