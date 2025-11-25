@@ -513,13 +513,151 @@ Las matrices salvo congruencia se clasifican atiendiendo a rango (caso $\mathbb{
     Al introducir el efecto de proporcionalidad relacionamos tambien signaturas opuestas, es decir, $(p,n) \sim (n,p)$ por ejemplo $(3,0) \sim (0,3)$., esto es $I, -I$ corresponden a la misma cuádrica proyectiva.
 }
 
-Caso $\mathbb{P} = \mathbb{P}^1_\mathbb{C}$:\\
-Si $rg(M(\varphi)_{\mathfrak{R}}) = 0 \implies$ no es una cuadrica.\\
-Si $rg(M(\varphi)_{\mathfrak{R}}) = 1 \implies M = \begin{pmatrix}
-    1 & 0 \\
-    0 & 0
-\end{pmatrix} \implies C_\varphi : x_0^2 = 0 \implies C_\varphi = \{ (0 : 1) \}$ (punto doble).\\
-Si $rg(M(\varphi)_{\mathfrak{R}}) = 2 \implies M = \begin{pmatrix}
-    1 & 0 \\
-    0 & 1
-\end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 = 0 \implies C_\varphi = \{ (1 : i), (1 : -i) \}$ (2 puntos distintos).\\
+Caso $\mathbb{P} = \mathbb{P}^1_\mathbb{C}$:
+
+\begin{itemize}
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 0 \implies$ no es una cuadrica.
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 1 \implies M = \begin{pmatrix}
+        1 & 0 \\
+        0 & 0
+    \end{pmatrix} \implies C_\varphi : x_0^2 = 0 \implies C_\varphi = \{ (0 : 1) \}$ (punto doble).
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 2 \implies M = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 = 0 \implies C_\varphi = \{ (1 : i), (1 : -i) \}$ (2 puntos distintos).
+\end{itemize}
+
+Caso $\mathbb{P} = \mathbb{P}^1_\mathbb{R}$:
+
+\begin{itemize}
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 0 \implies$ no es una cuadrica.
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 1$, entonces la signatura puede ser $(1,0)$ o $(0,1)$ (que son equivalentes desde el punto de vista proyectivo), luego:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 \\
+            0 & 0
+        \end{pmatrix} \implies C_\varphi : x_0^2 = 0 \implies C_\varphi = \{ (0 : 1) \} \text{ (punto doble).}
+    \]
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 2$, entonces la signatura puede ser $(2,0)$ o $(0,2)$ (que son equivalentes desde el punto de vista proyectivo), o bien $(1,1)$, luego:\\
+    Si la signatura es $(2,0)$ o $(0,2)$:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 = 0 \implies C_\varphi = \emptyset \text{ (sin puntos reales).}
+    \]
+    Si la signatura es $(1,1)$:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 \\
+            0 & -1
+        \end{pmatrix} \implies C_\varphi : x_0^2 - x_1^2 = 0 \implies C_\varphi = \{ (1 : 1), (1 : -1) \} \text{ (2 puntos distintos).}
+    \]
+\end{itemize}
+
+\textbf{Nota:} Las cuádricas proyectivas en dimensión $2$ se denominan \textbf{cónicas proyectivas}.
+
+Caso $\mathbb{P} = \mathbb{P}^2_\mathbb{C}$:
+
+\begin{itemize}
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 0 \implies$ no es una cuadrica.
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 1$, entonces:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix} \implies C_\varphi : x_0^2 = 0 \implies C_\varphi = \{ (0 : x_1 : x_2) \} \text{ (recta doble).}
+    \]
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 2$, entonces:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 = 0 \implies C_\varphi = \{ x_0 + i x_1 = 0 \} \cup \{ x_0 - i x_1 = 0 \} \text{ (2 rectas).}
+    \]
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 3$, entonces:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+        \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 + x_2^2 = 0 \implies C_\varphi \text{ es una cónica no degenerada compleja.}
+    \]
+\end{itemize}
+
+Caso $\mathbb{P} = \mathbb{P}^2_\mathbb{R}$:
+
+\begin{itemize}
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 0 \implies$ no es una cuadrica.
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 1$ (signatura $(1,0)$), entonces:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix} \implies C_\varphi : x_0^2 = 0 \implies C_\varphi = \{ (0 : x_1 : x_2) \} \text{ (recta doble).}
+    \]
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 2$, entonces la signatura puede ser $(2,0)$, $(1,1)$ o $(0,2)$, luego:\\
+    Si la signatura es $(2,0)$ o $(0,2)$:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 = 0 \implies C_\varphi = \{(0:0:1)\} \text{ (un punto real).}
+    \]
+    Si la signatura es $(1,1)$:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & -1 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix} \implies C_\varphi : x_0^2 - x_1^2 = 0 \implies C_\varphi = \{ x_0 + x_1 = 0 \} \cup \{ x_0 - x_1 = 0 \} \text{ (2 rectas).}
+    \]    
+    \item Si $rg(M(\varphi)_{\mathfrak{R}}) = 3$, entonces la signatura puede ser $(3,0)$, $(2,1)$ o $(1,2)$, luego:\\
+    Si la signatura es $(3,0)$ o $(0,3)$:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & 1
+        \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 + x_2^2 = 0 \implies C_\varphi = \emptyset \text{ (sin puntos reales).}
+    \]
+    Si la signatura es $(2,1)$ o $(1,2)$:
+    \[
+        M = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & 1 & 0 \\
+            0 & 0 & -1
+        \end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 - x_2^2 = 0 \implies C_\varphi \text{ es una cónica real no degenerada.}
+    \]
+    En la carta afín $\{x_2 \neq 0\}$, la ecuación $x_0^2 + x_1^2 - x_2^2 = 0$ al dividir por $x_2$ : $X, Y = \frac{x_0}{x_2}, \frac{x_1}{x_2}$ se convierte en $X^2 + Y^2 = 1$, que es una circunferencia.\\
+    En la carta afín $\{x_1 \neq 0\}$, la ecuación $x_0^2 + x_1^2 - x_2^2 = 0$ se convierte en $X'^2 - Y'^2 = 1$, que es una hipérbola.\\ 
+\end{itemize}
+
+\subsection{Imagen de una cuádrica proyectiva por una homografía}
+
+Sea $f : \mathbb{P} \to \mathbb{P}'$ una homografía entre espacios proyectivos de dimensión $n$, y sea $\varphi = [\hat{\varphi}]$ una cuádrica proyectiva en $\mathbb{P}'$.
+\[
+    \hat{\varphi} : V' \times V' \to \mathbb{K}
+\] 
+Como $\hat{f} : V \to V'$ es un isomorfismo lineal, podemos definir la forma bilineal simétrica:
+\[
+    \hat{\psi} \equiv \hat{\varphi} \circ \hat{f} : V \times V \to \mathbb{K}
+\]
+\[
+    \hat{\psi} (\vec{u}, \vec{v}) := \hat{\varphi} (\hat{f}(\vec{u}), \hat{f}(\vec{v}))
+\]
+donde $[\hat{\varphi} \circ \hat{f}]$ es una cuádrica proyectiva en $\mathbb{P}$.\\
+En coordenadas, si $\mathfrak{R}$ y $\mathfrak{R}'$ son referencias de $\mathbb{P}$ y $\mathbb{P}'$ respectivamente, con bases asociadas $B$ y $B'$ de $V$ y $V'$ respectivamente, y si $M = M_{\mathfrak{R} \mathfrak{R}'} (f)$, entonces:
+\[
+    \hat{\varphi} \circ \hat{f} (\vec{u}, \vec{v}) = (M x)^t B' (M y) = x^t (M^t B' M) y
+\]
+siendo $x,y$ las coordenadas de $\vec{u}, \vec{v}$ en la base $B$.\\
+Luego la martiz de la cuádrica proyectiva $[\hat{\varphi} \circ \hat{f}]$ en la referencia $\mathfrak{R}$ es:
+\[
+    M^t B' M
+\]
+Por lo tanto, dos cuádricas en $\mathbb{P}$, $\mathbb{P}'$ de la misma dimensión son una imagen de otra por una homografía si y solo si sus matrices (simétricas) son congruentes.
