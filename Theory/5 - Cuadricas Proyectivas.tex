@@ -309,3 +309,217 @@ Veamos algunas propiedades:
 \begin{definición}[Recta tangente a una cuádrica proyectiva]
     Las rectas de $T_A (C_{\varphi})$ que pasan por $A$ se denominan \textbf{rectas tangentes} a la cuádrica $\varphi$ (o a su lugar de ceros $C_{\varphi}$) en $A$.
 \end{definición}
+
+Veamos como construir la polar asociada a un punto:\\
+
+Sea $\varphi$ una cuádrica proyectiva en $\mathbb{P}(V)$, con polaridad asociada $f : \mathbb{P}(V) \dashrightarrow \mathbb{P}(V^*)$. Sea $D = \in \mathbb{P} \setminus C_{\varphi}$ un punto exterior a la cuádrica, calculemos su polar $\text{Polar}_\varphi(D)$.\\
+
+\begin{center}
+    \begin{tikzpicture}
+        % Elipse de parametros a = 3, b = 2
+            \draw[thick, rotate around={0:(0,0)}] plot [domain=0:360, samples=100] ({3*cos(\x)}, {2*sin(\x)});
+
+            % Punto A en la elipse (nodo)
+            \coordinate (A) at ({3*cos(40)},{2*sin(40)});
+            \draw (A) circle (1.5pt);
+            \node[anchor=south east] at (A) {$A$};
+            
+            % Punto B en la elipse
+            \coordinate (B) at ({3*cos(-60)},{2*sin(-60)});
+            \draw (B) circle (1.5pt);
+            \node[anchor=north east] at (B) {$B$};
+
+            % Punto D fuera de la elipse
+            \coordinate (D) at (7, 1);
+            \draw (D) circle (1.5pt);
+            \node[anchor=south west] at (D) {$D$};
+
+            % Rectas DA y DB
+            \draw[thick] (D) -- (A);
+            \draw[thick] (D) -- (B);
+
+            % Punto A'
+            \coordinate (A') at ({3*cos(20)},{2*sin(20)});
+            \draw (A') circle (1.5pt);
+            \node[anchor=south east] at (A') {$A'$};
+
+            % Punto B'
+            \coordinate (B') at ({3*cos(-80)},{2*sin(-80)});
+            \draw (B') circle (1.5pt);
+            \node[anchor=north east] at (B') {$B'$};
+
+            % Punto D'
+            \coordinate (D') at (9, -2);
+            \draw (D') circle (1.5pt);
+            \node[anchor=north west] at (D') {$D'$};
+
+            % Rectas D'A' y D'B'
+            \draw[thick] (D') -- (A');
+            \draw[thick] (D') -- (B');
+
+            % Rectas AB y A'B'
+            \draw[thick, dashed] (A) -- (B);
+            \draw[thick, dashed] (A') -- (B');
+
+            % Punto E (intersección de AB y A'B')
+            \coordinate (E) at (intersection of A--B and A'--B');
+            \draw (E) circle (1.5pt);
+            \node[anchor=north east] at (E) {$E$};
+
+            % Polar de E (recta que pasa por D y D'), extendida y etiquetada
+            \draw[thick, dotted] ($(D)!-0.5!(D')$) -- ($(D)!1.5!(D')$) node[midway, sloped, above] {$\operatorname{Polar}_\varphi(E)$};
+
+
+        
+    \end{tikzpicture}
+\end{center}
+
+Sabemos que $D \in T_A (C_{\varphi})$ y $D \in T_B (C_{\varphi})$, luego por la simetria de la polaridad $A,B \in \text{Polar} (D)$, luego $\text{Polar} (D) = V(A,B)$.\\
+
+Ahora tomemos un punto $E$ dentro de la cuádrica, entonces $E \in V(A,B) = \text{Polar} (D)$, y ademas $E \in V(A',B') = \text{Polar} (D')$, luego por la simetria de la polaridad $D,D' \in \text{Polar} (E)$, por lo que:
+
+\[
+D,D' \in \text{Polar} (E) \implies
+\text{Polar} (E) = V(D,D')
+\]
+
+\subsection{Cuadricas en coordenadas y cambios de referencia}
+
+Sea $\varphi = [\hat{\varphi}]$ una cuádrica proyectiva en $\mathbb{P}(V)$, y sean $\mathfrak{R}$ y $\mathfrak{R'}$ dos referencias de $\mathbb{P}$, con bases asociadas $B$ y $B'$ de $V$.\\
+
+Definimos las matrices:
+
+\[
+    M(\varphi)_{\mathfrak{R}} =
+    M(\hat{\varphi})_B =
+    B
+\]
+
+\[
+    M(\varphi)_{\mathfrak{R}'} =
+    M(\hat{\varphi})_{B'} =
+    B'
+\]
+
+Así:
+
+\[
+    \hat{\varphi}(\vec{u}, \vec{v}) =
+    x^t B y
+\]
+
+Siendo $x,y$ las coordenadas de $\vec{u}, \vec{v}$ en la base $B$.\\
+Si $x', y'$ son las coordenadas de $\vec{u}, \vec{v}$ en la base $B'$, entonces:
+
+\[
+    \begin{cases}
+        x = M x' \\
+        y = M y'
+    \end{cases}
+\]
+
+Con $M = M_{BB'}$. Por tanto:
+
+\[
+    \hat{\varphi}(\vec{u}, \vec{v}) =
+    x'^t B' y' =
+    (M x')^t B (M y') =
+    x'^t (M^t B M) y' \longrightarrow
+    B' = M^t B M
+\]
+
+Es decir, $M(\varphi)_{\mathfrak{R}} = M^t M(\varphi)_{\mathfrak{R}'} M$, con $M = M_{\mathfrak{R} \mathfrak{R}'}$.\\
+
+Las matrices de $\varphi$ en distintas referencias son congruentes. Ademas, si dos matrices son congruentes, definen la misma cuádrica proyectiva en distintas referencias.
+
+\subsection{Clasificación de las cuadricas proyectivas}
+
+Veamos la relación entre cuadricas proyectivas y sus matrices, donde tenemos el esquema:
+\[
+    \begin{array}{ccc}
+        \text{Cuádrica Proyectiva} & \longleftrightarrow & \text{Matriz} \\
+        \dim = n & & \text{Simétrica } (n+1) \times (n+1) \\
+    \end{array}
+\]
+
+Donde tenemos congruencia con proporcionalidad, es decir:
+
+\[
+B \sim \lambda B
+\]
+
+\[
+B \sim M^t B M
+\]
+
+Las matrices salvo congruencia se clasifican atiendiendo a rango (caso $\mathbb{K} = \mathbb{C}$) o a rango y signatura (caso $\mathbb{K} = \mathbb{R}$).\\
+
+\ejemplo{
+    Si $n=2$ y $\mathbb{K} = \mathbb{C}$ hay 4 clases de equivalencia de matrices $3x3$ salvo congruencia, que son los siguientes:
+    \[
+        \left\{
+        \begin{pmatrix}
+            \color{blue} 0 & 0 & 0 \\
+            0 & \color{blue} 0 & 0 \\
+            0 & 0 & \color{blue} 0
+        \end{pmatrix}
+        ,
+        \begin{pmatrix}
+            \color{blue} 1 & 0 & 0 \\
+            0 & \color{blue} 0 & 0 \\
+            0 & 0 & \color{blue} 0
+        \end{pmatrix}
+        ,
+        \begin{pmatrix}
+            \color{blue} 1 & 0 & 0 \\
+            0 & \color{blue} 1 & 0 \\
+            0 & 0 & \color{blue} 0
+        \end{pmatrix}
+        ,
+        \begin{pmatrix}
+            \color{blue} 1 & 0 & 0 \\
+            0 & \color{blue} 1 & 0 \\
+            0 & 0 & \color{blue} 1
+        \end{pmatrix}
+        \right\}
+    \]
+    Donde tienen rangos $0, 1, 2$ y $3$ respectivamente.\\
+    Sabemos que $A, B$ son congruentes $\iff$ $rg(A) = rg(B)$.\\
+    En el caso real, tenemos 10 clases de equivalencia de matrices $3x3$ salvo congruencia, que son:
+    \[
+        \left\{
+        \begin{pmatrix}
+            \color{blue} 0 & 0 & 0 \\
+            0 & \color{blue} 0 & 0 \\
+            0 & 0 & \color{blue} 0
+        \end{pmatrix}
+        ,
+        \begin{pmatrix}
+            \color{blue} 1 & 0 & 0 \\
+            0 & \color{blue} 0 & 0 \\
+            0 & 0 & \color{blue} 0
+        \end{pmatrix}
+        ,
+        \begin{pmatrix}
+            \color{blue} -1 & 0 & 0 \\
+            0 & \color{blue} 0 & 0 \\
+            0 & 0 & \color{blue} 0
+        \end{pmatrix}
+        \right\}
+    \]
+    Matrices de rangos $0, 1, 1$, teniendo estas ultimas matrices signaturas $(1,0)$ y $(0,1)$ respectivamente.\\
+    Para las matrices de rango $2$ tenemos de posibles signaturas $(2,0)$, $(1,1)$ y $(0,2)$, y para las de rango $3$ tenemos signaturas $(3,0)$, $(2,1)$, $(1,2)$ y $(0,3)$.
+    Siendo la signatura el par $(p,n)$, con $p$ el numero de autovalores positivos y $n$ el numero de autovalores negativos, es decir, la cantidad de $+1$ y $-1$ en la forma canónica de la matriz.\\
+    Al introducir el efecto de proporcionalidad relacionamos tambien signaturas opuestas, es decir, $(p,n) \sim (n,p)$ por ejemplo $(3,0) \sim (0,3)$., esto es $I, -I$ corresponden a la misma cuádrica proyectiva.
+}
+
+Caso $\mathbb{P} = \mathbb{P}^1_\mathbb{C}$:\\
+Si $rg(M(\varphi)_{\mathfrak{R}}) = 0 \implies$ no es una cuadrica.\\
+Si $rg(M(\varphi)_{\mathfrak{R}}) = 1 \implies M = \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+\end{pmatrix} \implies C_\varphi : x_0^2 = 0 \implies C_\varphi = \{ (0 : 1) \}$ (punto doble).\\
+Si $rg(M(\varphi)_{\mathfrak{R}}) = 2 \implies M = \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+\end{pmatrix} \implies C_\varphi : x_0^2 + x_1^2 = 0 \implies C_\varphi = \{ (1 : i), (1 : -i) \}$ (2 puntos distintos).\\

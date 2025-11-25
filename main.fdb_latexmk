@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1763643218.36166 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1763643223.92732 0
+["pdflatex"] 1763987216.23423 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1763987220.04874 0
   "Appendix/Appendix.tex" 1759475012 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1759474986 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762853050 81424 a723decfc5bddf73a572af9da400adf4 ""
@@ -351,14 +351,14 @@
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Preamble/Diagonal Matrix Command.tex" 1757327696 994 86797f6883aa9637224e9e09b84c6f7c ""
   "Preamble/Preamble.tex" 1762171867 13331 0dbe8d7d81467297011a2427c48cd95d ""
-  "Theory/5 - Cuadricas Proyectivas.tex" 1763643212 14371 f4b9f238dea598aee85e3da26aa2f777 ""
-  "Theory/Theory.tex" 1763484507 280 dd27fcc02256a75d1973280a9266600b ""
+  "Theory/5 - Cuadricas Proyectivas.tex" 1763987215 22048 450b025768500c46d1d7aafe8a2ed471 ""
+  "Theory/Theory.tex" 1763984144 318 8d559fa2b840b21e41a816b56fb843a4 ""
   "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" 1762935717 4082 08e63e979ead98949ff67a783c93b345 ""
   "images/logo.png" 1757327696 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1763643223 5149 15eda63d5d99a96bf034726378b50c6e "pdflatex"
-  "main.out" 1763643223 1329 87a316e7b35a64978622a37723376704 "pdflatex"
+  "main.aux" 1763987219 5458 a7b0d3c13b0654622d4b45fd1cc8fe3b "pdflatex"
+  "main.out" 1763987219 1927 85dd9def21888b25d6c5c061a6a55423 "pdflatex"
   "main.tex" 1762935717 4082 08e63e979ead98949ff67a783c93b345 ""
-  "main.toc" 1763643223 902 db7a8740ee84a0b837bd203bd8ab3628 "pdflatex"
+  "main.toc" 1763987219 1126 cca85ac49e902754151d0c001ff581bf "pdflatex"
   (generated)
   "main.aux"
   "main.log"
