@@ -119,8 +119,8 @@ Dada $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ aplicación proyectiva:
     \[
         [\hat{f}(\vec{u})] \in Y \iff \begin{cases}
             \vec{u} \in \ker \hat{f} \\
-            \vec{u} \in \hat{f}^{-1}(W_y)
-        \end{cases} \iff \vec{u} \in \hat{f}^{-1}(W_y) 
+            \vec{u} \in \hat{f}^{-1}(W_y) \setminus \ker \hat{f}
+        \end{cases} \iff \vec{u} \in \hat{f}^{-1}(W_y)
     \]
     Por lo tanto, $A \in f^{-1}(Y) \cup Z = \mathbb{P}(\hat{f}^{-1}(W_y))$ es un subespacio proyectivo de $\mathbb{P}$.
 \end{itemize}
@@ -180,7 +180,7 @@ Dada $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ aplicación proyectiva:
 \end{definición}
 
 \begin{definición}[Composición de aplicaciones proyectivas]
-    Sean $f:\mathbb{P} \setminus Z \dashrightarrow \mathbb{P}'$ y $g:\mathbb{P}' \setminus Z' \dashrightarrow \mathbb{P}''$ aplicaciones proyectivas, entonces la \textbf{composición} de $f$ y $g$ es la aplicación proyectiva:
+    Sean $f:\mathbb{P} \setminus Z \to \mathbb{P}'$ y $g:\mathbb{P}' \setminus Z' \to \mathbb{P}''$ aplicaciones proyectivas, entonces la \textbf{composición} de $f$ y $g$ es la aplicación proyectiva:
     \[
         g \circ f : \mathbb{P} \dashrightarrow \mathbb{P}''
     \]
@@ -204,7 +204,7 @@ Dada $f:\mathbb{P} \dashrightarrow \mathbb{P}'$ aplicación proyectiva:
 \ejemplo{
     La proyección canónica nos da perspectividad.
     Tengamos dos rectas $r$ y $r'$ en $\mathbb{P}$, y un punto $Z \notin z,z'$.\\
-    La restriccion de la proyeccion canonica sobre $r$ de centro $Z$ a la recta $r'$ se le llama \textbf{perspectividad} de $r'$ a $r$ de centro $Z$.
+    La restricción de la proyección canonica sobre $r$ de centro $Z$ a la recta $r'$ se le llama \textbf{perspectividad} de $r'$ a $r$ de centro $Z$.
     Las perspectividades son biyectivas (homografías), ya que:
     \begin{itemize}
         \item[1)] Son inyectivas porque:
