@@ -661,3 +661,222 @@ Luego la martiz de la cuádrica proyectiva $[\hat{\varphi} \circ \hat{f}]$ en la
     M^t B' M
 \]
 Por lo tanto, dos cuádricas en $\mathbb{P}$, $\mathbb{P}'$ de la misma dimensión son una imagen de otra por una homografía si y solo si sus matrices (simétricas) son congruentes.
+
+\begin{definición}[Cuádrica proyectivamente equivalente]
+    Dos cuadricas se dicen \textbf{proyectivamente equivalentes} si una es imagen de la otra por una homografía.
+\end{definición}
+
+\begin{observación}
+    Dos cuadricas proyectivas $\varphi, \psi$ serán proyectivamente equivalentes si y solo si sus matrices son congruentes.
+    \[
+        \varphi \sim \psi \iff
+        \exists M \text{ invertible }, \lambda \in \mathbb{K}^* :
+        M_{\varphi} = \lambda M^t M_{\psi} M
+    \]
+    Dejandonos la siguiente equivalencia:
+    \[
+        \frac{ \{ \text{Cuádrica Proyectiva} \} }{ \text{ Equivalencia proyectiva} }
+        \equiv
+        \frac{ \{ \text{Matriz Simétrica} \} }{ \text{ Congruencia salvo proporcionalidad} }
+    \]
+    Dejando así que:
+    \[
+    \varphi \sim \psi \iff
+    \varphi, \psi \in \text{ misma clase de equivalencia}
+    \]
+\end{observación}
+
+\subsection{Cuádricas afines en coordenadas}
+
+\begin{definición}
+    Sea $\mathbb{A}$ un espacio afín, $\mathfrak{R}_a$ una referencia afín de $\mathbb{A}$.\\
+    Diremos que una cuádrica afín es una clase de equivalencia por por proporcionalidad de expresiones:
+    \[
+    \begin{pmatrix}
+        1 & x_1 & \ldots & x_n
+    \end{pmatrix}
+    B
+    \begin{pmatrix}
+        1 \\
+        x_1 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}
+    \]
+    Siendo $B$:
+    \[
+    B =
+    \left(
+    \begin{array}{c|c}
+        c & b^t \\
+        \hline
+        b & B_\infty
+    \end{array}
+    \right)
+    \]
+    Con $\dim(B) = n+1$ y $\dim(B_\infty) = n$, siendo $B$ simétrica, y $x_1, \ldots, x_n$ las coordenadas de un punto de $\mathbb{A}$ en la referencia afín $\mathfrak{R}_a$.
+\end{definición}
+
+\ejemplo{
+    Veamos cual es la cuadrica del polinomio $x_1^2 - x_1x_2 + x_0x_2 = 0$ en $\mathbb{A}^2_\mathbb{R}$.\\
+    \[
+    x_1^2 - x_1x_2 + x_0x_2 =
+    \begin{pmatrix}
+        1 & x_1 & x_2
+    \end{pmatrix}
+    \begin{pmatrix}
+        0 & 0 & \frac{1}{2} \\
+        0 & 1 & -\frac{1}{2} \\
+        \frac{1}{2} & -\frac{1}{2} & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 \\
+        x_1 \\
+        x_2
+    \end{pmatrix}
+    \]
+}
+
+\begin{definición}[Completada proyectiva y cuadrica de infinito]
+    Una cuadrica afín en $\mathbb{A}$ con matriz $B$ da lugar a una cuadrica proyectiva de matriz $B$ en $\widetilde{\mathbb{A}} = \mathbb{P}( \mathbb{K} + \vec{\mathbb{A}} )$, que se llama completada proyectivamente de la cuadrica afín, y tiene por expresión:
+    \[
+    \begin{pmatrix}
+        x_0 & : & x_1 & \ldots & x_n
+    \end{pmatrix}
+    B
+    \begin{pmatrix}
+        x_0 \\
+        x_1 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}
+    \]
+    Por restricción de la completada proyectiva, obtenemos una cuádrica en el hiperplano de $\infty$, $\mathbb{A}_\infty$ ($\{ x_0 = 0 \}$ en la referencia) de expresión:
+    \[
+    \begin{pmatrix}
+        x_1 & : & x_2 & \ldots & x_n
+    \end{pmatrix}
+    B_\infty
+    \begin{pmatrix}
+        x_1 \\
+        x_2 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}
+    \]
+    Y se denomina cuadrica de $\infty$, y tiene por matriz $B_\infty$.
+\end{definición}
+
+\ejemplo{
+    Volvamos al ejemplo del polinomio $x_1^2 - x_1x_2 + x_0x_2 = 0$ en $\mathbb{A}^2_\mathbb{R}$, cuya matriz es:
+    \[
+    B =
+    \begin{pmatrix}
+        0 & 0 & \frac{1}{2} \\
+        0 & 1 & -\frac{1}{2} \\
+        \frac{1}{2} & -\frac{1}{2} & 0
+    \end{pmatrix}
+    \]
+    Tenemos asi lo siguiente:
+    \begin{itemize}
+        \item \textbf{Completada proyectiva:} $x_1^2 - x_1x_2 + x_0x_2 = 0$
+        \item \textbf{Cuádrica de infinito:} $x_1^2 - x_1x_2 = 0$
+    \end{itemize}
+}
+
+\begin{definición}[Cuádrica afínmente equivalente]
+    Dos cuadricas afines $\begin{pmatrix} 1 & x \end{pmatrix} B \begin{pmatrix} 1 \\ x \end{pmatrix}$ y $\begin{pmatrix} 1 & x' \end{pmatrix} B' \begin{pmatrix} 1 \\ x' \end{pmatrix}$ en espacios afines $\mathbb{A}$ y $\mathbb{A}'$ respectivamente, se dicen \textbf{afínmente equivalentes} si sus expresiones estan relacionadas por un cambio de variable $(1, x') = f(1, x)$, siendo $f : \mathbb{A} \to \mathbb{A}'$ un isomorfismo afín.\\
+    Otra forma de verlo es si:
+    \[
+    \exists M =
+    \left(
+        \begin{array}{c|c}
+            1 & 0 \\
+            \hline
+            * & M(\vec{f})
+        \end{array}
+    \right) : \quad
+    \begin{pmatrix}
+        1 \\
+        x'
+    \end{pmatrix}
+    =
+    M
+    \begin{pmatrix}
+        1 \\
+        x
+    \end{pmatrix}
+    \]
+    Entonces:
+    \[
+    \begin{pmatrix}
+        1 & x'
+    \end{pmatrix}
+    B'
+    \begin{pmatrix}
+        1 \\
+        x'
+    \end{pmatrix}
+    =
+    \left(
+        M
+        \begin{pmatrix}
+            1 \\
+            x
+        \end{pmatrix}
+    \right)^t
+    B'
+    \left(
+        M
+        \begin{pmatrix}
+            1 \\
+            x
+        \end{pmatrix}
+    \right)
+    =
+    \begin{pmatrix}
+        1 & x
+    \end{pmatrix}
+    M^t
+    B'
+    M
+    \begin{pmatrix}
+        1 \\
+        x
+    \end{pmatrix}
+    \]
+    Siendo este ultimo producto equivalente a $\begin{pmatrix} 1 & x \end{pmatrix} B \begin{pmatrix} 1 \\ x \end{pmatrix}$ por proporcionalidad, si y solo si:
+    \[
+    \exists \lambda \in \mathbb{K}^*, M \text{ invertible } : B = \lambda M^t B' M
+    \]
+    Por tanto, si dos cuadricas afines son equivalentes (con expresiones $\begin{pmatrix} 1 & x \end{pmatrix} B \begin{pmatrix} 1 \\ x \end{pmatrix}$ y $\begin{pmatrix} 1 & x' \end{pmatrix} B' \begin{pmatrix} 1 \\ x' \end{pmatrix}$), entonces se da la igualdad anterior, de lo que se deduce que las completadas proyectivas (que tienen por matrices a $B$ y $B'$ respectivamente) son proyectivamente equivalentes.\\
+    Además, como:
+    \[
+    M^t B M =
+    \left(
+        \begin{array}{c|c}
+            * & * \\
+            \hline
+            * & M(\vec{f})^t B_\infty' M(\vec{f})
+        \end{array}
+    \right)
+    \]
+    Podemos concluir que:
+    \[
+    B_\infty = 
+    \lambda M(\vec{f})^t B_\infty' M(\vec{f}) 
+    \underbrace{=}_{\text{Notación}
+    \lambda M_\infty^t B_\infty' M_\infty
+    }
+    \]
+    Siendo $M_\infty = M(\vec{f})$, y así las cuádricas de infinito son proyectivamente equivalentes.
+\end{definición}
+
+Asi, hemos visto que la equivalencia afín entre cuadricas afines implica la equivalencia proyectiva entre sus completadas proyectivas, y la equivalencia proyectiva entre sus cuádricas de infinito.\\
+
+Para ver la recíproca, es decir, si la equivalencia proyectiva entre las completadas proyectivas y entre las cuádricas de infinito implica la equivalencia afín entre las cuadricas afines, veamos un teorema.
+
+\begin{teorema}[Teorema de Will]
+    Dos cuadricas afines son afinamente equivalentes si y solo si sus completadas proyectivas y sus cuádricas de infinito son proyectivamente equivalentes.
+\end{teorema}
+

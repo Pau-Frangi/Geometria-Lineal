@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1763987216.23423 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1763987220.04874 0
+["pdflatex"] 1764591927.21149 "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" "main.pdf" "main" 1764591931.00706 0
   "Appendix/Appendix.tex" 1759475012 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1759474986 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762853050 81424 a723decfc5bddf73a572af9da400adf4 ""
@@ -61,6 +61,7 @@
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1247596667 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1247596667 36118 fad905eba93cff5bce1e185fe980a177 ""
+  "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1247596666 35660 fb24af7afbadb71801619f1415838111 ""
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb" 1335366146 21098 d4aee7c0aac232caac5688b586b9363c ""
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
@@ -351,14 +352,14 @@
   "C:/Users/Diego/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "Preamble/Diagonal Matrix Command.tex" 1757327696 994 86797f6883aa9637224e9e09b84c6f7c ""
   "Preamble/Preamble.tex" 1762171867 13331 0dbe8d7d81467297011a2427c48cd95d ""
-  "Theory/5 - Cuadricas Proyectivas.tex" 1763987215 22048 450b025768500c46d1d7aafe8a2ed471 ""
+  "Theory/5 - Cuadricas Proyectivas.tex" 1764591896 35226 324ec0e183a6065b83c039c504e21293 ""
   "Theory/Theory.tex" 1763984144 318 8d559fa2b840b21e41a816b56fb843a4 ""
   "c:/Users/Diego/OneDrive - Universidad Complutense de Madrid (UCM)/DIEGO UCM/GEOMETRIA LINEAL/Geometria-Lineal/main.tex" 1762935717 4082 08e63e979ead98949ff67a783c93b345 ""
   "images/logo.png" 1757327696 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1763987219 5458 a7b0d3c13b0654622d4b45fd1cc8fe3b "pdflatex"
-  "main.out" 1763987219 1927 85dd9def21888b25d6c5c061a6a55423 "pdflatex"
+  "main.aux" 1764591930 7476 1d1113c91588351ad1451dcd9a5b8351 "pdflatex"
+  "main.out" 1764591930 2497 9ac814571a314da60a5efd617e24846e "pdflatex"
   "main.tex" 1762935717 4082 08e63e979ead98949ff67a783c93b345 ""
-  "main.toc" 1763987219 1126 cca85ac49e902754151d0c001ff581bf "pdflatex"
+  "main.toc" 1764591930 1346 36ccd5b36c0718713c743cc7590904a1 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
