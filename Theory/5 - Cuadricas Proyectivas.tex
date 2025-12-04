@@ -876,7 +876,139 @@ Asi, hemos visto que la equivalencia afín entre cuadricas afines implica la equ
 
 Para ver la recíproca, es decir, si la equivalencia proyectiva entre las completadas proyectivas y entre las cuádricas de infinito implica la equivalencia afín entre las cuadricas afines, veamos un teorema.
 
-\begin{teorema}[Teorema de Will]
+\begin{teorema}[Teorema de Witt]
     Dos cuadricas afines son afinamente equivalentes si y solo si sus completadas proyectivas y sus cuádricas de infinito son proyectivamente equivalentes.
 \end{teorema}
 
+El lugar de cero de una cuádrica afín es $C = \{x \in \mathbb{A} : (1,x) B (1,x)^t = 0 \} \subset \mathbb{A}$ y el de la completada $\tilde{C} = \{ \tilde{x} \in \tilde{\mathbb{A}} : \tilde{x}^t B \tilde{x} = 0 \} \subset \tilde{\mathbb{A}}$, donde $C \subset \tilde{C}$ y $\mathbb{A} \subset \tilde{\mathbb{A}}$.\\
+La cuádrica de infinto $C_\infty = \{x_\infty \in \mathbb{A}_\infty : x_\infty^t B_\infty x_\infty = 0 \} \subset \mathbb{A}_\infty$ es la intersección de la completada proyectiva con el hiperplano de infinito, es decir, $C_\infty = \tilde{C} \cap \mathbb{A}_\infty$. O sea, $\tilde{C} = C \cup C_\infty$.\\
+
+\subsection{Clasificación de cónicas afines}
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \setlength{\tabcolsep}{6pt}
+    \begin{tabular}{|p{3.6cm}|p{3.6cm}|p{3.6cm}|p{3.6cm}|}
+    \hline
+    \textbf{Cónica proyectiva completada} & 
+    \textbf{Recta de $\infty$} &
+    \textbf{Cuádrica de $\infty$} &
+    \textbf{Cónica afín} \\ \hline
+    
+    Signatura (3,0) $x_0^2+x_1^2+x_2^2=0 \;\Rightarrow\; \tilde{C} = \emptyset$
+    &
+    Da igual
+    &
+    $\emptyset$
+    &
+    $\emptyset$
+    \\ \hline
+    
+    Signatura (2,1) $x_0^2+x_1^2 - x_2^2=0$, \quad $\tilde{C}$ cónica no degenerada, rango 3
+    &
+    $r_\infty : x_2 = 0$ solamente real
+    &
+    $\emptyset$ porque $\tilde{C} \cap r_\infty = \emptyset$
+    &
+    En $\mathbb{P}^2 \setminus r_\infty = \{x_2 \neq 0\}$ tenemos una elipse $X_0^2 + X_1^2 = 1$
+    \\ \hline
+    
+    Signatura (2,1) $x_0^2+x_1^2 - x_2^2=0$, \quad $\tilde{C}$ cónica no degenerada, rango 3
+    &
+    \[
+    x_0^2 + x_1^2 - x_2^2 
+    \implies 
+    x_0 - x_1' x_2' = 0
+    \]
+    \[
+    \begin{aligned}
+    x_1' &= x_2 - x_1 \\
+    x_2' &= x_2 + x_1
+    \end{aligned}
+    \]
+    &
+    $r_\infty : x_1 = x_2$
+    \[
+    \begin{aligned}
+    x_0 + x_1^2 - x_2^2 &= 0 \\
+    x_1 - x_2 &= 0
+    \end{aligned}
+    \Rightarrow
+    \begin{aligned}
+    x_0 &= 0 \\
+    x_1 - x_2 &= 0
+    \end{aligned}
+    \]
+    Luego $r_\infty : x_0'=0$
+    &
+    Punto doble $(0:1:1)$
+    \\ \hline
+    
+    Signatura (2,1) $x_0^2+x_1^2 - x_2^2=0$, \quad $\tilde{C}$ cónica no degenerada, rango 3
+    &
+    $r_\infty : x_1=0$ solamente real
+    &
+    $r_\infty : x_0=0$
+    \[
+    \begin{aligned}
+    x_0^2 + x_1^2 - x_2^2 &= 0 \\
+    x_0 &= 0
+    \end{aligned}
+    \]
+    &
+    Dos puntos reales $(0:1:1)$, $(0:1:-1)$
+    \\ \hline
+    
+    Signatura (2,0) $x_0^2+x_1^2 = 0$ tenemos un punto $(0:0:1)$
+    &
+    $r_\infty$ no pasa por el punto
+    &
+    $\emptyset$
+    &
+    Un punto real
+    \\ \hline
+    
+    Signatura (2,0) $x_0^2+x_1^2 = 0$ tenemos un punto $(0:0:1)$
+    &
+    $r_\infty$ pasa por el punto
+    &
+    Un punto
+    &
+    $\emptyset$
+    \\ \hline
+    
+    Signatura (1,1) $x_0^2 - x_1^2 =0$, rango 2
+    &
+    Dos rectas $\{x_0 = x_1\}$ y $\{x_0 = -x_1\}$ que se cortan en $r_\infty : x_0=0$
+    &
+    Punto doble
+    &
+    Dos rectas paralelas $1 - X_1^2 = 0$
+    \\ \hline
+    
+    Signatura (1,1) $x_0^2 - x_1^2 =0$, rango 2
+    &
+    Dos rectas que cortan en puntos distintos de $r_\infty$, \; $r_\infty : x_2=0$
+    &
+    Dos puntos $(1:1:0)$ y $(1:-1:0)$
+    &
+    Dos rectas $\{x_2 \neq 0\}$, \; $X_0^2 - X_1^2 = 0 \iff X_0 = \pm X_1$
+    \\ \hline
+    
+    Signatura (1,0) $x_0^2 =0$, rango 1, recta doble
+    &
+    $r_\infty : x_1=0$
+    &
+    Punto doble $(0:0:1)$
+    &
+    $\{x_1 \neq 0\}$ una recta doble $X_0^2 = 0$
+    \\ \hline
+    
+    \end{tabular}
+    \caption{Ejemplo de tabla con 4 columnas.}
+    \label{tabla:ejemplo}
+\end{table}
+    
+
+El caso en que $r_\infty \subset \tilde{C}$ resultaría de $C_\infty = r_\infty$, caso imposible en vista de que se obliga en la definición a que $B_\infty$ sea una matriz distinta de cero.
