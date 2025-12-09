@@ -1011,4 +1011,161 @@ La cuádrica de infinto $C_\infty = \{x_\infty \in \mathbb{A}_\infty : x_\infty^
 \end{table}
     
 
-El caso en que $r_\infty \subset \tilde{C}$ resultaría de $C_\infty = r_\infty$, caso imposible en vista de que se obliga en la definición a que $B_\infty$ sea una matriz distinta de cero.
+El caso en que $r_\infty \subset \tilde{C}$ resultaría de $C_\infty = r_\infty$, caso imposible en vista de que se obliga en la definición a que $B_\infty$ sea una matriz distinta de cero.\\
+
+Tenemos la siguiente relacion entre cuadricas y sus duales:
+\[
+    \begin{array}{c|c|c}
+        \text{Cuádrica no degenerada} \varphi \text{ en } \mathbb{P} & \longleftrightarrow & \text{Cuádrica no degenerada } \varphi^* \text{ en } \mathbb{P}^* \\
+        \hline
+        \text{Matriz } B \text{ en referencia } \mathfrak{R} & \longleftrightarrow & \text{Matriz } B^{-1} \text{ en referencia } \mathfrak{R}^* \\
+        \hline
+        \text{Hiperplanos tangentes de } \varphi & \longleftrightarrow & \text{Ceros de } \varphi^* \\
+    \end{array}
+\]
+
+\ejemplo{
+    Tengamos la cónica afín:
+    \[
+    \psi : x^2 + y^2 = 4
+    \]
+    Y tengamos el punto $A = (2,2)$, nos preguntamos cuales son las rectas tangentes a la cónica que pasan por $A$.\\
+    Completamos a la conica para obtener la completada proyectiva:
+    \[
+    \widetilde{\psi} : x_1^2 + x_2^2 = 4 x_0^2 \implies
+    4 x_0^2 - x_1^2 - x_2^2 = 0
+    \]
+    Dejandonos así la siguiente matriz:
+    \[
+    B =
+    \begin{pmatrix}
+        4 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}
+    \]
+    Siendo ahora el punto $A$ en coordenadas homogéneas $(1:2:2)$.\\
+    Calculamos la matriz inversa, la cual es la matriz de la cuádrica dual:
+    \[
+    B^{-1} =
+    \begin{pmatrix}
+        \frac{1}{4} & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}
+    \]
+    Que es la matriz de $\widetilde{\psi}^*$ en $\mathbb{P}^{2*}$.\\
+    Tenemos ahora la ecuación de la cuádrica dual:
+    \[
+    \widetilde{\psi}^* : \frac{1}{4} x_0^{*2}- x_1^{*2} - x_2^{*2} = 0
+    \]
+    También tenemos la recta dual $A^* : x_0^* + 2 x_1^* + 2 x_2^* = 0$.\\
+    Las intersecciones de la cuádrica dual con la recta dual nos darán las rectas tangentes (asociadas a los puntos de intersección) que pasan por el punto $A$:
+    \[
+    C_{\widetilde{\psi}^*} \cap A^* =
+    \begin{cases}
+        \frac{1}{4} x_0^{*2} - x_1^{*2} - x_2^{*2} = 0 \\
+        x_0^* + 2 x_1^* + 2 x_2^* = 0
+    \end{cases} \implies
+    x_1^{*2} x_2^{*2} = 0
+    \]
+    Que nos da las soluciones:
+    \[
+    (2 : 0 : -1) \text{ y } (2 : -1 : 0)
+    \]
+    Volviendo a $\mathbb{P}^2$, las rectas tangentes buscadas son:
+    \[
+    \begin{cases}
+        2 x_0 - x_2 = 0 \\
+        2 x_0 - x_1 = 0
+    \end{cases}
+    \implies
+    \begin{cases}
+        y = 2 \\
+        x = 2
+    \end{cases}
+    \]
+}
+
+\subsection{Centro y asíntotas de cónicas afines}
+
+Sea $\widetilde{\varphi}$ una cónica proyectiva no degenerada en $\mathbb{P}^2$, y sea la carta afín $\mathbb{P}^2 \setminus r_\infty \equiv \mathbb{A}^2$, con $r_\infty$ una recta del infinito, y sea $\varphi$ la cónica afín inducida por $\widetilde{\varphi}$ en $\mathbb{A}^2$.\\
+
+\begin{definición}
+    Se define el centro de la cónica afín $\varphi$ como el polo de $r_\infty$, es decir, el punto cuya polar es $r_\infty$, solo cuando dicho punto no está en $r_\infty$.
+\end{definición}
+
+\ejemplo{
+
+    Tengamos la siguiente elipse:
+    \begin{center}
+        \begin{tikzpicture}
+            % Elipse
+            \draw[thick] (0,0) ellipse (3cm and 2cm);
+
+            % Centro
+            \filldraw (1,0) circle (2pt) node[anchor=north west] {Centro};
+
+            % Recta del infinito
+            \draw[dashed] (3, -3) -- (4, 3) node[anchor=south west] {$r_\infty$};
+        \end{tikzpicture}
+    \end{center}
+    Como se aprecia, la elipse tiene centro, que es el polo de la recta del infinito (el punto cuya polar es la recta del infinito).
+
+    Ahora tengamos la siguiente parabola:
+    \begin{center}
+        \begin{tikzpicture}
+            % Elipse
+            \draw[thick] (0,0) ellipse (3cm and 2cm);
+
+            % Punto A
+            \filldraw (3,0) circle (2pt) node[anchor=north west] {$A$};
+
+            % Recta del infinito
+            \draw[dashed] (2.5, -3) -- (3.5, 3) node[anchor=south west] {$r_\infty$};
+        \end{tikzpicture}
+    \end{center}
+    En este caso, la parábola no tiene centro, ya que el polo de la recta del infinito es el punto $A$, que pertenece a la recta del infinito, es decir, $A= r_\infty \cap C_{\widetilde{\varphi}}$, por lo que $r_\infty = T_A (C_{\widetilde{\varphi}})$.
+
+    Tengamos ahora la siguiente hiperbola:
+    \begin{center}
+        \begin{tikzpicture}
+            % Elipse
+            \draw[thick, rotate around={0:(0,0)}] plot [domain=0:360, samples=100] ({3*cos(\x)}, {2*sin(\x)});
+
+            % Puntos 
+            \coordinate (A) at ({3*cos(40)},{2*sin(40)});
+            \coordinate (B) at ({3*cos(-60)},{2*sin(-60)});
+
+            % Recta AB
+            \draw[dashed] (A) -- (B) node[anchor=south west] {$r_\infty$};
+
+            % Centro
+            \coordinate (C) at (5,0);
+            \filldraw (C) circle (2pt) node[anchor=north west] {Centro};
+
+            % Asintotas
+            \draw[dotted] (C) -- (A) node[anchor=south west] {Asintota 1};
+            \draw[dotted] (C) -- (B) node[anchor=south west] {Asintota 2};
+        \end{tikzpicture}
+    \end{center}
+}
+
+\begin{definición}
+    Las asintotas de una hiperbola $\varphi$ son las rectas que unen el centro de $\varphi$ con los puntos del $\infty$, es decir, la intersección de la recta del infinito con los ceros de la completada proyectiva $\widetilde{\varphi}$ ($r_\infty \cap C_{\widetilde{\varphi}}$).
+\end{definición}
+
+\textbf{Nota: } Las asintotas son las rectas tangentes a $\widetilde{\varphi}$ en los puntos del infinito.
+
+\begin{proposición}
+    El centro $c \in \mathbb{A}^2$ de una cónica afín $\varphi$ es centro de simetria de $C_{\varphi}$, es decir:
+    \[
+    c + v \in C_{\varphi} \iff c - v \in C_{\varphi} \qquad \forall v \in \vec{\mathbb{A}}^2
+    \]
+\end{proposición}
+
+\begin{proof}
+    Caso $\varphi$ una hiperbola:\\
+    Las tres rectas $r_\infty$ y las asintotas no son concurrentes, luego podemos definir una referencia donde $r_\infty : x_0 = 0$, y las asintotas sean $r_1 : x_1 = 0$ y $r_2 : x_2 = 0$, siendo el centro $c = (1:0:0)$, y los puntos del infinito $A_1 = (0:1:0)$ y $A_2 = (0:0:1)$.\\
+    La polar de $c$ es $r_\infty = \{ x_0 = 0 \}$, luego la primera columna de la matriz debe ser $(1,0,0)^t$.\\
+\end{proof}
