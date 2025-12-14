@@ -1,0 +1,366 @@
+\hojaejercicio{9}{Cuádricas II}
+\ejercicio{Completa las siguientes cuádricas afines de $\mathbb{A}_{\mathbb{C}}^3$ a cuádricas proyectivas en $\mathbb{P}_{\mathbb{C}}^3$ y clasifica las cuádricas obtenidas:
+\begin{enumerate}
+    \item[a)] $4x^2 + z^2 - 2xy + 2y + 4 = 0$.
+    \item[b)] $x^2 + z^2 - xy + 2xz - yz + x + 1 = 0$.
+\end{enumerate}}{ 
+    
+    a) $4x^2 + z^2 - 2xy + 2y + 4 = 0$
+    Tenemos que
+\[
+M_{R_A}(\varphi) = 
+\left( \begin{array}{c|ccc}
+4 & 0 & 1 & 0 \\
+0 & 2 & -1 & 0 \\
+1 & -1 & 0 & 0 \\
+0 & 0 & 0 & 2
+\end{array} \right)
+\]
+
+La completación proyectiva es: $4x_1^2 + x_3^2 - 2x_1x_2 + 2x_2x_0 + 4x_0^2 = 0$
+
+Es decir
+\[
+M_{R_P}(\varphi) = 
+\begin{pmatrix}
+4 & 0 & 1 & 0 \\
+0 & 2 & -1 & 0 \\
+1 & -1 & 0 & 0 \\
+0 & 0 & 0 & 2
+\end{pmatrix}
+\]
+
+Las cuádricas complejas se clasifican por rango:
+
+\[
+|M_{R_P}(\tilde{\varphi})| = 
+\left| \begin{matrix}
+4 & 0 & 1 & 0 \\
+0 & 2 & -1 & 0 \\
+1 & -1 & 0 & 0 \\
+0 & 0 & 0 & 2
+\end{matrix} \right|
+= 2 
+\left| \begin{matrix}
+4 & 0 & 1 \\
+0 & 2 & -1 \\
+1 & -1 & 0
+\end{matrix} \right|
+= 2(-2-4) \neq 0
+\]
+
+\[
+\text{Rang}(M_{R_P}(\tilde{\varphi})) = 4 \implies \text{es proyectivamente equivalente a}
+\]
+\[
+x_0^2 + x_1^2 + x_2^2 + x_3^2 = 0.
+\]
+
+b) Hacemos lo mismo para $x^2+z^2-xy+2xz-yz+x+1=0$
+
+\[
+\begin{aligned}
+M_{R_P}(\tilde{\varphi}) &= 
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+1 & 0 & -1/2 & 1 \\
+0 & -1/2 & 0 & -1/2 \\
+0 & 1 & -1/2 & 1
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -2 & -1/2 & 1 \\
+0 & -1/2 & 0 & -1/2 \\
+0 & 1 & -1/2 & 0
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -2 & 0 & 0 \\
+0 & 0 & -1/4 & 1/2 \\
+0 & 1 & 1/2 & 0
+\end{pmatrix} \\
+&\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -2 & 0 & 0 \\
+0 & 0 & -1/4 & 1/2 \\
+0 & 0 & 1/2 & 1
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -2 & 0 & 0 \\
+0 & 0 & -1/4 & 0 \\
+0 & 0 & 0 & 3
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}.
+\end{aligned}
+\]
+
+Vemos de nuevo que es proyectivamente equivalente a $x_0^2 + x_1^2 + \dots x_3^2 = 0$
+    
+
+}
+
+%ejercicio2
+\ejercicio{Completa las siguientes cuádricas afines de $\mathbb{A}_{\mathbb{R}}^3$ a cuádricas proyectivas en $\mathbb{P}_{\mathbb{R}}^3$ y clasifica las cuádricas obtenidas:
+\begin{enumerate}
+    \item[a)] $x^2 - y^2 + 4xz + 2yz + 2y - 2z - 1 = 0$.
+    \item[b)] $x^2 + y^2 + 4z^2 - 2xy + 4xz - 4yz - 4y = 0$.
+    \item[c)] $x^2 - 2z^2 - xz + x + z = 0$.
+\end{enumerate}}{ }
+
+%ejercicio3
+\ejercicio{Clasifica las siguientes cónicas afines reales:
+\begin{enumerate}
+    \item[a)] $1 + 2x - 6y + 4x^2 - 6xy + y^2 = 0$.
+    \item[b)] $1 + 2x - 6y + 4x^2 - 4xy + y^2 = 0$.
+    \item[c)] $1 + 2x - 6y + 4x^2 - 2xy + y^2 = 0$.
+\end{enumerate}}{ }
+
+%ejercicio4
+\ejercicio{Se consideran en $\mathbb{P}_{\mathbb{R}}^2$ la cónica $\widetilde{\varphi}$ de ecuación $x_0^2 - 2x_0x_2 + 4x_1x_2 = 0$ y las rectas $r_{\alpha}: \alpha x_0 - x_1 + x_2 = 0$, con $\alpha \in \mathbb{R}$. Clasifica las cónicas afines inducidas por $\widetilde{\varphi}$ en los planos afines $\mathbb{P}_{\mathbb{R}}^2 \setminus r_{\alpha}$.}{
+4) $P^2_{\mathbb{R}}$ tenemos
+\[
+M_R(\tilde{\varphi}) = 
+\begin{pmatrix} 
+1 & 0 & -1 \\ 
+0 & 0 & 1 \\ 
+-1 & 1 & 0 
+\end{pmatrix} 
+\sim 
+\begin{pmatrix} 
+1 & 0 & 0 \\ 
+0 & 0 & 1 \\ 
+0 & 1 & -2 
+\end{pmatrix} 
+\sim 
+\begin{pmatrix} 
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & -2 
+\end{pmatrix}
+\]
+
+con nuestra recta del infinito:
+\[
+r_\infty \equiv \alpha x_0 - x_1 + x_2 = 0
+\]
+
+Hagamos entonces el cambio de referencia:
+\[
+\begin{cases}
+y_0 = \alpha x_0 - x_1 + x_2 \\
+y_1 = x_0 \\
+y_2 = x_2
+\end{cases}
+\Rightarrow
+\begin{cases}
+-y_0 + \alpha y_1 + y_2 = x_1 \\
+y_1 = x_0 \\
+y_2 = x_2
+\end{cases}
+\Rightarrow
+N_{R'R} = 
+\begin{pmatrix} 
+0 & 1 & 0 \\ 
+-1 & \alpha & 1 \\ 
+0 & 0 & 1 
+\end{pmatrix}
+\]
+
+Entonces, la cuádrica proyectiva en esa referencia es:
+\[
+M_{R'}(\tilde{\varphi}) = M_{R'R}^t M_R(\tilde{\varphi}) M_{R'R} = 
+\begin{pmatrix} 
+0 & 0 & -2 \\ 
+0 & 1 & 2\alpha - 1 \\ 
+-2 & 2\alpha - 1 & 4 
+\end{pmatrix}
+\]
+
+Sabemos que nuestra cuádrica de infinito es $C_\infty = \begin{pmatrix} 1 & 2\alpha-1 \\ 2\alpha-1 & 4 \end{pmatrix}$.\\
+Y al estar en dimensión 2, las posibles signaturas son:
+\begin{itemize}
+    \item Si $|C_\infty| = 0 \to \text{Sig}(C_\infty) = (1,0)$
+    \item Si $|C_\infty| > 0 \to \text{Sig}(C_\infty) = (2,0)$
+    \item Si $|C_\infty| < 0 \to \text{Sig}(C_\infty) = (1,1)$
+\end{itemize}
+
+Entonces:
+\[
+|C_\infty| = 
+\left| \begin{matrix} 
+1 & 2\alpha-1 \\ 
+2\alpha-1 & 4 
+\end{matrix} \right| 
+= 4 - (2\alpha-1)^2 = 0 \iff (2\alpha-1)^2 = 4
+\]
+\[
+\Rightarrow 
+\begin{cases} 
+2\alpha-1 = 2 \to \alpha = 3/2 \\ 
+2\alpha-1 = -2 \to \alpha = -1/2 
+\end{cases}
+\]
+
+Si $\alpha < -1/2$ ó $\alpha > 3/2 \Rightarrow |C_\infty| < 0 \Rightarrow \text{Sig}(C_\infty) = (1,1) \Rightarrow C_\infty \sim \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$.\\
+Entonces $C_\infty$ tiene dos puntos $\Rightarrow C_{\varphi_A} \sim X_1^2 - X_2^2 = 1$ hipérbola.
+
+Si $\alpha = 3/2$ ó $\alpha = -1/2 \Rightarrow |C_\infty| = 0 \Rightarrow \text{Sig}(C_\infty) = (1,0) \Rightarrow C_\infty \sim \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$.\\
+$C_\infty$ tiene un punto $\Rightarrow C_{\varphi_A} \sim X_1 = X_2^2$ parábola.
+
+Si $-1/2 < \alpha < 3/2$ entonces $|C_\infty| > 0 \Rightarrow \text{Sig}(C_\infty) = (2,0) \Rightarrow C_\infty \sim \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.\\
+$C_\infty \sim X_1^2 + X_2^2 = 0$ no tiene ningún punto $\Rightarrow C_{\varphi_A} \sim X_1^2 + X_2^2 = 1$.}
+
+%ejercicio5
+\ejercicio{Sea $\overline{\varphi}$ la cuádrica de $\mathbb{P}_{\mathbb{R}}^3$ de ecuación $x_0^2 - x_1^2 + 2x_2x_3 = 0$ y $H$ el plano $x_0 - x_1 = 0$. Clasifica la cuádrica afín definida por $\overline{\varphi}$ en el espacio afín $X = \mathbb{P}_{\mathbb{R}}^3 \setminus H$.}{ 
+    $C_{\tilde{\varphi}} \equiv x_0^2 - x_1^2 + 2x_2x_3 = 0$ por lo tanto:
+
+\[
+M_R(\tilde{\varphi}^2) =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & 2 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & 2 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}
+\]
+
+Es decir $\tilde{\varphi}$ es no degenerada de signatura (2,2)
+
+Tenemos entonces que $H_\infty \equiv x_0 - x_1 = 0 \implies -x_1 \neq 0$
+
+Cambio de referencia:
+
+\[
+\begin{cases}
+y_0 = x_0 - x_1 \\
+y_1 = x_1 \\
+y_2 = x_2 \\
+y_3 = x_3
+\end{cases}
+\implies
+\begin{cases}
+x_0 = y_0 + y_1 \\
+x_1 = y_1 \\
+x_2 = y_2 \\
+x_3 = y_3
+\end{cases}
+\implies
+M_{R'R} =
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\]
+
+\[
+M_{R'}(\tilde{\varphi}) = M_{R'R}^t M_R(\tilde{\varphi}) M_{R'R} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\]
+
+\[
+=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 1 & 0
+\end{pmatrix}
+\]
+
+Por lo que $M_{R'}(\tilde{\varphi}) = M_R(\tilde{\varphi})$
+
+ahora bien, nuestra carta afín es $\{X_0 \neq 0\}$ por lo que nuestra cuádrica de infinito $C_\infty \equiv -X_1^2 + 2X_2X_3 = 0 \sim -X_1^2 + X_2^2 + X_3^2 = 0$
+
+que al ser no singular se concluye que:
+
+$\varphi_A$ es afínmente a un hiperboloide de una hoja,
+
+es decir, $\varphi_A \sim x^2 + y^2 = z^2 + 1$.
+}
+
+%ejercicio6
+\ejercicio{Clasifica la cuádrica afín real
+\[ (3\alpha - 1) + 4\alpha z - x^2 + 4\alpha xy + (3\alpha - 1)y^2 - z^2 = 0 \]
+atendiendo a los valores del parámetro $\alpha \in \mathbb{R}$.}{ }
+
+%ejercicio7
+\ejercicio{Clasifica, según los valores de $t \in \mathbb{R}$, la cónica afín real
+\[ 1 - 2x + 2y + tx^2 + 2xy + ty^2 = 0 \]
+Calcula centro y asíntotas en $t = 0$ y $t = 2$ si los hubiera.}{ }
+
+%ejercicio8
+\ejercicio{Halla la ecuación de la cónica que es tangente a las rectas:
+$x_2 = 0$, $x_0 - x_1 + x_2 = 0$, $x_0 + x_2 = 0$, $x_0 + x_1 + 2x_2 = 0$ y $x_0 + 2x_1 - x_2 = 0$.}{ }
+
+%ejercicio9
+\ejercicio{Encuentra todas las cónicas degeneradas del haz generado por
+$x_0x_2 = x_1^2$ y $x_0x_1 + 2x_0x_2 = x_1x_2 + 2x_1^2$.}{ }
+
+%ejercicio10
+\ejercicio{Obtén la intersección de las cónicas:
+\[ x_0^2 + 2x_0x_1 + 2x_0x_2 + x_1x_2 + x_2^2 = 0 \]
+\[ x_0^2 + 2x_0x_1 + 3x_0x_2 + 2x_1x_2 + 2x_2^2 = 0 \] }{ }

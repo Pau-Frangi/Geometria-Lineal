@@ -1,0 +1,236 @@
+\hojaejercicio{8}{Cuádricas I}
+%ejercicio1
+\ejercicio{Prueba que la recta $x_0 - x_1 + x_2 = 0$ es tangente a la cónica $x_0^2 - x_1^2 + 2x_0x_2 = 0$ y halla el punto de tangencia.}{
+    La recta $r \equiv x_0 - x_1 + x_2 = 0$ es tangente si es el hiperplano polar de algún punto $A \in C_{\varphi}$.
+La matriz de la cónica es:
+\[
+M(C_{\varphi}) = \begin{pmatrix}
+1 & 0 & 1 \\
+0 & -1 & 0 \\
+1 & 0 & 0
+\end{pmatrix}
+\]
+Buscamos $A$ tal que $A \cdot M \sim (1, -1, 1)$ (coeficientes de $r$).
+\[
+(a_0, a_1, a_2) \begin{pmatrix}
+1 & 0 & 1 \\
+0 & -1 & 0 \\
+1 & 0 & 0
+\end{pmatrix} = (a_0 + a_2, -a_1, a_0) = \lambda (1, -1, 1)
+\]
+Sistema:
+\[
+\begin{cases}
+a_0 + a_2 = \lambda \\
+-a_1 = -\lambda \implies a_1 = \lambda \\
+a_0 = \lambda
+\end{cases}
+\]
+Sustituyendo $a_0 = \lambda$ en la primera: $\lambda + a_2 = \lambda \implies a_2 = 0$.
+El punto es $P = (1:1:0)$.
+Comprobamos que $P \in C_{\varphi}$: $1^2 - 1^2 + 2(1)(0) = 0$. Correcto.
+La recta es tangente en $(1:1:0)$.
+ }
+
+%ejercicio2
+\ejercicio{Sea $\varphi$ la cónica de $\mathbb{P}_{\mathbb{R}}^2$ de ecuación $4x_0^2 + 6x_0x_2 + \alpha x_1x_2 = 0$. Halla $\alpha$ sabiendo que la recta tangente a la cónica en $(0:0:1)$ es $3x_0 + 2x_1 = 0$. ¿Cuál es la signatura (proyectiva) de $\varphi$?}{ 
+    La matriz de la cuádrica en la referencia canónica es:
+\[
+M_R(\varphi) = \begin{pmatrix}
+4 & 0 & 3 \\
+0 & 0 & \alpha/2 \\
+3 & \alpha/2 & 0
+\end{pmatrix}
+\]
+Sabemos que para el punto $A=(0:0:1)$, su recta polar es $r_A \equiv 3x_0 + 2x_1 = 0$.
+\[
+r_A = \text{Polar}_{\varphi}(A) \iff A \cdot M_R(\varphi) \sim (3 : 2 : 0)
+\]
+Operando:
+\[
+(0, 0, 1) \cdot \begin{pmatrix}
+4 & 0 & 3 \\
+0 & 0 & \alpha/2 \\
+3 & \alpha/2 & 0
+\end{pmatrix} = (3, \alpha/2, 0)
+\]
+Igualando proyectivamente a los coeficientes de la recta dada:
+\[
+(3, \alpha/2, 0) \sim (3, 2, 0) \implies \frac{\alpha}{2} = 2 \implies \alpha = 4
+\]
+
+Para la signatura, con $\alpha=4$:
+\[
+M_R(\varphi) = \begin{pmatrix}
+4 & 0 & 3 \\
+0 & 0 & 2 \\
+3 & 2 & 0
+\end{pmatrix} \sim \dots \text{ (diagonalización) } \dots \sim
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & -1
+\end{pmatrix}
+\]
+La cuádrica tiene signatura $(2,1)$, es decir, $(++, -)$.
+}
+
+%ejercicio3
+\ejercicio{Determina las rectas tangentes a la cónica de ecuación $x_0^2 + x_1x_2 + x_2^2 = 0$ que pasan por el punto $(1:1:0)$.}{
+    Tenemos que $\text{Polar}_{\varphi}(A) \equiv A^t M_B(\varphi) X = 0$.
+\[
+M_B(\varphi) = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1/2 \\ 0 & 1/2 & 1 \end{pmatrix} 
+\]
+Por lo tanto, la ecuación de la polar es:
+\[
+\text{Polar}_{\varphi}(A) \equiv a_0x_0 + \frac{1}{2}a_2x_1 + (\frac{1}{2}a_1 + a_2)x_2 = 0
+\]
+Buscamos $A=(a_0:a_1:a_2)$ tal que $(1:1:0) \in \text{Polar}_{\varphi}(A) \Rightarrow$
+\[
+a_0(1) + \frac{1}{2}a_2(1) + (\dots)(0) = 0 \implies a_0 + \frac{1}{2}a_2 = 0 \rightarrow \boxed{a_2 = -2a_0}
+\]
+Además $A \in C_{\varphi} \Rightarrow a_0^2 + a_1a_2 + a_2^2 = 0$.
+Sustituyendo $a_2 = -2a_0$:
+\[
+a_0^2 + a_1(-2a_0) + (-2a_0)^2 = 0
+\]
+\[
+a_0^2 - 2a_1a_0 + 4a_0^2 = 0
+\]
+Es decir, $5a_0^2 - 2a_1a_0 = 0 \Rightarrow a_0(5a_0 - 2a_1) = 0$.
+
+Esto nos da dos casos para los puntos de tangencia:
+\[
+\Rightarrow \begin{cases} 
+a_0 = 0 \\ 
+5a_0 - 2a_1 = 0 \Rightarrow a_1 = \frac{5}{2}a_0 
+\end{cases}
+\]
+
+\textbf{Caso 1:} Si $a_0 = 0 \Rightarrow a_2 = -2(0) = 0$.
+El punto es $A_1 = (0:1:0)$.
+
+\textbf{Caso 2:} Si $a_1 = \frac{5}{2}a_0$. Tomamos $a_0 = 2 \Rightarrow a_1 = 5$.
+Entonces $a_2 = -2(2) = -4$.
+El punto es $A_2 = (2:5:-4)$.
+
+Por tanto, las rectas de tangencia se obtienen sustituyendo estos puntos en la ecuación de la polar:
+
+Para $A_1 = (0:1:0)$:
+\[
+0x_0 + \frac{1}{2}(0)x_1 + (\frac{1}{2}(1) + 0)x_2 = 0 \Rightarrow \frac{1}{2}x_2 = 0 \Rightarrow \boxed{r_1 \equiv x_2 = 0}
+\]
+
+Para $A_2 = (2:5:-4)$:
+\[
+2x_0 + \frac{1}{2}(-4)x_1 + (\frac{1}{2}(5) + (-4))x_2 = 0
+\]
+\[
+2x_0 - 2x_1 + (\frac{5}{2} - \frac{8}{2})x_2 = 0
+\]
+\[
+2x_0 - 2x_1 - \frac{3}{2}x_2 = 0 \quad (\times 2) \Rightarrow \boxed{r_2 \equiv 4x_0 - 4x_1 - 3x_2 = 0}
+\]
+ }
+
+%ejercicio4
+\ejercicio{Calcula las tangentes comunes a las cónicas $x_0^2 - 2x_0x_1 + 2x_0x_2 + x_1^2 = 0$ y $x_0x_2 - x_1^2 = 0$.}{ }
+
+%ejercicio5
+\ejercicio{Halla la ecuación de una cónica que pase por los puntos $(1:0:0), (1:1:0), (1:-1:1)$ y sea tangente a la recta $x_0 = 0$ en el punto $(0:1:1)$. ¿Es única dicha cónica?}{ }
+
+%ejercicio6
+\ejercicio{Clasifica las siguientes cónicas proyectivas complejas:
+\begin{enumerate}
+    \item[(i)] $4x_0^2 - 4x_0x_1 + 12x_0x_2 + x_1^2 - 6x_1x_2 + 9x_2^2 = 0$
+    \item[(ii)] $x_0^2 - 3x_0x_1 + 4x_0x_2 + 2x_1^2 - 5x_1x_2 + 3x_2^2 = 0$
+    \item[(iii)] $x_0^2 + 2x_0x_1 + 2x_0x_2 + x_1x_2 + x_2^2 = 0$
+\end{enumerate}}{ }
+
+%ejercicio7
+\ejercicio{Clasifica las siguientes cónicas proyectivas reales:
+\begin{enumerate}
+    \item[(i)] $2x_0^2 - 2x_0x_1 - x_1^2 + x_1x_2 - x_2^2 = 0$
+    \item[(ii)] $x_0^2 - 2x_0x_1 - x_1^2 - 4x_1x_2 - 2x_2^2 = 0$
+\end{enumerate}}{ }
+
+%ejercicio8
+\ejercicio{Sea $\varphi$ una cónica no singular de un plano proyectivo y $Q$ un punto (del conjunto de ceros) de la cónica. Tomamos $A, B$ dos puntos del plano alineados con $Q$. Demuestra que la tangente a la cónica en $Q$ pasa por la intersección de las polares de $A$ y $B$.}{ 
+    Estamos en $\mathbb{P}_{\mathbb{R}}^2$, por lo tanto los hiperplanos polares de los puntos son rectas. Es decir, la recta tangente en $Q$ es $\text{Polar}_{\varphi}(Q)$.
+
+Sea
+\[
+\begin{cases}
+\text{Polar}_{\varphi}(A) = r_A \\
+\text{Polar}_{\varphi}(B) = r_B
+\end{cases} \Rightarrow \text{Sea } P = r_A \cap r_B
+\]
+
+Entonces:
+\[
+\left.
+\begin{aligned}
+P \in \text{Polar}_{\varphi}(B) &\longrightarrow B \in \text{Polar}_{\varphi}(P)
+\end{aligned}
+\right\}
+\Rightarrow \text{Polar}_{\varphi}(P) = V(A,B) = r_P
+\]
+
+Tenemos que la recta que une $A,B$ es la polar de $P \Rightarrow$
+\[
+\text{Como } Q \in V(A,B) \Rightarrow Q \in r_P \Rightarrow Q \in \text{Polar}_{\varphi}(P) \Rightarrow P \in \text{Polar}_{\varphi}(Q)
+\]
+\[
+\Rightarrow P \in r_Q \text{ siendo } r_Q \text{ la recta tangente en } Q \text{ a la cuádrica.}
+\]
+}
+
+%ejercicio9
+\ejercicio{Considera una cuádrica en un espacio proyectivo y un hiperplano que no esté completamente contenido en ella. Demuestra que el hiperplano es tangente a la cuádrica si y solo si la cuádrica induce en el hiperplano una cuádrica singular.}{ }
+
+%ejercicio10
+\ejercicio{Supongamos que la expresión de una cuádrica en $\mathbb{P}_{\mathbb{K}}^n$ es $P(x_0, x_1, \dots, x_n) = 0$.
+\begin{enumerate}
+    \item[a)] Prueba que un punto $A = (a_0 : a_1 : \dots : a_n)$ es singular si y solo si
+    \[ \frac{\partial P}{\partial x_0}(a) = 0, \quad \frac{\partial P}{\partial x_1}(a) = 0, \quad \dots, \quad \frac{\partial P}{\partial x_n}(a) = 0, \]
+    donde $a = (a_0, a_1, \dots, a_n)$.
+    \item[b)] Prueba que si $A$ es regular entonces su hiperplano tangente es:
+    \[ \frac{\partial P}{\partial x_0}(a)x_0 + \frac{\partial P}{\partial x_1}(a)x_1 + \dots + \frac{\partial P}{\partial x_n}(a)x_n = 0 \]
+\end{enumerate}}{
+    Tenemos $P(x_0, \dots, x_n) = (x_0 \dots x_n) M_B(\varphi) \begin{pmatrix} x_0 \\ \vdots \\ x_n \end{pmatrix}$, siendo $M_B(\varphi)$ una matriz simétrica de tamaño $n+1$ que define nuestra cuádrica.
+
+Sabemos que si $A = (a_0 : \dots : a_n)$ es un punto singular:
+\[
+A \text{ es singular } \iff A \cdot M_B(\varphi) = (0, \dots, 0)
+\]
+Esto implica el sistema de ecuaciones:
+\[
+\begin{cases}
+A \cdot C_0 = 0 \implies \sum_{i=0}^n a_i c_{0,i} = 0 \\
+\vdots \\
+A \cdot C_n = 0 \implies \sum_{i=0}^n a_i c_{n,i} = 0
+\end{cases} \quad (*)
+\]
+donde $C_j$ son las columnas de la matriz.
+
+Derivando la expresión polinómica $P(\bar{x}) = \sum_{j=0}^n x_j (\sum_{i=0}^n c_{ij} x_i)$:
+\[
+\frac{\partial P}{\partial x_k}(\bar{x}) = \sum_{i=0}^n c_{ki} x_i + \sum_{j=0}^n c_{jk} x_j = 2 \left( \sum_{i=0}^n c_{ki} x_i \right)
+\]
+(usando que la matriz es simétrica, $c_{ij} = c_{ji}$).
+
+Por lo tanto, evaluando en $A$:
+\[
+\frac{\partial P}{\partial x_k}(A) = 0 \iff 2 \sum_{i=0}^n c_{ki} a_i = 0 \iff \sum_{i=0}^n a_i c_{ki} = 0
+\]
+Comparando con $(*)$, queda claro que:
+\[
+A \text{ singular } \iff A \cdot M_B(\varphi) = \bar{0} \iff \frac{\partial P}{\partial x_k}(A) = 0 \quad \forall k \in \{0, \dots, n\}
+\]
+ }
+
+%ejercicio11
+\ejercicio{Halla la ecuación de una cónica que pase por $(1:0:1), (0:0:1), (1:-1:1), (1:1:2)$ y $(1:2:-1)$.}{ }
+
+%ejercicio12
+\ejercicio{Encuentra una ecuación en $b_{00}, b_{01}, b_{11}, b_{02}, b_{12}, b_{22}$ que caracterice cuándo la recta $x_2 = 0$ es tangente a la cónica dada por la matriz $(b_{ij})$.}{ }
