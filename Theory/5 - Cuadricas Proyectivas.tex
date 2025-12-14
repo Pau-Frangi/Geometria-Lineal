@@ -1011,4 +1011,406 @@ La cuádrica de infinto $C_\infty = \{x_\infty \in \mathbb{A}_\infty : x_\infty^
 \end{table}
     
 
-El caso en que $r_\infty \subset \tilde{C}$ resultaría de $C_\infty = r_\infty$, caso imposible en vista de que se obliga en la definición a que $B_\infty$ sea una matriz distinta de cero.
+El caso en que $r_\infty \subset \tilde{C}$ resultaría de $C_\infty = r_\infty$, caso imposible en vista de que se obliga en la definición a que $B_\infty$ sea una matriz distinta de cero.\\
+
+Tenemos la siguiente relacion entre cuadricas y sus duales:
+\[
+    \begin{array}{c|c|c}
+        \text{Cuádrica no degenerada} \varphi \text{ en } \mathbb{P} & \longleftrightarrow & \text{Cuádrica no degenerada } \varphi^* \text{ en } \mathbb{P}^* \\
+        \hline
+        \text{Matriz } B \text{ en referencia } \mathfrak{R} & \longleftrightarrow & \text{Matriz } B^{-1} \text{ en referencia } \mathfrak{R}^* \\
+        \hline
+        \text{Hiperplanos tangentes de } \varphi & \longleftrightarrow & \text{Ceros de } \varphi^* \\
+    \end{array}
+\]
+
+\ejemplo{
+    Tengamos la cónica afín:
+    \[
+    \psi : x^2 + y^2 = 4
+    \]
+    Y tengamos el punto $A = (2,2)$, nos preguntamos cuales son las rectas tangentes a la cónica que pasan por $A$.\\
+    Completamos a la conica para obtener la completada proyectiva:
+    \[
+    \widetilde{\psi} : x_1^2 + x_2^2 = 4 x_0^2 \implies
+    4 x_0^2 - x_1^2 - x_2^2 = 0
+    \]
+    Dejandonos así la siguiente matriz:
+    \[
+    B =
+    \begin{pmatrix}
+        4 & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}
+    \]
+    Siendo ahora el punto $A$ en coordenadas homogéneas $(1:2:2)$.\\
+    Calculamos la matriz inversa, la cual es la matriz de la cuádrica dual:
+    \[
+    B^{-1} =
+    \begin{pmatrix}
+        \frac{1}{4} & 0 & 0 \\
+        0 & -1 & 0 \\
+        0 & 0 & -1
+    \end{pmatrix}
+    \]
+    Que es la matriz de $\widetilde{\psi}^*$ en $\mathbb{P}^{2*}$.\\
+    Tenemos ahora la ecuación de la cuádrica dual:
+    \[
+    \widetilde{\psi}^* : \frac{1}{4} x_0^{*2}- x_1^{*2} - x_2^{*2} = 0
+    \]
+    También tenemos la recta dual $A^* : x_0^* + 2 x_1^* + 2 x_2^* = 0$.\\
+    Las intersecciones de la cuádrica dual con la recta dual nos darán las rectas tangentes (asociadas a los puntos de intersección) que pasan por el punto $A$:
+    \[
+    C_{\widetilde{\psi}^*} \cap A^* =
+    \begin{cases}
+        \frac{1}{4} x_0^{*2} - x_1^{*2} - x_2^{*2} = 0 \\
+        x_0^* + 2 x_1^* + 2 x_2^* = 0
+    \end{cases} \implies
+    x_1^{*2} x_2^{*2} = 0
+    \]
+    Que nos da las soluciones:
+    \[
+    (2 : 0 : -1) \text{ y } (2 : -1 : 0)
+    \]
+    Volviendo a $\mathbb{P}^2$, las rectas tangentes buscadas son:
+    \[
+    \begin{cases}
+        2 x_0 - x_2 = 0 \\
+        2 x_0 - x_1 = 0
+    \end{cases}
+    \implies
+    \begin{cases}
+        y = 2 \\
+        x = 2
+    \end{cases}
+    \]
+}
+
+\subsection{Centro y asíntotas de cónicas afines}
+
+Sea $\widetilde{\varphi}$ una cónica proyectiva no degenerada en $\mathbb{P}^2$, y sea la carta afín $\mathbb{P}^2 \setminus r_\infty \equiv \mathbb{A}^2$, con $r_\infty$ una recta del infinito, y sea $\varphi$ la cónica afín inducida por $\widetilde{\varphi}$ en $\mathbb{A}^2$.\\
+
+\begin{definición}
+    Se define el centro de la cónica afín $\varphi$ como el polo de $r_\infty$, es decir, el punto cuya polar es $r_\infty$, solo cuando dicho punto no está en $r_\infty$.
+\end{definición}
+
+\ejemplo{
+
+    Tengamos la siguiente elipse:
+    \begin{center}
+        \begin{tikzpicture}
+            % Elipse
+            \draw[thick] (0,0) ellipse (3cm and 2cm);
+
+            % Centro
+            \filldraw (1,0) circle (2pt) node[anchor=north west] {Centro};
+
+            % Recta del infinito
+            \draw[dashed] (3, -3) -- (4, 3) node[anchor=south west] {$r_\infty$};
+        \end{tikzpicture}
+    \end{center}
+    Como se aprecia, la elipse tiene centro, que es el polo de la recta del infinito (el punto cuya polar es la recta del infinito).
+
+    Ahora tengamos la siguiente parabola:
+    \begin{center}
+        \begin{tikzpicture}
+            % Elipse
+            \draw[thick] (0,0) ellipse (3cm and 2cm);
+
+            % Punto A
+            \filldraw (3,0) circle (2pt) node[anchor=north west] {$A$};
+
+            % Recta del infinito
+            \draw[dashed] (2.5, -3) -- (3.5, 3) node[anchor=south west] {$r_\infty$};
+        \end{tikzpicture}
+    \end{center}
+    En este caso, la parábola no tiene centro, ya que el polo de la recta del infinito es el punto $A$, que pertenece a la recta del infinito, es decir, $A= r_\infty \cap C_{\widetilde{\varphi}}$, por lo que $r_\infty = T_A (C_{\widetilde{\varphi}})$.
+
+    Tengamos ahora la siguiente hiperbola:
+    \begin{center}
+        \begin{tikzpicture}
+            % Elipse
+            \draw[thick, rotate around={0:(0,0)}] plot [domain=0:360, samples=100] ({3*cos(\x)}, {2*sin(\x)});
+
+            % Puntos 
+            \coordinate (A) at ({3*cos(40)},{2*sin(40)});
+            \coordinate (B) at ({3*cos(-60)},{2*sin(-60)});
+
+            % Recta AB
+            \draw[dashed] (A) -- (B) node[anchor=south west] {$r_\infty$};
+
+            % Centro
+            \coordinate (C) at (5,0);
+            \filldraw (C) circle (2pt) node[anchor=north west] {Centro};
+
+            % Asintotas
+            \draw[dotted] (C) -- (A) node[anchor=south west] {Asintota 1};
+            \draw[dotted] (C) -- (B) node[anchor=south west] {Asintota 2};
+        \end{tikzpicture}
+    \end{center}
+}
+
+\begin{definición}
+    Las asintotas de una hiperbola $\varphi$ son las rectas que unen el centro de $\varphi$ con los puntos del $\infty$, es decir, la intersección de la recta del infinito con los ceros de la completada proyectiva $\widetilde{\varphi}$ ($r_\infty \cap C_{\widetilde{\varphi}}$).
+\end{definición}
+
+\textbf{Nota: } Las asintotas son las rectas tangentes a $\widetilde{\varphi}$ en los puntos del infinito.
+
+\begin{proposición}
+    El centro $c \in \mathbb{A}^2$ de una cónica afín $\varphi$ es centro de simetria de $C_{\varphi}$, es decir:
+    \[
+    c + v \in C_{\varphi} \iff c - v \in C_{\varphi} \qquad \forall v \in \vec{\mathbb{A}}^2
+    \]
+\end{proposición}
+
+\begin{proof}
+    Caso $\varphi$ una hiperbola:\\
+    Las tres rectas $r_\infty$ y las asintotas no son concurrentes, luego podemos definir una referencia donde $r_\infty : x_0 = 0$, y las asintotas sean $r_1 : x_1 = 0$ y $r_2 : x_2 = 0$, siendo el centro $c = (1:0:0)$, y los puntos del infinito $A_1 = (0:1:0)$ y $A_2 = (0:0:1)$.\\
+    La polar de $c$ es $r_\infty = \{ x_0 = 0 \}$, luego la primera columna de la matriz debe ser $(1,0,0)^t$.\\
+    Sea la matriz de $\widetilde{\varphi}$:
+    \[
+    B =
+    \begin{pmatrix}
+        a & b & c \\
+        b & d & e \\
+        c & e & f
+    \end{pmatrix}
+    \]
+    Entonces si tenemoslas siguientes polares:
+    \[
+    \text{Polar}_{\widetilde{\varphi}} (1 :0:0) : x_0 = 0 \implies
+    b = c = 0 \, \quad a \neq 0
+    \]
+    \[
+    \text{Polar}_{\widetilde{\varphi}} (0 :1:0) : x_2 = 0 \implies
+    b = d = 0 \, \quad e \neq 0
+    \]
+    \[
+    \text{Polar}_{\widetilde{\varphi}} (0 :0:1) : x_1 = 0 \implies
+    c = f = 0 \, \quad e \neq 0
+    \]
+    Por lo que la matriz queda:
+    \[
+    B =
+    \begin{pmatrix}
+        a & 0 & 0 \\
+        0 & 0 & e \\
+        0 & e & 0
+    \end{pmatrix}
+    \]
+    Con la ecuacion de la cónica:
+    \[
+    C_{\widetilde{\varphi}} : a x_0^2 + 2 e x_1 x_2 = 0
+    \]
+    Si ahora tomamos el plano afín $\{ x_0 \neq 0 \}$, y hacemos el cambio de variable $X_1 = \frac{x_1}{x_0}, X_2 = \frac{x_2}{x_0}$, obtenemos la ecuación de la cónica afín que tiene de ecuación:
+    \[
+    \varphi := X_1 X_2 = -\frac{a}{2e}
+    \]
+    Por lo que llegamos a que, tomando un vector $v = (v_1, v_2) \in \vec{\mathbb{A}}^2$:
+    \[
+    \boxed{ c + v \in C_{\varphi} }
+    \iff 
+    v_1v_2 = -\frac{a}{2e} \iff 
+    (-v_1)(-v_2) = -\frac{a}{2e} \iff
+    \boxed{ c - v \in C_{\varphi} }
+    \]
+\end{proof}
+
+\subsection{Espacio de cuadricas}
+
+Sea:
+\[
+Q(V) \equiv \{ \text{Espacio vectorial de formas bilineales simétricas en } V^{n+1} \}
+\]
+Que equivale a:
+\[
+Q(V) \equiv \{ \text{Espacio vectorial de matrices simétricas de dimensión } (n+1) \times (n+1) \}
+\]
+
+Por lo que su proyectivizado es:
+\[
+\mathbb{P} (Q(V)) \equiv \{ \text{Espacio proyectivo de cuádricas en } \mathbb{P} = \mathbb{P}(V) \}
+\]
+
+Es decir, que la forma de dichas cuádricas es:
+\[
+B =
+\begin{pmatrix}
+    b_{00} & b_{01} & \ldots & b_{0n} \\
+    b_{01} & b_{11} & \ldots & b_{1n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{0n} & b_{1n} & \ldots & b_{nn}
+\end{pmatrix}
+\]
+
+Las cuadricas en $\mathbb{P} = \mathbb{P}(V)$ forman un espacio proyectivo de dimensión:
+\[
+\dim \mathbb{P} (Q(V)) = (n+1) + n + \ldots + 2 + 1 - 1 = \frac{(n+1)(n+2)}{2} - 1 = \frac{n^2 + 3n}{2}
+\]
+
+Siendo las coordenadas homogeneas en $\mathbb{P} (Q(V))$ los coeficientes $b_{ij}$ de la matriz simétrica $B$:
+\[
+[b_{00} : b_{01} : \ldots : b_{0n} : b_{11} : b_{12} : \ldots : b_{1n} : \ldots : b_{nn}] =
+\left( b_{ij} \right)_{0 \leq i \leq j \leq n}
+\]
+
+\ejemplo{
+
+    Por ejemplo, tengamos en $\mathbb{P}^2$ (espacio proyectivo de dimensión $\frac{2^2 + 3\cdot 2}{2} = 5$) la cuádrica de matriz:
+    \[
+    B =
+    \begin{pmatrix}
+        b_{00} & b_{01} & b_{02} \\
+        b_{01} & b_{11} & b_{12} \\
+        b_{02} & b_{12} & b_{22}
+    \end{pmatrix}
+    \]
+    Que tiene por coordenadas en $\mathbb{P}(Q(\mathbb{K}^3))$:
+    \[
+    [b_{00} : b_{01} : b_{02} : b_{11} : b_{12} : b_{22}]
+    \]
+
+}
+
+\begin{lema}
+    Dado un punto $A \in \mathbb{P} = \mathbb{P}(V)$, el conjunto de cuádricas que pasan por $A$ es un hiperplano en $\mathbb{P}(Q(V))$.
+\end{lema}
+
+\begin{proof}
+    Sea $A \in \mathbb{P}$, de coordenadas homogéneas $a^t = (a_0 : a_1 : \ldots : a_n)$, y sea $\varphi \in \mathbb{P}(Q(V))$ una cuádrica de matriz $B$.\\
+    Entonces, $\varphi$ pasa por $A$ si y solo si:
+    \[
+    A \in C_{\varphi} \iff
+    a^t B a = 0 \iff
+    a^t
+    \begin{pmatrix}
+        b_{00} & b_{01} & \ldots & b_{0n} \\
+        b_{01} & b_{11} & \ldots & b_{1n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        b_{0n} & b_{1n} & \ldots & b_{nn}
+    \end{pmatrix}
+    a = 0
+    \]
+    Teniendo ahora que la ecuación lineal homogenea en las coordenadas $b_{ij}$ de $\mathbb{P}(Q(V))$ define un hiperplano en $\mathbb{P}(Q(V))$:
+    \[
+    \sum_{0 \leq i \leq j \leq n} a_i a_j b_{ij} = 0
+    \]
+\end{proof}
+
+\begin{corolario}
+    Dados 5 puntos $A_0, A_1, A_2, A_3, A_4$ de $\mathbb{P}^2$, existe una única cónica que pasa por ellos.
+\end{corolario}
+
+\begin{proof}
+    Asociemos a cada punto $A_i$ el hiperplano $H_i$, siendo este el hiperplano de cónicas en $\mathbb{P}(Q(\mathbb{K}^3)) \sim \mathbb{P}^5$ que pasan por $A_i$.\\
+    Por lo que podemos tomar la siguiente intersección:
+    \[
+    \bigcup_{i=0}^4 H_i \equiv H \equiv \text{cónicas que pasan por todos los } A_i
+    \]
+    Y sabemos que:
+    \[
+    \dim \bigcup_{i=0}^4 H_i \geq 
+    \dim \mathbb{P}(Q(\mathbb{K}^3)) - 5 = 
+    5 - 5 = 
+    0 \implies
+    \bigcup_{i=0}^4 H_i \neq \emptyset
+    \]
+\end{proof}
+
+\begin{definición}{Haz de cónicas}
+    Un haz de cónicas en $\mathbb{P}^2$ es una recta proyectiva del espacio proyectivo de cónicas $\mathbb{P}(Q(\mathbb{K}^3))$.
+\end{definición}
+
+\begin{observación}
+    Si $\varphi$, $\varphi'$ son dos cónicas con matrices $B$, $B'$ respectivamente, entonces el haz de cónicas generado por $\varphi$ y $\varphi'$ son las cónicas de matrices:
+    \[
+    \lambda B + \mu B' \, \qquad (\lambda : \mu) \in \mathbb{P}^1
+    \]
+\end{observación}
+
+\begin{proposición}
+    Todo haz de cónicas tiene cónicas degeneradas (de rango menor o igual a 2).
+\end{proposición}
+
+\begin{proof}
+    Sea el haz de cónicas generado por las cónicas $\varphi$, $\varphi'$ de matrices $B$, $B'$ respectivamente, entonces:
+    \[
+    P(\lambda, \mu) = \det (\lambda B + \mu B')
+    \]
+    Que es un polinomio homogéneo de grado 3 en las variables $\lambda$, $\mu$.\\
+    Tenemos ahora que:
+    \[
+    0 =
+    P(0, 1) =
+    \det (B') \iff
+    \varphi' \text{ es degenerada}
+    \]
+    Si ahora suponemos que $\varphi'$ no es degenerada, entonces:
+    \[
+    0 \neq
+    P(0, 1) \implies
+    P(\lambda, \mu) =
+    \lambda^3 q\left( \frac{\mu}{\lambda} \right)
+    \]
+    Siendo $q(t)$ un polinomio de grado 3 en la variable $t = \frac{\mu}{\lambda}$, que tiene al menos 1 raíz en $\mathbb{R}$, es decir que:
+    \[
+    \exists (\lambda_0 : \mu_0) \in \mathbb{P}^1 : 
+    P(\lambda_0, \mu_0) = 0 \implies
+    \det (\lambda_0 B + \mu_0 B') = 0
+    \]
+    Es decir, que la cónica de matriz $\lambda_0 B + \mu_0 B'$ es degenerada.
+\end{proof}
+
+Si queremos construir la cónica que pasa por 5 puntos dados $A_0, A_1, A_2, A_3, A_4$ en $\mathbb{P}^2$, podemos hacer lo siguiente:
+\begin{enumerate}
+    \item Definimos $\varphi$, $\varphi'$ como:
+    \[
+    \varphi := \text{"producto de las rectas" } V(A_0, A_1) \text{ y } V(A_2, A_3)
+    \]
+    \[
+    \varphi' := \text{"producto de las rectas" } V(A_0, A_2) \text{ y } V(A_1, A_3)
+    \]
+    \item Ahora tenemos el haz generado por $\varphi$ y $\varphi'$, el cual es:
+    \[
+    \mathcal{H} = \{ \lambda \varphi + \mu \varphi' : (\lambda : \mu) \in \mathbb{P}^1 \}
+    \]
+    \item Finalmente, buscamos $(\lambda_0 : \mu_0) \in \mathbb{P}^1$ tal que la cónica $\varphi_0 = \lambda_0 \varphi + \mu_0 \varphi'$ pase por $A_4$.
+    \item Ahora para buscar la interseccion de 2 cónicas no degeneradas debemos hacer:
+    \[
+    C_{\varphi} \cap C_{\varphi'} =
+    C_{\varphi} \cap C_{\psi}
+    \]
+    Siendo el haz generado por $\varphi$ y $\varphi'$ que incluye a $\psi$ una cónica degenerada, es decir, una recta doble o producto de rectas.
+\end{enumerate}
+
+\begin{center}
+    \begin{tikzpicture}
+        % Puntos dados (A0, A1, A2, A3) formando un cuadrado
+        \coordinate (A0) at (0, 0);
+        \coordinate (A1) at (4, 0);
+        \coordinate (A2) at (4, 3);
+        \coordinate (A3) at (0, 3);
+        \filldraw (A0) circle (2pt) node[anchor=north east] {$A_0$};
+        \filldraw (A1) circle (2pt) node[anchor=north west] {$A_1$};
+        \filldraw (A2) circle (2pt) node[anchor=south west] {$A_2$};
+        \filldraw (A3) circle (2pt) node[anchor=south east] {$A_3$};
+
+        % Coordenada a la derecha para
+        \coordinate(D) at (6, 1.5);
+        \filldraw (D) circle (2pt) node[anchor=west] {$\varphi_0$};
+
+        % Unimos los puntos A0, A1, A2, A3 con líneas que llegan a D
+        \draw[dashed] (A0) -- (A1) -- (D);
+        \draw[dashed] (A3) -- (A2) -- (D);
+
+        % Coordenada abajo para la cónica degenerada
+        \coordinate(E) at (2, -2);
+        \filldraw (E) circle (2pt) node[anchor=north] {$\varphi'$};
+
+        % Unimos los puntos A0, A2, A1, A3 con líneas que llegan a E
+        \draw[dashed] (A3) -- (A0) -- (E);
+        \draw[dashed] (A2) -- (A1) -- (E);
+
+    \end{tikzpicture}
+\end{center}
