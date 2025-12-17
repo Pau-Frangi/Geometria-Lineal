@@ -517,6 +517,10 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\fancyhdr\fancyhdr.s
 INPUT .\main.aux
 INPUT .\main.aux
 INPUT main.aux
+INPUT .\TikZ\desargues_tikz.aux
+INPUT .\TikZ\desargues_tikz.aux
+INPUT TikZ\desargues_tikz.aux
+INPUT TikZ\desargues_tikz.aux
 OUTPUT main.aux
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -598,20 +602,102 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT .\Theory\Theory.tex
 INPUT .\Theory\Theory.tex
 INPUT Theory\Theory.tex
-INPUT .\Theory\5 - Cuadricas Proyectivas.tex
-INPUT .\Theory\5 - Cuadricas Proyectivas.tex
-INPUT Theory\5 - Cuadricas Proyectivas.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT .\Theory\1 - Espacios Proyectivos.tex
+INPUT Theory\1 - Espacios Proyectivos.tex
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
-INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti8.tfm
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti7.tfm
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT .\Theory\2 - Aplicaciones proyectivas.tex
+INPUT Theory\2 - Aplicaciones proyectivas.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm5.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs5.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha5.tfm
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+OUTPUT TikZ\desargues_tikz.aux
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+INPUT TikZ\desargues_tikz.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT .\Theory\3 - Espacio Dual.tex
+INPUT Theory\3 - Espacio Dual.tex
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+OUTPUT TikZ\desargues_tikz.aux
+INPUT .\TikZ\desargues_tikz.tex
+INPUT .\TikZ\desargues_tikz.tex
+INPUT TikZ\desargues_tikz.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT .\Theory\4 - Clasificación de Homografías.tex
+INPUT .\Theory\4 - Clasificación de Homografías.tex
+INPUT Theory\4 - Clasificación de Homografías.tex
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs7.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha7.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\esint\esint10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\rsfs\rsfs10.tfm
+INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\tfm\public\mathabx\matha12.tfm
+INPUT .\Theory\5 - Cuadricas Proyectivas.tex
+INPUT .\Theory\5 - Cuadricas Proyectivas.tex
+INPUT Theory\5 - Cuadricas Proyectivas.tex
+INPUT .\Exercises\Hojas.tex
+INPUT .\Exercises\Hojas.tex
+INPUT Exercises\Hojas.tex
+INPUT .\Exercises\Hoja1.tex
+INPUT .\Exercises\Hoja1.tex
+INPUT Exercises\Hoja1.tex
+INPUT .\Exercises\Hoja2.tex
+INPUT .\Exercises\Hoja2.tex
+INPUT Exercises\Hoja2.tex
+INPUT .\Exercises\Hoja3.tex
+INPUT .\Exercises\Hoja3.tex
+INPUT Exercises\Hoja3.tex
+INPUT .\Exercises\Hoja4.tex
+INPUT .\Exercises\Hoja4.tex
+INPUT Exercises\Hoja4.tex
+INPUT .\Exercises\Hoja5.tex
+INPUT .\Exercises\Hoja5.tex
+INPUT Exercises\Hoja5.tex
+INPUT .\Exercises\Hoja6.tex
+INPUT .\Exercises\Hoja6.tex
+INPUT Exercises\Hoja6.tex
 INPUT .\Appendix\Appendix.tex
 INPUT .\Appendix\Appendix.tex
 INPUT Appendix\Appendix.tex
@@ -619,6 +705,10 @@ INPUT .\Appendix\PruebaApendice.tex
 INPUT .\Appendix\PruebaApendice.tex
 INPUT Appendix\PruebaApendice.tex
 INPUT main.aux
+INPUT .\TikZ\desargues_tikz.aux
+INPUT .\TikZ\desargues_tikz.aux
+INPUT TikZ\desargues_tikz.aux
+INPUT TikZ\desargues_tikz.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Users\Diego\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
@@ -637,8 +727,12 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmex8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
@@ -647,6 +741,8 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
@@ -657,6 +753,8 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti10.pfb
@@ -667,6 +765,8 @@ INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti8.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm7.pfb
+INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\euler\eufm7.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
