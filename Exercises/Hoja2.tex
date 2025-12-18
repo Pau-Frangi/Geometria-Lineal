@@ -258,7 +258,33 @@ Sugerencia: Si $s$ existe, ha de estar contenida en los planos auxiliares $\pi_i
     \item[(i)] Probar que un conjunto con $r + 1$ puntos es (proyectivamente) independiente si y solo si la subvariedad proyectiva que genera tiene dimensión $r$.
     \item[(ii)] Probar que un conjunto (proyectivamente) independiente tiene a lo sumo $n + 1$ elementos y que, si tiene menos, puede completarse (añadiendo puntos) hasta constar de $n + 1$ puntos independientes.
 \end{enumerate}
-}{}
+}{
+
+
+\noindent \textbf{6)} Sea $P = P(K^{n+1})$ un espacio proyectivo de dimensión $n$. Entonces, se dice que $n$ puntos son linealmente independientes si ninguno pertenece a la variedad proyectiva generada por los demás.
+
+\paragraph{i) $\Rightarrow$)} Es decir, sea $x_0, \dots, x_r$ puntos proyectivamente independientes $\rightarrow$ entonces si $x_i = [u_i]$ con $i \in \{0, \dots, n\}$ no pertenece a $V(x_0, \dots, x_{i-1}, x_{i+1}, \dots, x_r)$ o lo que es lo mismo $u_i \notin L(\{u_0, \dots, u_{i-1}, u_{i+1}, \dots, u_r\}) \quad \forall i \in \{0, \dots, r\}$ con $u_i$ no nulo.
+
+Por lo tanto los vectores $u_0, \dots, u_r$ son l.i \\(si no lo fueran existiría $\lambda_0, \dots, \lambda_r \in \mathbb{R}$ con alguno distinto de cero tq $\lambda_0 u_0 + \dots + \lambda_r u_r = 0 \Rightarrow$  existiria un i tq $u_i \in L(\{u_0, \dots, u_{i-1}, u_{i+1}, \dots, u_r\})$).
+
+ $\dim L(\{u_0, \dots, u_r\}) = r+1$ y asi pues:
+\[ \dim(V(x_0, \dots, x_r)) = \dim(L(u_0, \dots, u_r)) - 1 = (r+1) - 1 = r \]
+
+\paragraph{$\Leftarrow$)} Si $\dim(V(x_0, \dots, x_r)) = r \Rightarrow \dim(\hat{V}(x_0, \dots, x_r)) = r+1$ entonces:
+\[ \Rightarrow u_0, \dots, u_r \text{ son l.i y entonces } u_i \notin L(\{u_0, \dots, u_{i-1}, u_{i+1}, \dots, u_r\}) \quad \forall i \in \{0, \dots, r\} \]
+entonces $x_i \notin V(x_0, \dots, x_r) = P(L(\{u_0, \dots, u_r\})) \quad \forall i \in \{0, \dots, r\}$ Demostrando que son proyectivamente independientes.
+
+\paragraph{ii)} Sea $\{x_1, \dots, x_r\}$ un conjunto proyectivamente independiente $\Rightarrow$ es decir si $[u_i] = x_i \quad \forall i \in \{1, \dots, r\} \Rightarrow u_1, \dots, u_r$ son l.i por lo tanto como $\dim(P) = n \Rightarrow \dim(E) = n+1$ es decir $r \le n+1$.
+
+Concluimos, solo puede haber como mucho $n+1$ puntos en el conjunto.
+
+Si $r < n+1$ podemos completar $u_1, \dots, u_r$ con los vectores $u_{r+1}, \dots, u_{n+1}$ tq $L(\{u_1, \dots, u_r, \dots, u_{n+1}\}) = E$ y por lo tanto:
+\[ \dim(L(u_1, \dots, u_{n+1})) = \dim(E) - 1 = n \]
+Usando i) tenemos que son independientes y $\{x_1 = [u_1], \dots, x_{n+1} = [u_{n+1}]\}$ son proy. indep.
+
+
+
+}
 
 % 7
 \ejercicio{En $\mathbb{P}^4_{\mathbb{R}} = \mathbb{P}(\mathbb{R}^5)$ se considera el plano de ecuaciones implícitas
@@ -276,7 +302,38 @@ Se pide:
     \item[(ii)] Completar ese conjunto hasta un conjunto $S'$ proyectivamente independiente de 5 puntos.
     \item[(iii)] Obtener una referencia proyectiva $R$. Calcular una ecuación del hiperplano $H : x_0 + x_3 + 4x_4 = 0$ respecto de $R$.
 \end{enumerate}
-}{}
+}{
+   
+\paragraph{i)} $\pi$ tiene dimensión $5-2=3$. Podemos encontrar a lo sumo 3 vectores l.i. Por ejemplo:
+\[ \begin{cases} x_0 - x_1 = x_2 + 2x_3 + x_4 \\ x_1 = x_2 + x_3 - 3x_4 \end{cases} \rightarrow \begin{cases} x_0 = 2x_2 + 3x_3 - 2x_4 \\ x_1 = x_2 + x_3 - 3x_4 \end{cases} \]
+
+\[ \Rightarrow \text{si } (x_0, \dots, x_4) \in \pi \Rightarrow \begin{pmatrix} x_0 \\ \vdots \\ x_4 \end{pmatrix} = \begin{pmatrix} 2x_2 + 3x_3 - 2x_4 \\ x_2 + x_3 - 3x_4 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} \Rightarrow \]
+
+\[ \begin{pmatrix} x_0 \\ \vdots \\ x_4 \end{pmatrix} = \begin{pmatrix} 2 \\ 1 \\ 1 \\ 0 \\ 0 \end{pmatrix} x_2 + \begin{pmatrix} 3 \\ 1 \\ 0 \\ 1 \\ 0 \end{pmatrix} x_3 + \begin{pmatrix} -2 \\ -3 \\ 0 \\ 0 \\ 1 \end{pmatrix} x_4 \]
+
+Esos tres vectores forman base de $\pi$.  $\{(2:1:1:0:0), (3:1:0:1:0), (-2:-3:0:0:1)\}$ generan $\pi$.
+
+\paragraph{ii)} Nos piden un conjunto proyectivamente independiente de 5 elementos. Es decir, $x_0 \dots x_4$ tq $\dim(V(x_0 \dots x_4)) = 4 \Rightarrow \dim L(\hat{x}_0, \dots, \hat{x}_4) = 5$. Lo que es lo mismo, tenemos que completar la base de $\mathbb{R}^5$. Veamos si $(1,0,0,0,0)$ y $(0,1,0,0,0)$ completan a una base $B$ de $\mathbb{R}^5$:
+
+\[ \begin{vmatrix} 2 & 3 & -2 & 1 & 0 \\ 1 & 1 & -3 & 0 & 1 \\ 1 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \end{vmatrix} \neq 0 \iff \begin{vmatrix} 2 & 2 \\ 0 & 1 \end{vmatrix} \neq 0 \text{ que se cumple.} \\\text{(se va reduciendo el determinantes por filas y
+ columnas con todo ceros menos en uno y se concluye eso)} \]
+
+Concluimos que $\{(2:1:1:0:0), (3:1:0:1:0), (-2:-3:0:0:1), (1:0:0:0:0), (0:1:0:0:0)\}$ son proy. independientes.
+
+\paragraph{iii)} Entonces, una referencia proyectiva sería $R = \{ [u_0], \dots, [u_4] ; [u_0 + \dots + u_4] \}$ siendo $u_i$ los vectores de $\mathbb{R}^5$ indicados en el apartado anterior.
+
+\[ M_{B_c B} = (u_0 | \dots | u_4) = M_{\mathcal{R}_c \mathcal{R}} = \begin{pmatrix} 2 & 3 & -2 & 1 & 0 \\ 1 & 1 & -3 & 0 & 1 \\ 1 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \end{pmatrix} \]
+
+\[ M_{R \mathcal{R}_c} = M_{\mathcal{R}_c R}^{-1} = \begin{pmatrix} 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & -2 & -3 & 2 \\ 0 & 1 & -1 & -1 & 3 \end{pmatrix} \]
+
+\[ \bar{x} = M_{R \mathcal{R}_c} \bar{x}' \Rightarrow \begin{cases} x_0 = x_2' \\ x_1 = x_3' \\ x_2 = x_4' \\ x_3 = x_0' - 2x_2' - 3x_3' + 2x_4' \\ x_4 = x_1' - x_2' - x_3' + 3x_4' \end{cases} \]
+
+Por lo tanto la ecuación $H: x_0 + x_3 + 4x_4 = 0$ se transforma bajo el cambio de referencia en:
+\[ x_2' + x_0' - 2x_2' - 3x_3' + 2x_4' + 4(x_1' + x_2' - x_3' + x_4') = 0 \]
+\[ \Rightarrow x_0' + 4x_1' + 3x_2' - 7x_3' + 14x_4' = 0 \]
+
+
+}
 
 % 8
 \ejercicio{Sea $R_1 = \{A_0, A_1, A_2; A_3\}$ una referencia proyectiva de un espacio proyectivo $\mathbb{P}$.
