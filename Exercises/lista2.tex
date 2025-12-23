@@ -1,0 +1,199 @@
+\hojaejercicio{Lista 2}{}
+\ejercicio{}{Se nos proporcionan tres puntos fijos: $P_1(1:1:0)$, $P_2(0:0:1)$ y $P_3(-1:1:0)$. Dado que no son colineales, no pueden pertenecer todos al eje al mismo tiempo. Necesariamente, uno de ellos debe actuar como el \textbf{Centro} y los otros dos definirán la recta del \textbf{Eje}.
+
+Para determinar cuál de ellos es el centro, utilizamos el par de puntos $Q(-1:1:-1) \to Q'(-1:1:1)$. Por la propiedad de colinealidad, el centro $C$ debe encontrarse en la recta que une $Q$ y $Q'$.
+
+
+Observamos las coordenadas de $Q$ y $Q'$:
+\begin{align*}
+    Q &= (-1:1:-1) \\
+    Q' &= (-1:1:1)
+\end{align*}
+La recta que pasa por ambos mantiene constantes las dos primeras coordenadas en la relación $x_0 = -x_1$. Por lo tanto, la ecuación de la recta es:
+$$L_{QQ'} \equiv x_0 + x_1 = 0$$
+
+
+Verificamos cuáles de nuestros puntos fijos pertenecen a esta recta $x_0 + x_1 = 0$:
+\begin{itemize}
+    \item $P_1(1:1:0) \implies 1 + 1 = 2 \neq 0$ (No está en la recta).
+    \item $P_2(0:0:1) \implies 0 + 0 = 0$ (\textbf{Sí está}).
+    \item $P_3(-1:1:0) \implies -1 + 1 = 0$ (\textbf{Sí está}).
+\end{itemize}
+
+Como tanto $P_2$ como $P_3$ están en la recta $QQ'$, ambos son candidatos válidos para ser el Centro. El punto $P_1$ queda descartado como centro.
+
+
+Solución 1: Centro $C = P_2(0:0:1)$
+\begin{itemize}
+    \item \textbf{Eje $L$:} Definido por los otros dos puntos fijos $P_1$ y $P_3$. La recta que une $(1:1:0)$ y $(-1:1:0)$ es la recta $x_2 = 0$.
+    \item \textbf{Matriz:} En una homología con centro $(0:0:1)$ y eje $x_2=0$, la matriz es diagonal de la forma $M_1 = \text{diag}(1, 1, k)$.
+    \item \textbf{Entonces:}
+    $$M_1 \begin{pmatrix} -1 \\ 1 \\ -1 \end{pmatrix} = \begin{pmatrix} -1 \\ 1 \\ -k \end{pmatrix} \sim \begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix} \implies -k = 1 \implies k = -1$$
+    \item \textbf{Resultado:} Las ecuaciones son $x_0' = x_0, \quad x_1' = x_1, \quad x_2' = -x_2$.
+\end{itemize}
+
+Solución 2: Centro $C = P_3(-1:1:0)$
+\begin{itemize}
+    \item \textbf{Eje $L$:} Definido por $P_1$ y $P_2$. La recta que los une es $x_0 - x_1 = 0$.
+    \item \textbf{Matriz:} Usamos la estructura $M = I + \gamma \cdot C \cdot v^T$ con $v = (1, -1, 0)$.
+    \item \textbf{Resultado:} Tras imponer que $Q \to Q'$, se obtiene que la homografía intercambia las coordenadas $x_0$ y $x_1$:
+    $$x_0' = x_1, \quad x_1' = x_0, \quad x_2' = x_2$$
+\end{itemize}}
+%ejercicio2
+\ejercicio{}{\section{Definición de la Referencia de Puntos Fijos}
+Consideramos los tres puntos fijos dados como la base de un nuevo sistema de referencia $\mathcal{B} = \{P_1, P_2, P_3\}$:
+$$ P_1 = (1:1:0), \quad P_2 = (0:0:1), \quad P_3 = (-1:1:0) $$
+
+La matriz de cambio de base $P$ (que transforma coordenadas de $\mathcal{B}$ a la base canónica $\mathcal{C}$) se construye colocando los vectores en columnas:
+$$ P = \begin{pmatrix} 1 & 0 & -1 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix} $$
+
+La matriz inversa (necesaria para volver a la canónica) es:
+$$ P^{-1} = \begin{pmatrix} 0.5 & 0.5 & 0 \\ 0 & 0 & 1 \\ -0.5 & 0.5 & 0 \end{pmatrix} $$
+
+
+Expresamos el punto original $Q(-1:1:-1)$ y su imagen $Q'(-1:1:1)$ en la base $\mathcal{B}$ resolviendo el sistema $X_{\mathcal{B}} = P^{-1} \cdot X_{\mathcal{C}}$:
+
+\begin{itemize}
+    \item \textbf{Punto $Q$:} $Q_{\mathcal{B}} = P^{-1} \begin{pmatrix} -1 \\ 1 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix}$
+    \item \textbf{Punto $Q'$:} $Q'_{\mathcal{B}} = P^{-1} \begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$
+\end{itemize}
+
+
+Buscamos una homología donde el Centro tenga autovalor $1$ y el Eje tenga autovalor $k$ (con $k \neq 1$).
+
+Caso 1: Centro $P_1$ (Matriz $M_{\mathcal{B}} = \text{diag}(1, k, k)$)
+$$ \begin{pmatrix} 1 & 0 & 0 \\ 0 & k & 0 \\ 0 & 0 & k \end{pmatrix} \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ -k \\ k \end{pmatrix} \sim (0:-1:1) \neq (0:1:1) $$
+No existe solución para $k$. \textbf{Caso Imposible.}
+
+Caso 2: Centro $P_2$ (Matriz $M_{\mathcal{B}} = \text{diag}(k, 1, k)$)
+$$ \begin{pmatrix} k & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & k \end{pmatrix} \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ -1 \\ k \end{pmatrix} \sim \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} \implies \frac{-1}{1} = \frac{k}{1} \implies \mathbf{k = -1} $$
+
+Caso 3: Centro $P_3$ (Matriz $M_{\mathcal{B}} = \text{diag}(k, k, 1)$)
+$$ \begin{pmatrix} k & 0 & 0 \\ 0 & k & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ -k \\ 1 \end{pmatrix} \sim \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix} \implies \frac{-k}{1} = \frac{1}{1} \implies \mathbf{k = -1} $$
+
+
+Para obtener las ecuaciones finales, calculamos $M_{\mathcal{C}} = P \cdot M_{\mathcal{B}} \cdot P^{-1}$.
+
+Solución 1 (Centro $P_2$)
+Utilizando $M_{\mathcal{B}} = \text{diag}(-1, 1, -1)$:
+$$ M_{\mathcal{C}} = \begin{pmatrix} 1 & 0 & -1 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix} \begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{pmatrix} \begin{pmatrix} 0.5 & 0.5 & 0 \\ 0 & 0 & 1 \\ -0.5 & 0.5 & 0 \end{pmatrix} = \begin{pmatrix} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \sim \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{pmatrix} $$
+\textbf{Ecuaciones:} $x_0' = x_0, \quad x_1' = x_1, \quad x_2' = -x_2$.
+
+Solución 2 (Centro $P_3$)
+Utilizando $M_{\mathcal{B}} = \text{diag}(-1, -1, 1)$:
+$$ M_{\mathcal{C}} = \begin{pmatrix} 1 & 0 & -1 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix} \begin{pmatrix} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0.5 & 0.5 & 0 \\ 0 & 0 & 1 \\ -0.5 & 0.5 & 0 \end{pmatrix} = \begin{pmatrix} 0 & -1 & 0 \\ -1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix} \sim \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
+\textbf{Ecuaciones:} $x_0' = x_1, \quad x_1' = x_0, \quad x_2' = x_2$.}
+%ejercicio4
+
+\ejercicio{}{
+A)
+    Los Puntos Fijos son:
+Los puntos fijos de la homografía corresponden a las direcciones de los autovectores de la matriz $A$. Calculamos el polinomio característico:
+\[ p(\lambda) = \det(A - \lambda I) = (1-\lambda)^2(2-\lambda)^2 \]
+Los autovalores son $\lambda_1 = 1$ (doble) y $\lambda_2 = 2$ (doble).
+
+\begin{itemize}
+    \item \textbf{Para $\lambda = 1$:} Resolvemos $(A-I)\vec{v} = \vec{0}$:
+    \[ \begin{pmatrix} 0 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \end{pmatrix} \implies x_1=0, x_2=0, x_3=0 \]
+    El subespacio propio es $V_1 = \langle (1,0,0,0) \rangle$. El punto fijo es \textbf{$P_1(1:0:0:0)$}.
+
+    \item \textbf{Para $\lambda = 2$:} Resolvemos $(A-2I)\vec{v} = \vec{0}$:
+    \[ \begin{pmatrix} -1 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & -1 \end{pmatrix} \begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \end{pmatrix} \implies x_0=x_1, x_2=0, x_3=0 \]
+    El subespacio propio es $V_2 = \langle (1,1,0,0) \rangle$. El punto fijo es \textbf{$P_2(1:1:0:0)$}.
+\end{itemize}
+
+Los Planos Invariantes son:
+Un plano $u_0x_0 + u_1x_1 + u_2x_2 + u_3x_3 = 0$ es invariante si el vector de sus coeficientes $u = (u_0, u_1, u_2, u_3)^T$ es un autovector de la matriz traspuesta $A^T$:
+\[ A^T = \begin{pmatrix} 1 & 0 & 0 & 0 \\ 1 & 2 & 0 & 0 \\ 0 & 1 & 2 & 0 \\ 0 & 0 & 1 & 1 \end{pmatrix} \]
+
+\begin{itemize}
+    \item \textbf{Para $\lambda = 1$:} $(A^T-I)u = 0 \implies u_0+u_1=0, u_1+u_2=0, u_2=0$. La solución es $u = (0,0,0,1)$. 
+    El plano invariante es \textbf{$\pi_1: x_3 = 0$}.
+    \item \textbf{Para $\lambda = 2$:} $(A^T-2I)u = 0 \implies u_0=0, u_1=0, u_2-u_3=0$. La solución es $u = (0,0,1,1)$. 
+    El plano invariante es \textbf{$\pi_2: x_2 + x_3 = 0$}.
+\end{itemize}
+
+B)
+Definimos una referencia proyectiva $\mathcal{R}$ en el plano $x_2+x_3=0$ usando los vectores:
+\[ \vec{v}_1 = (1,0,0,0), \quad \vec{v}_2 = (0,1,0,0), \quad \vec{v}_3 = (0,0,1,-1) \]
+Calculamos la imagen de estos vectores por $A$ y las expresamos en términos de la misma base $\mathcal{R}$ para obtener la matriz restringida $M_{\mathcal{R}}$:
+\begin{enumerate}
+    \item $A(1,0,0,0) = (1,0,0,0) = \mathbf{1}\vec{v}_1 + \mathbf{0}\vec{v}_2 + \mathbf{0}\vec{v}_3$
+    \item $A(0,1,0,0) = (1,2,0,0) = \mathbf{1}\vec{v}_1 + \mathbf{2}\vec{v}_2 + \mathbf{0}\vec{v}_3$
+    \item $A(0,0,1,-1) = A(0,0,1,0) - A(0,0,0,1) = (0,1,2,0) - (0,0,1,1) = (0,1,1,-1) = \mathbf{0}\vec{v}_1 + \mathbf{1}\vec{v}_2 + \mathbf{1}\vec{v}_3$
+\end{enumerate}
+La matriz de la restricción es:
+\[ M_{\mathcal{R}} = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 1 \end{pmatrix} \]
+
+C)
+Una recta contenida en un plano invariante es invariante si su vector dual en la restricción es autovector de $M_{restr}^T$.
+
+En el plano $x_2+x_3=0$ (Matriz $M_{\mathcal{R}}$)
+Analizamos los autovectores de $M_{\mathcal{R}}^T = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 2 & 0 \\ 0 & 1 & 1 \end{pmatrix}$:
+\begin{itemize}
+    \item $\lambda=1$: Autovector $(0,0,1)_{\mathcal{R}}$. Representa la recta $z_{\mathcal{R}}=0$. En el espacio original, esta es la recta que une $\vec{v}_1$ y $\vec{v}_2$: \textbf{$x_2=0, x_3=0$}.
+    \item $\lambda=2$: Autovector $(0,1,1)_{\mathcal{R}}$. Representa la recta $y_{\mathcal{R}}+z_{\mathcal{R}}=0$. En el espacio original: \textbf{$x_1+x_2=0, x_2+x_3=0$}.
+\end{itemize}
+
+En el plano $x_3=0$:
+La matriz de la restricción en la base $\{(1,0,0,0), (0,1,0,0), (0,0,1,0)\}$ es:
+\[ N = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix} \implies N^T = \begin{pmatrix} 1 & 0 & 0 \\ 1 & 2 & 0 \\ 0 & 1 & 2 \end{pmatrix} \]
+\begin{itemize}
+    \item $\lambda=1$: Autovector $(1,-1,1)$. Recta: \textbf{$x_0 - x_1 + x_2 = 0$ (con $x_3=0$)}.
+    \item $\lambda=2$: Autovector $(0,0,1)$. Recta: \textbf{$x_2 = 0$ (con $x_3=0$)}.
+\end{itemize}
+}
+\ejercicio{}{Dada la homografía $g$ de $\mathbb{P}^3_{\mathbb{R}}$, extraemos su matriz asociada $A$:
+\[
+A = \begin{pmatrix} 
+-1 & 2 & 0 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 1 & -1 & 0 \\ 
+0 & -2 & 3 & 2 
+\end{pmatrix}
+\]
+
+a) 
+1. Cálculo de Autovalores:
+Resolvemos el polinomio característico $|A - \lambda I| = 0$:
+\[
+(-1-\lambda)^2(1-\lambda)(2-\lambda) = 0 \implies \lambda_1 = -1 \text{ (doble)}, \lambda_2 = 1, \lambda_3 = 2
+\]
+
+2. Puntos Fijos (Autovectores de $A$):
+\begin{itemize}
+    \item \textbf{Para $\lambda = -1$}: El sistema $(A+I)\vec{x} = \vec{0}$ da $x_1 = 0$ y $x_2 = -x_3$. La variable $x_0$ es libre. Obtenemos la \textbf{recta de puntos fijos} generada por $P_1(1:0:0:0)$ y $P_2(0:0:1:-1)$.
+    \item \textbf{Para $\lambda = 1$}: El sistema $(A-I)\vec{x} = \vec{0}$ da $x_0 = 2, x_1 = 2, x_2 = 1, x_3 = 1$. Punto fijo: \textbf{$P_3(2:2:1:1)$}.
+    \item \textbf{Para $\lambda = 2$}: El sistema $(A-2I)\vec{x} = \vec{0}$ da $x_0 = 0, x_1 = 0, x_2 = 0, x_3 = 1$. Punto fijo: \textbf{$P_4(0:0:0:1)$}.
+\end{itemize}
+3. Planos Invariantes (Autovectores de $A^T$):
+Buscamos los planos $\pi \equiv u_0x_0 + u_1x_1 + u_2x_2 + u_3x_3 = 0$ tales que $(A^T - \lambda I)\vec{u} = \vec{0}$.
+\begin{itemize}
+    \item \textbf{Para $\lambda = -1$}: El sistema $(A^T+I)\vec{u} = \vec{0}$ impone las condiciones:
+    \[ u_3 = 0 \quad \text{y} \quad 2u_0 + 2u_1 + u_2 = 0 \implies u_2 = -2u_0 - 2u_1 \]
+    Esto define un \textbf{haz de planos} cuya ecuación general es:
+    \[ \pi_{u_0, u_1} \equiv u_0x_0 + u_1x_1 + (-2u_0 - 2u_1)x_2 = 0 \]
+    \item \textbf{Para $\lambda = 1$}: Obtenemos el plano \textbf{$\pi_3 \equiv x_1 = 0$}.
+    \item \textbf{Para $\lambda = 2$}: Obtenemos el plano \textbf{$\pi_4 \equiv -x_1 + x_2 + x_3 = 0$}.
+\end{itemize}
+
+b) 
+
+El enunciado nos pide comprobar si dentro del conjunto de planos invariantes se encuentra un haz cuya base es la recta generada por $Q_1(2:2:1:1)$ y $Q_2(0:0:0:1)$. 
+
+Para demostrarlo, comprobaremos que ambos puntos pertenecen a \textbf{todos} los planos del haz asociado a $\lambda = -1$:
+\[ \pi \equiv u_0x_0 + u_1x_1 - (2u_0 + 2u_1)x_2 = 0 \]
+
+\begin{enumerate}
+    \item Comprobación para $Q_2(0:0:0:1)$:
+    Sustituimos las coordenadas $(x_0, x_1, x_2, x_3) = (0, 0, 0, 1)$ en la ecuación del haz:
+    \[ u_0(0) + u_1(0) - (2u_0 + 2u_1)(0) = 0 \]
+    Se cumple $0=0$ para cualquier valor de $u_0$ y $u_1$. Por tanto, $Q_2$ está en todos los planos del haz.
+    
+    \item Comprobación para $Q_1(2:2:1:1)$:
+    Sustituimos las coordenadas $(x_0, x_1, x_2, x_3) = (2, 2, 1, 1)$ en la ecuación:
+    \[ u_0(2) + u_1(2) - (2u_0 + 2u_1)(1) = 2u_0 + 2u_1 - 2u_0 - 2u_1 = 0 \]
+    Se cumple $0=0$ independientemente de los coeficientes $u_0, u_1$. Por tanto, $Q_1$ también pertenece a todos los planos del haz.
+\end{enumerate}
+
+\textbf{Conclusión:} Al estar $Q_1$ y $Q_2$ contenidos en todos los planos invariantes asociados al autovalor $\lambda = -1$, la recta que los une es necesariamente la base (eje) de dicho haz.}

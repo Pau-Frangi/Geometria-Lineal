@@ -270,16 +270,16 @@ Por lo tanto los vectores $u_0, \dots, u_r$ son l.i \\(si no lo fueran existirí
  $\dim L(\{u_0, \dots, u_r\}) = r+1$ y asi pues:
 \[ \dim(V(x_0, \dots, x_r)) = \dim(L(u_0, \dots, u_r)) - 1 = (r+1) - 1 = r \]
 
-\paragraph{$\Leftarrow$)} Si $\dim(V(x_0, \dots, x_r)) = r \Rightarrow \dim(\hat{V}(x_0, \dots, x_r)) = r+1$ entonces:
+\paragraph{$\Leftarrow$)} Si $\dim(V(x_0, \dots, x_r)) = r \Rightarrow \dim(L(u_0, \dots, u_r)) = r+1$ entonces:
 \[ \Rightarrow u_0, \dots, u_r \text{ son l.i y entonces } u_i \notin L(\{u_0, \dots, u_{i-1}, u_{i+1}, \dots, u_r\}) \quad \forall i \in \{0, \dots, r\} \]
-entonces $x_i \notin V(x_0, \dots, x_r) = P(L(\{u_0, \dots, u_r\})) \quad \forall i \in \{0, \dots, r\}$ Demostrando que son proyectivamente independientes.
+entonces $x_i \notin V(x_0, \dots,x_{i-1}, x_{i+1}, \dots, x_r) = P(L(\{u_0, \dots, u_r\})) \quad \forall i \in \{0, \dots, r\}$ Demostrando que son proyectivamente independientes.
 
 \paragraph{ii)} Sea $\{x_1, \dots, x_r\}$ un conjunto proyectivamente independiente $\Rightarrow$ es decir si $[u_i] = x_i \quad \forall i \in \{1, \dots, r\} \Rightarrow u_1, \dots, u_r$ son l.i por lo tanto como $\dim(P) = n \Rightarrow \dim(E) = n+1$ es decir $r \le n+1$.
 
 Concluimos, solo puede haber como mucho $n+1$ puntos en el conjunto.
 
 Si $r < n+1$ podemos completar $u_1, \dots, u_r$ con los vectores $u_{r+1}, \dots, u_{n+1}$ tq $L(\{u_1, \dots, u_r, \dots, u_{n+1}\}) = E$ y por lo tanto:
-\[ \dim(L(u_1, \dots, u_{n+1})) = \dim(E) - 1 = n \]
+\[ \dim(L(u_1, \dots,u_{i-1},u_{i+1}, \dots, u_{n+1})) = \dim(E) - 1 = n \]
 Usando i) tenemos que son independientes y $\{x_1 = [u_1], \dots, x_{n+1} = [u_{n+1}]\}$ son proy. indep.
 
 
@@ -342,7 +342,59 @@ Por lo tanto la ecuación $H: x_0 + x_3 + 4x_4 = 0$ se transforma bajo el cambio
     \item[(b)] Hallar las coordenadas homogéneas del punto $(3 : 2 : 1)_{R_1}$ respecto de $R_2$.
     \item[(c)] Determinar los puntos cuyas coordenadas homogéneas respecto de ambas referencias son iguales.
 \end{enumerate}
-}{}
+}{
+    \subsection*{(a)}
+
+Para que $\mathcal{R}_2$ sea referencia, sus puntos fundamentales deben ser proyectivamente independientes. O lo que es lo mismo, cada terna
+posible de puntos que podamos coger deben ser entre sí proyectivamente independientes. Como $\mathcal{R}_1$ es una referencia, y el conjunto de ternas
+es el mismo que el de $\mathcal{R}_2$, entonces podemos afirmar que todas las ternas posibles de $\mathcal{R}_2$ son proyectivamente independientes. Tomamos representantes de los puntos de $\mathcal{R}_2$, para construir la base asociada:
+\begin{align*}
+    v_0 &= u_2 \quad (\text{representa a } A_2) \\
+    v_1 &= u_0 + u_1 + u_2 \quad (\text{representa a } A_3) \\
+    v_2 &= u_1 \quad (\text{representa a } A_1)
+\end{align*}
+
+Buscamos si el punto $A_0 = [u_0]$ puede ser el punto unidad de una base formada por estos vectores. Planteamos:
+\[ u_0 = \lambda_0 v_0 + \lambda_1 v_1 + \lambda_2 v_2 = \lambda_0(u_2) + \lambda_1(u_0 + u_1 + u_2) + \lambda_2(u_1) \]
+
+Igualando coeficientes respecto a la base $B_1$:
+\begin{itemize}
+    \item $u_0: 1 = \lambda_1 \Rightarrow \lambda_1 = 1$
+    \item $u_1: 0 = \lambda_1 + \lambda_2 \Rightarrow \lambda_2 = -1$
+    \item $u_2: 0 = \lambda_0 + \lambda_1 \Rightarrow \lambda_0 = -1$
+\end{itemize}
+
+Como todos los $\lambda_i \neq 0$, los vectores $\{v_0, v_1, v_2\}$ son linealmente independientes y el punto $A_0$ está en posición general respecto a ellos . Hemos encontrado nuestra base asociada.
+
+\subsection*{(b) }
+
+El punto $X$ tiene por vector representante $x = 3u_0 + 2u_1 + 1u_2$. Para hallar sus coordenadas en $\mathcal{R}_2$, debemos usar su base asociada $B_2 = \{w_0, w_1, w_2\}$, definida por:
+\[ w_0 = \lambda_0 v_0 = -u_2, \quad w_1 = \lambda_1 v_1 = u_0 + u_1 + u_2, \quad w_2 = \lambda_2 v_2 = -u_1 \]
+
+Buscamos $(x'_0 : x'_1 : x'_2)$ tales que $x = x'_0 w_0 + x'_1 w_1 + x'_2 w_2$:
+\[ 3u_0 + 2u_1 + u_2 = x'_0(-u_2) + x'_1(u_0 + u_1 + u_2) + x'_2(-u_1) \]
+\[ 3u_0 + 2u_1 + u_2 = (x'_1)u_0 + (x'_1 - x'_2)u_1 + (x'_1 - x'_0)u_2 \]
+
+Resolviendo el sistema:
+$x'_1 = 3$; $x'_1 - x'_2 = 2 \Rightarrow x'_2 = 1$; $x'_1 - x'_0 = 1 \Rightarrow x'_0 = 2$.
+Las coordenadas son $(2:3:1)_{\mathcal{R}_2}$.
+
+\subsection*{(c) }
+
+Buscamos $X$ tal que $[x_0 u_0 + x_1 u_1 + x_2 u_2] = [x_0 w_0 + x_1 w_1 + x_2 w_2]$. Esto implica:
+\[ x_0 u_0 + x_1 u_1 + x_2 u_2 = \rho [x_0(-u_2) + x_1(u_0 + u_1 + u_2) + x_2(-u_1)] \]
+
+Igualando componentes:
+1) $x_0 = \rho x_1$ \\
+2) $x_1 = \rho(x_1 - x_2)$ \\
+3) $x_2 = \rho(x_1 - x_0)$
+
+De (1), si $x_1 \neq 0$, $\rho = x_0/x_1$. Sustituyendo se obtiene la ecuación característica $\rho^3 - \rho^2 + \rho - 1 = 0$.
+\begin{itemize}
+    \item En $\mathbb{P}_{\mathbb{R}}^2$: $\rho=1$, lo que implica $x_0=x_1$ y $x_2=0$. Punto: $(1:1:0)$ .
+    \item En $\mathbb{P}_{\mathbb{C}}^2$: $\rho = \pm i$, dando los puntos $(1:-i:1-i)$ y $(1:i:1+i)$ .
+\end{itemize}
+}
 
 % 9
 \ejercicio{En el plano proyectivo canónico $\mathbb{P}^2_{\mathbb{R}} = \mathbb{P}(\mathbb{R}^3)$ se consideran los conjuntos

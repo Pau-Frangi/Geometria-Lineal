@@ -100,6 +100,94 @@ una aplicación proyectiva.
     \]
 
 }
+\ejercicio{ Se considera una aplicación proyectiva $f_a: \mathbb{P}_{\mathbb{R}}^3 \to \mathbb{P}_{\mathbb{R}}^3$ que depende de un parámetro $a \in \mathbb{R}$ y que tiene por matriz en la referencia proyectiva canónica es (vacío = entrada nula)
+\[
+\begin{pmatrix}
+-1 &  &  &  \\
+ & a &  & -1 \\
+ &  & a-1 &  \\
+ &  &  & -1
+\end{pmatrix}.
+\]
+Calcula para qué valores de $a$ es $f_a$ una proyección cónica y, para aquellos en que lo sea, calcula el centro de la proyección y el subespacio sobre el que proyecta.
+
+\textit{Pista: puede ser útil (no imprescindible) un resultado de Álgebra Lineal que dice que una aplicación lineal $F$ es una proyección (lineal) si y solo si $F \circ F = F$.}}{
+    Se considera la aplicación proyectiva $f_a: \mathbb{P}_{\mathbb{R}}^3 \to \mathbb{P}_{\mathbb{R}}^3$ definida por la matriz:
+\[
+M = \begin{pmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & a & 0 & -1 \\ 
+0 & 0 & a-1 & 0 \\ 
+0 & 0 & 0 & -1 
+\end{pmatrix}
+\]
+Determinaremos el valor de $a$ para que $f_a$ sea una proyección cónica, y hallaremos su centro y subespacio de proyección.
+
+\subsection*{1. Condición de Proyección Cónica}
+
+Una aplicación proyectiva es una proyección cónica si su matriz asociada $M$ induce una proyección en el espacio vectorial, lo que equivale a la condición:
+\[ M^2 = \rho M \quad \text{con } \rho \neq 0 \]
+
+Calculamos $M^2$:
+\[
+M^2 = \begin{pmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & a & 0 & -1 \\ 
+0 & 0 & a-1 & 0 \\ 
+0 & 0 & 0 & -1 
+\end{pmatrix} 
+\begin{pmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & a & 0 & -1 \\ 
+0 & 0 & a-1 & 0 \\ 
+0 & 0 & 0 & -1 
+\end{pmatrix} =
+\begin{pmatrix} 
+1 & 0 & 0 & 0 \\ 
+0 & a^2 & 0 & 1-a \\ 
+0 & 0 & (a-1)^2 & 0 \\ 
+0 & 0 & 0 & 1 
+\end{pmatrix}
+\]
+
+\subsection*{2. Determinación del parámetro $a$}
+
+Igualamos $M^2 = \rho M$ término a término:
+\begin{itemize}
+    \item Elemento (1,1): $1 = \rho(-1) \implies \mathbf{\rho = -1}$.
+    \item Elemento (2,2): $a^2 = -a \implies a(a+1) = 0 \implies a \in \{0, -1\}$.
+    \item Elemento (3,3): $(a-1)^2 = -(a-1) \implies (a-1)(a-1+1) = 0 \implies a \in \{0, 1\}$.
+    \item Elemento (2,4): $1-a = -(-1) \implies 1-a = 1 \implies a = 0$.
+\end{itemize}
+La única solución común a todas las ecuaciones es \textbf{$a = 0$}.
+
+\subsection*{3. Centro y Subespacio de Proyección ($a=0$)}
+
+Sustituyendo $a=0$, la matriz es:
+\[
+M = \begin{pmatrix} 
+-1 & 0 & 0 & 0 \\ 
+0 & 0 & 0 & -1 \\ 
+0 & 0 & -1 & 0 \\ 
+0 & 0 & 0 & -1 
+\end{pmatrix}
+\]
+
+\paragraph{Centro de proyección ($C$):} Corresponde al proyectivizado del núcleo, $\mathbb{P}(\ker M)$. Resolvemos el sistema $M\vec{x} = \vec{0}$:
+\[
+\begin{cases} -x_0 = 0 \\ -x_3 = 0 \\ -x_2 = 0 \end{cases} \implies x_0=x_2=x_3=0, \, x_1 \text{ libre.}
+\]
+El núcleo está generado por el vector $(0, 1, 0, 0)$. Por tanto, el centro es:
+\[ \mathbf{C = (0 : 1 : 0 : 0)} \]
+
+\paragraph{Subespacio de proyección ($S$):} Corresponde a la imagen de la aplicación, $\mathbb{P}(\text{im } M)$. La imagen está generada por las columnas de $M$:
+\[ \text{im } M = \langle (1,0,0,0), (0,0,1,0), (0,1,0,1) \rangle \]
+Buscamos la ecuación implícita del plano:
+\[
+\begin{vmatrix} x_0 & 1 & 0 & 0 \\ x_1 & 0 & 0 & 1 \\ x_2 & 0 & 1 & 0 \\ x_3 & 0 & 0 & 1 \end{vmatrix} = 0 \implies -(x_1 - x_3) = 0 \implies \mathbf{x_1 - x_3 = 0}
+\]
+El subespacio es el plano de ecuación $x_1 = x_3$.
+}
 
 % Ejercicio 6
 \ejercicio{
