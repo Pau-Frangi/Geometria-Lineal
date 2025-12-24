@@ -1,46 +1,23 @@
 \hojaejercicio{Lista 2}{}
-\ejercicio{}{Se nos proporcionan tres puntos fijos: $P_1(1:1:0)$, $P_2(0:0:1)$ y $P_3(-1:1:0)$. Dado que no son colineales, no pueden pertenecer todos al eje al mismo tiempo. Necesariamente, uno de ellos debe actuar como el \textbf{Centro} y los otros dos definirán la recta del \textbf{Eje}.
-
-Para determinar cuál de ellos es el centro, utilizamos el par de puntos $Q(-1:1:-1) \to Q'(-1:1:1)$. Por la propiedad de colinealidad, el centro $C$ debe encontrarse en la recta que une $Q$ y $Q'$.
 
 
-Observamos las coordenadas de $Q$ y $Q'$:
-\begin{align*}
-    Q &= (-1:1:-1) \\
-    Q' &= (-1:1:1)
-\end{align*}
-La recta que pasa por ambos mantiene constantes las dos primeras coordenadas en la relación $x_0 = -x_1$. Por lo tanto, la ecuación de la recta es:
-$$L_{QQ'} \equiv x_0 + x_1 = 0$$
 
 
-Verificamos cuáles de nuestros puntos fijos pertenecen a esta recta $x_0 + x_1 = 0$:
+
+%ejercicioN(1)
+\ejercicio{Considera una homografía de $\mathbb{P}_{\mathbb{C}}^{2}$ que transforma los puntos $(1:0:-1)$ y $(1:1:-1)$ en los puntos $(0:1:-1)$ y $(0:2:1)$ y en alguna carta afín es una traslación.\\
+a) Halla la recta de infinito de la carta afín anterior.\\
+b) Obtén las ecuaciones de la homografía.}{}
+
+%ejercicioN(2)
+\ejercicio{Obtén las ecuaciones de una homografía de $\mathbb{P}_{\mathbb{R}}^{2}$ que:
 \begin{itemize}
-    \item $P_1(1:1:0) \implies 1 + 1 = 2 \neq 0$ (No está en la recta).
-    \item $P_2(0:0:1) \implies 0 + 0 = 0$ (\textbf{Sí está}).
-    \item $P_3(-1:1:0) \implies -1 + 1 = 0$ (\textbf{Sí está}).
+    \item Deja fijos los puntos $(1:1:0), (0:0:1)$ y $(-1:1:0)$.
+    \item Transforma el punto $(-1:1:-1)$ en $(-1:1:1)$.
+    \item En alguna carta afín es una homotecia.
 \end{itemize}
-
-Como tanto $P_2$ como $P_3$ están en la recta $QQ'$, ambos son candidatos válidos para ser el Centro. El punto $P_1$ queda descartado como centro.
-
-
-Solución 1: Centro $C = P_2(0:0:1)$
-\begin{itemize}
-    \item \textbf{Eje $L$:} Definido por los otros dos puntos fijos $P_1$ y $P_3$. La recta que une $(1:1:0)$ y $(-1:1:0)$ es la recta $x_2 = 0$.
-    \item \textbf{Matriz:} En una homología con centro $(0:0:1)$ y eje $x_2=0$, la matriz es diagonal de la forma $M_1 = \text{diag}(1, 1, k)$.
-    \item \textbf{Entonces:}
-    $$M_1 \begin{pmatrix} -1 \\ 1 \\ -1 \end{pmatrix} = \begin{pmatrix} -1 \\ 1 \\ -k \end{pmatrix} \sim \begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix} \implies -k = 1 \implies k = -1$$
-    \item \textbf{Resultado:} Las ecuaciones son $x_0' = x_0, \quad x_1' = x_1, \quad x_2' = -x_2$.
-\end{itemize}
-
-Solución 2: Centro $C = P_3(-1:1:0)$
-\begin{itemize}
-    \item \textbf{Eje $L$:} Definido por $P_1$ y $P_2$. La recta que los une es $x_0 - x_1 = 0$.
-    \item \textbf{Matriz:} Usamos la estructura $M = I + \gamma \cdot C \cdot v^T$ con $v = (1, -1, 0)$.
-    \item \textbf{Resultado:} Tras imponer que $Q \to Q'$, se obtiene que la homografía intercambia las coordenadas $x_0$ y $x_1$:
-    $$x_0' = x_1, \quad x_1' = x_0, \quad x_2' = x_2$$
-\end{itemize}}
-%ejercicio2
-\ejercicio{}{\section{Definición de la Referencia de Puntos Fijos}
+¿Hay más de una homografía con las anteriores características?}{
+    \section{Definición de la Referencia de Puntos Fijos}
 Consideramos los tres puntos fijos dados como la base de un nuevo sistema de referencia $\mathcal{B} = \{P_1, P_2, P_3\}$:
 $$ P_1 = (1:1:0), \quad P_2 = (0:0:1), \quad P_3 = (-1:1:0) $$
 
@@ -59,7 +36,7 @@ Expresamos el punto original $Q(-1:1:-1)$ y su imagen $Q'(-1:1:1)$ en la base $\
 \end{itemize}
 
 
-Buscamos una homología donde el Centro tenga autovalor $1$ y el Eje tenga autovalor $k$ (con $k \neq 1$).
+Buscamos una homología donde el Centro tenga autovalor $1$ y la recta de puntos fijos tenga autovalor $k$ (con $k \neq 1$).
 
 Caso 1: Centro $P_1$ (Matriz $M_{\mathcal{B}} = \text{diag}(1, k, k)$)
 $$ \begin{pmatrix} 1 & 0 & 0 \\ 0 & k & 0 \\ 0 & 0 & k \end{pmatrix} \begin{pmatrix} 0 \\ -1 \\ 1 \end{pmatrix} = \begin{pmatrix} 0 \\ -k \\ k \end{pmatrix} \sim (0:-1:1) \neq (0:1:1) $$
@@ -82,11 +59,74 @@ $$ M_{\mathcal{C}} = \begin{pmatrix} 1 & 0 & -1 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{p
 Solución 2 (Centro $P_3$)
 Utilizando $M_{\mathcal{B}} = \text{diag}(-1, -1, 1)$:
 $$ M_{\mathcal{C}} = \begin{pmatrix} 1 & 0 & -1 \\ 1 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix} \begin{pmatrix} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0.5 & 0.5 & 0 \\ 0 & 0 & 1 \\ -0.5 & 0.5 & 0 \end{pmatrix} = \begin{pmatrix} 0 & -1 & 0 \\ -1 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix} \sim \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
-\textbf{Ecuaciones:} $x_0' = x_1, \quad x_1' = x_0, \quad x_2' = x_2$.}
-%ejercicio4
+\textbf{Ecuaciones:} $x_0' = x_1, \quad x_1' = x_0, \quad x_2' = x_2$.
+}
 
-\ejercicio{}{
-A)
+%ejercicioN(3)
+\ejercicio{Sea la proyección cónica de $\mathbb{P}_{\mathbb{R}}^{3}$ sobre el plano $x_{0}=0$ de centro el punto $(1:0:1:0)$. Halla unas ecuaciones de la proyección paralela (afín) inducida por en el complementario del plano $x_{0}-x_{2}=0$.}{
+    Para simplificar el problema, definimos una nueva base $B = \{ \vec{v}_0, \vec{v}_1, \vec{v}_2, \vec{v}_3 \}$ de $\mathbb{R}^4$ tal que el centro de proyección $C$ y el plano del infinito $H_\infty$ queden alineados con los ejes:
+\begin{itemize}
+    \item $\vec{v}_0 = (1, 0, 1, 0)$ (Centro de proyección $C$).
+    \item $\vec{v}_1 = (0, 1, 0, 0) = \vec{e}_2$.
+    \item $\vec{v}_2 = (0, 0, 1, 0) = \vec{e}_3$.
+    \item $\vec{v}_3 = (0, 0, 0, 1) = \vec{e}_4$.
+\end{itemize}
+
+La relación entre las coordenadas originales $(x_i)$ y las nuevas coordenadas $(X_i)_{\mathcal{R}}$ viene dada por:
+\[
+\begin{pmatrix} x_0 \\ x_1 \\ x_2 \\ x_3 \end{pmatrix} = 
+\begin{pmatrix} 
+1 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+1 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1 
+\end{pmatrix} 
+\begin{pmatrix} X_0 \\ X_1 \\ X_2 \\ X_3 \end{pmatrix} 
+\implies 
+\begin{cases} 
+x_0 = X_0 \\ 
+x_1 = X_1 \\ 
+x_2 = X_0 + X_2 \\ 
+x_3 = X_3 
+\end{cases}
+\]
+
+
+\begin{itemize}
+    \item \textbf{Plano del infinito:} El enunciado define el espacio afín como el complementario de $x_0 - x_2 = 0$. Sustituyendo las expresiones obtenidas:
+    \[ X_0 - (X_0 + X_2) = 0 \implies \mathbf{X_2 = 0} \]
+    En esta referencia, la carta afín se obtiene tomando $X_2 = 1$.
+    
+    \item \textbf{Centro de proyección:} $C = (1 : 0 : 0 : 0)_{\mathcal{R}}$. Al pertenecer al plano $X_2=0$, el centro es un punto del infinito, lo que garantiza que la proyección inducida es \textbf{paralela}.
+    
+    \item \textbf{Plano imagen:} $x_0 = 0 \implies \mathbf{X_0 = 0}$.
+\end{itemize}
+
+
+La proyección cónica $\pi$ desde el centro $(1:0:0:0)$ sobre el plano $X_0=0$ en coordenadas homogéneas es:
+\[ \pi(X_0 : X_1 : X_2 : X_3) = (0 : X_1 : X_2 : X_3) \]
+
+Pasamos al espacio afín tomando la carta $\mathbf{X_2 = 1}$. Un punto genérico de $\mathbb{A}^3$ tiene coordenadas:
+\[ P = (y_1 : y_2 : 1 : y_3)_{\mathcal{R}} \quad \text{donde } y_1 = \frac{X_0}{X_2}, y_2 = \frac{X_1}{X_2}, y_3 = \frac{X_3}{X_2} \]
+
+Aplicamos la proyección evaluando para $X_2=1$:
+\[ \pi(P) = (0 : y_2 : 1 : y_3)_{\mathcal{R}} \]
+
+Las coordenadas de la imagen $(z_1, z_2)$ en el plano afín destino (subespacio de $\mathbb{A}^3$ donde $X_0=0$) son:
+\[ \begin{cases} z_1 = y_2 \\ z_2 = y_3 \end{cases} \]
+
+\textbf{Conclusión:} La proyección afín inducida es la proyección paralela que mantiene las coordenadas $y_2, y_3$ y anula la coordenada $y_1$ (dirección del centro de proyección).}
+
+%ejercicioN(4)
+\ejercicio{Sea $f$ la homografía de $\mathbb{P}_{\mathbb{R}}^{3}$ de ecuaciones:
+\[ \begin{cases} \lambda x_{0}^{\prime}=x_{0}+x_{1} \\ \lambda x_{1}^{\prime}=2x_{1}+x_{2} \\ \lambda x_{2}^{\prime}=2x_{2}+x_{3} \\ \lambda x_{3}^{\prime}=x_{3} \end{cases} \]
+a) Halla sus puntos fijos y sus planos invariantes.\\
+b) Halla una referencia proyectiva $R$ del plano $x_{2}+x_{3}=0$ y obtén la matriz de la restricción de $f$ a dicho plano en la referencia $R$.\\
+c) Calcula las rectas invariantes contenidas en los planos $x_{2}+x_{3}=0$ y $x_{3}=0$.\\
+Unos apartados más exigentes:\\
+d) Prueba que las rectas obtenidas en el apartado anterior son todas las rectas invariantes por $f$. (Pista: si una recta corta en un punto a un plano invariante lo hace en un punto fijo, y si dos rectas coplanarias son invariantes entonces el plano que generan también lo es.)\\
+e) Halla unas ecuaciones de la aplicación afín inducida en el plano afín $\{x_{3}=0\}\setminus\{x_{2}=0\}$.}{
+    A)
     Los Puntos Fijos son:
 Los puntos fijos de la homografía corresponden a las direcciones de los autovectores de la matriz $A$. Calculamos el polinomio característico:
 \[ p(\lambda) = \det(A - \lambda I) = (1-\lambda)^2(2-\lambda)^2 \]
@@ -142,8 +182,74 @@ La matriz de la restricción en la base $\{(1,0,0,0), (0,1,0,0), (0,0,1,0)\}$ es
     \item $\lambda=1$: Autovector $(1,-1,1)$. Recta: \textbf{$x_0 - x_1 + x_2 = 0$ (con $x_3=0$)}.
     \item $\lambda=2$: Autovector $(0,0,1)$. Recta: \textbf{$x_2 = 0$ (con $x_3=0$)}.
 \end{itemize}
+D)
+\begin{enumerate}
+    \item \textbf{Anclaje a los puntos fijos (Pista 1):} 
+    Sea $r$ una recta invariante por la homografía $f$. En el espacio proyectivo $\mathbb{P}^3$, toda recta tiene intersección no vacía con cualquier plano. Consideremos los planos invariantes $\pi_1$ y $\pi_2$ hallados en el apartado (a).
+    
+    Por la \textit{Pista 1}, los puntos de intersección $Q_1 = r \cap \pi_1$ y $Q_2 = r \cap \pi_2$ deben ser necesariamente puntos fijos de la homografía. Dado que los únicos puntos fijos son $P_1(1:0:0:0)$ y $P_2(1:1:0:0)$, existen dos posibilidades para $r$:
+    \begin{itemize}
+        \item Que $r$ pase por dos puntos fijos distintos ($P_1$ y $P_2$). Esta es la recta $r_1$, ya calculada.
+        \item Que $r$ pase por un único punto fijo (por ejemplo, $Q_1 = Q_2 = P_1$). En este caso, la recta interseca a ambos planos en su punto de corte común.
+    \end{itemize}
+
+    \item \textbf{Restricción a los planos existentes (Pista 2):}
+    Supongamos que existiera una recta invariante $r$ que pasara por un punto fijo (pongamos $P_1$) pero que no estuviera contenida ni en $\pi_1$ ni en $\pi_2$.
+    
+    Tomemos una recta invariante conocida que también pase por $P_1$, como es $r_1$. Al cortarse ambas en $P_1$, las rectas $r$ y $r_1$ son coplanarias. Según la \textit{Pista 2}, el plano $\alpha$ generado por $r$ y $r_1$ debe ser también un plano invariante.
+    
+    \item \textbf{Contradicción con el estudio de planos:}
+    En el apartado (a) se determinó, mediante el cálculo de los autovectores de la matriz traspuesta $A^T$, que los únicos planos invariantes de la transformación son $\pi_1$ y $\pi_2$. 
+    
+    Si existiera la recta $r$ fuera de estos planos, el plano $\alpha$ sería un tercer plano invariante distinto de los anteriores, o bien formaría parte de un haz de planos invariantes. Ambas situaciones contradicen el hecho de que el subespacio propio de $A^T$ para cada autovalor tiene dimensión 1, lo que limita los planos invariantes a solo dos.
+\end{enumerate}
+E)
+Consideramos la restricción de la homografía al plano invariante $x_3 = 0$. La matriz reducida que actúa sobre las coordenadas $(x_0 : x_1 : x_2)$ es:
+\[
+M = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix}
+\]
+
+Para obtener la aplicación afín, observamos el plano desde la carta afín donde la recta del infinito es $x_2 = 0$. Esto implica fijar $x_2 = 1$ y definir nuestras coordenadas afines como $y_1 = x_0$ e $y_2 = x_1$.
+
+\begin{enumerate}
+    \item \textbf{Transformación en coordenadas homogéneas:}
+    Tomamos un punto genérico del plano afín expresado como $(y_1, y_2, 1)$ y aplicamos la matriz reducida:
+    \[
+    \lambda \begin{pmatrix} x'_0 \\ x'_1 \\ x'_2 \end{pmatrix} = 
+    \begin{pmatrix} 1 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix}
+    \begin{pmatrix} y_1 \\ y_2 \\ 1 \end{pmatrix} = 
+    \begin{pmatrix} y_1 + y_2 \\ 2y_2 + 1 \\ 2 \end{pmatrix}
+    \]
+
+    \item \textbf{Normalización por proporcionalidad:}
+    Como el resultado proyectivo es $(y_1 + y_2 : 2y_2 + 1 : 2)$, para obtener las coordenadas en nuestro plano "afín" (donde la tercera componente debe ser $1$), debemos dividir todo el vector por el valor de la coordenada de referencia, que es $2$. 
+    
+    Este paso de normalización asegura que el punto imagen se mantenga en la misma carta afín $x_2=1$:
+    \[
+    y'_1 = \frac{y_1 + y_2}{2}, \quad y'_2 = \frac{2y_2 + 1}{2}
+    \]
+
+    \item \textbf{Ecuaciones de la aplicación afín:}
+    Separando los términos, obtenemos la expresión final de la aplicación:
+    \[
+    \begin{cases}
+    y'_1 = \frac{1}{2}y_1 + \frac{1}{2}y_2 \\
+    y'_2 = y_2 + \frac{1}{2}
+    \end{cases}
+    \]
+\end{enumerate}
 }
-\ejercicio{}{Dada la homografía $g$ de $\mathbb{P}^3_{\mathbb{R}}$, extraemos su matriz asociada $A$:
+
+%ejercicioN(5)
+\ejercicio{Sea $g$ la homografía de $\mathbb{P}_{\mathbb{R}}^{3}$ de ecuaciones:
+\[ \begin{cases} \lambda x_{0}^{\prime}=-x_{0}+2x_{1} \\ \lambda x_{1}^{\prime}=x_{1} \\ \lambda x_{2}^{\prime}=x_{1}-x_{2} \\ \lambda x_{3}^{\prime}=-2x_{1}+3x_{2}+2x_{3} \end{cases} \]
+a) Halla sus puntos fijos y sus planos invariantes.\\
+b) Comprueba dentro del conjunto de planos invariantes se encuentra un haz de planos cuya base es la recta generada por $(2:2:1:1)$ y $(0:0:0:1)$.\\
+Unos apartados más exigentes:\\
+c) Halla todas las rectas invariantes por $g$.\\
+d) Determina la recta $r$ del plano $\{x_{1}=0\}$ tal que $g$ induce una homotecia en el plano afín $\{x_{1}=0\}\setminus r$.\\
+e) Halla el centro y la razón de la homotecia.}{
+    Dada la homografía $g$ de $\mathbb{P}^3_{\mathbb{R}}$, extraemos su matriz asociada $A$:
 \[
 A = \begin{pmatrix} 
 -1 & 2 & 0 & 0 \\ 
@@ -163,8 +269,8 @@ Resolvemos el polinomio característico $|A - \lambda I| = 0$:
 2. Puntos Fijos (Autovectores de $A$):
 \begin{itemize}
     \item \textbf{Para $\lambda = -1$}: El sistema $(A+I)\vec{x} = \vec{0}$ da $x_1 = 0$ y $x_2 = -x_3$. La variable $x_0$ es libre. Obtenemos la \textbf{recta de puntos fijos} generada por $P_1(1:0:0:0)$ y $P_2(0:0:1:-1)$.
-    \item \textbf{Para $\lambda = 1$}: El sistema $(A-I)\vec{x} = \vec{0}$ da $x_0 = 2, x_1 = 2, x_2 = 1, x_3 = 1$. Punto fijo: \textbf{$P_3(2:2:1:1)$}.
-    \item \textbf{Para $\lambda = 2$}: El sistema $(A-2I)\vec{x} = \vec{0}$ da $x_0 = 0, x_1 = 0, x_2 = 0, x_3 = 1$. Punto fijo: \textbf{$P_4(0:0:0:1)$}.
+    \item \textbf{Para $\lambda = 1$}: El sistema $(A-I)\vec{x} = \vec{0}$ da el punto \textbf{$P_3(2:2:1:1)$}.
+    \item \textbf{Para $\lambda = 2$}: El sistema $(A-2I)\vec{x} = \vec{0}$ da el punto \textbf{$P_4(0:0:0:1)$}.
 \end{itemize}
 3. Planos Invariantes (Autovectores de $A^T$):
 Buscamos los planos $\pi \equiv u_0x_0 + u_1x_1 + u_2x_2 + u_3x_3 = 0$ tales que $(A^T - \lambda I)\vec{u} = \vec{0}$.
@@ -196,4 +302,201 @@ Para demostrarlo, comprobaremos que ambos puntos pertenecen a \textbf{todos} los
     Se cumple $0=0$ independientemente de los coeficientes $u_0, u_1$. Por tanto, $Q_1$ también pertenece a todos los planos del haz.
 \end{enumerate}
 
-\textbf{Conclusión:} Al estar $Q_1$ y $Q_2$ contenidos en todos los planos invariantes asociados al autovalor $\lambda = -1$, la recta que los une es necesariamente la base (eje) de dicho haz.}
+\textbf{Conclusión:} Al estar $Q_1$ y $Q_2$ contenidos en todos los planos invariantes asociados al autovalor $\lambda = -1$, la recta que los une es necesariamente la base (eje) de dicho haz.
+c)
+Las rectas invariantes de $g$ son:
+
+\begin{enumerate}
+    \item \textbf{La recta de puntos fijos:} 
+    $r_{12} = \langle (1:0:0:0), (0:0:1:-1) \rangle$. Es invariante punto a punto pues está asociada al autovalor $\lambda = -1$.
+    
+    \item \textbf{La recta que une los puntos fijos con autovalores $\lambda=1$ y $\lambda=2$:}
+    $r_{34} = \langle (2:2:1:1), (0:0:0:1) \rangle$. Esta recta es invariante.
+    
+    \item \textbf{El conjunto de rectas que unen $P_3$ con cualquier punto de $L_{12}$:}
+    Estas rectas forman un haz de rectas con centro $P_3$ contenido en el plano invariante $\pi_4 \equiv -x_1 + x_2 + x_3 = 0$.
+    
+    \item \textbf{El conjunto de rectas que unen $P_4$ con cualquier punto de $L_{12}$:}
+    Estas rectas forman un haz de rectas con centro $P_4$ contenido en el plano invariante $\pi_3 \equiv x_1 = 0$.
+    \\
+    Usando un resultado visto en clase, sabemos que en un cuerpo algebraicamente cerrado, los subespacios invariantes contienen un punto fijo y están contenidos por un hiperplano invariante. Así, como en nuestro caso, todos autovalores son reales y los autovectores también. Por lo tanto, los puntos fijos de la aplicación en $\mathbb{C}$   son de $P(\mathbb{R}^4)$  y los hiperplanos invariantes tambien. Así, podemos asegurar que cubrimos todas las posibilidades.
+\end{enumerate}
+d)
+
+Para que la homografía $g$ induzca una homotecia en el plano afín $\mathbb{A}^2 = \{x_1 = 0\} \setminus r$, debemos estudiar la restricción de $g$ al plano proyectivo $\pi \equiv \{x_1 = 0\}$ y encontrar una recta $r$ que, al ser tomada como recta del infinito, convierta la aplicación inducida en una homotecia. (Podemos interpretarlo tambien como que, la aplicación proyectiva debe ser una homología, es decir, que en alguna referencia debe tener la forma diag(1,k,k))
+Consideramos el subespacio de puntos de la forma $(x_0 : 0 : x_2 : x_3)$. Aplicando las ecuaciones de la homografía original, obtenemos la matriz restringida $M$ que actúa sobre las coordenadas $(x_0, x_2, x_3)$:
+\[
+M = \begin{pmatrix} 
+-1 & 0 & 0 \\ 
+0 & -1 & 0 \\ 
+0 & 3 & 2 
+\end{pmatrix}\]
+Una homología proyectiva es una proyectividad plana que posee una recta de puntos fijos (eje) y un punto fijo aislado (centro). Analizamos los autovalores de $M$:
+\begin{itemize}
+    \item \textbf{Eje de puntos fijos ($\lambda = -1$):} Resolvemos el sistema $(M + I)\vec{x} = \vec{0}$:
+    \[
+    \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 3 & 3 \end{pmatrix} \begin{pmatrix} x_0 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} \implies x_2 + x_3 = 0
+    \]
+    Todos los puntos de la recta $e \equiv \{x_2 + x_3 = 0\}$ dentro del plano $x_1=0$ son puntos fijos. Este es el \textbf{eje de la homología}.
+    
+    \item \textbf{Centro de la homología ($\lambda = 2$):} Resolvemos $(M - 2I)\vec{x} = \vec{0}$:
+    \[
+    \begin{pmatrix} -3 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 3 & 0 \end{pmatrix} \begin{pmatrix} x_0 \\ x_2 \\ x_3 \end{pmatrix} = \vec{0} \implies x_0 = 0, x_2 = 0
+    \]
+    Obtenemos el punto fijo aislado $C(0:0:1)$, que corresponde a $P_4(0:0:0:1)$ en $\mathbb{P}^3$.
+\end{itemize}
+
+
+Como proponemos, definimos una referencia proyectiva en $\pi$ formada por:
+\begin{itemize}
+    \item $u_1 = (0, 0, 1)$ (Centro $C$).
+    \item $u_2 = (1, 0, 0)$ (Punto del eje $e$).
+    \item $u_3 = (0, 1, -1)$ (Punto del eje $e$).
+\end{itemize}
+En esta referencia, la matriz de la aplicación es diagonal: $D = \text{diag}(2, -1, -1)$, que es proyectivamente equivalente a $\text{diag}(-2, 1, 1)$. 
+
+Si elegimos como **recta del infinito** $r$ al propio eje de la homología ($r = e$), cualquier punto de dicha recta se transforma mediante la identidad (puntos fijos). En la carta afín resultante $\{x_1 = 0\} \setminus r$:
+\begin{enumerate}
+    \item La aplicación es una afinidad porque preserva la recta del infinito $r$.
+    \item Al ser $r$ una recta de puntos fijos, la parte lineal es la identidad o un múltiplo de ella.
+\end{enumerate}
+e) La existencia de un punto fijo $C$ fuera del infinito garantiza que la aplicación sea una \textbf{homotecia} de centro $C$ (en nuestras coordenadas afines será el (0,0)) y razón $k = \frac{\lambda_\infty}{\lambda_C} = \frac{1}{-2}$
+}
+
+%ejercicioN(6)
+\ejercicio{La polaridad asociada a una cónica no singular tiene las siguientes propiedades:
+\begin{itemize}
+    \item[(i)] La recta polar del punto $A_{1}=(1:0:-1)$ es $r_{1}:x_{0}+x_{1}-2x_{2}=0$.
+    \item[(ii)] El polo de la recta $r_{2}:x_{2}=0$ es $A_{2}=(1:1:0)$ (esto es equivalente a que la polar de $A_{2}$ sea $r_2$).
+    \item[(iii)] La recta $r_{3}:x_{0}=0$ es la polar de un punto de la cónica.
+\end{itemize}
+Se pide:\\
+a) La recta polar del punto $A_{4}=(1:-1:0)$.\\
+b) El polo de la recta $s:x_{0}+x_{1}+x_{2}=0$.\\
+c) ¿Cuántas tangentes a la cónica pasan por el punto $A_{2}$?\\
+d) Clasificar la cónica afín inducida en la carta afín $\{x_{2}\neq 0\}$.\\
+e) La ecuación de la cónica.}{
+
+Sea $\mathcal{C}$ una cónica no singular en $\mathbb{P}_{\mathbb{R}}^{2}$ asociada a una matriz simétrica $C$:
+\[
+C = \begin{pmatrix} 
+c_{00} & c_{01} & c_{02} \\ 
+c_{01} & c_{11} & c_{12} \\ 
+c_{02} & c_{12} & c_{22} 
+\end{pmatrix}
+\]
+
+
+
+\begin{itemize}
+    \item \textbf{Propiedad (ii):} El polo de la recta $x_2=0$ (coeficientes $[0,0,1]$) es el punto $A_2(1:1:0)$. Por la relación fundamental de polaridad $C \cdot P = \rho L$:
+    \[
+    \begin{pmatrix} c_{00} & c_{01} & c_{02} \\ c_{01} & c_{11} & c_{12} \\ c_{02} & c_{12} & c_{22} \end{pmatrix} \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ \rho_2 \end{pmatrix} \implies 
+    \begin{cases} 
+    c_{00} + c_{01} = 0 \\ 
+    c_{01} + c_{11} = 0 
+    \end{cases}
+    \]
+    Tomando $c_{00} = k$ como factor de escala, obtenemos $c_{01} = -k$ y $c_{11} = k$.
+
+    \item \textbf{Propiedad (i):} La recta polar de $A_1(1:0:-1)$ es $x_0 + x_1 - 2x_2 = 0$ (coeficientes $[1,1,-2]$):
+    \[
+    \begin{pmatrix} k & -k & c_{02} \\ -k & k & c_{12} \\ c_{02} & c_{12} & c_{22} \end{pmatrix} \begin{pmatrix} 1 \\ 0 \\ -1 \end{pmatrix} = \rho_1 \begin{pmatrix} 1 \\ 1 \\ -2 \end{pmatrix} \implies
+    \begin{cases} 
+    k - c_{02} = \rho_1 \implies c_{02} = k - \rho_1 \\ 
+    -k - c_{12} = \rho_1 \implies c_{12} = -k - \rho_1 \\
+    c_{02} - c_{22} = -2\rho_1 \implies (k - \rho_1) - c_{22} = -2\rho_1 \implies c_{22} = k + \rho_1
+    \end{cases}
+    \]
+\end{itemize}
+
+La matriz de la cónica queda definida en función de $k$ y el parámetro de proporcionalidad $\rho_1$:
+\[
+C = \begin{pmatrix} 
+k & -k & k-\rho_1 \\ 
+-k & k & -k-\rho_1 \\ 
+k-\rho_1 & -k-\rho_1 & k+\rho_1 
+\end{pmatrix}
+\]
+
+
+
+La propiedad (iii) establece que la recta $r_3: x_0 = 0$ es la polar de un punto de la cónica, lo cual implica que $r_3$ es una \textbf{recta tangente}. 
+
+Geométricamente, la intersección de una cónica con una recta tangente debe ser un único punto doble. Consideramos la restricción de la cónica a la recta proyectiva $\mathbb{P}^1$ definida por $x_0 = 0$. Los puntos de esta recta son de la forma $(0:x_1:x_2)$. La ecuación de la cuádrica inducida en la recta es:
+\[
+\begin{pmatrix} x_1 & x_2 \end{pmatrix} 
+\begin{pmatrix} c_{11} & c_{12} \\ c_{12} & c_{22} \end{pmatrix} 
+\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = 0
+\]
+Según la clasificación de cuádricas en la recta proyectiva, para que existan un único punto doble (tangencia), el determinante de la matriz de restricción debe ser nulo:
+\[
+\det \begin{pmatrix} k & -k-\rho_1 \\ -k-\rho_1 & k+\rho_1 \end{pmatrix} = 0
+\]
+\[
+k(k+\rho_1) - (-k-\rho_1)^2 = 0 \implies k^2 + k\rho_1 - (k^2 + 2k\rho_1 + \rho_1^2) = 0
+\]
+\[
+-k\rho_1 - \rho_1^2 = 0 \implies -\rho_1(k + \rho_1) = 0
+\]
+Dado que la cónica es no singular ($\det C \neq 0$), descartamos $\rho_1 = 0$. Por tanto, obtenemos la condición $\rho_1 = -k$.
+
+
+
+Sustituyendo $\rho_1 = -k$ en la matriz $C$ y fijando $k=1$ para normalizar:
+\[
+C = \begin{pmatrix} 
+1 & -1 & 2 \\ 
+-1 & 1 & 0 \\ 
+2 & 0 & 0 
+\end{pmatrix}
+\]
+
+Para clasificar la cónica en la carta afín $\{x_2 \neq 0\}$, estudiamos sus puntos del infinito intersecando con la recta $x_2=0$:
+\[
+x_0^2 + x_1^2 - 2x_0x_1 = 0 \implies (x_0 - x_1)^2 = 0
+\]
+La cónica posee un único punto del infinito doble en la dirección $(1:1:0)$. Por lo tanto, se trata de una \textbf{parábola}.
+}
+
+%ejercicioN(7)
+\ejercicio{Se tiene una familia uniparamétrica de cónicas no singulares $\{\varphi_{\alpha}\}$ cuyas polaridades asociadas tienen todas las siguientes propiedades:
+\begin{itemize}
+    \item[(i)] La recta polar del punto $A_{1}=(1:0:-1)$ pasa por $A_{1}$.
+    \item[(ii)] El polo de la recta $r_{2}:x_{2}=0$ es $A_{2}=(0:1:0)$ (esto es equivalente a que la polar de $A_{2}$ sea $r_2$).
+    \item[(iii)] La recta $r_{3}:-x_{0}+x_{1}=0$ es la polar del punto $A_{3}=(-1:1:1)$.
+\end{itemize}
+Se pide:\\
+a) La recta polar de $A_{4}=(1:1:0)$.\\
+b) Probar que la recta polar de $A_{1}$ es $x_{0}-x_{1}+x_{2}=0$.\\
+c) Las ecuaciones de las cónicas de la familia (dependiendo de un parámetro $a$).\\
+d) Clasificar las cónicas afines inducidas en $\{x_{0}+x_{1}\neq 0\}$.\\
+e) Todas las rectas proyectivas $s$ que pasan por $A_{1}$ y en cuyo complementario alguna cónica de la familia induzca una parábola.}{}
+
+%ejercicioN(8)
+\ejercicio{Decide razonadamente para qué cónicas existen referencias proyectivas tales que su ecuación se escribe en coordenadas como $x_{0}^{2}-x_{1}x_{2}=0$ (distingue si es necesario el caso real y el complejo). Describe geométricamente la posición de los puntos que forman parte de la referencia en función del lugar de ceros de la cónica.}{}
+
+%ejercicioN(9)
+\ejercicio{Dada una cuádrica proyectiva, sea $r$ una recta que no sea tangente ni pase por un punto singular.\\
+a) Muestra que $g:r\rightarrow r$ definida por $g(A)=Polar_{\varphi}(A)\cap r$ está bien definida y es una homografía.\\
+b) Halla los puntos fijos de $g$ y muestra que $g\circ g=id$ (en otras palabras, $g$ es involutiva).\\
+c) Suponiendo que $r\cap\mathcal{C}_{\varphi}=\{B,B^{\prime}\}$, prueba que para todo $A\in r \setminus \{B, B^{\prime}\}$ se cumple $[B,B^{\prime},A,g(A)]=-1$.}{}
+
+%ejercicioN(10)
+\ejercicio{Prueba que la dimensión del espacio proyectivo de las cuádricas de $\mathbb{P}_{\mathbb{R}}^{3}$ es 9, y deduce que cualesquiera tres rectas de $\mathbb{P}_{\mathbb{R}}^{3}$ están contenidas en (el lugar de ceros de) una misma cuádrica.\\
+$\bullet$ Estudia la posición relativa de tres rectas contenidas en una cuádrica degenerada en $\mathbb{P}_{\mathbb{R}}^{3}$. Elabora una lista de posibilidades en función del tipo de cuádrica.\\
+$\bullet$ Prueba o refuta la siguiente afirmación: dadas tres rectas disjuntas en $\mathbb{P}_{\mathbb{R}}^{3}$, no hay ninguna cuádrica degenerada que las contenga.}{}
+
+%ejercicioN(11)
+\ejercicio{Sobre superficies cuádricas en dimensión 3:\\
+a) Demuestra que la cuádrica proyectiva real de signatura $(3,1)$ no contiene rectas en su lugar de ceros (y de ahí su denominación cuádrica no reglada).\\
+b) Dado un punto $p$ cualquiera de la cuádrica proyectiva real de signatura $(2,2)$, obtén una recta que pasa por $p$ y está contenida en la cuádrica. ¿Hay más de una? Deduce que (el lugar de ceros de) la cuádrica es unión de rectas, por eso se denomina cuádrica reglada.\\
+c) Comprueba que la superficie cuádrica compleja no degenerada es también una cuádrica reglada: su lugar de ceros es una unión de rectas.\\
+d) Utiliza los dos primeros apartados para enumerar cuáles son las posibles cónicas obtenidas por restricción de la cuádrica reglada y la no reglada a un plano (y así justificar las posibles cónicas de infinito estudiadas en los casos de clasificación de superficies cuádricas afines vistos en clase).}{}
+
+%ejercicioN(12)
+\ejercicio{Sea una cuádrica no degenerada, $p\in\mathcal{C}_{\varphi}$ y $H$ un hiperplano que no pasa por $p$.\\
+a) Decide para qué puntos $q$ la asignación $q\mapsto h(q)=V(p,q)\cap(\mathcal{C}_{\varphi}\setminus\{p\})$ está bien definida.\\
+b) Determina $X$ de forma que $h:H\setminus X\rightarrow\mathcal{C}_{\varphi}\setminus\{p\}$ es una biyección (que se llama proyección estereográfica).\\
+c) Supongamos que es una cuádrica en $P_{\mathbb{K}}^{n}$, siendo $\mathbb{K}=\mathbb{Z}_{m}$ con $m$ primo el cuerpo con $m$ elementos. Halla el número de puntos que contiene $H\setminus X$ en función de $m$ y $n$ y utiliza la proyección estereográfica para dar una cota inferior al número de puntos contenidos en una cuádrica en $P_{\mathbb{K}}^{n}$ supuesta que es no vacía.\\
+d) Los primeros apartados proporcionan un método para parametrizar cónicas: se considera una parametrización $t\mapsto\alpha(t)$ de una recta afín que no pase por $p$ (que hará las veces de $H\setminus X$) y la parametrización buscada es $t\mapsto h(\alpha(t))$. Parametriza $x_{0}^{2}+x_{0}x_{1}-2x_{1}^{2}+9x_{2}^{2}=0$ desde el punto $p=(1:-2:1)$.}{}
