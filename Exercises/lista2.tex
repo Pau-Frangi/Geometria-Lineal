@@ -451,12 +451,60 @@ C = \begin{pmatrix}
 2 & 0 & 0 
 \end{pmatrix}
 \]
-
-Para clasificar la cónica en la carta afín $\{x_2 \neq 0\}$, estudiamos sus puntos del infinito intersecando con la recta $x_2=0$:
+a)
+La recta polar $r$ de un punto $P$ se obtiene mediante la relación $L = C \cdot P$, donde $L$ es el vector de coeficientes de la recta $[u_0, u_1, u_2]$.
 \[
-x_0^2 + x_1^2 - 2x_0x_1 = 0 \implies (x_0 - x_1)^2 = 0
+L = \begin{pmatrix} 1 & -1 & 2 \\ -1 & 1 & 0 \\ 2 & 0 & 0 \end{pmatrix} \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix} = 
+\begin{pmatrix} 1(1) + (-1)(-1) + 2(0) \\ -1(1) + 1(-1) + 0(0) \\ 2(1) + 0(-1) + 0(0) \end{pmatrix} = 
+\begin{pmatrix} 2 \\ -2 \\ 2 \end{pmatrix}
 \]
-La cónica posee un único punto del infinito doble en la dirección $(1:1:0)$. Por lo tanto, se trata de una \textbf{parábola}.
+Dividiendo por el factor común $2$, obtenemos los coeficientes $[1, -1, 1]$. \\
+\textbf{Ecuación de la recta polar:} $x_0 - x_1 + x_2 = 0$.
+
+b) El polo de la recta $s : x_0 + x_1 + x_2 = 0$
+
+Para hallar el polo $P(x_0:x_1:x_2)$, resolvemos el sistema $C \cdot P = \lambda \vec{s}$, donde $\vec{s} = [1, 1, 1]^T$:
+\[
+\begin{pmatrix} 1 & -1 & 2 \\ -1 & 1 & 0 \\ 2 & 0 & 0 \end{pmatrix} \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \implies
+\begin{cases} 
+x_0 - x_1 + 2x_2 = 1 \\ 
+-x_0 + x_1 = 1 \\ 
+2x_0 = 1 
+\end{cases}
+\]
+1. De la tercera ecuación: $x_0 = 1/2$. \\
+2. Sustituyendo en la segunda: $-1/2 + x_1 = 1 \implies x_1 = 3/2$. \\
+3. Sustituyendo en la primera: $1/2 - 3/2 + 2x_2 = 1 \implies -1 + 2x_2 = 1 \implies x_2 = 1$. \\
+El punto es $(1/2 : 3/2 : 1)$, que normalizado es $(1 : 3 : 2)$. \\
+\textbf{Polo de la recta $s$:} $P = (1 : 3 : 2)$.
+
+c) Cantidad de tangentes que pasan por $A_2 = (1 : 1 : 0)$
+
+Evaluamos si el punto $A_2$ pertenece a la cónica usando su forma cuadrática $X^T C X = 0$:
+\[
+(1, 1, 0) \begin{pmatrix} 1 & -1 & 2 \\ -1 & 1 & 0 \\ 2 & 0 & 0 \end{pmatrix} \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix} = (0, 0, 2) \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix} = 0
+\]
+Como $A_2$ satisface la ecuación de la cónica, el punto es un punto de la curva. Por definición, en una cónica no singular, por cada punto de la curva pasa **exactamente una recta tangente** (su recta polar). \\
+Pasa 1 tangente.
+
+d) Clasificación de la cónica en la carta afín $\{x_2 \neq 0\}$
+
+Intersecamos la cónica con la recta del infinito $x_2 = 0$:
+\[
+x_0^2 + x_1^2 - 2x_0x_1 + 4x_0(0) = 0 \implies (x_0 - x_1)^2 = 0
+\]
+La intersección produce un único punto real doble $(1:1:0)$. \\
+ La cónica es una \textbf{parábola}.
+
+e) Ecuación de la cónica
+
+Expandiendo la expresión $X^T C X = 0$:
+\[
+\begin{pmatrix} x_0 & x_1 & x_2 \end{pmatrix} \begin{pmatrix} 1 & -1 & 2 \\ -1 & 1 & 0 \\ 2 & 0 & 0 \end{pmatrix} \begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix} = 0
+\]
+ $x_0^2 + x_1^2 - 2x_0x_1 + 4x_0x_2 = 0$.
+
+
 }
 
 %ejercicioN(7)
@@ -471,16 +519,163 @@ a) La recta polar de $A_{4}=(1:1:0)$.\\
 b) Probar que la recta polar de $A_{1}$ es $x_{0}-x_{1}+x_{2}=0$.\\
 c) Las ecuaciones de las cónicas de la familia (dependiendo de un parámetro $a$).\\
 d) Clasificar las cónicas afines inducidas en $\{x_{0}+x_{1}\neq 0\}$.\\
-e) Todas las rectas proyectivas $s$ que pasan por $A_{1}$ y en cuyo complementario alguna cónica de la familia induzca una parábola.}{}
+e) Todas las rectas proyectivas $s$ que pasan por $A_{1}$ y en cuyo complementario alguna cónica de la familia induzca una parábola.}{
+    Sea $C_{\alpha}$ la matriz simétrica asociada a la familia de cónicas $\{\varphi_{\alpha}\}$ en $\mathbb{P}_{\mathbb{R}}^{2}$. A partir de las propiedades de polaridad dadas:
+
+\begin{enumerate}
+    \item \textbf{Propiedad (ii):} El polo de la recta $x_2=0$ es $A_2(0:1:0)$. Esto implica que la segunda columna de la matriz es proporcional al vector de la recta $[0,0,1]^T$, lo que nos da $c_{01}=0, c_{11}=0$ y $c_{12} = \lambda$. Tomando $\lambda=1$:
+    \[ C = \begin{pmatrix} c_{00} & 0 & c_{02} \\ 0 & 0 & 1 \\ c_{02} & 1 & c_{22} \end{pmatrix} \]
+    
+    \item \textbf{Propiedad (iii):} La polar de $A_3(-1:1:1)$ es $-x_0 + x_1 = 0$. Aplicando $C \cdot A_3 = \mu [-1, 1, 0]^T$:
+    \[ \begin{pmatrix} c_{00} & 0 & c_{02} \\ 0 & 0 & 1 \\ c_{02} & 1 & c_{22} \end{pmatrix} \begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix} = \begin{pmatrix} -c_{00} + c_{02} \\ 1 \\ -c_{02} + 1 + c_{22} \end{pmatrix} = \begin{pmatrix} -\mu \\ \mu \\ 0 \end{pmatrix} \]
+    De la segunda fila, $\mu = 1$. Resolviendo: $c_{02} = c_{00} - 1$ y $c_{22} = c_{00} - 2$.
+\end{enumerate}
+
+Definiendo $\alpha = c_{00}$, la matriz de la familia es:
+\[ C_{\alpha} = \begin{pmatrix} \alpha & 0 & \alpha-1 \\ 0 & 0 & 1 \\ \alpha-1 & 1 & \alpha-2 \end{pmatrix} \]
+
+---
+
+
+
+a) La recta polar de $A_4 = (1:1:0)$
+$L_{A4} = C_{\alpha} \cdot (1, 1, 0)^T = (\alpha, 0, \alpha)^T$. Normalizando por $\alpha \neq 0$:
+\textbf{Ecuación:} $x_0 + x_2 = 0$.
+
+b) Probar que la recta polar de $A_1(1:0:-1)$ es $x_0 - x_1 + x_2 = 0$
+$L_{A1} = C_{\alpha} \cdot (1, 0, -1)^T = (\alpha - (\alpha - 1), -1, (\alpha - 1) - (\alpha - 2))^T = (1, -1, 1)^T$.
+La ecuación es $x_0 - x_1 + x_2 = 0$. Puesto que $1 - 0 + (-1) = 0$, se cumple que el polo $A_1$ pertenece a su propia polar (Propiedad i).
+
+c) Ecuaciones de las cónicas de la familia
+Ecuación: $\alpha x_0^2 + 2(\alpha-1)x_0x_2 + 2x_1x_2 + (\alpha-2)x_2^2 = 0$.
+
+d) Clasificación en la carta afín $\{x_0 + x_1 \neq 0\}$
+
+Primero, verificamos la \textbf{no singularidad} de la familia. La cónica es no singular si su determinante es no nulo:
+\[ |C_{\alpha}| = \det \begin{pmatrix} \alpha & 0 & \alpha-1 \\ 0 & 0 & 1 \\ \alpha-1 & 1 & \alpha-2 \end{pmatrix} = -1 \cdot \det \begin{pmatrix} \alpha & 0 \\ \alpha-1 & 1 \end{pmatrix} = -\alpha \]
+Por tanto, la cónica es \textbf{no singular si y solo si $\alpha \neq 0$}.
+
+Para clasificar, realizamos el cambio de referencia para que la recta del infinito sea $X_0 = x_0 + x_1$:
+Definimos $X_0 = x_0 + x_1, X_1 = x_1, X_2 = x_2$. La matriz de paso es $M = \begin{pmatrix} 1 & -1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}$.
+La matriz en la nueva referencia es $C' = M^T C_{\alpha} M$:
+\[ C' = \begin{pmatrix} \alpha & -\alpha & \alpha-1 \\ -\alpha & \alpha & 2-\alpha \\ \alpha-1 & 2-\alpha & \alpha-2 \end{pmatrix} \]
+El tipo afín depende de la submatriz de direcciones infinitas $A_{00}$ (filas y columnas 1 y 2):
+\[ |A_{00}| = \det \begin{pmatrix} \alpha & 2-\alpha \\ 2-\alpha & \alpha-2 \end{pmatrix} = 2\alpha - 4 \]
+Clasificación ($\alpha \neq 0$):
+\begin{itemize}
+    \item \textbf{Elipse:} $2\alpha - 4 > 0 \implies \alpha > 2$.
+    \item \textbf{Parábola:} $2\alpha - 4 = 0 \implies \alpha = 2$.
+    \item \textbf{Hipérbola:} $2\alpha - 4 < 0 \implies \alpha < 2$ (con $\alpha \neq 0$).
+\end{itemize}
+
+e) Rectas $s$ por $A_1$ que inducen una parábola
+Una cónica induce una parábola en el complementario de una recta $s$ si y solo si $s$ es tangente a la cónica. Como $A_1$ es un punto de todas las cónicas de la familia, la recta $s$ debe ser la tangente en $A_1$, que es su polar.
+Del apartado (b), la polar de $A_1$ es única e independiente de $\alpha$:
+\textbf{Respuesta:} $s: x_0 - x_1 + x_2 = 0$.
+}
 
 %ejercicioN(8)
-\ejercicio{Decide razonadamente para qué cónicas existen referencias proyectivas tales que su ecuación se escribe en coordenadas como $x_{0}^{2}-x_{1}x_{2}=0$ (distingue si es necesario el caso real y el complejo). Describe geométricamente la posición de los puntos que forman parte de la referencia en función del lugar de ceros de la cónica.}{}
+\ejercicio{Decide razonadamente para qué cónicas existen referencias proyectivas tales que su ecuación se escribe en coordenadas como $x_{0}^{2}-x_{1}x_{2}=0$ (distingue si es necesario el caso real y el complejo). Describe geométricamente la posición de los puntos que forman parte de la referencia en función del lugar de ceros de la cónica.}{
+    Dada la ecuación de la cónica $C: x_0^2 - x_1x_2 = 0$, podemos escribir su matriz asociada $A$ en la referencia proyectiva dada:
+\[
+A = \begin{pmatrix} 
+1 & 0 & 0 \\ 
+0 & 0 & -1/2 \\ 
+0 & -1/2 & 0 
+\end{pmatrix}
+\]
+
+Para determinar el tipo de cónica, calculamos el determinante de la matriz:
+\[
+\det(A) = 1 \cdot \left( 0 - \left(-\frac{1}{2}\right)\left(-\frac{1}{2}\right) \right) = -\frac{1}{4}
+\]
+
+Como $\det(A) \neq 0$, la cónica es \textbf{no degenerada} (rango 3). 
+Caso Complejo ($\mathbb{P}^2(\mathbb{C})$)
+En el plano proyectivo complejo, todas las cónicas no degeneradas son proyectivamente equivalentes. Por tanto, existe tal referencia para \textbf{cualquier cónica propia}.
+
+Caso Real ($\mathbb{P}^2(\mathbb{R})$)
+En el caso real, debemos considerar la signatura de la forma cuadrática. Los autovalores de $A$ son $\{1, 1/2, -1/2\}$, lo que da una signatura $(2, 1)$. Esto corresponde a una \textbf{cónica real con puntos} (no vacía). En términos afines, esto representa elipses, parábolas o hipérbolas reales.
+
+Descripción geométrica de la referencia
+
+Sea la referencia $\mathcal{R} = \{P_0, P_1, P_2; U\}$. Analizamos la posición de estos puntos respecto a la cónica $C$ mediante sus coordenadas:
+
+\begin{itemize}
+    \item \textbf{Puntos en la cónica:} 
+    Sustituyendo las coordenadas en la ecuación $x_0^2 - x_1x_2 = 0$:
+    \begin{itemize}
+        \item $P_1 = [0 : 1 : 0] \implies 0^2 - (1)(0) = 0 \quad \therefore P_1 \in C$
+        \item $P_2 = [0 : 0 : 1] \implies 0^2 - (0)(1) = 0 \quad \therefore P_2 \in C$
+        \item $U = [1 : 1 : 1] \implies 1^2 - (1)(1) = 0 \quad \therefore U \in C$
+    \end{itemize}
+    
+    \item \textbf{Punto fuera de la cónica:}
+    \begin{itemize}
+        \item $P_0 = [1 : 0 : 0] \implies 1^2 - (0)(0) = 1 \neq 0 \quad \therefore P_0 \notin C$
+    \end{itemize}
+\end{itemize}
+
+\subsection{Relación de tangencia y polaridad}
+La recta polar de un punto $P$ respecto a la cónica se define como $P^T A X = 0$.
+
+\begin{enumerate}
+    \item \textbf{Tangente en $P_1$:} La polar de $P_1$ es $x_2 = 0$. Esta es la recta que une $P_0$ y $P_1$. Por lo tanto, la recta $\overline{P_0P_1}$ es la recta tangente a la cónica en el punto $P_1$.
+    \item \textbf{Tangente en $P_2$:} La polar de $P_2$ es $x_1 = 0$. Esta es la recta que une $P_0$ y $P_2$. Por lo tanto, la recta $\overline{P_0P_2}$ es la recta tangente a la cónica en el punto $P_2$.
+\end{enumerate}
+
+\section{Conclusión geométrica}
+Para que una cónica pueda expresarse de esta forma, debe ser \textbf{no degenerada} (y no vacía en el caso real). Los elementos de la referencia se sitúan de la siguiente manera:
+\begin{itemize}
+    \item $P_1$ y $P_2$ son dos puntos de la propia cónica.
+    \item $P_0$ es el punto donde se cruzan las rectas tangentes a la cónica que pasan por $P_1$ y $P_2$.
+    \item $U$ (punto unidad) es un tercer punto de la cónica que fija la escala de la referencia.
+\end{itemize}
+}
 
 %ejercicioN(9)
 \ejercicio{Dada una cuádrica proyectiva, sea $r$ una recta que no sea tangente ni pase por un punto singular.\\
 a) Muestra que $g:r\rightarrow r$ definida por $g(A)=Polar_{\varphi}(A)\cap r$ está bien definida y es una homografía.\\
 b) Halla los puntos fijos de $g$ y muestra que $g\circ g=id$ (en otras palabras, $g$ es involutiva).\\
-c) Suponiendo que $r\cap\mathcal{C}_{\varphi}=\{B,B^{\prime}\}$, prueba que para todo $A\in r \setminus \{B, B^{\prime}\}$ se cumple $[B,B^{\prime},A,g(A)]=-1$.}{}
+c) Suponiendo que $r\cap\mathcal{C}_{\varphi}=\{B,B^{\prime}\}$, prueba que para todo $A\in r \setminus \{B, B^{\prime}\}$ se cumple $[B,B^{\prime},A,g(A)]=-1$.}{
+    Sea $\varphi$ una cuádrica proyectiva y $r$ una recta que no es tangente a $\varphi$ ni pasa por un punto singular.
+
+a) 
+
+Sea $A \in r$. Bajo la polaridad inducida por la cuádrica $\varphi$, el punto $A$ se transforma en su hiperplano polar $\pi_A$ en el espacio dual. Para que la aplicación $g(A) = \pi_A \cap r$ esté bien definida, la intersección debe ser un punto único de la recta, lo que exige que $r \not\subset \pi_A$ (de lo contrario, la intersección sería toda la recta $r$).
+
+Razonamos por reducción al absurdo: supongamos que $r \subseteq \pi_A$. Como $A \in r$, esto implicaría que $A \in \pi_A$, lo que por definición significa que $A$ es un punto de la cuádrica ($A \in \mathcal{C}_\varphi$). Al ser $A$ un punto de la cuádrica, su hiperplano polar $\pi_A$ es el hiperplano tangente en $A$. Si la recta $r$ estuviera contenida en el hiperplano tangente y pasara por el punto de contacto $A$, entonces $r$ sería una recta tangente a la cuádrica. Esto supone una \textbf{contradicción} con la hipótesis inicial.
+
+Por tanto, podemos afirmar que para ningún punto de la recta los hiperplanos polares contienen a $r$. Así, la recta no está contenida en la base del haz y podemos definir $g$ como la composición de dos aplicaciones proyectivas: la polaridad $f: r \to \text{Polar}_\varphi(r)$ y la intersección con la recta $r$. Al ser composición de homografías, $g$ es una homografía.
+
+b) 
+
+Al ser $g$ una homografía, un punto es fijo si $g(x) = x$. Esto ocurre si y solo si $x$ pertenece a su propio hiperplano polar ($x \in \pi_x$), lo cual es la condición necesaria y suficiente para que $x$ sea un punto de la cuádrica ($x \in \mathcal{C}_\varphi$). Por tanto, los puntos fijos de $g$ son exactamente los puntos de la intersección de la recta con la cuádrica:
+\[ \text{Fix}(g) = r \cap \mathcal{C}_\varphi \]
+
+Demostrar que $g$ es una involución es inmediato por la reprocidad de los polos y polares: si el punto $A'$ está en el polar de $A$, entonces el punto $A$ debe estar en el polar de $A'$. Analíticamente, si $\varphi(A, A') = 0$, entonces $\varphi(A', A) = 0$, lo que implica que $g(g(A)) = A$.
+
+c) 
+
+Sea $r \cap \mathcal{C}_\varphi = \{B, B'\}$. Para demostrar que la razón doble es $-1$, elegimos una referencia proyectiva sobre la recta $r$ utilizando los puntos fijos de la involución:
+\begin{itemize}
+    \item $B = [1:0]$ (origen).
+    \item $B' = [0:1]$ (punto del infinito).
+\end{itemize}
+
+Cualquier punto $A \in r$ puede expresarse como $A = B + x B'$, donde $x$ es su coordenada. Sea $g(A) = B + x' B'$ su imagen. La condición de que $A$ y $g(A)$ sean conjugados respecto a la cuádrica $\varphi$ (con matriz $M$) es $A^T M g(A) = 0$. Desarrollando:
+\[ (B + xB')^T M (B + x'B') = 0 \]
+\[ B^T MB + x'(B^T MB') + x(B'^T MB) + xx'(B'^T MB') = 0 \]
+
+Como $B$ y $B'$ pertenecen a la cuádrica, $B^T MB = 0$ y $B'^T MB' = 0$. Por simetría, $B^T MB' = B'^T MB = k$. La ecuación se simplifica a:
+\[ kx' + kx = 0 \implies x' = -x \]
+
+La homografía en esta referencia es la aplicación $x \mapsto -x$. Calculamos la razón doble de los cuatro puntos utilizando sus coordenadas $\{0, \infty, x, -x\}$:
+\[ [B, B', A, g(A)] = \frac{x - 0}{x - \infty} : \frac{-x - 0}{-x - \infty} \]
+En el límite cuando una coordenada tiende a infinito, la expresión se reduce a:
+\[ [0, \infty, x, -x] = \frac{x}{-x} = -1 \]
+Esto demuestra que los puntos $A$ y $g(A)$ están en división armónica respecto a los puntos de intersección de la recta con la cuádrica.
+}
 
 %ejercicioN(10)
 \ejercicio{Prueba que la dimensión del espacio proyectivo de las cuádricas de $\mathbb{P}_{\mathbb{R}}^{3}$ es 9, y deduce que cualesquiera tres rectas de $\mathbb{P}_{\mathbb{R}}^{3}$ están contenidas en (el lugar de ceros de) una misma cuádrica.\\
