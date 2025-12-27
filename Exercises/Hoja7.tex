@@ -1,0 +1,129 @@
+\hojaejercicio{7}{Razón doble}
+
+%ejercicio1
+\ejercicio{Demuestra que si $[A,B,C,D]=[A,B,C,D^{\prime}]$ entonces $D=D^{\prime}$.}{
+    Como la razón doble es un invariante por homografías, si $[A,B,C,D]=[A,B,C,D^{\prime}]$, existe una única homografía $f$ tal que $f(A)=A$, $f(B)=B$, $f(C)=C$ y $f(D)=D^{\prime}$. Dado que una homografía en la recta proyectiva queda unívocamente determinada por la imagen de tres puntos distintos, y en este caso $f$ fija los puntos de la referencia $\{A, B; C\}$, se deduce que $f$ es la identidad. Por lo tanto, $D^{\prime} = f(D) = D$.
+}
+
+%ejercicio2
+\ejercicio{a) Halla la ecuación de la recta de $\mathbb{P}_{\mathbb{C}}^{2}$ que contiene a los puntos $A=(1:-1:0),$ $B=(0:1:-1)$ y $C=(1:1:-2)$ . b) Halla la razón doble de los puntos $A, B, C$ y $D=(3:-2:-1)$. Pista: 
+envía por una homografía los cuatro puntos a cuatro puntos de $\mathbb{P}_{\mathbb{C}}^{1}$ y calcula la razón doble de las imágenes . c) Encuentra puntos $P_{1}, P_{2}$ en la recta tales que $[A,B,C,P_{1}]=-1/2$ y $[A,B,P_{2},P_{1}]=-2/3$.}{
+ \textbf{a)} Obtenemos la ecuación del hiperplano mediante el determinante de los vectores representativos de $A$, $B$ y un punto genérico $X=(x_0, x_1, x_2)$:
+\[ \det \begin{pmatrix} 1 & 0 & x_0 \\ -1 & 1 & x_1 \\ 0 & -1 & x_2 \end{pmatrix} = 1(x_2 + x_1) + x_0(1) = x_0 + x_1 + x_2 = 0 \]
+La recta es $x_0 + x_1 + x_2 = 0$. Se comprueba que $C(1,1,-2)$ pertenece a la recta ($1+1-2=0$).
+
+\textbf{b)} Consideramos la referencia proyectiva $\mathcal{R} = \{B, A; C\}$ para que $B$ sea el origen ($0$), $A$ el punto del infinito ($\infty$) y $C$ el punto unidad ($1$). Buscamos la \textbf{base asociada} $\{\vec{v}_1, \vec{v}_2\}$ tal que $\vec{v}_1 \propto \vec{u}_B$, $\vec{v}_2 \propto \vec{u}_A$ y $\vec{u}_C = \vec{v}_1 + \vec{v}_2$.
+Resolvemos la combinación lineal: $\vec{u}_C = \lambda \vec{u}_B + \mu \vec{u}_A$:
+\[ (1, 1, -2) = \lambda(0, 1, -1) + \mu(1, -1, 0) \implies \mu = 1, \, \lambda = 2 \]
+La base asociada es $\vec{v}_1 = (0, 2, -2)$ y $\vec{v}_2 = (1, -1, 0)$. Expresamos el vector de $D(3, -2, -1)$ en dicha base:
+\[ (3, -2, -1) = d_0 \vec{v}_1 + d_1 \vec{v}_2 = d_0(0, 2, -2) + d_1(1, -1, 0) \implies d_1 = 3, \, d_0 = 1/2 \]
+Las coordenadas de $D$ en $\mathcal{R}$ son $[d_0 : d_1] = [1/2 : 3]$. La coordenada no homogénea es $x = d_1/d_0 = 3/(1/2) = 6$. Por definición, la aplicación que manda la referencia a la canónica es la identidad en coordenadas, por lo que:
+\[ [A, B, C, D] = [\infty, 0, 1, 6] = 6 \]
+
+\textbf{c)} Usando la misma referencia y la coordenada $x$:
+Para $P_1$: $[A, B, C, P_1] = -1/2 \implies x_1 = -1/2$.
+$\vec{u}_{P_1} = 1\vec{v}_1 + (-1/2)\vec{v}_2 = (0, 2, -2) - (1/2, -1/2, 0) = (-1/2, 5/2, -2) \sim (-1: 5: -4)$.
+Para $P_2$: Utilizamos la relación $[A, B, P_2, P_1] = \frac{[A, B, C, P_1]}{[A, B, C, P_2]}$.
+$-2/3 = \frac{-1/2}{x_2} \implies x_2 = 3/4$.
+$\vec{u}_{P_2} = 1\vec{v}_1 + (3/4)\vec{v}_2 = (0, 2, -2) + (3/4, -3/4, 0) = (3/4, 5/4, -2) \sim (3: 5: -8)$.   
+
+}
+
+%ejercicio3
+\ejercicio{Dados $A, B, C, D$ cuatro puntos diferentes alineados : a) Calcula, en función de $\rho=[A,B,C,D]$, el valor de: $[B, A, C, D]$, $[A, B, D, C]$ y $[A, C, B, D]$ . b) En vista de los resultados anteriores, calcula $[D, B, C, A]$ . c) Justifica que a partir de los resultados anteriores se puede obtener el valor de la razón doble de los cuatro puntos en cualquier orden. ¿Qué valores puede tomar?  d) Prueba que no existe ninguna homografía que transforme $A, B, C, D$ en $B, C, A, D$, resp., si los cuatro puntos pertenecen a una recta proyectiva real, independientemente de cómo estén colocados. Observa que en una recta proyectiva compleja sí podría existir tal homografía.}{
+    \textbf{a) }
+\begin{itemize}
+    \item Para $[B, A, C, D]$: Intercambiamos los dos primeros puntos (puntos base). Por propiedad de inversión:
+    \[ [B, A, C, D] = \frac{1}{[A, B, C, D]} = \frac{1}{\rho} \]
+    \item Para $[A, B, D, C]$: Intercambiamos los dos últimos puntos (punto unidad y punto variable). Por propiedad de inversión:
+    \[ [A, B, D, C] = \frac{1}{[A, B, C, D]} = \frac{1}{\rho} \]
+    \item Para $[A, C, B, D]$: Intercambiamos los puntos en las posiciones 2 y 3. Por propiedad de complementariedad:
+    \[ [A, C, B, D] = 1 - [A, B, C, D] = 1 - \rho \]
+\end{itemize}
+
+\textbf{b) }
+Se puede comprobar lo siguiente para cada permutación de puntos:
+\[ [A, B, C, D] = [B, A, D, C] = [C, D, A, B] = [D, C, B, A] = \rho \]
+Partiendo de $[A, B, C, D] = \rho$,  y desarrollando nos queda que:
+\[ [D, B, C, A] = \frac{1}{1-\rho} \]
+
+\textbf{c) }
+Existen $4! = 24$ formas de ordenar los puntos. Sin embargo, como hemos visto antes para cada permutación existen otras cuatro que tienen el mismo valor, es decir solo existen $24/4 = 6$ valores posibles para la razón doble según el orden. A partir de $\rho$, estos valores son:
+\[ \mathcal{S} = \left\{ \rho, \frac{1}{\rho}, 1-\rho, \frac{1}{1-\rho}, \frac{\rho-1}{\rho}, \frac{\rho}{\rho-1} \right\} \]
+Cualquier permutación se puede descomponer en transposiciones de los tipos analizados en el apartado (a), permitiendo obtener el valor mecánicamente.
+
+\textbf{d)}
+Sabemos que existe una homografía que transforma la cuaterna $(A, B, C, D)$ en $(B, C, A, D)$ si y solo si sus razones dobles coinciden:
+\[ [A, B, C, D] = [B, C, A, D] \]
+Calculamos $[B, C, A, D]$ en función de $\rho$:
+\[ [A, B, C, D] = \rho \xrightarrow{\text{cambia } (1,2)} [B, A, C, D] = \frac{1}{\rho} \xrightarrow{\text{cambia } (2,3)} [B, C, A, D] = 1 - \frac{1}{\rho} = \frac{\rho - 1}{\rho} \]
+Igualamos ambos valores:
+\[ \rho = \frac{\rho - 1}{\rho} \implies \rho^2 = \rho - 1 \implies \rho^2 - \rho + 1 = 0 \]
+El discriminante es $\Delta = (-1)^2 - 4(1)(1) = -3$.
+\begin{itemize}
+    \item En $\mathbb{P}_{\mathbb{R}}^{1}$: Como $\Delta < 0$, la ecuación no tiene soluciones reales. Por tanto, no existe ninguna homografía en el cuerpo de los reales.
+    \item En $\mathbb{P}_{\mathbb{C}}^{1}$: La ecuación tiene soluciones complejas ($\rho = e^{\pm i\pi/3}$), por lo que en el cuerpo complejo la homografía sí existe.
+\end{itemize}
+}
+
+%ejercicio4
+\ejercicio{Sean $A, B, C$ tres puntos diferentes de una recta afín. Demuestra que $C$ es el punto medio del segmento (afín) $AB$ si y solo si $[A,B,C,\infty]=-1$, donde $\infty$ denota el punto de infinito de la recta afín.}{
+    Consideramos una recta afín $r$ con espacio de direcciones $V = L(\vec{u})$. Para completar la recta proyectivamente, añadimos su punto del infinito $P(V) = \{\infty\}$.
+
+
+Sea $C$ el origen de la recta afín (coordenada $0$). Si $C$ es el punto medio del segmento $AB$, entonces los puntos $A$ y $B$ están situados simétricamente respecto a $C$. Por tanto, en la recta afín, sus coordenadas son $-u$ y $u$ para algún escalar $u \neq 0$
+
+
+Utilizamos la correspondencia estándar para encajar los puntos afines en el espacio proyectivo $\mathbb{P}^1$ mediante la aplicación $x \mapsto (1:x)$:
+\begin{itemize}
+    \item El punto $C$ (origen) se mapea a $\vec{u}_C = (1:0)$
+    \item El punto $A$ se mapea a $\vec{u}_A = (1:-u)$
+    \item El punto $B$ se mapea a $\vec{u}_B = (1:u)$
+    \item El punto del infinito $D = \infty$ de la recta tiene como vector director la dirección de la recta $(0, 1)$, es decir, $\vec{u}_D = (0:1)$.
+\end{itemize}
+
+Calculamos $[A, B, C, D]$ utilizando la fórmula de los determinantes para vectores representativos en $\mathbb{P}^1$:
+\[ [A, B, C, D] = \frac{\det(\vec{u}_A, \vec{u}_C) \cdot \det(\vec{u}_B, \vec{u}_D)}{\det(\vec{u}_B, \vec{u}_C) \cdot \det(\vec{u}_A, \vec{u}_D)} \]
+
+Calculamos cada determinante individualmente:
+\begin{itemize}
+    \item $\det(\vec{u}_A, \vec{u}_C) = \det \begin{pmatrix} 1 & 1 \\ -u & 0 \end{pmatrix} = (1)(0) - (-u)(1) = u$.
+    \item $\det(\vec{u}_B, \vec{u}_D) = \det \begin{pmatrix} 1 & 0 \\ u & 1 \end{pmatrix} = (1)(1) - (u)(0) = 1$.
+    \item $\det(\vec{u}_B, \vec{u}_C) = \det \begin{pmatrix} 1 & 1 \\ u & 0 \end{pmatrix} = (1)(0) - (u)(1) = -u$.
+    \item $\det(\vec{u}_A, \vec{u}_D) = \det \begin{pmatrix} 1 & 0 \\ -u & 1 \end{pmatrix} = (1)(1) - (-u)(0) = 1$.
+\end{itemize}
+
+Sustituimos en la fórmula:
+\[ [A, B, C, \infty] = \frac{u \cdot 1}{-u \cdot 1} = \frac{u}{-u} = -1 \]
+
+
+Como el cálculo es reversible (si la razón es $-1$, la relación entre las coordenadas afines debe ser $x_A = -x_B$ tomando $C=0$), queda demostrado que $C$ es el punto medio de $AB$ si y solo si la cuaterna formada con el punto del infinito es armónica.
+}
+
+%ejercicio5
+\ejercicio{Definición: Una involución es una aplicación proyectiva $f$, distinta de la identidad, tal que $f^{2}=f\circ f=id$ . a) Prueba que las involuciones son homografías . b) Utiliza el ejercicio 3 para demostrar la siguiente caracterización de las involuciones de una recta proyectiva: $f$ es una involución si y solo si existen dos puntos distintos $A, A'$ tales que $f(A)=A^{\prime}$ y $f(A^{\prime})=A$. Pista: toma un punto arbitrario $B$ y muestra que $[A, A', f(B), f^{2}(B)]=[A,A^{\prime},f(B),B]$ utilizando que $f$ es homografía.}{
+a) Prueba que las involuciones son homografías.
+
+Sea $f: \mathbb{P}(V) \to \mathbb{P}(V)$ una aplicación proyectiva. Por definición, $f$ está inducida por una aplicación lineal $\vec{f}: V \to V$ tal que $f([\vec{v}]) = [\vec{f}(\vec{v})]$. Sea $M$ la matriz representativa de $\vec{f}$ en una base dada.
+Si $f^2 = id$, entonces en términos de matrices tenemos que $M^2 = \rho I$ para algún escalar $\rho \neq 0$. Aplicando el determinante a ambos lados:
+\[ \det(M^2) = \det(\rho I) \implies (\det M)^2 = \rho^n \]
+Como $\rho \neq 0$, se deduce que $\det M \neq 0$. Esto implica que la aplicación lineal $\vec{f}$ tiene rango máximo y es, por tanto, un isomorfismo (biyectiva). Una aplicación proyectiva cuya aplicación lineal asociada es biyectiva es, por definición, una homografía.
+
+b) Caracterización de las involuciones.
+
+$(\implies)$ Si $f$ es una involución, entonces $f = f^{-1}$. Para cualquier punto $A$ tal que $f(A) = A'$, aplicando $f$ de nuevo obtenemos $f(A') = f(f(A)) = id(A) = A$. Basta tomar $A$ no fijo para que $A \neq A'$.
+
+$(\impliedby)$ Supongamos que existen $A, A'$ distintos tales que $f(A)=A'$ y $f(A')=A$. Sea $B$ un punto cualquiera de la recta distinto de $A$ y $A'$. Consideramos la razón doble $[A, A', f(B), B]$. Como $f$ es una homografía, preserva la razón doble:
+\[ [A, A', f(B), B] = [f(A), f(A'), f^2(B), f(B)] = [A', A, f^2(B), f(B)]^{-1} = [A',A,f(B),f^2(B)] \]
+Usando en el último paso las propiedades de la razón doble.
+Invocando el \textbf{ejercicio 1} ($[A,B,C,D]=[A,B,C,D'] \implies D=D'$), concluimos que $f^2(B) = B$ para todo punto $B$. Como $f$ no es la identidad por hipótesis, $f$ es una involución.
+}
+
+%ejercicio6
+\ejercicio{Definición: Cuatro puntos alineados $A, B, C, D$ forman una cuaterna armónica si su razón doble es $-1$, esto es, $[A,B,C,D]=-1$. En este ejercicio vamos a ver cómo se construye una cuaterna armónica dados tres puntos $A, B, C$ de una recta $r$ en un plano proyectivo . a) Se toman dos puntos $A_{2}, A_{3}$ alineados con $C$. Calcula las coordenadas de $A, B, C$ en la referencia $\mathcal{R}=\{B,A,A_{2};A_{3}\}$ del plano . b) Construye $D$ siguiendo la figura y calcula sus coordenadas . c) Comprueba que $[A,B,C,D]=-1$.}{}
+
+%ejercicio7
+\ejercicio{Sea $\mathbb{A}\subset\mathbb{P}_{\mathbb{R}}^{2}$ el plano afín complementario de una recta proyectiva $r$ que pasa por $(0:1:2)$. Determinar $r$ sabiendo que en cierta referencia cartesiana de $\mathbb{A}$ los puntos $(3:1:0)$, $(1:1:0)$ y $(1:-1:0)$ tienen coordenadas $(1,0)$, $(0,0)$ y $(-1,0)$. Pista: observa que la terna de puntos afines está alineada y el punto de infinito de dicha recta, $Q$, pertenece a $r$. Halla $r$ sabiendo que la razón doble de la cuaterna de puntos de $r$ es igual a la razón simple de la terna de puntos afines.}{}
+
+%ejercicio8_fachada
+\ejercicio{La siguiente imagen es una fotografía de la fachada de la facultad de Matemáticas. Los cuatro puntos $A, B, C, D$ corresponden a cuatro pilares que están equiespaciados . a) Demuestra que la razón doble de cuatro puntos equiespaciados (y colocados en orden) en una recta afín cualquiera es igual a $4/3$ . b) Calcula la razón doble de los cuatro puntos $A, B, C, D$ de la imagen. ¿Es el resultado compatible con la afirmación de que en la fachada están alineados y equiespaciados?  c) Estima llongitud total de la fachada si suponemos que la distancia entre pilares adyacentes es de $5,5$ metros. Pista: Calcula $[A, B, C, F]$ y usa que en cierta referencia afín $A=0$, $B=5,5$, $C=11$.}{}
