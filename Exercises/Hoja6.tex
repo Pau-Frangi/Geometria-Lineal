@@ -210,4 +210,57 @@ Luego,
 \]
 Por tanto, D es un punto fijo de f. \\
 }
+% Ejercicio 6
+\ejercicio{Supongamos que el conjunto de puntos fijos de una homografía de $\mathbb{P}_{\mathbb{C}}^3$ está formado por dos rectas. Prueba que toda recta invariante une dos puntos fijos.
+
+Pista: recuerda que dadas dos rectas $r,r'$ disjuntas en dimensión 3 y un punto $A$ fuera de ellas, existe una única recta que pasa por $A$ y corta a $r$ y $r'$.}{
+    Sea $f: \mathbb{P}_{\mathbb{C}}^{3} \to \mathbb{P}_{\mathbb{C}}^{3}$ una homografía cuyo conjunto de puntos fijos es la unión de dos rectas disjuntas $r$ y $r'$. Sea $L$ una recta invariante por $f$ ($f(L) = L$).
+
+Demostración geométrica:
+Supongamos que $L$ no es una de las rectas de puntos fijos. Sea $A \in L$ un punto que no es fijo ($f(A) \neq A$).
+\begin{enumerate}
+    \item Por el teorema de la transversal única, existe una única recta $m$ que pasa por $A$ y corta a $r$ en $P$ y a $r'$ en $Q$.
+    \item Dado que $P \in r$ y $Q \in r'$, son puntos fijos. Por tanto, la recta $m = \langle P, Q \rangle$ es invariante por $f$.
+    \item Puesto que $A \in L \cap m$ y ambas rectas son invariantes, se cumple que $f(A) \in f(L) \cap f(m) = L \cap m$.
+    \item Al ser $A$ y $f(A)$ dos puntos distintos pertenecientes a la intersección de $L$ y $m$, ambas rectas deben coincidir: $L = m$.
+    \item Como $m$ une los puntos fijos $P$ y $Q$, concluimos que $L$ une dos puntos fijos.
+\end{enumerate}
+
+Un razonamiento algebraico:
+La homografía $f$ está inducida por una matriz $M$ con dos subespacios propios $V_{\lambda_1}$ y $V_{\lambda_2}$ de dimensión 2, tales que $V = V_{\lambda_1} \oplus V_{\lambda_2}$. Una recta invariante corresponde a un subespacio $W$ de dimensión 2 tal que $M(W) \subseteq W$. Todo subespacio invariante se descompone como:
+$$ W = (W \cap V_{\lambda_1}) \oplus (W \cap V_{\lambda_2}) $$
+Las únicas configuraciones posibles para $\dim(W)=2$ son:
+\begin{itemize}
+    \item $\dim(W \cap V_{\lambda_1}) = 2 \implies L = r$.
+    \item $\dim(W \cap V_{\lambda_2}) = 2 \implies L = r'$.
+    \item $\dim(W \cap V_{\lambda_1}) = 1$ y $\dim(W \cap V_{\lambda_2}) = 1$. En este caso, $L$ contiene un punto fijo de $r$ y otro de $r'$.
+\end{itemize}
+}
+\ejercicio{Recuerda que una involución es una aplicación proyectiva $\sigma$ distinta de la identidad tal que $\sigma^2 = \text{id}$. Halla las posibles formas de Jordan de una involución en una recta proyectiva real.}{Sea $\sigma: \mathbb{P}_{\mathbb{R}}^1 \to \mathbb{P}_{\mathbb{R}}^1$ una involución distinta de la identidad ($\sigma^2 = \text{id}, \sigma \neq \text{id}$). Sea $A \in \mathcal{M}_{2 \times 2}(\mathbb{R})$ la matriz asociada a $\sigma$ en la referencia proyectiva canónica.
+
+La condición $\sigma^2 = \text{id}$ implica que, a nivel matricial, $A^2 = \rho I$ para algún factor de escala $\rho \in \mathbb{R} \setminus \{0\}$. El polinomio mínimo $m(x)$ de $A$ debe ser un divisor de:
+$$ P(x) = x^2 - \rho $$
+Dado que $\sigma \neq \text{id}$, la matriz $A$ no puede ser un múltiplo de la identidad (es decir, $m(x) \neq x-\lambda$). Por tanto, el polinomio mínimo es necesariamente de grado 2: $m(x) = x^2 - \rho$. Clasificamos las posibles formas de Jordan reales según el signo de $\rho$.
+
+ Caso $\rho > 0$
+Si $\rho$ es positivo, podemos escribir $\rho = k^2$ con $k > 0$. El polinomio mínimo es:
+$$ m(x) = x^2 - k^2 = (x - k)(x + k) $$
+Este polinomio tiene dos raíces reales y distintas ($\pm k$). En consecuencia, la matriz es diagonalizable sobre $\mathbb{R}$.
+\begin{itemize}
+    \item \textbf{Forma de Jordan:} La matriz es semejante a $\begin{pmatrix} k & 0 \\ 0 & -k \end{pmatrix}$.
+    \item \textbf{Equivalencia Proyectiva:} Puesto que en $\mathbb{P}_{\mathbb{R}}^1$ las matrices se consideran salvo factor de escala, dividimos por $k$ para obtener la forma canónica:
+    \[ J_1 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} \]
+\end{itemize}
+Esta involución posee dos puntos fijos reales correspondientes a los autovectores.
+
+ Caso $\rho < 0$
+Si $\rho$ es negativo, podemos escribir $\rho = -k^2$ con $k > 0$. El polinomio mínimo es:
+$$ m(x) = x^2 + k^2 $$
+Este polinomio es \textbf{irreducible sobre $\mathbb{R}$}. Para un bloque asociado a un polinomio irreducible de la forma $(x-a)^2 + b^2$, la matriz es semejante a $\begin{pmatrix} a & b \\ -b & a \end{pmatrix}$.
+\begin{itemize}
+    \item \textbf{Forma Canónica Real:} En nuestro caso $a=0$ y $b=k$, luego la matriz es semejante a $\begin{pmatrix} 0 & k \\ -k & 0 \end{pmatrix}$.
+    \item \textbf{Equivalencia Proyectiva:} Dividiendo por $k$, obtenemos la forma simplificada:
+    \[ J_2 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \]
+\end{itemize}
+}
 
