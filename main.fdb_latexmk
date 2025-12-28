@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1766860068.99227 "c:/Users/jaime/GeometríaLineal/Geometria-Lineal/main.tex" "main.pdf" "main" 1766860080.73767 0
+["pdflatex"] 1766925254.61374 "c:/Users/jaime/GeometríaLineal/Geometria-Lineal/main.tex" "main.pdf" "main" 1766925274.0997 0
   "Appendix/Appendix.tex" 1764850944 45 9e967cd0c1cfb46f0952e425ef1e7aa3 ""
   "Appendix/PruebaApendice.tex" 1764850944 0 d41d8cd98f00b204e9800998ecf8427e ""
   "C:/Users/jaime/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1764853198 81247 50d52f6487769ef97fe2dc7d59ae1563 ""
@@ -356,9 +356,9 @@
   "Exercises/Hoja2.tex" 1766322437 22193 e3206b2980af6397e830edf4785c25bf ""
   "Exercises/Hoja3.tex" 1766326502 11908 f03795a3c3f70cab6b7b1254650e57bf ""
   "Exercises/Hoja4.tex" 1764851085 5875 0a88907e3371194563f79a11020eee41 ""
-  "Exercises/Hoja5.tex" 1764850944 9691 5358accedfda9a42a1bc6d0619f25d88 ""
+  "Exercises/Hoja5.tex" 1766925252 17222 10b9f1c9530ce2a5f4b6f212b1f9493d ""
   "Exercises/Hoja6.tex" 1764850944 7036 d3308f77a6e5614fc57fa62fafe7dc81 ""
-  "Exercises/Hoja7.tex" 1766860067 12703 a021c1056165fe9341a1e7fd5a639fa2 ""
+  "Exercises/Hoja7.tex" 1766860183 12702 7dc93f97f956291c71fe4783329dc49e ""
   "Exercises/Hoja8.tex" 1765714651 8743 cbc3fbcee8bbf834f422f49d3b4c67ea ""
   "Exercises/Hojas.tex" 1766850022 350 4203c07703b32286345d01af8fe447d5 ""
   "Exercises/lista2.tex" 1766849811 44946 21d4a440d566a078551fc9a6986469b4 ""
@@ -366,10 +366,10 @@
   "Preamble/Preamble.tex" 1764853866 13331 0dbe8d7d81467297011a2427c48cd95d ""
   "c:/Users/jaime/GeometríaLineal/Geometria-Lineal/main.tex" 1766849781 4082 6a54bce63d7283a93751a959666bb359 ""
   "images/logo.png" 1764850944 444144 2cb7926de033eda7c58a3b31d8e065e6 ""
-  "main.aux" 1766860079 3065 1737b001f3cae33e811951beaf2073c0 "pdflatex"
-  "main.out" 1766860079 1538 4a7bda44c382e45ef366634ef60317ee "pdflatex"
+  "main.aux" 1766925272 3065 fd8d130708f9d2e9a19f57712d3e753b "pdflatex"
+  "main.out" 1766925272 1538 4a7bda44c382e45ef366634ef60317ee "pdflatex"
   "main.tex" 1766849781 4082 6a54bce63d7283a93751a959666bb359 ""
-  "main.toc" 1766860079 1487 3235ba324338870e639aef57b5709bc7 "pdflatex"
+  "main.toc" 1766925272 1487 a4cb66854caef71704648dd294feddcb "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -7,6 +7,26 @@ En el plano proyectivo $\mathbb{P}^2_{\mathbb{R}}$ se consideran las rectas
 Encuentra, si es posible, una carta afín en la que (las partes afines de) las tres rectas sean paralelas, calculando además sus ecuaciones.
 }{
 
+Observamos que las ecuaciones de las rectas no son linealmente independientes. Si denotamos por $L_i$ al primer miembro de cada ecuación:
+\[ L_1 + L_2 = (x_0 - x_1 - 2x_2) + (x_0 - 2x_2) = 2x_0 - x_1 - 4x_2 = L_3 \]
+Como $L_3$ es combinación lineal de $L_1$ y $L_2$, las tres rectas se cortan en un mismo punto $P = r_1 \cap r_2 \cap r_3$. Calculamos dicho punto resolviendo el sistema:
+\[ \begin{cases} x_0 - x_1 - 2x_2 = 0 \\ x_0 - 2x_2 = 0 \end{cases} \implies x_0 = 2x_2, \quad x_1 = 0 \]
+Tomando $x_2 = 1$, el punto de intersección es $P = (2:0:1)$.
+
+Dos o más rectas son paralelas en una carta afín si y solo si su punto de intersección proyectivo pertenece a la recta del infinito $r_{\infty}$. Esto se ve más claramente si dibujamos las tres rectas con una misma intersección
+y nos llevamos la interseccion al infinito. En resumidas cuentas, necesitamos una recta del infinito distinta de las tres antes mencionadas que pase por la intersección. Para ello, tomamos un punto auxiliar $Q = (1:0:0)$ que no pertenece a ninguna de las rectas (pues $1-0-0 \neq 0$, etc.). La recta que une $P$ y $Q$ será nuestra recta del infinito:
+\[ r_{\infty} : \det \begin{pmatrix} x_0 & x_1 & x_2 \\ 2 & 0 & 1 \\ 1 & 0 & 0 \end{pmatrix} = 0 \implies x_1 = 0 \]
+
+
+Definimos la carta afín asociada a $x_1 \neq 0$ mediante las coordenadas $(X, Y) = (\frac{x_0}{x_1}, \frac{x_2}{x_1})$. Dividiendo las ecuaciones originales por $x_1$:
+\begin{itemize}
+    \item \textbf{Para $r_1$:} $\frac{x_0}{x_1} - 1 - 2\frac{x_2}{x_1} = 0 \implies X - 2Y - 1 = 0$.
+    \item \textbf{Para $r_2$:} $\frac{x_0}{x_1} - 2\frac{x_2}{x_1} = 0 \implies X - 2Y = 0$.
+    \item \textbf{Para $r_3$:} $2\frac{x_0}{x_1} - 1 - 4\frac{x_2}{x_1} = 0 \implies 2X - 4Y - 1 = 0$.
+\end{itemize}
+
+
+Las tres rectas tienen la misma dirección (vector director $(2, 1)$), por lo que son paralelas en esta carta afín.
 }
 
 % Ejercicio 2
@@ -119,7 +139,52 @@ Determina la ecuación de una recta $\ell_\infty$ de $\mathbb{P}^2_{\mathbb{C}}$
 \ejercicio{
 Da las ecuaciones de la aplicación proyectiva $\tilde{f} : \mathbb{P}^2_{\mathbb{R}} \to \mathbb{P}^3_{\mathbb{R}}$ que extiende la aplicación afín $f : \mathbb{A}^2_{\mathbb{R}} \to \mathbb{A}^3_{\mathbb{R}}$ definida por: 
 \[f(1, 0) = (1, 0, 2), \quad f(1, 2) = (0, 1, 1), \quad f(2, 0) = (2, 0, 0).\]
-}{}
+}{
+    Sea $f: \mathbb{A}_{\mathbb{R}}^2 \to \mathbb{A}_{\mathbb{R}}^3$ la aplicación afín dada. Buscamos su extensión proyectiva $\tilde{f}: \mathbb{P}_{\mathbb{R}}^2 \to \mathbb{P}_{\mathbb{R}}^3$.
+
+
+Utilizamos la propiedad $\vec{f}(Q-P) = f(Q) - f(P)$ para hallar la imagen de la base canónica:
+\begin{itemize}
+    \item $\vec{f}(e_1) = \vec{f}((2,0)-(1,0)) = f(2,0) - f(1,0) = (2,0,0) - (1,0,2) = (1,0,-2)$.
+    \item $\vec{f}(2e_2) = \vec{f}((1,2)-(1,0)) = f(1,2) - f(1,0) = (0,1,1) - (1,0,2) = (-1,1,-1)$.
+    \item Por tanto, $\vec{f}(e_2) = \left(-\frac{1}{2}, \frac{1}{2}, -\frac{1}{2}\right)$.
+\end{itemize}
+
+
+Calculamos la imagen del origen mediante $f(0,0) = f(1,0) - \vec{f}(1,0)$:
+$$f(0,0) = (1,0,2) - (1,0,-2) = (0,0,4)$$
+
+La aplicación en coordenadas afines $(x,y)$ es:
+$$
+\begin{cases} 
+y_1 = x - \frac{1}{2}y \\ 
+y_2 = \frac{1}{2}y \\ 
+y_3 = -2x - \frac{1}{2}y + 4 
+\end{cases}
+$$
+
+
+Encajamos los espacios afines de forma canónica (con la correspondencia vista en clase). Homogeneizando las ecuaciones, obtenemos la aplicación proyectiva $\tilde{f}$ definida por la matriz:
+$$
+\begin{pmatrix} Y_0 \\ Y_1 \\ Y_2 \\ Y_3 \end{pmatrix} = 
+\begin{pmatrix} 
+1 & 0 & 0 \\ 
+0 & 1 & -1/2 \\ 
+0 & 0 & 1/2 \\ 
+4 & -2 & -1/2 
+\end{pmatrix} 
+\begin{pmatrix} x_0 \\ x_1 \\ x_2 \end{pmatrix}
+$$
+Las ecuaciones proyectivas finales son:
+$$
+\begin{cases} 
+\rho Y_0 = x_0 \\ 
+\rho Y_1 = x_1 - \frac{1}{2}x_2 \\ 
+\rho Y_2 = \frac{1}{2}x_2 \\ 
+\rho Y_3 = 4x_0 - 2x_1 - \frac{1}{2}x_2 
+\end{cases}
+$$
+}
 
 % Ejercicio 5
 \ejercicio{
@@ -135,7 +200,44 @@ Sea $f$ la homografía de $\mathbb{P}^2_{\mathbb{R}}$ que tiene por matriz, resp
     \item[(iii)] ¿Qué tipo de aplicación es la del apartado anterior?
     \item[(iv)] Comprueba que la recta $s : x_1 = 0$ es invariante. Halla ecuaciones de la restricción de $f$ al complementario de $s$.
 \end{enumerate}
-}{}
+}{
+    Dada la homografía $f$ con matriz $M = \begin{pmatrix} 4 & -2 & 2 \\ 0 & 4 & 0 \\ 0 & -2 & 6 \end{pmatrix}$.
+
+i)
+Calculamos el polinomio característico para hallar los autovalores:
+\[ p(\lambda) = \det(M - \lambda I) = (4-\lambda) \begin{vmatrix} 4-\lambda & 0 \\ -2 & 6-\lambda \end{vmatrix} = (4-\lambda)^2(6-\lambda) \]
+\begin{itemize}
+    \item \textbf{Para $\lambda = 4$:} El sistema $(M-4I)\mathbf{x} = 0$ da $-2x_1 + 2x_2 = 0$. Los puntos fijos forman la recta de ecuación $x_1 = x_2$.
+    \item \textbf{Para $\lambda = 6$:} El sistema $(M-6I)\mathbf{x} = 0$ da $x_1 = 0$ y $x_0 = x_2$. El punto fijo es $[1:0:1]$.
+\end{itemize}
+
+ii)
+Realizamos el cambio de referencia $X_0 = x_0, X_1 = x_2 - x_1, X_2 = x_2$. La matriz del cambio es $P = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$.
+La matriz en la nueva referencia es:
+\[ M' = P M P^{-1} = \begin{pmatrix} 4 & 2 & 0 \\ 0 & 6 & 0 \\ 0 & 2 & 4 \end{pmatrix} \]
+La recta $r: x_1 = x_2$ equivale a $X_1 = 0$. Puesto que $M'(X_0, 0, X_2)^t = (4X_0, 0, 4X_2)^t$, la recta $r$ es invariante.
+
+Para la restricción afín a $\mathbb{P}^2 \setminus r$, tomamos el plano afín $X_1 = 1$ y vemos la aplicacion proyectiva reestringida a este plano:
+\[Y_0 = 4X_0 + 2X_1, \quad Y_1 = 6X_1, \quad Y_2 = 2X_1 + 4X_2 \] en X1 = 1:
+\[Y_0 = 4X_0 + 2, \quad Y_1 = 6, \quad Y_2 = 2 + 4X_2 \]
+En el hiperplano afin $Y_1 = 1$, tenemos:
+\[ Y_0' = \frac{2}{3}X_0 + \frac{1}{3}, \quad Y_2' = \frac{1}{3} + \frac{2}{3}X_2 \]
+que son nuestras coordenadas afines (podemos simplemente deshomogeneizar y ya, pero esta forma quizás es más visual).
+\\
+iii)
+A partir de las ecuaciones obtenidas:
+$$ \begin{pmatrix} u' \\ v' \end{pmatrix} = \begin{pmatrix} 2/3 & 0 \\ 0 & 2/3 \end{pmatrix} \begin{pmatrix} u \\ v \end{pmatrix} + \begin{pmatrix} 1/3 \\ 1/3 \end{pmatrix} $$
+Observamos que:
+\begin{itemize}
+    \item La matriz de la parte lineal es de la forma $k \cdot I$ con $k = \frac{2}{3}$. Puesto que $k \neq 1$ y $k \neq 0$, la aplicación es una \textbf{homotecia}.
+    \item La razón de la homotecia es $k = \frac{2}{3}$.
+    \item El centro de la homotecia se calcula buscando el punto fijo $(u,v) = (u',v')$:
+    $$ u = \frac{2}{3}u + \frac{1}{3} \implies u = 1 $$
+    $$ v = \frac{2}{3}v + \frac{1}{3} \implies v = 1 $$
+\end{itemize}
+Por tanto, la aplicación es una \textbf{homotecia de centro $C(1,1)$ y razón $k=2/3$}.
+iv) se hace de forma análoga al anterior.
+}
 
 % Ejercicio 6
 \ejercicio{
@@ -193,4 +295,28 @@ Sean $P = (1 : 0 : 0)$, $Q = (0 : 0 : 1)$ y $r : x_0 + x_1 + x_2 = 0$. En el pla
 % Ejercicio 7
 \ejercicio{
 Sea el plano afín obtenido al quitar a $\mathbb{P}^2_{\mathbb{R}}$ la recta $x_1 - x_2 = 0$. Determina la razón de la homotecia de centro $(1 : 0 : -1)$ que transforma el punto $(1 : -1 : 0)$ en el punto $(0 : 1 : -1)$. Da las ecuaciones de la extensión proyectiva de dicha homotecia.
-}{}
+}{
+    Consideramos la recta del infinito $r: x_1 - x_2 = 0$.
+
+
+Definimos una base $\mathcal{B} = \{u_1, u_2, u_3\}$ de $\mathbb{R}^3$ tal que $\{u_1, u_2\} \subset \ker(x_1 - x_2)$:
+$$ u_1 = (1, 0, 0), \quad u_2 = (0, 1, 1), \quad u_3 = (0, 0, 1) $$
+
+
+Normalizamos los puntos para que $x_1 - x_2 = 1$ (lo que es equivalente a razonar que, ya que estamos en el proyectivo, cada punto
+es una clase de equivalencia de vectores en E. Así, elegimos el representante que esté en el hiperplano AFÍN deseado (forzamos a que sus coordenadas satisfagan $x_1 - x_2 = 1$). Ahora que tenemos el 
+representante, al haber construido la base del vectorial como unión de la base del hiperplano de infinito y un vector complementario,   
+tendremos que esta nueva referencia, si proyectamos las dos primeras coordenadas, tendremos nuestras coordenadas del afín):
+\begin{itemize}
+    \item $c = (1, 0, -1) = 1u_1 + 0u_2 - 1u_3 \implies c_{\mathcal{B}} = (1, 0, -1)$.
+    \item $p = (-1, 1, 0) = -1u_1 + 1u_2 - 1u_3 \implies p_{\mathcal{B}} = (-1, 1, -1)$.
+    \item $p' = (0, 1/2, -1/2) = 0u_1 + \frac{1}{2}u_2 - 1u_3 \implies p'_{\mathcal{B}} = (0, \frac{1}{2}, -1)$.
+\end{itemize}
+
+
+Proyectando sobre las dos primeras coordenadas (referencia afín asociada a $\{u_1, u_2\}$):
+$$ \vec{CP} = (-1, 1) - (1, 0) = (-2, 1) $$
+$$ \vec{CP'} = (0, 1/2) - (1, 0) = (-1, 1/2) $$
+Puesto que $\vec{CP'} = \frac{1}{2} \vec{CP}$, la razón de la homotecia es \textbf{$k = 1/2$}.
+Se puede hacer de forma más canónica simplemente calculando directamente con los puntos. Pero me pareció este procedimiento más visual.
+}
