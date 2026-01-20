@@ -771,9 +771,9 @@ INPUT Exercises\lista2.tex
 INPUT .\Appendix\Appendix.tex
 INPUT .\Appendix\Appendix.tex
 INPUT Appendix\Appendix.tex
-INPUT .\Appendix\PruebaApendice.tex
-INPUT .\Appendix\PruebaApendice.tex
-INPUT Appendix\PruebaApendice.tex
+INPUT .\Appendix\Agradecimientos.tex
+INPUT .\Appendix\Agradecimientos.tex
+INPUT Appendix\Agradecimientos.tex
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\doclicense\images\doclicense-CC-by-nc-nd-88x31.pdf
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\doclicense\images\doclicense-CC-by-nc-nd-88x31.pdf
 INPUT C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex\latex\doclicense\images\doclicense-CC-by-nc-nd-88x31.pdf

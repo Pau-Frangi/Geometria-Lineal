@@ -443,3 +443,19 @@ mdframed={
   \setcounter{subsection}{0}%
   \renewcommand{\thesubsection}{\theapendice.\arabic{subsection}}%
 }
+
+% Comando para incluir un agradecimiento resaltando el nombre de la persona
+% y para que cada agradecimiento aparezca como entrada en el índice del apéndice.
+% Uso: \agradecimiento{Nombre Apellido}{Texto del agradecimiento.}
+\newcommand{\agradecimiento}[2]{%
+  % Aumentar el contador de subsección del apéndice y mostrar el título numerado
+  \refstepcounter{subsection}%
+  % Mostrar una cabecera visible con número de subsección y nombre
+  \subsection*{\thesubsection\quad #1}%
+  % Añadir entrada al índice (TOC) como subsección dentro del apéndice
+  \addcontentsline{toc}{subsection}{\thesubsection\quad #1}%
+  % Mostrar el contenido del agradecimiento dentro de un recuadro visual
+  \begin{tcolorbox}[colback=LightGray,colframe=myblue!60!black,sharp corners,boxrule=0.7pt,enhanced]
+    #2
+  \end{tcolorbox}
+}
