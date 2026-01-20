@@ -3,22 +3,29 @@
 \include{Preamble/Preamble}
 \title{Geometría Lineal}
 \date{Ciencias Matemáticas, Fall 2023}
-\author{Pau Frangi Mahiques}
+\author{Pau Frangi Mahiques, Diego Rodríguez Cubero y Jaime Nieto Petinal}
+
+% CC license
+\usepackage[
+    type={CC},
+    modifier={by-nc-nd},
+    version={3.0},
+]{doclicense}
 
 \begin{document}
 
 %Title Page:
 \begin{titlepage}
-
+    
     \newcommand{\TopRule}{\rule{\linewidth}{0.3mm}}   % thinner
     \newcommand{\BottomRule}{\rule{\linewidth}{0.5mm}} % thicker
-
+    
     \center % Center everything on the page
-
+     
     %----------------------------------------------------------------------------------------
     %	HEADING SECTIONS
     %----------------------------------------------------------------------------------------
-
+    
     % Add some space between the top of the page and image
     \vspace*{1cm}
     \includegraphics[scale=.15]{images/logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
@@ -26,33 +33,38 @@
     %----------------------------------------------------------------------------------------
     %	TITLE SECTION
     %----------------------------------------------------------------------------------------
-
+    
     \TopRule \\[0.4cm]
-    { \huge \bfseries GEOMETRÍA LINEAL}\\[0.4cm]
-    \BottomRule \\[0.5cm]
+    { \huge \bfseries Geometría Lineal \footnote{Basado en los apuntes de Luis Hernandez Corbato}}\\[0.4cm]
+    \BottomRule \\[0.5cm]    
     \textsc{\large Ciencias Matemáticas e Ingeniería Informática}\\[0.5cm] % Minor heading such as course title
-
+      
     %----------------------------------------------------------------------------------------
     %	AUTHOR SECTION
     %----------------------------------------------------------------------------------------
-
+    
     \vspace{0.5cm}
     \begin{minipage}{0.7\textwidth}
-        \begin{flushleft} \large
-            \emph{Autores:}\\
-            \href{https://github.com/Pau-Frangi}{Pau Frangi Mahiques} y \href{https://github.com/DIEGOROCU}{Diego Rodríguez Cubero}\\
-        \end{flushleft}
-
+    \begin{flushleft} \large
+    \emph{Autores:}\\
+    \href{https://github.com/Pau-Frangi}{Pau Frangi Mahiques}, \href{https://github.com/DIEGOROCU}{Diego Rodríguez Cubero} y \href{https://github.com/Jaimito1243}{Jaime Nieto Petinal}
+    \end{flushleft}
+    
     \end{minipage}\\[2cm]
+    
 
     %----------------------------------------------------------------------------------------
     %	DATE SECTION
     %----------------------------------------------------------------------------------------
-
-    Primer cuatrimestre 2025-2026\\[2cm] % Date, change the \today to a set date if you want to be precise
+    
+    Primer Cuatrimestre 2025-2026\\[2cm] 
     \vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
+\newpage
+
+\input{Preamble/Introduction.tex}
+\newpage
 
 % =====================================
 % TABLA DE CONTENIDOS GENERAL
@@ -74,7 +86,7 @@
 \newpage
 
 % Incluir la teoría
-%\input{Theory/Theory.tex}
+\input{Theory/Theory.tex}
 
 \newpage
 
@@ -118,5 +130,7 @@
 
 % Incluir el apéndice
 \input{Appendix/Appendix.tex}
+
+\doclicenseThis
 
 \end{document}
